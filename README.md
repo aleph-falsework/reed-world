@@ -27,7 +27,7 @@ python gen_walk.py ../world/lowfi/reed_world.geojson ../world/walk/reed_walk.htm
 - [x] World, low fidelity
 - [ ] World, high fidelity: DEM terrain, building heights, canyon vegetation
 - [ ] Simulation
-- [ ] Game: GB Studio campus walk (see `docs/GB_STUDIO_PLAN.md`; tracked in Jira project RW)
+- [x] Game (prototype): GB Studio campus walk — `build/reed_world.gb`, project in `game/reed-world/`, see `docs/MORNING_REPORT.md`. Was: GB Studio campus walk (see `docs/GB_STUDIO_PLAN.md`; tracked in Jira project RW)
 - [ ] Engine export
 
 Map data © OpenStreetMap contributors, ODbL.
