@@ -5,6 +5,7 @@ Material for a talk at Reed College on the difference between a **world** (a map
 Every stage is built on one canonical file, `world/lowfi/reed_world.geojson`. Each feature in it keeps its OpenStreetMap id, so later layers attach to the same objects instead of redrawing them.
 
 ## Layout
+- `docs/PROCESS.md`: how this was built, the problems hit along the way, and an estimate of the effort without AI assistance.
 - `data/raw/`: inputs. These are the Overpass export, the building-use CSV and the 2010 campus map, which is used only as a reference.
 - `scripts/`: the pipeline (Python 3, `shapely`, `pyproj`, `Pillow`).
 - `world/walk/reed_walk.html`: a top-down three.js wireframe you can walk around (WASD or drag). Building heights come from OSM levels, or are estimated and drawn dimmer.
