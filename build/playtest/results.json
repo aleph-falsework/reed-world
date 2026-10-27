@@ -1,0 +1,1133 @@
+{
+ "pass": 148,
+ "fail": 0,
+ "checks": [
+  {
+   "group": "static",
+   "name": "validate() ok",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "front_lawn: tiles 78 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "front_lawn: actors 1 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "front_lawn: triggers 23 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "old_campus: tiles 70 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "old_campus: actors 8 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "old_campus: triggers 21 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "west_campus: tiles 98 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "west_campus: actors 5 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "west_campus: triggers 12 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "performing_arts: tiles 78 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "performing_arts: actors 5 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "performing_arts: triggers 19 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "science_quad: tiles 62 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "science_quad: actors 5 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "science_quad: triggers 9 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "language_houses: tiles 79 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "language_houses: actors 7 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "language_houses: triggers 16 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "studio_arts: tiles 64 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "studio_arts: actors 3 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "studio_arts: triggers 12 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "canyon_east: tiles 79 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "canyon_east: actors 0 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "canyon_east: triggers 8 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "reed_lake: tiles 88 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "reed_lake: actors 0 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "reed_lake: triggers 5 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "cross_canyon: tiles 89 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "cross_canyon: actors 7 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "cross_canyon: triggers 19 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "the_grove: tiles 73 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "the_grove: actors 7 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "the_grove: triggers 25 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "northwest: tiles 91 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "northwest: actors 11 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "northwest: triggers 7 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "all dialogue lines ASCII and <= 18 chars",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "static",
+   "name": "spawn ('front_lawn', 92, 47) clear of collision and triggers",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "every exit lands clear of collision and triggers",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "all 12 scenes reachable from spawn",
+   "ok": true,
+   "detail": "missing []"
+  },
+  {
+   "group": "static",
+   "name": "every signpost readable from a reachable tile",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "exit triggers reachable from the spawn (info: unreachable ones listed)",
+   "ok": true,
+   "detail": "unreachable: front_lawn/exit_e_language_houses_2, old_campus/exit_w_performing_arts_3, science_quad/exit_n_reed_lake_1, language_houses/exit_w_front_lawn_0, language_houses/exit_w_front_lawn_2, studio_arts/exit_w_science_quad_0, reed_lake/exit_s_science_quad_1, reed_lake/exit_w_cross_canyon_2, cross_canyon/exit_e_reed_lake_2"
+  },
+  {
+   "group": "static",
+   "name": "no exit lands the player where no exit can be walked to (stuck)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "open ground reachable per scene (info)",
+   "ok": true,
+   "detail": "front_lawn 97%, old_campus 94%, west_campus 96%, performing_arts 96%, science_quad 94%, language_houses 93%, studio_arts 92%, canyon_east 87%, reed_lake 25%, cross_canyon 94%, the_grove 97%, northwest 98%"
+  },
+  {
+   "group": "play",
+   "name": "boot: player spawns in front_lawn at (92,47)",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 92, 47)"
+  },
+  {
+   "group": "boundary",
+   "name": "front_lawn -> language_houses via exit_e_language_houses_1: lands at (2,40)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Greywood Hall' at (6,33) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Educational Technology Center' at (10,24) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Russian House' at (18,26) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'German House' at (27,33) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'French House' at (37,40) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Spanish House' at (44,40) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "language_houses -> studio_arts via exit_e_studio_arts_1: lands at (2,55)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Chinese House' at (46,32) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "studio_arts: read 'Dorothy Johansen House' at (18,41) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "studio_arts: read 'Studio Arts' at (10,13) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "language_houses -> science_quad via exit_n_science_quad_1: lands at (13,49)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Psychology' at (14,47) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Biology' at (8,49) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Physics' at (12,31) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Chemistry' at (12,29) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Reed Research Reactor' at (26,37) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "boundary",
+   "name": "science_quad -> old_campus via exit_w_old_campus_0: lands at (116,12)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "boundary",
+   "name": "science_quad -> reed_lake via exit_n_reed_lake_0: lands at (68,35)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "boundary",
+   "name": "science_quad -> canyon_east via exit_e_canyon_east_1: lands at (2,56)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "boundary",
+   "name": "science_quad -> studio_arts via exit_e_studio_arts_0: lands at (1,12)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "studio_arts: read 'The Horrid Art Project' at (44,19) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "boundary",
+   "name": "studio_arts -> canyon_east via exit_n_canyon_east_3: lands at (50,75)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "front_lawn: read 'Eric V. Hauser Memorial Library' at (102,21) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "front_lawn -> old_campus via exit_n_old_campus_9: lands at (98,41)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Eliot Circle' at (86,35) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Vollum College Center' at (92,27) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Eliot Hall' at (52,38) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Old Dorm Block' at (40,40) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Student Union' at (33,34) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Student Center' at (42,19) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "old_campus -> cross_canyon via exit_n_cross_canyon_3: lands at (58,105)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Bragdon Hall' at (58,95) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Chittick' at (38,93) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'McKinley Hall' at (22,75) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Woodbridge Hall' at (22,80) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "cross_canyon -> the_grove via exit_w_the_grove_3: lands at (80,77)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Physical Plant' at (72,99) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "the_grove -> performing_arts via exit_s_performing_arts_3: lands at (75,2)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "boundary",
+   "name": "the_grove -> old_campus via exit_s_old_campus_0: lands at (2,2)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Cerf Amphitheatre' at (12,2) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "performing_arts -> old_campus via exit_e_old_campus_3: lands at (1,20)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Gray Campus Center' at (2,22) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Reed College Sports Center' at (62,13) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Kaul Auditorium' at (54,26) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Gyms I and II' at (42,21) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Performing Arts Building' at (58,40) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "performing_arts -> west_campus via exit_s_west_campus_7: lands at (54,2)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'Foster Hall' at (60,18) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'MacNaughton Hall' at (64,18) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "west_campus -> front_lawn via exit_e_front_lawn_1: lands at (1,48)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "boundary",
+   "name": "performing_arts -> front_lawn via exit_e_front_lawn_0: lands at (2,13)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Anna Mann Hall' at (76,54) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'Prexy Hall' at (61,38) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'Scholz Hall' at (40,25) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'Parker House' at (70,61) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Naito Hall' at (2,56) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Griffin Hall' at (6,68) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Sullivan Hall' at (26,43) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Trillium' at (42,58) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Bidwell House' at (20,64) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Aspen House' at (18,71) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Sequoia House' at (4,74) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "the_grove -> northwest via exit_w_northwest_0: lands at (68,72)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Sitka House' at (2,60) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed College Apartments' at (60,76) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed College Apartments' at (48,76) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed College Apartments' at (44,71) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed College Apartments' at (38,76) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read '28 West' at (42,61) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Childcare Center' at (44,29) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Health and Counseling Center' at (32,40) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed Warehouse' at (4,55) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Farm House' at (30,98) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Garden House' at (40,85) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Canyon House' at (62,83) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Greenwood Hall' at (36,102) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "boundary",
+   "name": "cross_canyon -> reed_lake via exit_e_reed_lake_0: lands at (2,30)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "boundary",
+   "name": "reed_lake -> canyon_east via exit_e_canyon_east_0: lands at (1,11)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "front_lawn: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "studio_arts: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "northwest: at least one signpost read",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "front_lawn: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "old_campus: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "west_campus: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "performing_arts: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "science_quad: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "language_houses: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "studio_arts: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "canyon_east: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "reed_lake: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "cross_canyon: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "the_grove: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "screens",
+   "name": "northwest: screenshot",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "play",
+   "name": "no stuck steps (RAM matched the planned tile at every step)",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "signs": {
+  "language_houses/3": [
+   "Greywood Hall",
+   "sign_language_houses_03.png"
+  ],
+  "language_houses/6": [
+   "Educational Technology Center",
+   "sign_language_houses_06.png"
+  ],
+  "language_houses/5": [
+   "Russian House",
+   "sign_language_houses_05.png"
+  ],
+  "language_houses/2": [
+   "German House",
+   "sign_language_houses_02.png"
+  ],
+  "language_houses/1": [
+   "French House",
+   "sign_language_houses_01.png"
+  ],
+  "language_houses/0": [
+   "Spanish House",
+   "sign_language_houses_00.png"
+  ],
+  "language_houses/4": [
+   "Chinese House",
+   "sign_language_houses_04.png"
+  ],
+  "studio_arts/0": [
+   "Dorothy Johansen House",
+   "sign_studio_arts_00.png"
+  ],
+  "studio_arts/2": [
+   "Studio Arts",
+   "sign_studio_arts_02.png"
+  ],
+  "science_quad/1": [
+   "Psychology",
+   "sign_science_quad_01.png"
+  ],
+  "science_quad/0": [
+   "Biology",
+   "sign_science_quad_00.png"
+  ],
+  "science_quad/3": [
+   "Physics",
+   "sign_science_quad_03.png"
+  ],
+  "science_quad/4": [
+   "Chemistry",
+   "sign_science_quad_04.png"
+  ],
+  "science_quad/2": [
+   "Reed Research Reactor",
+   "sign_science_quad_02.png"
+  ],
+  "studio_arts/1": [
+   "The Horrid Art Project",
+   "sign_studio_arts_01.png"
+  ],
+  "front_lawn/0": [
+   "Eric V. Hauser Memorial Library",
+   "sign_front_lawn_00.png"
+  ],
+  "old_campus/6": [
+   "Eliot Circle",
+   "sign_old_campus_06.png"
+  ],
+  "old_campus/3": [
+   "Vollum College Center",
+   "sign_old_campus_03.png"
+  ],
+  "old_campus/1": [
+   "Eliot Hall",
+   "sign_old_campus_01.png"
+  ],
+  "old_campus/0": [
+   "Old Dorm Block",
+   "sign_old_campus_00.png"
+  ],
+  "old_campus/2": [
+   "Student Union",
+   "sign_old_campus_02.png"
+  ],
+  "old_campus/5": [
+   "Student Center",
+   "sign_old_campus_05.png"
+  ],
+  "cross_canyon/1": [
+   "Bragdon Hall",
+   "sign_cross_canyon_01.png"
+  ],
+  "cross_canyon/0": [
+   "Chittick",
+   "sign_cross_canyon_00.png"
+  ],
+  "cross_canyon/3": [
+   "McKinley Hall",
+   "sign_cross_canyon_03.png"
+  ],
+  "cross_canyon/2": [
+   "Woodbridge Hall",
+   "sign_cross_canyon_02.png"
+  ],
+  "the_grove/1": [
+   "Physical Plant",
+   "sign_the_grove_01.png"
+  ],
+  "old_campus/7": [
+   "Cerf Amphitheatre",
+   "sign_old_campus_07.png"
+  ],
+  "old_campus/4": [
+   "Gray Campus Center",
+   "sign_old_campus_04.png"
+  ],
+  "performing_arts/4": [
+   "Reed College Sports Center",
+   "sign_performing_arts_04.png"
+  ],
+  "performing_arts/2": [
+   "Kaul Auditorium",
+   "sign_performing_arts_02.png"
+  ],
+  "performing_arts/3": [
+   "Gyms I and II",
+   "sign_performing_arts_03.png"
+  ],
+  "performing_arts/1": [
+   "Performing Arts Building",
+   "sign_performing_arts_01.png"
+  ],
+  "west_campus/3": [
+   "Foster Hall",
+   "sign_west_campus_03.png"
+  ],
+  "west_campus/4": [
+   "MacNaughton Hall",
+   "sign_west_campus_04.png"
+  ],
+  "performing_arts/0": [
+   "Anna Mann Hall",
+   "sign_performing_arts_00.png"
+  ],
+  "west_campus/1": [
+   "Prexy Hall",
+   "sign_west_campus_01.png"
+  ],
+  "west_campus/2": [
+   "Scholz Hall",
+   "sign_west_campus_02.png"
+  ],
+  "west_campus/0": [
+   "Parker House",
+   "sign_west_campus_00.png"
+  ],
+  "cross_canyon/5": [
+   "Naito Hall",
+   "sign_cross_canyon_05.png"
+  ],
+  "cross_canyon/4": [
+   "Griffin Hall",
+   "sign_cross_canyon_04.png"
+  ],
+  "cross_canyon/6": [
+   "Sullivan Hall",
+   "sign_cross_canyon_06.png"
+  ],
+  "the_grove/4": [
+   "Trillium",
+   "sign_the_grove_04.png"
+  ],
+  "the_grove/5": [
+   "Bidwell House",
+   "sign_the_grove_05.png"
+  ],
+  "the_grove/3": [
+   "Aspen House",
+   "sign_the_grove_03.png"
+  ],
+  "the_grove/2": [
+   "Sequoia House",
+   "sign_the_grove_02.png"
+  ],
+  "the_grove/6": [
+   "Sitka House",
+   "sign_the_grove_06.png"
+  ],
+  "northwest/5": [
+   "Reed College Apartments",
+   "sign_northwest_05.png"
+  ],
+  "northwest/4": [
+   "Reed College Apartments",
+   "sign_northwest_04.png"
+  ],
+  "northwest/6": [
+   "Reed College Apartments",
+   "sign_northwest_06.png"
+  ],
+  "northwest/3": [
+   "Reed College Apartments",
+   "sign_northwest_03.png"
+  ],
+  "northwest/7": [
+   "28 West",
+   "sign_northwest_07.png"
+  ],
+  "northwest/10": [
+   "Childcare Center",
+   "sign_northwest_10.png"
+  ],
+  "northwest/9": [
+   "Health and Counseling Center",
+   "sign_northwest_09.png"
+  ],
+  "northwest/8": [
+   "Reed Warehouse",
+   "sign_northwest_08.png"
+  ],
+  "northwest/0": [
+   "Farm House",
+   "sign_northwest_00.png"
+  ],
+  "northwest/1": [
+   "Garden House",
+   "sign_northwest_01.png"
+  ],
+  "northwest/2": [
+   "Canyon House",
+   "sign_northwest_02.png"
+  ],
+  "the_grove/0": [
+   "Greenwood Hall",
+   "sign_the_grove_00.png"
+  ]
+ },
+ "stuck": []
+}

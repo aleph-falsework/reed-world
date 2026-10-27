@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "66cb2744-fdf4-5f60-b572-7961bba36712",
+  "symbol": "actor_way_339603988",
+  "prefabId": "",
+  "name": "Parker House",
+  "notes": "id: way/339603988",
+  "coordinateType": "tiles",
+  "x": 72,
+  "y": 61,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "PARKER HOUSE\n1929 Arts and\nCrafts house",
+          "bought by Reed in\n2005."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "73c8f97b-d12c-5683-a6c4-ab9b8857914a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

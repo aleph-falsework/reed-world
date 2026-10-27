@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 5,
+  "id": "d6c8a35d-360d-57a5-bc4f-55b963a7d212",
+  "symbol": "actor_way_39516352",
+  "prefabId": "",
+  "name": "Naito Hall",
+  "notes": "id: way/39516352",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 55,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "NAITO HALL\nResidence hall on\nthe north side of",
+          "campus near the\nsports fields."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "d279262c-3883-5fa6-9de9-c7533b3c60b5"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

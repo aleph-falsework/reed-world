@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "1b82acf9-11a8-5ca0-b980-b874a3c2345f",
+  "name": "west_campus",
+  "symbol": "bg_west_campus",
+  "tileColors": "",
+  "filename": "west_campus.png",
+  "width": 80,
+  "height": 64,
+  "imageWidth": 640,
+  "imageHeight": 512,
+  "autoColor": false
+}

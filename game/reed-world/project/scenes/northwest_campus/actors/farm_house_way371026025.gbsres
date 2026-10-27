@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "d7e2803c-fc4b-57ab-bb20-77b2a698f6bf",
+  "symbol": "actor_way_371026025",
+  "prefabId": "",
+  "name": "Farm House",
+  "notes": "id: way/371026025",
+  "coordinateType": "tiles",
+  "x": 32,
+  "y": 99,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "FARM HOUSE\nSmall house-style\nresidence hall."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "88a9d3a5-b848-59f2-b754-e7e52037fbb6"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,110 @@
+[
+ {
+  "step": "validate",
+  "seconds": 3.5,
+  "ok": true,
+  "warnings": [],
+  "scenes": {
+   "front_lawn": {
+    "unique_tiles": 78,
+    "actors": 1,
+    "triggers": 23,
+    "sprite_tile_budget": 96
+   },
+   "old_campus": {
+    "unique_tiles": 70,
+    "actors": 8,
+    "triggers": 21,
+    "sprite_tile_budget": 96
+   },
+   "west_campus": {
+    "unique_tiles": 98,
+    "actors": 5,
+    "triggers": 12,
+    "sprite_tile_budget": 96
+   },
+   "performing_arts": {
+    "unique_tiles": 78,
+    "actors": 5,
+    "triggers": 19,
+    "sprite_tile_budget": 96
+   },
+   "science_quad": {
+    "unique_tiles": 62,
+    "actors": 5,
+    "triggers": 9,
+    "sprite_tile_budget": 96
+   },
+   "language_houses": {
+    "unique_tiles": 79,
+    "actors": 7,
+    "triggers": 16,
+    "sprite_tile_budget": 96
+   },
+   "studio_arts": {
+    "unique_tiles": 64,
+    "actors": 3,
+    "triggers": 12,
+    "sprite_tile_budget": 96
+   },
+   "canyon_east": {
+    "unique_tiles": 79,
+    "actors": 0,
+    "triggers": 8,
+    "sprite_tile_budget": 96
+   },
+   "reed_lake": {
+    "unique_tiles": 88,
+    "actors": 0,
+    "triggers": 5,
+    "sprite_tile_budget": 96
+   },
+   "cross_canyon": {
+    "unique_tiles": 89,
+    "actors": 7,
+    "triggers": 19,
+    "sprite_tile_budget": 96
+   },
+   "the_grove": {
+    "unique_tiles": 73,
+    "actors": 7,
+    "triggers": 25,
+    "sprite_tile_budget": 96
+   },
+   "northwest": {
+    "unique_tiles": 91,
+    "actors": 11,
+    "triggers": 7,
+    "sprite_tile_budget": 96
+   }
+  },
+  "over_180": []
+ },
+ {
+  "step": "make_project -> game/reed-world",
+  "seconds": 3.4,
+  "project": "game/reed-world/reed_world.gbsproj"
+ },
+ {
+  "step": "check_project",
+  "seconds": 0.4,
+  "ok": true,
+  "isMigrated": false
+ },
+ {
+  "step": "build_rom -> build/reed_world.gb",
+  "seconds": 25.2,
+  "rom": "build/reed_world.gb",
+  "bytes": 524288
+ },
+ {
+  "step": "build_web -> build/web",
+  "seconds": 26.4,
+  "index": "build/web/index.html"
+ },
+ {
+  "step": "playtest",
+  "seconds": 8.5,
+  "returncode": 0
+ }
+]

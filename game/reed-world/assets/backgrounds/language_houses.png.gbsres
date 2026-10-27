@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "4fee8aed-be2c-5485-babc-8f8f088c0f6b",
+  "name": "language_houses",
+  "symbol": "bg_language_houses",
+  "tileColors": "",
+  "filename": "language_houses.png",
+  "width": 54,
+  "height": 54,
+  "imageWidth": 432,
+  "imageHeight": 432,
+  "autoColor": false
+}

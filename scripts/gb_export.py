@@ -13,8 +13,9 @@ Writes world/gb/: zones.json, zones_overlay.png, <scene>/background.png,
 See docs/ZONES.md for the method and decisions.
 """
 import json, os, re, sys, math, unicodedata, argparse
-from collections import Counter, defaultdict
+from collections import Counter, defaultdict, deque
 import numpy as np
+from scipy import ndimage
 import rasterio
 from rasterio import features as rfeatures
 from affine import Affine
@@ -31,7 +32,7 @@ PAL = ['#071821', '#306850', '#86c06c', '#e0f8cf']   # shade 0 (dark) .. 3 (ligh
 PAL_RGB = np.array([[int(c[i:i + 2], 16) for i in (1, 3, 5)] for c in PAL], np.uint8)
 TILE_LIMIT, TILE_TARGET = 192, 180
 MAX_ACTORS, MAX_TRIGGERS = 20, 30
-TEXT_COLS, TEXT_LINES = 18, 4
+TEXT_COLS, TEXT_LINES = 18, 6   # 6 lines = two full 3-line text boxes (4 left a lone line in box 2)
 EXIT_CHUNK = 6               # max exit trigger length in tiles before splitting (grows if >30 triggers)
 
 # ---------------------------------------------------------------- zones
@@ -62,9 +63,12 @@ NODATA, BUILDING, WATER, ROAD, PATH, TREE, STEEP, PAVED, LAWN = range(9)   # sur
 C = dict(LAWN=0, PAVED=1, PATH=2, ROAD=3, WATER=4, TREE=5, FOREST=6, STEEP=7, BRIDGE=8,
          ROOF=9, FACADE=10, DOOR=11, LONETREE=12)
 CN = {v: k for k, v in C.items()}
-SOLID = {C['WATER'], C['FOREST'], C['LONETREE'], C['STEEP'], C['ROOF'], C['FACADE']}
+# TREE (forest edge) is solid too: it is drawn with the same canopy as the interior, so walking over it
+# read as walking over trees. Paths and paved ground through woods are their own classes and stay open.
+SOLID = {C['WATER'], C['TREE'], C['FOREST'], C['LONETREE'], C['STEEP'], C['ROOF'], C['FACADE']}
 WALKABLE = set(C.values()) - SOLID
 SLIVERS = []
+PATH_LINKS = set()   # ((j,i),(j2,i2)) metatile pairs an OSM footway steps between (south-up)
 
 
 def log(*a):
@@ -149,9 +153,16 @@ def proposal_report(campus_bldgs):
 
 
 # ================================================================ metatile class grid (global, south-up)
-def trace_lines(lines, MH, MW):
-    """4-connected supercover of line features on the metatile grid (south-up)."""
+def trace_lines(lines, MH, MW, links=None):
+    """4-connected supercover of line features on the metatile grid (south-up).
+    If `links` is a set, each pair of 4-adjacent cells a way steps between is added to it, so path
+    tiles can connect along the way itself rather than to every adjacent path cell."""
     m = np.zeros((MH, MW), bool)
+    inb = lambda c: 0 <= c[0] < MH and 0 <= c[1] < MW
+
+    def link(a, b):
+        if links is not None and a != b and inb(a) and inb(b):
+            links.add((a, b)); links.add((b, a))
     for ln in lines:
         parts = getattr(ln, 'geoms', [ln])
         for part in parts:
@@ -166,6 +177,9 @@ def trace_lines(lines, MH, MW):
                     mid = (prev[0], cell[1])            # step through an orthogonal neighbour
                     if 0 <= mid[0] < MH and 0 <= mid[1] < MW:
                         m[mid] = True
+                    link(prev, mid); link(mid, cell)
+                elif prev and cell != prev:
+                    link(prev, cell)
                 if 0 <= cell[0] < MH and 0 <= cell[1] < MW:
                     m[cell] = True
                 prev = cell
@@ -199,11 +213,16 @@ def class_grid(surf, bid_r, bridge_r, osm_ids, campus_idx, named_idx, lines=None
     # unless it is mostly open water (then only a bridge may cross it)
     if lines:
         road_m = trace_lines(lines['road'], MH, MW)
-        path_m = trace_lines(lines['path'], MH, MW)
+        path_m = trace_lines(lines['path'], MH, MW, PATH_LINKS)
         bridge_m = trace_lines(lines['bridge'], MH, MW)
         wet = frac[..., WATER] >= 0.70
         cls[road_m & ~wet & (cls != C['PATH']) & (cls != C['BRIDGE'])] = C['ROAD']
         cls[path_m & ~wet & ~road_m] = C['PATH']
+        # Lidar 'path' with no OSM way through it (hard-standing, shade, roof edges) drew as wide pale
+        # blobs that merged with the real footpaths. Draw it as lawn: still walkable, so connectivity
+        # is unchanged, but the drawn paths follow the mapped ways.
+        cls[(cls == C['PATH']) & road_m & ~path_m & ~bridge_m] = C['ROAD']
+        cls[(cls == C['PATH']) & ~path_m & ~bridge_m] = C['LAWN']
         cls[bridge_m] = C['BRIDGE']
         cls[(cls == C['PATH']) & (br.sum(-1) >= 0.10 * n)] = C['BRIDGE']
     bmask = bfrac >= 0.40
@@ -222,7 +241,7 @@ def class_grid(surf, bid_r, bridge_r, osm_ids, campus_idx, named_idx, lines=None
         j, i = np.unravel_index(np.argmax(cov), cov.shape)
         cls[j, i] = C['ROOF']; mid[j, i] = idx
         forced.append(osm_ids[idx])
-    # forest = tree metatiles whose 8 neighbours are all tree (interior); others stay walkable TREE
+    # forest = tree metatiles whose 8 neighbours are all tree (interior); others are forest-edge TREE (also solid)
     t = cls == C['TREE']
     tp = np.pad(t, 1, constant_values=True)
     interior = np.ones_like(t)
@@ -452,6 +471,8 @@ class ArtKit:
             if roof_style == 'offcampus':          # yards and driveways: keep the neighbourhood calm
                 return 'lawn_a'
             return 'paved_parking' if roof_style == 'parking' else 'paved_plaza'
+        if c == C['PATH'] and getattr(self, 'pmask', None) is not None:
+            return self.auto['path']['masks'][str(self.pmask)]
         if c == C['PATH']:
             grp = {C['PATH'], C['BRIDGE'], C['DOOR']}
             m = 0
@@ -527,6 +548,7 @@ def render(z, kit):
                     return cls[jj, ii], mid[jj, ii], style[jj, ii]
                 return cls[j, i], mid[j, i], style[j, i]
             hsh = (i * 73856093 ^ j * 19349663) & 0xFFFF
+            kit.pmask = GL.get('pmask', {}).get((j, i))
             img[r * 16:r * 16 + 16, c * 16:c * 16 + 16] = kit.metatile(int(cls[j, i]), nb, mid[j, i], hsh, style[j, i])
             if isinstance(kit, ArtKit):
                 row.append(kit.metatile_name(int(cls[j, i]), nb, mid[j, i], hsh, style[j, i]))
@@ -670,13 +692,21 @@ def main():
     camp_f = camp_r.reshape(MH, MT_M, MW, MT_M).mean(axis=(1, 3))
     style[camp_f < 0.5] = 'offcampus'
     style[park_f >= 0.5] = 'parking'
+    # The lidar 'paved' class also catches shade, roofs and hard-standing, and drawn as pale pavers it
+    # blobbed into the footpaths. OSM has no plaza/pedestrian areas here, so paved ground is drawn only
+    # where an OSM parking lot covers the metatile; the rest is lawn (still walkable).
+    cls[(cls == C['PAVED']) & (park_f < 0.5)] = C['LAWN']
+    inzone = np.zeros(cls.shape, bool)       # ground outside every scene connects nothing in the game
+    for z in ZONES:
+        inzone[z['y0'] // MT_M:z['y1'] // MT_M, z['x0'] // MT_M:z['x1'] // MT_M] = True
+    carved = carve_pockets(cls, doors, osm_ids, bprops, inzone)
     for j, i in zip(*np.nonzero(mid)):
         p = bprops[mid[j, i]]
         # every roof uses the dark pitched kit roof (the light flat roof reads as a plaza at this scale);
         # houses and the 1912-30s Tudor Gothic core get windowed facades, other campus buildings ribbon facades
         house = p.get('realm') != 'campus' or 'House' in (p.get('name') or '')
         style[j, i] = 'tudor' if house or p.get('name') in ArtKit.ROOF_TUDOR_NAMES else 'modern'
-    GL.update(cls=cls, mid=mid, style=style)
+    GL.update(cls=cls, mid=mid, style=style, pmask=path_masks(cls, style))
 
     # ---- per-zone grids (north-up)
     for z in ZONES:
@@ -733,15 +763,33 @@ def main():
             for yy in range(t['y'], t['y'] + t['h']):
                 for xx in range(t['x'], t['x'] + t['w']):
                     trig_cells.add((yy // 2, xx // 2))
+        # metatiles under an incoming exit's landing spot (the player's 16x8 box)
+        land_cells = {(t['to_y'] // 2, xx // 2) for z2 in ZONES for t in z2['triggers'] if t['to'] == z['id']
+                      for xx in (t['to_x'], t['to_x'] + 1)}
+        open_mt = np.isin(g_, list(WALKABLE))
+
+        def cuts_corridor(rr, cc):
+            """A signpost is a solid 16x16 actor: refuse cells whose removal splits the walkable area
+            (a sign on a one-metatile path or bridge would wall off everything beyond it)."""
+            m = open_mt.copy()
+            for o in occupied:
+                m[o] = False
+            n0 = ndimage.label(m)[1]
+            m[rr, cc] = False
+            return ndimage.label(m)[1] > n0
+
         def free_spot(r, c, prefer):
             for strict in (True, False):           # second pass allows the scene's edge metatiles
                 for dr, dc in prefer:
                     rr, cc = r + dr, c + dc
                     lo = 1 if strict else 0
                     if lo <= rr < g_.shape[0] - lo and lo <= cc < g_.shape[1] - lo and g_[rr, cc] in WALKABLE \
-                            and g_[rr, cc] != C['DOOR'] and (rr, cc) not in occupied and (rr, cc) not in trig_cells:
+                            and g_[rr, cc] != C['DOOR'] and (rr, cc) not in occupied and (rr, cc) not in trig_cells \
+                            and (rr, cc) not in land_cells:
                         # never block a door apron (cell directly south of a door)
                         if rr > 0 and g_[rr - 1, cc] == C['DOOR']:
+                            continue
+                        if cuts_corridor(rr, cc):
                             continue
                         return rr, cc
             return None
@@ -756,6 +804,21 @@ def main():
             r, c = prim['y'] // 2, prim['x'] // 2
             spot = free_spot(r, c, ring)
             extra = {}
+            if not spot:
+                # nowhere free beside the door: mount the sign on the facade next to the door (a solid cell),
+                # so the door stays clear. Right beside the door it is read from the doorway (facing
+                # east/west); further along, from open ground south of it.
+                for dc in (-1, 1, -2, 2, -3, 3):
+                    cc, rs = c + dc, r + 1
+                    readable = abs(dc) == 1 or (rs < g_.shape[0] - 1 and g_[rs, cc] in WALKABLE
+                                                and (rs, cc) not in trig_cells)
+                    wall = (C['FACADE'], C['ROOF']) if abs(dc) == 1 else (C['FACADE'],)   # door in a notch
+                    if 0 < cc < g_.shape[1] - 1 and g_[r, cc] in wall \
+                            and z['bidx'][r, cc] == z['bidx'][r, c] and readable and (r, cc) not in occupied:
+                        spot, extra = (r, cc), {'on_facade': True}
+                        z['notes'].append(f'signpost of {name} ({oid}) mounted on the facade beside its door '
+                                          f'(no free ground beside the door)')
+                        break
             if not spot:
                 # nowhere free beside the door (exits or solid all round): read the sign at the door itself
                 spot, extra = (r, c), {'on_door': True}
@@ -792,6 +855,95 @@ def main():
     write_all(player, prop_lines, forced, outside)
 
 
+CARVED = []      # (osm id, name, metatiles turned from canopy into path)
+
+
+def path_masks(cls, style):
+    """4-neighbour mask (N1 E2 S4 W8) for every PATH metatile. Two path cells join only if an OSM way
+    steps between them (PATH_LINKS), so parallel footways a metatile apart stay two lines instead of
+    merging into a pale slab. Path cells with no way of their own (door aprons, carved gaps) join any
+    path neighbour. Bridges, doors and plazas always join, as before."""
+    MH, MW = cls.shape
+    P_ = C['PATH']
+    grp = lambda j, i: cls[j, i] in (P_, C['BRIDGE'], C['DOOR']) or \
+        (cls[j, i] == C['PAVED'] and style[j, i] not in ('parking', 'offcampus'))
+    dirs = [((1, 0), 1), ((0, 1), 2), ((-1, 0), 4), ((0, -1), 8)]
+    inb = lambda j, i: 0 <= j < MH and 0 <= i < MW
+    own = {}
+    for j, i in zip(*np.nonzero(cls == P_)):
+        own[(j, i)] = any(inb(j + dj, i + di) and grp(j + dj, i + di) and ((j, i), (j + dj, i + di)) in PATH_LINKS
+                          for (dj, di), _ in dirs)
+    out = {}
+    for (j, i), linked in own.items():
+        m = 0
+        for (dj, di), bit in dirs:
+            jj, ii = j + dj, i + di
+            if not inb(jj, ii):
+                continue
+            if cls[jj, ii] == P_:
+                if ((j, i), (jj, ii)) in PATH_LINKS or not linked or not own[(jj, ii)]:
+                    m |= bit
+            elif grp(jj, ii):
+                m |= bit
+        out[(int(j), int(i))] = m
+    return out
+
+
+def carve_pockets(cls, doors, osm_ids, bprops, inzone):
+    """With canopy solid, some doors open onto a clearing walled in by trees. For each door whose
+    walkable area is cut off from the main campus area (the component holding the main entrance),
+    turn the fewest tree metatiles into path to join it up (0-1 BFS: open ground costs 0, canopy 1;
+    water, buildings and steep ground are never crossed). Gameplay access, not survey data: every
+    carve is listed in REPORT.md."""
+    MH, MW = cls.shape
+    tree = {C['TREE'], C['FOREST'], C['LONETREE']}
+    s0 = (MAIN_ENTRANCE_XY[1] // MT_M, MAIN_ENTRANCE_XY[0] // MT_M)
+    for d in sorted(doors, key=lambda d: (d['j'], d['i'])):
+        lab, _ = ndimage.label(np.isin(cls, list(WALKABLE)) & inzone)
+        main = lab[s0]
+        if lab[d['j'], d['i']] == main or not main:
+            continue
+        pocket = lab == lab[d['j'], d['i']]
+        dist = np.full(cls.shape, 1 << 30)
+        prev = {}
+        dq = deque()
+        for j, i in zip(*np.nonzero(pocket)):
+            dist[j, i] = 0
+            dq.append((j, i))
+        hit = None
+        while dq:
+            j, i = dq.popleft()
+            if lab[j, i] == main:
+                hit = (j, i)
+                break
+            for dj, di in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                jj, ii = j + dj, i + di
+                if not (0 <= jj < MH and 0 <= ii < MW) or not inzone[jj, ii]:
+                    continue
+                c = int(cls[jj, ii])
+                if c in WALKABLE:
+                    w = 0
+                elif c in tree:
+                    w = 1
+                else:
+                    continue
+                if dist[j, i] + w < dist[jj, ii]:
+                    dist[jj, ii] = dist[j, i] + w
+                    prev[(jj, ii)] = (j, i)
+                    (dq.appendleft if w == 0 else dq.append)((jj, ii))
+        if hit is None or dist[hit] > 12:
+            continue
+        cells, k = [], hit
+        while k in prev:
+            if cls[k] in tree:
+                cells.append(k)
+            k = prev[k]
+        for k in cells:
+            cls[k] = C['PATH']
+        CARVED.append((osm_ids[d['idx']], bprops[d['idx']].get('name'), len(cells)))
+    return CARVED
+
+
 def nearest_walkable(z, x, y):
     col = z['col']
     best = None
@@ -808,7 +960,9 @@ def build_exits():
     """Exit triggers on shared zone edges, in 8x8 tile units, merged into runs, mirrored on both sides."""
     for z in ZONES:
         z['triggers'] = []
-        z['col'][0, :] = 1; z['col'][-1, :] = 1; z['col'][:, 0] = 1; z['col'][:, -1] = 1
+        # No solid outer ring: GB Studio treats tiles beyond the scene as solid on every side
+        # (tile_col_test_range_x/y in gbvm src/core/collision.c), and a ring cost the player half of
+        # every edge metatile, which dropped exits wherever a path met the edge on a diagonal.
     T = lambda m: int(round(m / TILE_M))
     pairs = []
     for a in ZONES:
@@ -914,6 +1068,22 @@ def build_exits():
                 ys = sorted(range(lo, hi), key=lambda y: abs(y + 0.5 - centre))
                 spot = next(((x, y) for x in xs for y in ys if ok(x, y)), None)
             if spot is None:
+                # a path crossing the edge as a staircase leaves no clear spot inside the span: look a few
+                # tiles around it, and accept a spot only if the player can walk from it back onto the
+                # partner trigger (so nobody lands in a pocket)
+                partner = next(u for u in tz['triggers'] if u['_pair'] == t['_pair'])
+                H_, W_ = col.shape
+                if edge in ('bottom', 'top'):
+                    ys = range(H_ - 6, H_ - 1) if edge == 'bottom' else range(1, 6)
+                    xs = range(lo - 4, hi + 3)
+                else:
+                    xs = range(1, 6) if edge == 'left' else range(W_ - 7, W_ - 2)
+                    ys = range(lo - 4, hi + 4)
+                cands = sorted(((x, y) for y in ys for x in xs if ok(x, y)),
+                               key=lambda q: (q[0] + 1 - (partner['x'] + partner['w'] / 2)) ** 2
+                               + (q[1] + 0.5 - (partner['y'] + partner['h'] / 2)) ** 2)
+                spot = next((q for q in cands if walks_to(col, q, partner)), None)
+            if spot is None:
                 dead.add(t['_pair'])
                 z['notes'].append(f"{t['id']}: no room for the 16 px player on the matching edge of {tz['id']} "
                                   f"(one-metatile pocket); exit dropped on both sides")
@@ -922,13 +1092,33 @@ def build_exits():
     for z in ZONES:
         keep = []
         for t in z['triggers']:
-            if t['_pair'] in dead:
-                z['col'][t['y']:t['y'] + t['h'], t['x']:t['x'] + t['w']] = 1
+            if t['_pair'] in dead:      # back to the cells' own collision
+                base = np.kron(np.isin(z['grid'], list(SOLID)).astype(np.uint8), np.ones((2, 2), np.uint8))
+                z['col'][t['y']:t['y'] + t['h'], t['x']:t['x'] + t['w']] = \
+                    base[t['y']:t['y'] + t['h'], t['x']:t['x'] + t['w']]
             else:
                 keep.append(t)
         for t in keep:
             t.pop('_pair')
         z['triggers'] = keep
+
+
+def walks_to(col, start, trig, limit=600):
+    """BFS over player positions (16x8 box: row y, columns x..x+1) from `start`: can the player reach
+    a position whose box overlaps `trig`? Trigger cells count as open (the ring under them is 0)."""
+    H_, W_ = col.shape
+    hit = lambda x, y: trig['y'] <= y < trig['y'] + trig['h'] and trig['x'] <= x + 1 and x < trig['x'] + trig['w']
+    seen, q = {start}, deque([start])
+    while q and len(seen) < limit:
+        x, y = q.popleft()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if (nx, ny) in seen or not (0 <= ny < H_ and 0 <= nx < W_ - 1) or col[ny, nx] or col[ny, nx + 1]:
+                continue
+            if hit(nx, ny):
+                return True
+            seen.add((nx, ny)); q.append((nx, ny))
+    return False
 
 
 def nearest_walkable_inner(z, x, y):
@@ -1058,6 +1248,13 @@ def report(player, forced, outside):
         for d in sorted(z['doors'], key=lambda d: (d['name'] or '', d['x'])):
             src = 'estimated' if d['door_estimated'] else ('OSM ' + ', '.join(d['entrances']) + (' (moved to facade)' if d['moved_to_facade'] else ''))
             L.append(f"| {z['id']} | {d['name'] or '(unnamed)'} | {d['osm_id']} | ({d['x']},{d['y']}) | {src} |")
+    if CARVED:
+        L += ['', '## Paths carved through canopy (estimated)', '',
+              'Tree metatiles are solid, so these doors opened onto clearings walled in by trees. The fewest tree '
+              'metatiles between each clearing and the main campus were redrawn as path (`carve_pockets`). '
+              'These paths are a gameplay accommodation, not survey data.', '']
+        for oid, name, n in CARVED:
+            L.append(f'- {name or "(unnamed)"} ({oid}): {n} metatile(s)')
     L += ['', '## Notes', '']
     for z in ZONES:
         for n_ in z['notes']:

@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 2,
+  "id": "c71ccc7d-ef1d-505e-8e22-abee183e9943",
+  "symbol": "actor_way_119843581",
+  "prefabId": "",
+  "name": "Scholz Hall",
+  "notes": "id: way/119843581",
+  "coordinateType": "tiles",
+  "x": 38,
+  "y": 25,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "SCHOLZ HALL\nCoed residence\nhall built",
+          "1954-55."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "ccd61c4f-0ecd-59c5-b66c-79ef66796cbb"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

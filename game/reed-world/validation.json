@@ -1,0 +1,139 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "scenes": {
+    "front_lawn": {
+      "image_width": 960,
+      "image_height": 464,
+      "unique_tiles": 78,
+      "unique_tiles_with_flips": 77,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 1,
+      "triggers": 23,
+      "max_actors": 20
+    },
+    "old_campus": {
+      "image_width": 960,
+      "image_height": 352,
+      "unique_tiles": 70,
+      "unique_tiles_with_flips": 68,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 8,
+      "triggers": 21,
+      "max_actors": 20
+    },
+    "west_campus": {
+      "image_width": 640,
+      "image_height": 512,
+      "unique_tiles": 98,
+      "unique_tiles_with_flips": 95,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 5,
+      "triggers": 12,
+      "max_actors": 20
+    },
+    "performing_arts": {
+      "image_width": 640,
+      "image_height": 496,
+      "unique_tiles": 78,
+      "unique_tiles_with_flips": 77,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 5,
+      "triggers": 19,
+      "max_actors": 20
+    },
+    "science_quad": {
+      "image_width": 432,
+      "image_height": 416,
+      "unique_tiles": 62,
+      "unique_tiles_with_flips": 62,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 5,
+      "triggers": 9,
+      "max_actors": 20
+    },
+    "language_houses": {
+      "image_width": 432,
+      "image_height": 432,
+      "unique_tiles": 79,
+      "unique_tiles_with_flips": 78,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 7,
+      "triggers": 16,
+      "max_actors": 20
+    },
+    "studio_arts": {
+      "image_width": 432,
+      "image_height": 528,
+      "unique_tiles": 64,
+      "unique_tiles_with_flips": 64,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 3,
+      "triggers": 12,
+      "max_actors": 20
+    },
+    "canyon_east": {
+      "image_width": 432,
+      "image_height": 624,
+      "unique_tiles": 79,
+      "unique_tiles_with_flips": 78,
+      "sprite_tiles": 10,
+      "sprite_tile_budget": 96,
+      "actors": 0,
+      "triggers": 8,
+      "max_actors": 20
+    },
+    "reed_lake": {
+      "image_width": 752,
+      "image_height": 304,
+      "unique_tiles": 88,
+      "unique_tiles_with_flips": 87,
+      "sprite_tiles": 10,
+      "sprite_tile_budget": 96,
+      "actors": 0,
+      "triggers": 5,
+      "max_actors": 20
+    },
+    "cross_canyon": {
+      "image_width": 608,
+      "image_height": 864,
+      "unique_tiles": 89,
+      "unique_tiles_with_flips": 86,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 7,
+      "triggers": 19,
+      "max_actors": 20
+    },
+    "the_grove": {
+      "image_width": 672,
+      "image_height": 864,
+      "unique_tiles": 73,
+      "unique_tiles_with_flips": 71,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 7,
+      "triggers": 25,
+      "max_actors": 20
+    },
+    "northwest": {
+      "image_width": 576,
+      "image_height": 864,
+      "unique_tiles": 91,
+      "unique_tiles_with_flips": 89,
+      "sprite_tiles": 12,
+      "sprite_tile_budget": 96,
+      "actors": 11,
+      "triggers": 7,
+      "max_actors": 20
+    }
+  }
+}

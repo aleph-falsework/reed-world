@@ -1,0 +1,34 @@
+{
+  "_resourceType": "trigger",
+  "_index": 5,
+  "id": "da825d4f-0fea-5d92-b37f-47d92cd647c2",
+  "symbol": "trigger_west_campus_exit_n__1",
+  "prefabId": "",
+  "name": "exit_n_performing_arts_2",
+  "notes": "id: exit_n_performing_arts_2 -> performing_arts",
+  "x": 16,
+  "y": 0,
+  "width": 4,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "faf74918-57c1-5863-8d5c-49dfd8d9d083",
+        "x": {
+          "type": "number",
+          "value": 16
+        },
+        "y": {
+          "type": "number",
+          "value": 59
+        },
+        "direction": "up",
+        "fadeSpeed": "2"
+      },
+      "id": "529c22d4-1fd5-5f4e-8820-a16cd1ccf021"
+    }
+  ],
+  "leaveScript": []
+}

@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 3,
+  "id": "cec1dd93-57ba-56c7-a6f9-7304b1dcfc72",
+  "symbol": "actor_way_910685692",
+  "prefabId": "",
+  "name": "Gyms I and II",
+  "notes": "id: way/910685692",
+  "coordinateType": "tiles",
+  "x": 40,
+  "y": 21,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "GYMS I AND II"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "2fce61ac-c6a5-5a3c-a839-5477e8c990f9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

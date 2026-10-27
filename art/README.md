@@ -32,7 +32,7 @@ Every PNG is checked against the palette when it's written. Nothing uses anti-al
 | `player_on_grounds.png` | The player over 18 ground and edge types |
 
 ## Tile budget
-**128 unique 8×8 tiles** across 211 metatiles, which leaves 64 tiles per scene for building-specific detail.
+**140 unique 8×8 tiles** across 211 metatiles (128 before the road redraw: kerbs, gutter and centre lines took the road family from 12 to 25 tiles, one shared with parking). A scene uses only the families it needs; the exporter measures 62–98 per scene.
 
 | family | tiles | family | tiles |
 |---|---|---|---|
@@ -41,7 +41,7 @@ Every PNG is checked against the palette when it's written. Nothing uses anti-al
 | forest (blob/47 + fill variant) | 14 | tree | 4 |
 | props (signpost, fence, hedge, bench) | 14 | bridge | 4 |
 | path (16-case pipe) | 12 | paved | 3 |
-| road (blob/47) | 12 | | |
+| road (blob/47) | 25 | | |
 
 A scene seldom uses every family: the canyon needs no buildings, and Old Campus needs no road. The real per-scene count is what the exporter measures.
 
@@ -55,7 +55,7 @@ How the budget was kept down:
 - **lawn:** `lawn_a` (plain; use for about 80% of cells), `lawn_b` (tufts), `lawn_c` (tuft and daisy)
 - **paved:** `paved_plaza` (running-bond pavers), `paved_parking` (asphalt with a bay stripe on the west edge)
 - **path:** `path_00` … `path_15`, a 10 px footpath, 4-neighbour
-- **road:** `road_NNN`, blob/47 with kerbs (`road_255` is the fill)
+- **road:** `road_NNN`, blob/47 with a dark edge, a 2 px pale kerb and a dark gutter; the asphalt has sparse dark grain (water has light waves). Straight pieces carry a dashed centre line (4 on, 4 off) on the road's axis: mid-cell for a 1-wide road, on the seam for a 2-wide one (`road_dash`). `road_255` is the plain fill. Integration pass, 27 Oct: roads and water had read alike.
 - **water:** `water_NNN`, blob/47 with foam and shallows. `water_fill_b` is a second fill for checkerboarding
 - **forest:** `forest_NNN`, blob/47 with a scalloped canopy edge and cast shadow. `forest_fill_b` is a second fill. `tree` is a single 16×16 tree
 - **steep:** `ledge`, `ledge_l`, `ledge_r` (a one-way south drop: the top half is lawn and the lip is in the bottom half); `cliff_top`, `cliff_face`, `cliff_face_l`, `cliff_face_r`, `cliff_base`; `stairs`

@@ -6,7 +6,7 @@ How `scripts/gb_export.py` turns the world layer into GB Studio scenes. It write
 python3 scripts/gb_export.py              # uses art/tiles/kit.json when present
 python3 scripts/gb_export.py --kit temp   # the exporter's own flat placeholder tiles
 ```
-It runs in about 10 s and the output is deterministic. It needs `numpy`, `rasterio`, `shapely` and `Pillow`.
+It runs in about 10 s and the output is deterministic. It needs `numpy`, `scipy`, `rasterio`, `shapely` and `Pillow`.
 
 ## Scale and units
 - 1 metatile (16×16 px) = **6 m**, and one 8×8 GB tile = 3 m.
@@ -58,9 +58,11 @@ The 1 m `surface_1m.tif` grid is flipped south-up and binned 6×6. Rules, in ord
 1. The majority of water, tree, steep, paved, lawn and nodata. Nodata (east of 1136 m) becomes lawn.
 2. **Steep** if ≥ 34 %. **Water** if ≥ 30 %, so streams survive.
 3. **Path or road** if either covers ≥ 20 %, whichever is larger. **Bridge** if it is a path and an OSM `bridge` way covers ≥ 10 %.
-4. **Connectivity pass.** Every metatile an OSM footway, path or service road passes through becomes path, and every one a street passes through becomes road. Lines are traced 4-connected, adding an orthogonal step at each diagonal step. Without this, diagonal paths broke into corner-touching fragments. Cells ≥ 70 % open water are skipped, but bridge ways are always drawn as bridge.
+4. **Connectivity pass.** Every metatile an OSM footway, path or service road passes through becomes path, and every one a street passes through becomes road. Lines are traced 4-connected, adding an orthogonal step at each diagonal step. Without this, diagonal paths broke into corner-touching fragments. Cells ≥ 70 % open water are skipped, but bridge ways are always drawn as bridge. Lidar path with no OSM way through it becomes lawn (or road, on a traced street): it drew as pale blobs that merged with the real footpaths. Each pair of metatiles a footway steps between is recorded (`PATH_LINKS`), and path tiles join only along those links, so parallel footways a metatile apart stay two lines. Path cells with no way of their own (door aprons, carved gaps) join any path neighbour.
 5. **Building** if a footprint covers ≥ 40 %. The metatile keeps the OSM id of the footprint covering most of it. Campus footprints win over neighbourhood ones. A campus building that reaches 40 % nowhere is forced onto its best-covered metatile. Only The Horrid Art Project (5 m²) needed this.
-6. Tree cells whose 8 neighbours are all tree become **forest interior**: solid. Other tree cells are forest edge: walkable, the canopy you walk under. A tree cell with no tree on any side becomes a single **lone tree**: solid.
+6. Tree cells whose 8 neighbours are all tree become **forest interior**. Other tree cells are **forest edge**. A tree cell with no tree on any side becomes a single **lone tree**. All three are solid (integration pass, 27 Oct): the edge is drawn with the same canopy as the interior, so walking over it read as walking over trees. Paths through woods are path cells and stay open.
+7. **Paved** ground is drawn only where an OSM parking lot covers ≥ 50 % of the metatile. OSM has no plaza or pedestrian areas here, and the lidar paved class also catches shade, roofs and hard-standing, so the rest becomes lawn.
+8. **Carved paths.** With canopy solid, a few doors opened onto clearings walled in by trees. For each door cut off from the main area (the component holding the main entrance, counting only ground inside a scene), the fewest tree metatiles to the main area are redrawn as path (`carve_pockets`, 0-1 BFS; never through water, buildings or steep ground). They are listed in REPORT.md as estimated.
 
 ## Buildings and doors
 - Each building is its footprint's metatiles. The southernmost metatile of each column is the **facade**; the rest are **roof**. Roof edge pieces (`_n`, `_e`, `_w`) are chosen by whether the neighbour has the same OSM id, so adjacent buildings stay separate.
@@ -70,14 +72,15 @@ The 1 m `surface_1m.tif` grid is flipped south-up and binned 6×6. Rules, in ord
 - **Art choices (stylistic, not from data).** Every roof uses the kit's dark pitched roof, because the light flat roof read as a plaza at this scale. Houses (off-campus, or campus buildings named "… House") and the Tudor Gothic core (Eliot, Old Dorm Block, Anna Mann, the library) get windowed facades with gables. Other campus buildings get the ribbon facade. Paved ground off campus draws as lawn, to keep the neighbourhood readable. OSM parking draws as `paved_parking`, and other paved ground on campus as `paved_plaza`.
 
 ## Collision (8×8, twice the metatile resolution)
-- **Solid (1):** roof, facade, water, forest interior, lone tree, steep, and the outer tile ring of the scene except under exit triggers.
-- **Walkable (0):** lawn, paved, path, road, bridge, forest edge and doors.
+- **Solid (1):** roof, facade, water, forest (edge and interior), lone tree and steep.
+- **Walkable (0):** lawn, paved, path, road, bridge and doors.
+- There is **no solid outer ring**. GB Studio treats tiles beyond the scene as solid on every side (`tile_col_test_range_x/y` in gbvm `src/core/collision.c`), and a ring left only one free tile column in each edge metatile, which is narrower than the player and dropped exits wherever a path met the edge on a diagonal.
 - Signposts are solid in GB Studio through their own actor collision, so the grid stays 0 under them.
 
 ## Signposts
-- There is one signpost per named campus building, keyed by OSM id. It stands one metatile south-west or south-east of the building's main door: OSM `entrance=main` first, then a real door, then an estimated one. It never blocks a door's apron or sits on an exit.
+- There is one signpost per named campus building, keyed by OSM id. It stands one metatile south-west or south-east of the building's main door: OSM `entrance=main` first, then a real door, then an estimated one. It never blocks a door's apron, sits on an exit or an exit's landing spot, or stands on a metatile whose removal would split the walkable area (a sign is a solid 16×16 actor, so one on a one-metatile path walled off everything beyond it).
 - Cerf Amphitheatre and Eliot Circle are named campus features with CSV use text, so they get signposts too.
-- In Science Quad, every tile beside Biology's door is solid or an exit, so its signpost stands on the door itself (`on_door: true`).
+- If no ground beside the door qualifies, the sign is mounted on the building's own facade (or roof, for a door in a notch) right beside the door and read from the doorway, facing east or west (`on_facade: true`; listed under Notes in REPORT.md). This covers Biology, Psychology, Dorothy Johansen House and Canyon House. No sign stands on a door.
 - **Dialogue.** The name in capitals, wrapped at 18 characters, then the CSV `use` text, with at most 4 lines in total. The engine packs 3 lines per text box. The text is the first sentence (abbreviations such as "A.E." don't end it), cut at clause boundaries (`:` `;` `,` `(`). A leading clause that only repeats the name is dropped. If even one clause doesn't fit, it is cut at a word and ends in "...", never on a function word. The text is ASCII only.
 
 ## Exits
@@ -86,12 +89,13 @@ The 1 m `surface_1m.tif` grid is flipped south-up and binned 6×6. Rules, in ord
   - The trigger is 1 tile deep on the edge row or column of each scene.
   - Its id names the direction and the destination, and the piece index counts along the edge: `exit_n_old_campus_0` in `front_lawn` pairs with `exit_s_front_lawn_0` in `old_campus`.
   - You land on the matching span of the neighbour, 2 tiles in from the edge, or 1 if 2 is blocked. The landing is clear of every trigger, and the 16×8 player box (row y, columns x and x+1) is walkable. You face the direction of travel.
-- A piece whose neighbour has no room for the player is a one-metatile pocket at a scene corner. It is dropped on both sides and listed under Notes in REPORT.md.
-- **Check.** A flood fill from the player start through every exit reaches 100 % of the walkable area of all 12 scenes, apart from 5 isolated player positions (2 in West Campus, 3 in Reed Lake), and reaches every signpost.
+  - If the span has no such spot (a path crossing the edge as a staircase), the search widens to a few tiles around it, and a spot is accepted only if the player can walk from it back onto the partner trigger (`walks_to`).
+- A piece whose neighbour still has no room for the player is dropped on both sides and listed under Notes in REPORT.md (8 after the integration pass; 10 before it, 29 once trees became solid).
+- **Check.** `scripts/playtest.py` checks reachability over player positions (16×8 box, signposts solid, triggers as warps): every scene, every signpost and no trapping landing. It lists the share of open ground reachable per scene in `build/playtest/RESULTS.md`.
 
 ## Tile budget
 - Each scene's background is rendered from the kit, and the exporter counts the unique 8×8 tiles exactly. On DMG, GB Studio doesn't dedupe flipped tiles.
-- With the Art kit (130 tiles in total), every scene uses 63–88. No simplification step was needed.
+- With the Art kit (140 tiles in total after the road redraw), every scene uses 62–98. No simplification step was needed.
 - The steps are still in place, in order: merge lawn variants, drop decorative tiles (gables and fill variants), simplify autotile edges (no inner corners), and finally shrink the zone (manual). They run while a scene is over 180, and each step is logged in REPORT.md.
 - With the placeholder tiles (`--kit temp`), the scenes use 34–54.
 
@@ -113,6 +117,6 @@ The player starts on the **Front Lawn** at tile (92, 47), facing up. That is jus
 ## Known limits
 - Most doors are estimated: only 10 buildings have OSM entrances. Walking the site, or adding entrances to OSM, would fix this.
 - Moved doors: entrances on north, east or west walls appear on the south facade, because the kit only has south-facing doors.
-- Forest edge is walkable while the interior is solid, so the player walks over the outer ring of tree tiles. This follows the brief ("dense tree" is solid), but an art pass could give the edge its own look.
-- Roads and water are both dark blob terrains, and in the west (SE 28th Ave) they look alike. That is an art-kit question.
+- Reed Lake: the off-campus neighbourhood north of the lake is walled in by canopy and has no exit, door or sign, so only about 25 % of that scene's open ground is reachable. The canyon trail through it is reachable.
+- Lidar canopy is dense, so the Science Quad and the canyon read as forest with paths through them.
 - Steep is drawn as a ledge but is plainly solid, because the contract has only 0/1 collision and no one-way ledges.

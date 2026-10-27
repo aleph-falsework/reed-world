@@ -1,0 +1,34 @@
+{
+  "_resourceType": "trigger",
+  "_index": 19,
+  "id": "537ded13-b1ba-58bd-ab6e-157c6915b178",
+  "symbol": "trigger_the_grove_exit_w_no_0",
+  "prefabId": "",
+  "name": "exit_w_northwest_1",
+  "notes": "id: exit_w_northwest_1 -> northwest",
+  "x": 0,
+  "y": 58,
+  "width": 1,
+  "height": 10,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "6eab6f03-8e8a-5356-a0c1-a9b03924a151",
+        "x": {
+          "type": "number",
+          "value": 68
+        },
+        "y": {
+          "type": "number",
+          "value": 62
+        },
+        "direction": "left",
+        "fadeSpeed": "2"
+      },
+      "id": "dca3a06f-92fd-5819-ac64-325ad4a2e585"
+    }
+  ],
+  "leaveScript": []
+}

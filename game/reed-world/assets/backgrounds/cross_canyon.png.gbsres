@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "4af67b77-e878-537c-8c11-2eb4daca6196",
+  "name": "cross_canyon",
+  "symbol": "bg_cross_canyon",
+  "tileColors": "",
+  "filename": "cross_canyon.png",
+  "width": 76,
+  "height": 108,
+  "imageWidth": 608,
+  "imageHeight": 864,
+  "autoColor": false
+}

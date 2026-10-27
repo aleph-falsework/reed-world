@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "01485ffe-9724-5c7f-95d0-cb6c3894b135",
+  "name": "performing_arts",
+  "symbol": "bg_performing_arts",
+  "tileColors": "",
+  "filename": "performing_arts.png",
+  "width": 80,
+  "height": 62,
+  "imageWidth": 640,
+  "imageHeight": 496,
+  "autoColor": false
+}

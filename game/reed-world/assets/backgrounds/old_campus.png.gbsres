@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "ce917ade-0fed-5031-8801-d4e0a68db5ec",
+  "name": "old_campus",
+  "symbol": "bg_old_campus",
+  "tileColors": "",
+  "filename": "old_campus.png",
+  "width": 120,
+  "height": 44,
+  "imageWidth": 960,
+  "imageHeight": 352,
+  "autoColor": false
+}

@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 1,
+  "id": "13cfd954-58f6-5ce7-b3f3-b97f700ceec6",
+  "symbol": "actor_way_331521983",
+  "prefabId": "",
+  "name": "Prexy Hall",
+  "notes": "id: way/331521983",
+  "coordinateType": "tiles",
+  "x": 60,
+  "y": 37,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "PREXY HALL\nMusic building on\nthis map, a former",
+          "president's\nresidence,\npractice rooms."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "9370a49b-5bac-5a55-be12-2e887998e63d"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

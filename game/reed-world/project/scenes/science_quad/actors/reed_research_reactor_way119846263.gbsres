@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 2,
+  "id": "7951c7c3-792c-54ec-982a-0420091dce45",
+  "symbol": "actor_way_119846263",
+  "prefabId": "",
+  "name": "Reed Research Reactor",
+  "notes": "id: way/119846263",
+  "coordinateType": "tiles",
+  "x": 28,
+  "y": 37,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "REED RESEARCH\nREACTOR"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "2cafc36b-b9a6-5b6a-8db1-ed07472b2a90"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

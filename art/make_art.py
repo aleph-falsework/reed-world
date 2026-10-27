@@ -285,8 +285,11 @@ LLLLLLLL
 KIT.add("paved_plaza", q4(PAVER, PAVER, PAVER, PAVER), "paved")
 
 
+ASPHALT_GRAIN = {(1, 6), (5, 2)}     # sparse dark grain: water has light waves, asphalt has dark specks
+
+
 def road_tex(u, v):
-    return D
+    return K if (u, v) in ASPHALT_GRAIN else D
 
 
 ROADFILL = np.array([[road_tex(u, v) for u in range(8)] for v in range(8)], np.uint8)
@@ -299,11 +302,27 @@ KIT.add("paved_parking", q4(STRIPE, ROADFILL, STRIPE, ROADFILL), "paved")
 # --------------------------------------------------------------------------
 
 
+def road_dash(m, x, y):
+    """Dashed centre line (4 px on, 4 off; repeats every 8 px so straight runs share tiles).
+    The line sits on the axis of the road: mid-cell for a 1-wide road, on the seam
+    between the two cells of a 2-wide road (each draws 1 px of it)."""
+    n, e, s, w = m & 1, m & 2, m & 4, m & 8
+    if n and s and not (e and w):                       # runs north-south
+        xs = (7, 8) if not e and not w else ((15,) if e else (0,))
+        return x in xs and (y % 8) < 4
+    if e and w and not (n and s):                       # runs east-west
+        ys = (7, 8) if not n and not s else ((15,) if s else (0,))
+        return y in ys and (x % 8) < 4
+    return False
+
+
 def road_shade(m, x, y):
     e = efield(m, x + 0.5, y + 0.5, 3.0)
     if e < 0: return L
     if e < 1: return K
-    if e < 2: return W
+    if e < 3: return W                                  # 2 px pale kerb (water has a 1 px foam line)
+    if e < 4: return K                                  # gutter
+    if road_dash(m, x, y): return W
     return road_tex(x % 8, y % 8)
 
 

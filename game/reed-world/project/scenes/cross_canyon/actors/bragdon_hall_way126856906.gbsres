@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 1,
+  "id": "f1a80d61-c537-5b29-a303-1bcfe862490a",
+  "symbol": "actor_way_126856906",
+  "prefabId": "",
+  "name": "Bragdon Hall",
+  "notes": "id: way/126856906",
+  "coordinateType": "tiles",
+  "x": 60,
+  "y": 95,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "BRAGDON HALL\nNewest Cross\nCanyon residence",
+          "hall, 1998, named\nfor a former Reed\npresident."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "933d7e9c-aa25-5e5f-a888-012f608f63dd"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

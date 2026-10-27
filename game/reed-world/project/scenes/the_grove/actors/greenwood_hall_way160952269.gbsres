@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "4b325db4-b848-595b-becd-41fe571b2374",
+  "symbol": "actor_way_160952269",
+  "prefabId": "",
+  "name": "Greenwood Hall",
+  "notes": "id: way/160952269",
+  "coordinateType": "tiles",
+  "x": 34,
+  "y": 103,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "GREENWOOD HALL"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "d8f5f6e2-322b-5ce5-9faa-16fc7dc9f310"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

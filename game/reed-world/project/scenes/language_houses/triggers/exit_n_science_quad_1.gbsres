@@ -1,0 +1,34 @@
+{
+  "_resourceType": "trigger",
+  "_index": 8,
+  "id": "6b5421a9-be79-53f5-b9f5-690c8f6d8779",
+  "symbol": "trigger_language_houses_exi_7",
+  "prefabId": "",
+  "name": "exit_n_science_quad_1",
+  "notes": "id: exit_n_science_quad_1 -> science_quad",
+  "x": 12,
+  "y": 0,
+  "width": 4,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "b68055af-a12b-5ad0-bed2-acfd622bc4f7",
+        "x": {
+          "type": "number",
+          "value": 13
+        },
+        "y": {
+          "type": "number",
+          "value": 49
+        },
+        "direction": "up",
+        "fadeSpeed": "2"
+      },
+      "id": "09949747-2c04-5e0f-93c2-9cb612032f94"
+    }
+  ],
+  "leaveScript": []
+}

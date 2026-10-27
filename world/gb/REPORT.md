@@ -6,33 +6,33 @@ Player start: `front_lawn` at tile (92, 47), facing up.
 
 | Scene | Size px | Unique tiles | Actors | Triggers | Doors (est.) | Kit | Warnings |
 |---|---|---|---|---|---|---|---|
-| Front Lawn (`front_lawn`) | 960×464 | 68 | 1 | 25 | 1 (1) | art | 0 |
-| Old Campus (`old_campus`) | 960×352 | 71 | 8 | 23 | 10 (3) | art | 0 |
-| West Campus (`west_campus`) | 640×512 | 88 | 5 | 13 | 8 (3) | art | 0 |
-| Performing Arts & Sports (`performing_arts`) | 640×496 | 74 | 5 | 21 | 5 (4) | art | 0 |
-| Science Quad (`science_quad`) | 432×416 | 63 | 5 | 22 | 5 (4) | art | 1 |
-| Language Houses (`language_houses`) | 432×432 | 70 | 7 | 20 | 7 (7) | art | 0 |
-| Studio Arts (`studio_arts`) | 432×528 | 63 | 3 | 14 | 3 (3) | art | 0 |
-| Reed Canyon East (`canyon_east`) | 432×624 | 72 | 0 | 14 | 0 (0) | art | 0 |
-| Reed Lake (`reed_lake`) | 752×304 | 80 | 0 | 8 | 0 (0) | art | 0 |
-| Cross Canyon (`cross_canyon`) | 608×864 | 87 | 7 | 15 | 10 (6) | art | 0 |
-| The Grove (`the_grove`) | 672×864 | 73 | 7 | 24 | 11 (6) | art | 0 |
-| Northwest Campus (`northwest`) | 576×864 | 82 | 11 | 9 | 11 (11) | art | 0 |
+| Front Lawn (`front_lawn`) | 960×464 | 78 | 1 | 23 | 1 (1) | art | 0 |
+| Old Campus (`old_campus`) | 960×352 | 70 | 8 | 21 | 10 (3) | art | 0 |
+| West Campus (`west_campus`) | 640×512 | 98 | 5 | 12 | 8 (3) | art | 0 |
+| Performing Arts & Sports (`performing_arts`) | 640×496 | 78 | 5 | 19 | 5 (4) | art | 0 |
+| Science Quad (`science_quad`) | 432×416 | 62 | 5 | 9 | 5 (4) | art | 0 |
+| Language Houses (`language_houses`) | 432×432 | 79 | 7 | 16 | 7 (7) | art | 0 |
+| Studio Arts (`studio_arts`) | 432×528 | 64 | 3 | 12 | 3 (3) | art | 0 |
+| Reed Canyon East (`canyon_east`) | 432×624 | 79 | 0 | 8 | 0 (0) | art | 0 |
+| Reed Lake (`reed_lake`) | 752×304 | 88 | 0 | 5 | 0 (0) | art | 0 |
+| Cross Canyon (`cross_canyon`) | 608×864 | 89 | 7 | 19 | 10 (6) | art | 0 |
+| The Grove (`the_grove`) | 672×864 | 73 | 7 | 25 | 11 (6) | art | 0 |
+| Northwest Campus (`northwest`) | 576×864 | 91 | 11 | 7 | 11 (11) | art | 0 |
 
 ## Tile budget log
 
-- **front_lawn**: art kit, full detail: 68 unique tiles
-- **old_campus**: art kit, full detail: 71 unique tiles
-- **west_campus**: art kit, full detail: 88 unique tiles
-- **performing_arts**: art kit, full detail: 74 unique tiles
-- **science_quad**: art kit, full detail: 63 unique tiles
-- **language_houses**: art kit, full detail: 70 unique tiles
-- **studio_arts**: art kit, full detail: 63 unique tiles
-- **canyon_east**: art kit, full detail: 72 unique tiles
-- **reed_lake**: art kit, full detail: 80 unique tiles
-- **cross_canyon**: art kit, full detail: 87 unique tiles
+- **front_lawn**: art kit, full detail: 78 unique tiles
+- **old_campus**: art kit, full detail: 70 unique tiles
+- **west_campus**: art kit, full detail: 98 unique tiles
+- **performing_arts**: art kit, full detail: 78 unique tiles
+- **science_quad**: art kit, full detail: 62 unique tiles
+- **language_houses**: art kit, full detail: 79 unique tiles
+- **studio_arts**: art kit, full detail: 64 unique tiles
+- **canyon_east**: art kit, full detail: 79 unique tiles
+- **reed_lake**: art kit, full detail: 88 unique tiles
+- **cross_canyon**: art kit, full detail: 89 unique tiles
 - **the_grove**: art kit, full detail: 73 unique tiles
-- **northwest**: art kit, full detail: 82 unique tiles
+- **northwest**: art kit, full detail: 91 unique tiles
 
 ## Doors
 
@@ -59,12 +59,12 @@ Real doors come from OSM `entrance` nodes. "moved" means the entrance is on a no
 | west_campus | Prexy Hall | way/331521983 | (64,34) | estimated |
 | west_campus | Scholz Hall | way/119843581 | (42,22) | OSM node/9628035067 (moved to facade) |
 | west_campus | Scholz Hall | way/119843581 | (44,24) | OSM node/8778150674 |
-| performing_arts | Anna Mann Hall | way/119843580 | (72,52) | estimated |
+| performing_arts | Anna Mann Hall | way/119843580 | (74,50) | estimated |
 | performing_arts | Gyms I and II | way/910685692 | (42,18) | estimated |
 | performing_arts | Kaul Auditorium | way/40877933 | (58,24) | estimated |
 | performing_arts | Performing Arts Building | way/218153556 | (54,38) | OSM node/8778150671, node/8945851201, node/12951055209 |
 | performing_arts | Reed College Sports Center | way/243997608 | (62,10) | estimated |
-| science_quad | Biology | way/142983684 | (2,48) | estimated |
+| science_quad | Biology | way/142983684 | (8,48) | estimated |
 | science_quad | Chemistry | way/142983685 | (12,26) | estimated |
 | science_quad | Physics | way/302430449 | (6,28) | OSM node/12951055216 |
 | science_quad | Psychology | way/119846265 | (14,46) | estimated |
@@ -79,7 +79,7 @@ Real doors come from OSM `entrance` nodes. "moved" means the entrance is on a no
 | studio_arts | Dorothy Johansen House | way/367893606 | (18,40) | estimated |
 | studio_arts | Studio Arts | way/302430850 | (14,10) | estimated |
 | studio_arts | The Horrid Art Project | way/787036016 | (48,16) | estimated |
-| cross_canyon | Bragdon Hall | way/126856906 | (54,78) | estimated |
+| cross_canyon | Bragdon Hall | way/126856906 | (58,92) | estimated |
 | cross_canyon | Chittick | way/126856903 | (38,90) | estimated |
 | cross_canyon | Griffin Hall | way/126856905 | (6,66) | estimated |
 | cross_canyon | McKinley Hall | way/126856902 | (22,72) | estimated |
@@ -101,32 +101,45 @@ Real doors come from OSM `entrance` nodes. "moved" means the entrance is on a no
 | the_grove | Trillium | way/785269171 | (50,54) | OSM node/8777894223, node/8777894227 (moved to facade) |
 | the_grove | Trillium | way/785269171 | (54,64) | OSM node/8777894220 (moved to facade) |
 | northwest | 28 West | way/142983673 | (42,58) | estimated |
-| northwest | Canyon House | way/367919775 | (58,82) | estimated |
+| northwest | Canyon House | way/367919775 | (62,82) | estimated |
 | northwest | Childcare Center | way/39516259 | (40,26) | estimated |
 | northwest | Farm House | way/371026025 | (38,96) | estimated |
-| northwest | Garden House | way/367919774 | (38,80) | estimated |
-| northwest | Health and Counseling Center | way/39516260 | (40,36) | estimated |
+| northwest | Garden House | way/367919774 | (40,82) | estimated |
+| northwest | Health and Counseling Center | way/39516260 | (34,36) | estimated |
 | northwest | Reed College Apartments | way/142983670 | (38,74) | estimated |
 | northwest | Reed College Apartments | way/142983671 | (44,66) | estimated |
 | northwest | Reed College Apartments | way/142983669 | (48,74) | estimated |
 | northwest | Reed College Apartments | way/142983672 | (60,74) | estimated |
 | northwest | Reed Warehouse | way/685753545 | (4,52) | estimated |
 
+## Paths carved through canopy (estimated)
+
+Tree metatiles are solid, so these doors opened onto clearings walled in by trees. The fewest tree metatiles between each clearing and the main campus were redrawn as path (`carve_pockets`). These paths are a gameplay accommodation, not survey data.
+
+- Parker House (way/339603988): 1 metatile(s)
+- Dorothy Johansen House (way/367893606): 1 metatile(s)
+- Physics (way/302430449): 1 metatile(s)
+- Greenwood Hall (way/160952269): 1 metatile(s)
+- Farm House (way/371026025): 1 metatile(s)
+- Bragdon Hall (way/126856906): 1 metatile(s)
+- Canyon House (way/367919775): 3 metatile(s)
+
 ## Notes
 
-- `old_campus`: exit_e_science_quad_0: no room for the 16 px player on the matching edge of science_quad (one-metatile pocket); exit dropped on both sides
-- `science_quad`: exit_w_old_campus_0: no room for the 16 px player on the matching edge of old_campus (one-metatile pocket); exit dropped on both sides
-- `studio_arts`: exit_n_canyon_east_6: no room for the 16 px player on the matching edge of canyon_east (one-metatile pocket); exit dropped on both sides
+- `front_lawn`: exit_n_old_campus_0: no room for the 16 px player on the matching edge of old_campus (one-metatile pocket); exit dropped on both sides
+- `performing_arts`: exit_e_old_campus_0: no room for the 16 px player on the matching edge of old_campus (one-metatile pocket); exit dropped on both sides
+- `science_quad`: signpost of Biology (way/142983684) mounted on the facade beside its door (no free ground beside the door)
+- `science_quad`: signpost of Psychology (way/119846265) mounted on the facade beside its door (no free ground beside the door)
+- `language_houses`: exit_w_front_lawn_7: no room for the 16 px player on the matching edge of front_lawn (one-metatile pocket); exit dropped on both sides
 - `studio_arts`: exit_w_language_houses_2: no room for the 16 px player on the matching edge of language_houses (one-metatile pocket); exit dropped on both sides
-- `canyon_east`: exit_s_studio_arts_6: no room for the 16 px player on the matching edge of studio_arts (one-metatile pocket); exit dropped on both sides
-- `reed_lake`: exit_e_canyon_east_2: no room for the 16 px player on the matching edge of canyon_east (one-metatile pocket); exit dropped on both sides
-- `reed_lake`: exit_w_cross_canyon_3: no room for the 16 px player on the matching edge of cross_canyon (one-metatile pocket); exit dropped on both sides
-- `cross_canyon`: exit_e_reed_lake_4: no room for the 16 px player on the matching edge of reed_lake (one-metatile pocket); exit dropped on both sides
-- `cross_canyon`: exit_e_reed_lake_5: no room for the 16 px player on the matching edge of reed_lake (one-metatile pocket); exit dropped on both sides
-- `the_grove`: exit_e_cross_canyon_2: no room for the 16 px player on the matching edge of cross_canyon (one-metatile pocket); exit dropped on both sides
+- `studio_arts`: signpost of Dorothy Johansen House (way/367893606) mounted on the facade beside its door (no free ground beside the door)
+- `canyon_east`: exit_w_science_quad_2: no room for the 16 px player on the matching edge of science_quad (one-metatile pocket); exit dropped on both sides
+- `reed_lake`: exit_w_cross_canyon_1: no room for the 16 px player on the matching edge of cross_canyon (one-metatile pocket); exit dropped on both sides
+- `cross_canyon`: exit_e_reed_lake_3: no room for the 16 px player on the matching edge of reed_lake (one-metatile pocket); exit dropped on both sides
+- `cross_canyon`: exit_w_the_grove_2: no room for the 16 px player on the matching edge of the_grove (one-metatile pocket); exit dropped on both sides
+- `northwest`: signpost of Canyon House (way/367919775) mounted on the facade beside its door (no free ground beside the door)
 
 ## Warnings
 
-- `science_quad`: signpost of Biology (way/142983684) placed on its door: no free tile beside it
 - Campus buildings under 40 % of any metatile, forced onto their best-covered metatile: way/787036016
 - Zone edge: Greywood Hall (way/119843567): 3.3 m² sliver across a zone edge, not drawn

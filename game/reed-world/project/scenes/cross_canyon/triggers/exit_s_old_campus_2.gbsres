@@ -1,0 +1,34 @@
+{
+  "_resourceType": "trigger",
+  "_index": 4,
+  "id": "f221dfd3-2fe5-5a30-abdc-649cc438d109",
+  "symbol": "trigger_cross_canyon_exit_s_1",
+  "prefabId": "",
+  "name": "exit_s_old_campus_2",
+  "notes": "id: exit_s_old_campus_2 -> old_campus",
+  "x": 16,
+  "y": 107,
+  "width": 4,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "63329105-269c-5a55-b8f3-9553c4ac4c8c",
+        "x": {
+          "type": "number",
+          "value": 21
+        },
+        "y": {
+          "type": "number",
+          "value": 2
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "f320cdaf-033c-53cd-85fa-daa6a08178d2"
+    }
+  ],
+  "leaveScript": []
+}

@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "6807a2ac-76da-5756-8fd2-86f359046441",
+  "symbol": "actor_way_126856903",
+  "prefabId": "",
+  "name": "Chittick",
+  "notes": "id: way/126856903",
+  "coordinateType": "tiles",
+  "x": 36,
+  "y": 93,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "CHITTICK\nCross Canyon\nresidence hall,",
+          "mostly\nfirst-years, about\n28 residents."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "acfbe800-6a0b-53de-b2a3-4060f4f526a5"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

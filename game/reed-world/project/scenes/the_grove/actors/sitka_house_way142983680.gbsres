@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 6,
+  "id": "42011a1f-d67e-5772-b1ef-a955786210fc",
+  "symbol": "actor_way_142983680",
+  "prefabId": "",
+  "name": "Sitka House",
+  "notes": "id: way/142983680",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 59,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "SITKA HOUSE\nGrove residence\nhall, 2008, with",
+          "house-style\nliving."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "bb82745f-2b1d-55cd-baa0-a0678450eb59"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

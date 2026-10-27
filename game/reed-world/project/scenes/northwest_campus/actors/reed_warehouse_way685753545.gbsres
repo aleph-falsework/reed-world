@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 8,
+  "id": "32c6b676-adf4-5511-8a0e-a2bbc730cccc",
+  "symbol": "actor_way_685753545",
+  "prefabId": "",
+  "name": "Reed Warehouse",
+  "notes": "id: way/685753545",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 55,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "REED WAREHOUSE\nStorage for\ntheatre sets."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "b7020caf-4063-52b6-89b8-1974ea44d88f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

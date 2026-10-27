@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 2,
+  "id": "ce796820-f722-5676-9c07-6b7d7f171bce",
+  "symbol": "actor_way_142983681",
+  "prefabId": "",
+  "name": "Sequoia House",
+  "notes": "id: way/142983681",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 75,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "SEQUOIA HOUSE\nOne of the four\nGrove residence",
+          "halls, completed\n2008."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "f7cfe527-4ecf-56b7-bf65-6f06b77d814a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

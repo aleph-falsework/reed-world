@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "3256b021-01ea-53a5-990f-e6c35ceeae07",
+  "symbol": "actor_way_371026023",
+  "prefabId": "",
+  "name": "Spanish House",
+  "notes": "id: way/371026023",
+  "coordinateType": "tiles",
+  "x": 46,
+  "y": 41,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "SPANISH HOUSE\nSpanish language\nhouse with a",
+          "language scholar."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "ba5d36af-1a3d-547e-bf60-14b32846ca83"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

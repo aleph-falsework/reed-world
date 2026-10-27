@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 6,
+  "id": "12e04a99-4343-5696-a7a6-7b48f2b18c48",
+  "symbol": "actor_way_119843563",
+  "prefabId": "",
+  "name": "Eliot Circle",
+  "notes": "id: way/119843563",
+  "coordinateType": "tiles",
+  "x": 84,
+  "y": 35,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "ELIOT CIRCLE\nTraffic circle and\nlawn at the main",
+          "entrance in front\nof Eliot Hall."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "0419bdfe-42d0-56ef-b9d7-5b40b17609c9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

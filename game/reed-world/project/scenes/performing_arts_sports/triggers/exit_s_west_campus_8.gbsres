@@ -1,0 +1,34 @@
+{
+  "_resourceType": "trigger",
+  "_index": 18,
+  "id": "1406ba5b-476f-5cc6-a7be-ade07f65c73f",
+  "symbol": "trigger_performing_arts_exi_17",
+  "prefabId": "",
+  "name": "exit_s_west_campus_8",
+  "notes": "id: exit_s_west_campus_8 -> west_campus",
+  "x": 74,
+  "y": 61,
+  "width": 4,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "dabb468e-94a2-5b6a-84a7-b3a42ccdf2fe",
+        "x": {
+          "type": "number",
+          "value": 76
+        },
+        "y": {
+          "type": "number",
+          "value": 2
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "96d97eb9-5bd0-5ac7-9b7b-e52e010a5f39"
+    }
+  ],
+  "leaveScript": []
+}
