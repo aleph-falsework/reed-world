@@ -73,7 +73,7 @@ These are where the time goes when you work without assistance. Each was found b
 | The user's computer had Python but no `shapely` or `pyproj` | Did the processing in a cloud workspace and copied results back to the folder |
 | 10 features in the export crashed the geometry parser (transit route relations with broken geometry) | Skipped route relations and logged every invalid id |
 | The export held 2,057 buildings, mostly neighbourhood houses | Split them into campus and neighbourhood, and drew the neighbourhood dimmer |
-| 55 campus "buildings" were really solar panels | Filtered out `power` and `generator:*` tags |
+| 55 untagged-looking polygons on campus turned out to be mapped solar panels | Filtered out `power` and `generator:*` tags |
 | CSV names and OSM names disagree | Hand-written alias table; unmatched names reported, not guessed |
 | Labels were illegible in the PNG preview (the converter ignores the CSS `paint-order` property) | Drew halos as a separate text layer under the labels |
 | "Eliot Circle" was labelled twice (two OSM polygons) | Deduplicated area labels |
