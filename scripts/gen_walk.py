@@ -54,12 +54,23 @@ body{background:var(--bg);color:var(--ink);font-family:var(--mono);overflow:hidd
 #scale{display:flex;align-items:center;gap:8px}
 #bar{height:4px;border:1px solid var(--ink);border-top:0}
 kbd{font-family:var(--mono);border:1px solid var(--faint);padding:0 4px;color:var(--ink)}
-@media (max-width:600px){#use{display:none}#place{font-size:16px}.keys{display:none}}
+.ctl{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 62px);display:grid;gap:8px;background:rgba(13,15,14,.82);border:1px solid var(--faint);padding:10px 12px;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em}
+.row{display:grid;grid-template-columns:44px 28px 120px 28px;align-items:center;gap:6px}
+.ctl button{font:inherit;font-size:15px;letter-spacing:0;color:var(--ink);background:transparent;border:1px solid var(--faint);height:28px;cursor:pointer}
+.ctl button:hover{border-color:var(--ink)}.ctl button:focus-visible,.ctl input:focus-visible{outline:1px solid var(--walker);outline-offset:2px}
+.ctl input[type=range]{width:120px;accent-color:var(--walker)}
+.ctl .presets{display:flex;gap:6px}.ctl .presets button{flex:1;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:600px){#use{display:none}#place{font-size:16px}.keys{display:none}.ctl{bottom:calc(env(safe-area-inset-bottom,0px) + 32px);left:max(16px,env(safe-area-inset-left,0px));justify-content:center}.bl{bottom:calc(env(safe-area-inset-bottom,0px) + 166px)}.br{font-size:10px}}
 </style>
 <canvas id="stage" tabindex="0" aria-label="Top-down wireframe of Reed College. Use arrow keys or WASD to walk."></canvas>
 <div class="hud tl"><div class="k" id="where">Reed College · world layer</div><div id="place">—</div><div id="use"></div></div>
 <div class="hud bl"><div id="scale"><div id="bar"></div><span id="barl">50 m</span></div><div class="k" id="pos" style="margin-top:6px"></div></div>
-<div class="hud br"><div class="keys"><kbd>W A S D</kbd> walk · <kbd>Shift</kbd> run · <kbd>Q</kbd>/<kbd>E</kbd> or wheel zoom</div><div>drag to walk on touch · © OpenStreetMap contributors</div></div>
+<div class="hud br"><div class="keys"><kbd>W A S D</kbd> walk · <kbd>Shift</kbd> run · <kbd>Q</kbd>/<kbd>E</kbd>, wheel or pinch zoom · <kbd>T</kbd> tilt</div><div><span class="keys">drag to walk on touch · </span>© OpenStreetMap contributors</div></div>
+<div class="ctl" role="group" aria-label="View">
+ <div class="row"><span>Zoom</span><button id="zout" aria-label="Zoom out">−</button><input id="zoom" type="range" min="0" max="1000" value="0" aria-label="Zoom"><button id="zin" aria-label="Zoom in">+</button></div>
+ <div class="row"><span>Tilt</span><span></span><input id="tilt" type="range" min="0" max="60" value="0" aria-label="Tilt in degrees"><span id="tiltv">0°</span></div>
+ <div class="presets"><button id="pStreet">Street</button><button id="pQuad">Quad</button><button id="pCampus">Campus</button></div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const D=__DATA__;
@@ -92,7 +103,7 @@ me.add(new THREE.Mesh(ring,new THREE.MeshBasicMaterial({color:0xff5a3c})));
 const tick=new THREE.BufferGeometry();tick.setAttribute('position',new THREE.Float32BufferAttribute([0,.2,0,0,.2,-5],3));
 me.add(new THREE.Line(tick,new THREE.LineBasicMaterial({color:0xff5a3c})));
 S.add(me);
-let px=D.start[0],py=D.start[1],hd=0,camH=160,camHt=160;
+let px=D.start[0],py=D.start[1],hd=0,camH=650,camHt=650,tilt=0,tiltT=0;const ZMIN=30,ZMAX=1400;
 // footprint lookup
 const BB=D.B.filter(b=>b.n).map(b=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;for(let i=0;i<b.r.length;i+=2){x0=Math.min(x0,b.r[i]);x1=Math.max(x1,b.r[i]);y0=Math.min(y0,b.r[i+1]);y1=Math.max(y1,b.r[i+1])}return {b,x0,y0,x1,y1}});
 function inside(r,x,y){let c=false;for(let i=0,n=r.length/2,j=n-1;i<n;j=i++){const xi=r[2*i],yi=r[2*i+1],xj=r[2*j],yj=r[2*j+1];if((yi>y)!==(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)c=!c}return c}
@@ -109,10 +120,24 @@ function hud(){const n=near(px,py);const id=n?n.b.i+(n.d===0):null;
   const m=[10,20,50,100,200].find(v=>v*ppm>70)||200;el('bar').style.width=(m*ppm)+'px';el('barl').textContent=m+' m'}
 // input
 const keys={};addEventListener('keydown',e=>{keys[e.key.toLowerCase()]=1;if(e.key.startsWith('Arrow'))e.preventDefault()});addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=0});
-addEventListener('wheel',e=>{camHt=Math.min(900,Math.max(30,camHt*Math.exp(e.deltaY*.001)))},{passive:true});
-let drag=null;cv.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,dx:0,dy:0};cv.setPointerCapture(e.pointerId)});
+const zs=el('zoom'),ts=el('tilt');
+const z2s=h=>Math.round(1000*Math.log(h/ZMIN)/Math.log(ZMAX/ZMIN)), s2z=v=>ZMIN*Math.pow(ZMAX/ZMIN,v/1000);
+function setZoom(h){camHt=Math.min(ZMAX,Math.max(ZMIN,h));zs.value=1000-z2s(camHt)}
+function setTilt(d){tiltT=Math.min(60,Math.max(0,d));ts.value=tiltT;el('tiltv').textContent=Math.round(tiltT)+'°'}
+setZoom(camHt);
+zs.addEventListener('input',()=>{camHt=s2z(1000-zs.value)});
+ts.addEventListener('input',()=>setTilt(+ts.value));
+el('zin').onclick=()=>setZoom(camHt/1.5);el('zout').onclick=()=>setZoom(camHt*1.5);
+el('pStreet').onclick=()=>{setZoom(60);setTilt(50)};el('pQuad').onclick=()=>{setZoom(260);setTilt(25)};el('pCampus').onclick=()=>{setZoom(1100);setTilt(0)};
+addEventListener('wheel',e=>{setZoom(camHt*Math.exp(e.deltaY*.001))},{passive:true});
+addEventListener('keydown',e=>{if(e.key==='-'||e.key==='_')setZoom(camHt*1.25);if(e.key==='='||e.key==='+')setZoom(camHt/1.25);if(e.key.toLowerCase()==='t')setTilt(tiltT>0?0:45)});
+const pts=new Map();let pinch0=null;
+let drag=null;cv.addEventListener('pointerdown',e=>{pts.set(e.pointerId,[e.clientX,e.clientY]);cv.setPointerCapture(e.pointerId);
+  if(pts.size===2){drag=null;const [a,b]=[...pts.values()];pinch0={d:Math.hypot(a[0]-b[0],a[1]-b[1]),h:camHt}}else{drag={x:e.clientX,y:e.clientY,dx:0,dy:0}}});
+cv.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,[e.clientX,e.clientY]);
+  if(pinch0&&pts.size===2){const [a,b]=[...pts.values()];setZoom(pinch0.h*pinch0.d/Math.max(10,Math.hypot(a[0]-b[0],a[1]-b[1])))}});
 cv.addEventListener('pointermove',e=>{if(drag){drag.dx=e.clientX-drag.x;drag.dy=e.clientY-drag.y}});
-['pointerup','pointercancel'].forEach(t=>cv.addEventListener(t,()=>drag=null));
+['pointerup','pointercancel'].forEach(t=>cv.addEventListener(t,e=>{pts.delete(e.pointerId);if(pts.size<2)pinch0=null;drag=null}));
 function size(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();lastId=null}
 addEventListener('resize',size);size();cv.focus();
 let t0=performance.now();
@@ -120,12 +145,12 @@ function frame(t){const dt=Math.min(.05,(t-t0)/1000);t0=t;
   let vx=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0),vy=(keys.w||keys.arrowup?1:0)-(keys.s||keys.arrowdown?1:0);
   if(drag&&Math.hypot(drag.dx,drag.dy)>8){vx=drag.dx;vy=-drag.dy}
   const m=Math.hypot(vx,vy);
-  if(m){const sp=(keys.shift?6:1.4)*(drag?Math.min(1,m/120)*4:1)*(camH/60);  // walk 1.4 m/s, scaled so it stays usable when zoomed out
+  if(m){const sp=(keys.shift?6:1.4)*(drag?Math.min(1,m/120)*4:1)*(Math.min(camH,400)/60);  // walk 1.4 m/s, scaled so it stays usable when zoomed out
     px=Math.min(D.W,Math.max(0,px+vx/m*sp*dt));py=Math.min(D.H,Math.max(0,py+vy/m*sp*dt));hd=Math.atan2(vx,vy)}
-  if(keys.q)camHt=Math.max(30,camHt*.98);if(keys.e)camHt=Math.min(900,camHt*1.02);
-  camH+=(camHt-camH)*.12;
+  if(keys.q)setZoom(camHt*.98);if(keys.e)setZoom(camHt*1.02);
+  camH+=(camHt-camH)*.12;tilt+=(tiltT-tilt)*.12;
   me.position.set(px,0,-py);me.rotation.y=-hd;
-  cam.position.set(px,camH,-py+camH*.0001);cam.lookAt(px,0,-py);
+  const tr=THREE.MathUtils.degToRad(tilt);cam.position.set(px,camH*Math.cos(tr),-py+camH*Math.sin(tr)+.001);cam.lookAt(px,0,-py);
   R.render(S,cam);hud();requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
 </script>'''
