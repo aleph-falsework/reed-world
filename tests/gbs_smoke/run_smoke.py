@@ -20,7 +20,7 @@ REPO = HERE.parents[1]
 sys.path.insert(0, str(REPO))
 
 from tests.gbs_smoke import make_assets  # noqa: E402
-from tools.gbs import build_rom, build_web, make_project, play, validate  # noqa: E402
+from tools.gbs import build_rom, build_web, check_project, make_project, play, validate  # noqa: E402
 
 OUT = HERE / "out"
 SCREENS = HERE / "screens"
@@ -93,6 +93,22 @@ INPUTS = [
 ]
 
 
+def contact_sheet(paths, out, scale=3):
+    from PIL import Image, ImageDraw
+
+    ims = [Image.open(p).convert("RGB") for p in paths]
+    pad, label = 6, 14
+    W = len(ims) * (160 * scale + pad) + pad
+    H = 144 * scale + pad * 2 + label
+    sheet = Image.new("RGB", (W, H), (0x07, 0x18, 0x21))
+    d = ImageDraw.Draw(sheet)
+    for i, (im, p) in enumerate(zip(ims, paths)):
+        x = pad + i * (160 * scale + pad)
+        sheet.paste(im.resize((160 * scale, 144 * scale), 0), (x, pad + label))
+        d.text((x, 3), Path(p).stem, fill=(0xE0, 0xF8, 0xCF))
+    sheet.save(out)
+
+
 def main(web=False):
     col1, col2 = make_assets.main()
     spec = make_spec(col1, col2)
@@ -105,6 +121,10 @@ def main(web=False):
 
     proj = make_project(spec, OUT / "project", REPO, seed="smoke")
     print("project:", proj)
+    chk = check_project(proj.parent)
+    print("gb studio loader check:", "ok" if chk["ok"] else chk["problems"],
+          "| migrated:", chk["isMigrated"], "| sprites needing re-detect:", chk["modifiedSpriteIds"])
+    assert chk["ok"], chk
 
     t0 = time.time()
     rom = build_rom(proj.parent, OUT / "smoke.gb")
@@ -129,6 +149,7 @@ def main(web=False):
     }
     for k, v in checks.items():
         print(("PASS " if v else "FAIL ") + k)
+    contact_sheet(shots, SCREENS / "contact_sheet.png")
 
     result = {"build_seconds": round(build_secs, 1), "checks": checks, "screens": shots}
     if web:

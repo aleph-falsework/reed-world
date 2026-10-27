@@ -4,7 +4,7 @@
 
 See docs/gbstudio-4.3.2-format.md.
 """
-from .build import BuildError, build_rom, build_web
+from .build import BuildError, build_rom, build_web, check_project
 from .play import GBRunner, play
 from .project import SpecError, make_project
 from .validate import count_unique_tiles, validate
@@ -15,6 +15,7 @@ __all__ = [
     "build_web",
     "play",
     "validate",
+    "check_project",
     "count_unique_tiles",
     "GBRunner",
     "BuildError",

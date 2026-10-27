@@ -149,7 +149,30 @@ def proposal_report(campus_bldgs):
 
 
 # ================================================================ metatile class grid (global, south-up)
-def class_grid(surf, bid_r, bridge_r, osm_ids, campus_idx, named_idx):
+def trace_lines(lines, MH, MW):
+    """4-connected supercover of line features on the metatile grid (south-up)."""
+    m = np.zeros((MH, MW), bool)
+    for ln in lines:
+        parts = getattr(ln, 'geoms', [ln])
+        for part in parts:
+            L = part.length
+            if L == 0:
+                continue
+            prev = None
+            for d in np.arange(0, L + 0.25, 0.25):
+                pt = part.interpolate(min(d, L))
+                cell = (int(pt.y // MT_M), int(pt.x // MT_M))
+                if prev and cell != prev and cell[0] != prev[0] and cell[1] != prev[1]:
+                    mid = (prev[0], cell[1])            # step through an orthogonal neighbour
+                    if 0 <= mid[0] < MH and 0 <= mid[1] < MW:
+                        m[mid] = True
+                if 0 <= cell[0] < MH and 0 <= cell[1] < MW:
+                    m[cell] = True
+                prev = cell
+    return m
+
+
+def class_grid(surf, bid_r, bridge_r, osm_ids, campus_idx, named_idx, lines=None):
     MH, MW = 810 // MT_M, 1272 // MT_M
     s = surf[:MH * MT_M, :MW * MT_M].reshape(MH, MT_M, MW, MT_M).transpose(0, 2, 1, 3).reshape(MH, MW, MT_M * MT_M)
     b = bid_r[:MH * MT_M, :MW * MT_M].reshape(MH, MT_M, MW, MT_M).transpose(0, 2, 1, 3).reshape(MH, MW, MT_M * MT_M)
@@ -172,6 +195,17 @@ def class_grid(surf, bid_r, bridge_r, osm_ids, campus_idx, named_idx):
     cls[thin & (frac[..., PATH] >= frac[..., ROAD])] = C['PATH']
     cls[thin & (frac[..., PATH] < frac[..., ROAD])] = C['ROAD']
     cls[(cls == C['PATH']) & (br.sum(-1) >= 0.10 * n)] = C['BRIDGE']
+    # keep thin features connected: every metatile an OSM way passes through (4-connected) is path/road,
+    # unless it is mostly open water (then only a bridge may cross it)
+    if lines:
+        road_m = trace_lines(lines['road'], MH, MW)
+        path_m = trace_lines(lines['path'], MH, MW)
+        bridge_m = trace_lines(lines['bridge'], MH, MW)
+        wet = frac[..., WATER] >= 0.70
+        cls[road_m & ~wet & (cls != C['PATH']) & (cls != C['BRIDGE'])] = C['ROAD']
+        cls[path_m & ~wet & ~road_m] = C['PATH']
+        cls[bridge_m] = C['BRIDGE']
+        cls[(cls == C['PATH']) & (br.sum(-1) >= 0.10 * n)] = C['BRIDGE']
     bmask = bfrac >= 0.40
     cls[bmask] = C['ROOF']
     for j, i in zip(*np.nonzero(bmask)):
@@ -204,7 +238,7 @@ def class_grid(surf, bid_r, bridge_r, osm_ids, campus_idx, named_idx):
     return cls, mid, forced
 
 
-def place_buildings(cls, mid, osm_ids, bprops, entrances, campus_idx, named_idx):
+def place_buildings(cls, mid, osm_ids, bprops, entrances, campus_idx, named_idx, edge):
     """Facade row on the south side of each building column; doors at OSM entrances or estimated."""
     MH, MW = cls.shape
     # south-up: (j-1) is the cell to the south
@@ -249,7 +283,7 @@ def place_buildings(cls, mid, osm_ids, bprops, entrances, campus_idx, named_idx)
                 j, i = c
                 d2 = ((pj - j) ** 2 + (pi - i) ** 2).min() if len(pj) else 0
                 south_ok = j > 0 and walk(cls[j - 1, i]) and not mid[j - 1, i]
-                return (0 if south_ok else 1, d2, i)
+                return (int(edge[j, i]), int(j > 0 and edge[j - 1, i]), 0 if south_ok else 1, d2, i)
             best = min(facades, key=score)
             placed[best] = dict(idx=bidx, j=best[0], i=best[1], estimated=True, entrances=[], moved=False, main=True)
         for d in placed.values():
@@ -525,26 +559,42 @@ def wrap(text, width=TEXT_COLS):
     return lines
 
 
+STOP = {'a', 'an', 'the', 'of', 'and', 'for', 'with', 'to', 'in', 'on', 'by', 'at', 'as', 'that', 'which',
+        'where', 'near', 'from', 'its', 'their', 'or', 'plus', 'also', 'is', 'are', 'was', 'used', 'built', 'named'}
+
+
 def dialogue(name, use):
+    """Name in caps, then the CSV use text cut at clause boundaries to fit TEXT_LINES lines of TEXT_COLS chars."""
     title = wrap(ascii_text(name).upper())
     room = TEXT_LINES - len(title)
     if not use or room <= 0:
         return title[:TEXT_LINES]
     use = ascii_text(use).strip()
-    # candidate prefixes, longest first: whole sentence, then clause cuts, then word cuts
-    first = re.split(r'(?<=[.!?])\s', use)[0].rstrip('.')
-    cands = [first]
-    for m in re.finditer(r'[:;,(]', first):
-        cands.append(first[:m.start()])
-    words = first.split()
-    cands += [' '.join(words[:k]) for k in range(len(words) - 1, 0, -1)]
-    cands = sorted({c.strip(' ,;:(-') for c in cands if c.strip()}, key=len, reverse=True)
-    for c in cands:
-        ln = wrap(c + '.')
-        if len(ln) <= room:
-            # word-cut prefixes ending in a dangling function word read badly: drop it
-            return title + ln
-    return title
+    # first sentence; a '. ' only ends a sentence after a word longer than 3 letters (keeps 'A.E. Doyle')
+    m = re.search(r'(?<=[a-z0-9)]{4})\.\s', use)
+    first = use[:m.start()] if m else use.rstrip('.')
+    segs = [x.strip() for x in re.split(r'[:;]|\s\(|\)|,', first) if x.strip()]
+    # drop a leading segment that just restates the building's name ("Eric V. Hauser Memorial Library: ...")
+    if len(segs) > 1 and (ascii_text(name).lower() in segs[0].lower() or segs[0].lower() in ascii_text(name).lower()):
+        segs = segs[1:]
+    best = None
+    for k in range(len(segs), 0, -1):              # longest run of whole clauses that fits
+        text = ', '.join(segs[:k]) + '.'
+        if len(wrap(text)) <= room:
+            best = text
+            break
+    if best is None:                                # word-cut the first clause, ending on a content word
+        words = segs[0].split()
+        for k in range(len(words) - 1, 0, -1):
+            ws = words[:k]
+            while ws and ws[-1].lower().strip(',') in STOP:
+                ws = ws[:-1]
+            text = ' '.join(ws).rstrip(',') + '...'
+            if ws and len(wrap(text)) <= room:
+                best = text
+                break
+    best = best[0].upper() + best[1:] if best else None
+    return title + (wrap(best) if best else [])
 
 
 # ================================================================ main
@@ -590,8 +640,24 @@ def main():
     bid_r = np.where(bc > 0, bc, bid_r)
     bridge_r = rasterize_ids([(b, 1) for b in bridges], H, W) if bridges else np.zeros_like(bid_r)
 
-    cls, mid, forced = class_grid(surf, bid_r, bridge_r, osm_ids, campus_idx, named_idx)
-    doors = place_buildings(cls, mid, osm_ids, bprops, entrances, campus_idx, named_idx)
+    lines = {'road': [], 'path': [], 'bridge': []}
+    for f in feats:
+        p = f['properties']
+        if f['geometry']['type'] not in ('LineString', 'MultiLineString'):
+            continue
+        if p.get('bridge'):
+            lines['bridge'].append(shape(f['geometry']))
+        elif p['kind'] == 'road':
+            lines['road'].append(shape(f['geometry']))
+        elif p['kind'] in ('path', 'service_road'):
+            lines['path'].append(shape(f['geometry']))
+    cls, mid, forced = class_grid(surf, bid_r, bridge_r, osm_ids, campus_idx, named_idx, lines)
+    edge = np.zeros(cls.shape, bool)          # metatiles on the outer ring of a zone (exits/border live there)
+    for z in ZONES:
+        j0, j1, i0, i1 = z['y0'] // MT_M, z['y1'] // MT_M, z['x0'] // MT_M, z['x1'] // MT_M
+        edge[j0:j1, [i0, i1 - 1]] = True
+        edge[[j0, j1 - 1], i0:i1] = True
+    doors = place_buildings(cls, mid, osm_ids, bprops, entrances, campus_idx, named_idx, edge)
     log('forced (sub-40 %) campus buildings:', forced)
     MH, MW = cls.shape
     # per-metatile style: roof style for buildings, 'parking' for OSM parking lots
@@ -617,7 +683,7 @@ def main():
         j0, j1, i0, i1 = z['y0'] // MT_M, z['y1'] // MT_M, z['x0'] // MT_M, z['x1'] // MT_M
         z['grid'] = cls[j0:j1, i0:i1][::-1].copy()
         z['bidx'] = mid[j0:j1, i0:i1][::-1].copy()
-        z['log'], z['warnings'] = [], []
+        z['log'], z['warnings'], z['notes'] = [], [], []
 
     def mt_local(z, j, i):            # global south-up metatile -> local (row, col) north-up
         return z['y1'] // MT_M - 1 - j, i - z['x0'] // MT_M
@@ -630,6 +696,9 @@ def main():
 
     for z in ZONES:
         z['col'] = collision(z)
+
+    # ---- exits (before signposts, so signposts never sit on an exit)
+    build_exits()
 
     # ---- actors (signposts) and door records
     for z in ZONES:
@@ -659,17 +728,25 @@ def main():
         per_b = defaultdict(list)
         for d in z['doors']:
             per_b[d['osm_id']].append(d)
+        trig_cells = set()
+        for t in z['triggers']:
+            for yy in range(t['y'], t['y'] + t['h']):
+                for xx in range(t['x'], t['x'] + t['w']):
+                    trig_cells.add((yy // 2, xx // 2))
         def free_spot(r, c, prefer):
-            for dr, dc in prefer:
-                rr, cc = r + dr, c + dc
-                if 0 < rr < g_.shape[0] - 1 and 0 < cc < g_.shape[1] - 1 and g_[rr, cc] in WALKABLE \
-                        and g_[rr, cc] != C['DOOR'] and (rr, cc) not in occupied:
-                    # never block a door apron (cell directly south of a door)
-                    if rr > 0 and g_[rr - 1, cc] == C['DOOR']:
-                        continue
-                    return rr, cc
+            for strict in (True, False):           # second pass allows the scene's edge metatiles
+                for dr, dc in prefer:
+                    rr, cc = r + dr, c + dc
+                    lo = 1 if strict else 0
+                    if lo <= rr < g_.shape[0] - lo and lo <= cc < g_.shape[1] - lo and g_[rr, cc] in WALKABLE \
+                            and g_[rr, cc] != C['DOOR'] and (rr, cc) not in occupied and (rr, cc) not in trig_cells:
+                        # never block a door apron (cell directly south of a door)
+                        if rr > 0 and g_[rr - 1, cc] == C['DOOR']:
+                            continue
+                        return rr, cc
             return None
-        ring = [(1, -1), (1, 1), (1, -2), (1, 2), (0, -1), (0, 1), (2, -1), (2, 1), (2, 0), (0, -2), (0, 2), (-1, -1), (-1, 1)]
+        ring = [(1, -1), (1, 1), (1, -2), (1, 2), (0, -1), (0, 1), (2, -1), (2, 1), (2, 0), (0, -2), (0, 2), (2, -2), (2, 2),
+                (1, -3), (1, 3), (-1, -1), (-1, 1), (3, 0), (3, -1), (3, 1)]
         for oid, ds in per_b.items():
             name = ds[0]['name']
             k = osm_ids.index(oid)
@@ -678,13 +755,14 @@ def main():
             prim = sorted(ds, key=lambda d: (not d['main'], d['door_estimated'], -d['y'], d['x']))[0]
             r, c = prim['y'] // 2, prim['x'] // 2
             spot = free_spot(r, c, ring)
+            extra = {}
             if not spot:
-                z['warnings'].append(f'no free tile for the signpost of {name} ({oid})')
-                continue
+                # nowhere free beside the door (exits or solid all round): read the sign at the door itself
+                spot, extra = (r, c), {'on_door': True}
+                z['warnings'].append(f'signpost of {name} ({oid}) placed on its door: no free tile beside it')
             occupied.add(spot)
-            z['actors'].append(dict(id=oid, name=name, sprite='signpost', x=spot[1] * 2, y=spot[0] * 2 + 1,
+            z['actors'].append(dict(id=oid, name=name, sprite='signpost', x=spot[1] * 2, y=spot[0] * 2 + 1, **extra,
                                     dialogue=dialogue(name, bprops[k].get('use')),
-                                    door=dict(x=prim['x'], y=prim['y']),
                                     **({'door_estimated': True} if prim['door_estimated'] else {})))
         for p, pt in venues:
             if not (z['x0'] <= pt.x < z['x1'] and z['y0'] <= pt.y < z['y1']):
@@ -699,9 +777,6 @@ def main():
             z['warnings'].append(f"{len(z['actors'])} signposts > {MAX_ACTORS}; dropped the unnamed-use ones")
             z['actors'] = sorted(z['actors'], key=lambda a: len(a['dialogue']), reverse=True)[:MAX_ACTORS]
         # signposts are solid in GB Studio, keep the collision grid open under them (actor collision handles it)
-
-    # ---- exits
-    build_exits()
 
     # ---- start
     zs = next(z for z in ZONES if z['id'] == START_LABEL)
@@ -788,19 +863,22 @@ def build_exits():
                     # a: top row, going up into b's bottom
                     ta = dict(x=t0 - T(a['x0']), y=0, w=t1 - t0, h=1)
                     tb = dict(x=t0 - T(b['x0']), y=b['h'] - 1, w=t1 - t0, h=1)
-                    da = dict(to=b['id'], to_x=mid - T(b['x0']) - 1, to_y=b['h'] - 3, direction='up')
-                    db = dict(to=a['id'], to_x=mid - T(a['x0']) - 1, to_y=2, direction='down')
+                    da = dict(to=b['id'], to_x=0, to_y=0, direction='up',
+                              _dest=('bottom', t0 - T(b['x0']), t1 - T(b['x0'])))
+                    db = dict(to=a['id'], to_x=0, to_y=0, direction='down',
+                              _dest=('top', t0 - T(a['x0']), t1 - T(a['x0'])))
                     names = (f"exit_n_{b['id']}_{k}", f"exit_s_{a['id']}_{k}")
                 else:
                     # t counts tiles in world y (south-up); local rows are north-up
                     ya, yb = T(a['y1']) - t1, T(b['y1']) - t1
                     ta = dict(x=a['w'] - 1, y=ya, w=1, h=t1 - t0)
                     tb = dict(x=0, y=yb, w=1, h=t1 - t0)
-                    da = dict(to=b['id'], to_x=2, to_y=T(b['y1']) - mid, direction='right')
-                    db = dict(to=a['id'], to_x=a['w'] - 4, to_y=T(a['y1']) - mid, direction='left')
+                    da = dict(to=b['id'], to_x=0, to_y=0, direction='right', _dest=('left', yb, yb + t1 - t0))
+                    db = dict(to=a['id'], to_x=0, to_y=0, direction='left', _dest=('right', ya, ya + t1 - t0))
                     names = (f"exit_e_{b['id']}_{k}", f"exit_w_{a['id']}_{k}")
-                trig[a['id']].append(dict(id=names[0], **ta, **da))
-                trig[b['id']].append(dict(id=names[1], **tb, **db))
+                pair = f"{a['id']}|{b['id']}|{d}|{k}"
+                trig[a['id']].append(dict(id=names[0], **ta, **da, _pair=pair))
+                trig[b['id']].append(dict(id=names[1], **tb, **db, _pair=pair))
         over = [zid for zid, ts in trig.items() if len(ts) > MAX_TRIGGERS]
         if not over:
             break
@@ -813,16 +891,44 @@ def build_exits():
         z['exit_chunk'] = max([chunk[k] for k in chunk if z['id'] in k] or [EXIT_CHUNK])
         for t in z['triggers']:
             z['col'][t['y']:t['y'] + t['h'], t['x']:t['x'] + t['w']] = 0
-    # landing spots must be walkable (2 tiles wide for the 16 px player)
+    dead = set()
+    # landing spot: inside the matching run of the destination edge, clear of its exit trigger.
+    # The player's collision box is row y, columns x and x+1 (tools/gbs/sprites.py BOUNDS_PLAYER).
     for z in ZONES:
         for t in z['triggers']:
             tz = zmap[t['to']]
             col = tz['col']
-            x, y = t['to_x'], t['to_y']
-            if not (0 <= y < col.shape[0] and 0 <= x < col.shape[1] - 1 and col[y, x] == 0 and col[y, x + 1] == 0):
-                nx, ny = nearest_walkable_inner(tz, x, y)
-                z['warnings'].append(f"{t['id']}: landing ({x},{y}) in {tz['id']} blocked, moved to ({nx},{ny})")
-                t['to_x'], t['to_y'] = nx, ny
+            edge, lo, hi = t.pop('_dest')
+            tcells = {(yy, xx) for u in tz['triggers'] for yy in range(u['y'], u['y'] + u['h'])
+                      for xx in range(u['x'], u['x'] + u['w'])}
+            ok = lambda x, y: 0 <= y < col.shape[0] and 0 <= x < col.shape[1] - 1 and col[y, x] == 0 \
+                and col[y, x + 1] == 0 and (y, x) not in tcells and (y, x + 1) not in tcells
+            centre = (lo + hi) / 2
+            spot = None
+            if edge in ('bottom', 'top'):
+                depths = [tz['h'] - 3, tz['h'] - 2] if edge == 'bottom' else [2, 1]
+                xs = sorted(range(lo, hi - 1), key=lambda x: abs(x + 1 - centre))
+                spot = next(((x, y) for y in depths for x in xs if ok(x, y)), None)
+            else:
+                xs = [2, 1] if edge == 'left' else [tz['w'] - 4, tz['w'] - 3]
+                ys = sorted(range(lo, hi), key=lambda y: abs(y + 0.5 - centre))
+                spot = next(((x, y) for x in xs for y in ys if ok(x, y)), None)
+            if spot is None:
+                dead.add(t['_pair'])
+                z['notes'].append(f"{t['id']}: no room for the 16 px player on the matching edge of {tz['id']} "
+                                  f"(one-metatile pocket); exit dropped on both sides")
+                continue
+            t['to_x'], t['to_y'] = spot
+    for z in ZONES:
+        keep = []
+        for t in z['triggers']:
+            if t['_pair'] in dead:
+                z['col'][t['y']:t['y'] + t['h'], t['x']:t['x'] + t['w']] = 1
+            else:
+                keep.append(t)
+        for t in keep:
+            t.pop('_pair')
+        z['triggers'] = keep
 
 
 def nearest_walkable_inner(z, x, y):
@@ -892,7 +998,8 @@ def write_all(player, prop_lines, forced, outside):
                     actor_position='x = left tile, y = bottom tile row of the 16x16 sprite',
                     unique_tiles=z['tiles'], kit=z['kit'], doors=z['doors'],
                     metatile_classes=[[CN[int(v)] for v in row] for row in z['grid']])
-        json.dump(dict(scene, _meta=meta), open(os.path.join(d, 'spec.json'), 'w'), indent=1, default=int)
+        json.dump(scene, open(os.path.join(d, 'spec.json'), 'w'), indent=1, default=int)
+        json.dump(meta, open(os.path.join(d, 'meta.json'), 'w'), indent=1, default=int)
         scenes.append(scene)
         zones_json.append(dict(id=z['id'], name=z['name'], x0=z['x0'], x1=z['x1'], y0=z['y0'], y1=z['y1'],
                                width_px=z['w_px'], height_px=z['h_px'], width_tiles=z['w'], height_tiles=z['h'],
@@ -951,6 +1058,10 @@ def report(player, forced, outside):
         for d in sorted(z['doors'], key=lambda d: (d['name'] or '', d['x'])):
             src = 'estimated' if d['door_estimated'] else ('OSM ' + ', '.join(d['entrances']) + (' (moved to facade)' if d['moved_to_facade'] else ''))
             L.append(f"| {z['id']} | {d['name'] or '(unnamed)'} | {d['osm_id']} | ({d['x']},{d['y']}) | {src} |")
+    L += ['', '## Notes', '']
+    for z in ZONES:
+        for n_ in z['notes']:
+            L.append(f"- `{z['id']}`: {n_}")
     L += ['', '## Warnings', '']
     any_w = False
     for z in ZONES:

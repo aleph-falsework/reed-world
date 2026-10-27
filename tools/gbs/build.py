@@ -104,3 +104,23 @@ def build_web(project_dir, out_dir, verbose: bool = False) -> Path:
         return index
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
+
+
+def check_project(project_dir) -> dict:
+    """Load the project with GB Studio 4.3.2's own loader and check every
+    .gbsres strictly against its TypeBox schemas (tools/gbs/node/check_project.ts).
+    Returns the checker's JSON report; report["ok"] is False on any schema
+    problem, if loading would migrate the project, or if a sprite lacks frames."""
+    import json
+
+    checker = gbs_src() / "out" / "cli" / "gbs-check.js"
+    if not checker.exists():
+        raise BuildError(f"{checker} missing; run tools/gbs/node/build_checker.sh")
+    proj = _project_file(project_dir).resolve()
+    r = subprocess.run(
+        ["node", str(checker), str(proj)], capture_output=True, text=True, cwd=gbs_src()
+    )
+    try:
+        return json.loads(r.stdout[r.stdout.index("{"):])
+    except ValueError:
+        raise BuildError(f"checker failed (exit {r.returncode}):\n{r.stderr[-2000:]}")

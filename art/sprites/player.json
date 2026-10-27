@@ -4,7 +4,7 @@
   16
  ],
  "transparent": "#e0f8cf",
- "transparent_note": "sprites use only #86c06c/#306850/#071821; #e0f8cf is background. Change SPRITE_KEY in make_art.py if GB Studio needs another key.",
+ "transparent_note": "GB Studio 4.3.2 format: RGBA, alpha 0 = transparent, inks #071821/#86c06c/#e0f8cf (see sprite_img).",
  "sheets": {
   "player.png": {
    "layout": "horizontal strip",

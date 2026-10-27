@@ -1,5 +1,5 @@
 {
- "build_seconds": 22.4,
+ "build_seconds": 21.5,
  "checks": {
   "a: starts in scene1 at (4,10)": true,
   "b: wall at column 12 stops player at x=10": true,
@@ -12,5 +12,7 @@
   "/home/claude/reed-world/tests/gbs_smoke/screens/c_signpost_dialogue.png",
   "/home/claude/reed-world/tests/gbs_smoke/screens/c2_dialogue_closed.png",
   "/home/claude/reed-world/tests/gbs_smoke/screens/d_scene2_loaded.png"
- ]
+ ],
+ "web_index": "/home/claude/reed-world/tests/gbs_smoke/out/web/index.html",
+ "web_seconds": 20.9
 }

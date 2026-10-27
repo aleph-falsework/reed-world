@@ -6,33 +6,33 @@ Player start: `front_lawn` at tile (92, 47), facing up.
 
 | Scene | Size px | Unique tiles | Actors | Triggers | Doors (est.) | Kit | Warnings |
 |---|---|---|---|---|---|---|---|
-| Front Lawn (`front_lawn`) | 960×464 | 68 | 1 | 24 | 1 (1) | art | 4 |
-| Old Campus (`old_campus`) | 960×352 | 77 | 8 | 23 | 10 (3) | art | 5 |
-| West Campus (`west_campus`) | 640×512 | 95 | 5 | 14 | 8 (3) | art | 2 |
-| Performing Arts & Sports (`performing_arts`) | 640×496 | 78 | 5 | 22 | 5 (4) | art | 4 |
-| Science Quad (`science_quad`) | 432×416 | 59 | 4 | 23 | 5 (4) | art | 3 |
-| Language Houses (`language_houses`) | 432×432 | 77 | 7 | 21 | 7 (7) | art | 2 |
-| Studio Arts (`studio_arts`) | 432×528 | 65 | 3 | 16 | 3 (3) | art | 4 |
-| Reed Canyon East (`canyon_east`) | 432×624 | 73 | 0 | 16 | 0 (0) | art | 5 |
-| Reed Lake (`reed_lake`) | 752×304 | 79 | 0 | 12 | 0 (0) | art | 3 |
-| Cross Canyon (`cross_canyon`) | 608×864 | 93 | 7 | 19 | 10 (6) | art | 5 |
-| The Grove (`the_grove`) | 672×864 | 77 | 7 | 25 | 11 (6) | art | 1 |
-| Northwest Campus (`northwest`) | 576×864 | 88 | 11 | 9 | 11 (11) | art | 0 |
+| Front Lawn (`front_lawn`) | 960×464 | 68 | 1 | 25 | 1 (1) | art | 0 |
+| Old Campus (`old_campus`) | 960×352 | 71 | 8 | 23 | 10 (3) | art | 0 |
+| West Campus (`west_campus`) | 640×512 | 88 | 5 | 13 | 8 (3) | art | 0 |
+| Performing Arts & Sports (`performing_arts`) | 640×496 | 74 | 5 | 21 | 5 (4) | art | 0 |
+| Science Quad (`science_quad`) | 432×416 | 63 | 5 | 22 | 5 (4) | art | 1 |
+| Language Houses (`language_houses`) | 432×432 | 70 | 7 | 20 | 7 (7) | art | 0 |
+| Studio Arts (`studio_arts`) | 432×528 | 63 | 3 | 14 | 3 (3) | art | 0 |
+| Reed Canyon East (`canyon_east`) | 432×624 | 72 | 0 | 14 | 0 (0) | art | 0 |
+| Reed Lake (`reed_lake`) | 752×304 | 80 | 0 | 8 | 0 (0) | art | 0 |
+| Cross Canyon (`cross_canyon`) | 608×864 | 87 | 7 | 15 | 10 (6) | art | 0 |
+| The Grove (`the_grove`) | 672×864 | 73 | 7 | 24 | 11 (6) | art | 0 |
+| Northwest Campus (`northwest`) | 576×864 | 82 | 11 | 9 | 11 (11) | art | 0 |
 
 ## Tile budget log
 
 - **front_lawn**: art kit, full detail: 68 unique tiles
-- **old_campus**: art kit, full detail: 77 unique tiles
-- **west_campus**: art kit, full detail: 95 unique tiles
-- **performing_arts**: art kit, full detail: 78 unique tiles
-- **science_quad**: art kit, full detail: 59 unique tiles
-- **language_houses**: art kit, full detail: 77 unique tiles
-- **studio_arts**: art kit, full detail: 65 unique tiles
-- **canyon_east**: art kit, full detail: 73 unique tiles
-- **reed_lake**: art kit, full detail: 79 unique tiles
-- **cross_canyon**: art kit, full detail: 93 unique tiles
-- **the_grove**: art kit, full detail: 77 unique tiles
-- **northwest**: art kit, full detail: 88 unique tiles
+- **old_campus**: art kit, full detail: 71 unique tiles
+- **west_campus**: art kit, full detail: 88 unique tiles
+- **performing_arts**: art kit, full detail: 74 unique tiles
+- **science_quad**: art kit, full detail: 63 unique tiles
+- **language_houses**: art kit, full detail: 70 unique tiles
+- **studio_arts**: art kit, full detail: 63 unique tiles
+- **canyon_east**: art kit, full detail: 72 unique tiles
+- **reed_lake**: art kit, full detail: 80 unique tiles
+- **cross_canyon**: art kit, full detail: 87 unique tiles
+- **the_grove**: art kit, full detail: 73 unique tiles
+- **northwest**: art kit, full detail: 82 unique tiles
 
 ## Doors
 
@@ -61,19 +61,19 @@ Real doors come from OSM `entrance` nodes. "moved" means the entrance is on a no
 | west_campus | Scholz Hall | way/119843581 | (44,24) | OSM node/8778150674 |
 | performing_arts | Anna Mann Hall | way/119843580 | (72,52) | estimated |
 | performing_arts | Gyms I and II | way/910685692 | (42,18) | estimated |
-| performing_arts | Kaul Auditorium | way/40877933 | (74,26) | estimated |
+| performing_arts | Kaul Auditorium | way/40877933 | (58,24) | estimated |
 | performing_arts | Performing Arts Building | way/218153556 | (54,38) | OSM node/8778150671, node/8945851201, node/12951055209 |
 | performing_arts | Reed College Sports Center | way/243997608 | (62,10) | estimated |
-| science_quad | Biology | way/142983684 | (0,48) | estimated |
+| science_quad | Biology | way/142983684 | (2,48) | estimated |
 | science_quad | Chemistry | way/142983685 | (12,26) | estimated |
 | science_quad | Physics | way/302430449 | (6,28) | OSM node/12951055216 |
-| science_quad | Psychology | way/119846265 | (16,48) | estimated |
+| science_quad | Psychology | way/119846265 | (14,46) | estimated |
 | science_quad | Reed Research Reactor | way/119846263 | (32,34) | estimated |
 | language_houses | Chinese House | way/371026024 | (48,28) | estimated |
 | language_houses | Educational Technology Center | way/119843572 | (12,20) | estimated |
 | language_houses | French House | way/371026021 | (40,36) | estimated |
 | language_houses | German House | way/371022333 | (30,32) | estimated |
-| language_houses | Greywood Hall | way/119843567 | (0,30) | estimated |
+| language_houses | Greywood Hall | way/119843567 | (2,30) | estimated |
 | language_houses | Russian House | way/371026022 | (22,24) | estimated |
 | language_houses | Spanish House | way/371026023 | (48,38) | estimated |
 | studio_arts | Dorothy Johansen House | way/367893606 | (18,40) | estimated |
@@ -91,9 +91,9 @@ Real doors come from OSM `entrance` nodes. "moved" means the entrance is on a no
 | cross_canyon | Woodbridge Hall | way/126856904 | (22,78) | estimated |
 | the_grove | Aspen House | way/142983682 | (20,70) | estimated |
 | the_grove | Bidwell House | way/142983683 | (20,62) | estimated |
-| the_grove | Greenwood Hall | way/160952269 | (26,102) | estimated |
+| the_grove | Greenwood Hall | way/160952269 | (30,102) | estimated |
 | the_grove | Physical Plant | way/40912073 | (76,98) | estimated |
-| the_grove | Sequoia House | way/142983681 | (6,72) | estimated |
+| the_grove | Sequoia House | way/142983681 | (4,72) | estimated |
 | the_grove | Sitka House | way/142983680 | (4,56) | estimated |
 | the_grove | Trillium | way/785269171 | (34,54) | OSM node/8777894226 (moved to facade) |
 | the_grove | Trillium | way/785269171 | (44,54) | OSM node/8777894218, node/8777894229, node/8777894233 (moved to facade) |
@@ -112,45 +112,21 @@ Real doors come from OSM `entrance` nodes. "moved" means the entrance is on a no
 | northwest | Reed College Apartments | way/142983672 | (60,74) | estimated |
 | northwest | Reed Warehouse | way/685753545 | (4,52) | estimated |
 
+## Notes
+
+- `old_campus`: exit_e_science_quad_0: no room for the 16 px player on the matching edge of science_quad (one-metatile pocket); exit dropped on both sides
+- `science_quad`: exit_w_old_campus_0: no room for the 16 px player on the matching edge of old_campus (one-metatile pocket); exit dropped on both sides
+- `studio_arts`: exit_n_canyon_east_6: no room for the 16 px player on the matching edge of canyon_east (one-metatile pocket); exit dropped on both sides
+- `studio_arts`: exit_w_language_houses_2: no room for the 16 px player on the matching edge of language_houses (one-metatile pocket); exit dropped on both sides
+- `canyon_east`: exit_s_studio_arts_6: no room for the 16 px player on the matching edge of studio_arts (one-metatile pocket); exit dropped on both sides
+- `reed_lake`: exit_e_canyon_east_2: no room for the 16 px player on the matching edge of canyon_east (one-metatile pocket); exit dropped on both sides
+- `reed_lake`: exit_w_cross_canyon_3: no room for the 16 px player on the matching edge of cross_canyon (one-metatile pocket); exit dropped on both sides
+- `cross_canyon`: exit_e_reed_lake_4: no room for the 16 px player on the matching edge of reed_lake (one-metatile pocket); exit dropped on both sides
+- `cross_canyon`: exit_e_reed_lake_5: no room for the 16 px player on the matching edge of reed_lake (one-metatile pocket); exit dropped on both sides
+- `the_grove`: exit_e_cross_canyon_2: no room for the 16 px player on the matching edge of cross_canyon (one-metatile pocket); exit dropped on both sides
+
 ## Warnings
 
-- `front_lawn`: exit_n_old_campus_0: landing (3,41) in old_campus blocked, moved to (3,37)
-- `front_lawn`: exit_n_old_campus_1: landing (10,41) in old_campus blocked, moved to (10,37)
-- `front_lawn`: exit_n_old_campus_2: landing (19,41) in old_campus blocked, moved to (19,37)
-- `front_lawn`: exit_n_old_campus_3: landing (27,41) in old_campus blocked, moved to (27,37)
-- `old_campus`: exit_e_science_quad_0: landing (2,19) in science_quad blocked, moved to (2,17)
-- `old_campus`: exit_n_the_grove_0: landing (81,105) in the_grove blocked, moved to (80,103)
-- `old_campus`: exit_s_front_lawn_10: landing (107,2) in front_lawn blocked, moved to (108,2)
-- `old_campus`: exit_s_front_lawn_11: landing (115,2) in front_lawn blocked, moved to (116,2)
-- `old_campus`: exit_s_front_lawn_4: landing (39,2) in front_lawn blocked, moved to (38,4)
-- `west_campus`: exit_n_performing_arts_0: landing (3,59) in performing_arts blocked, moved to (4,59)
-- `west_campus`: exit_n_performing_arts_8: landing (69,59) in performing_arts blocked, moved to (72,59)
-- `performing_arts`: exit_e_old_campus_3: landing (2,13) in old_campus blocked, moved to (2,9)
-- `performing_arts`: exit_n_the_grove_0: landing (11,105) in the_grove blocked, moved to (11,101)
-- `performing_arts`: exit_n_the_grove_1: landing (22,105) in the_grove blocked, moved to (24,105)
-- `performing_arts`: exit_s_west_campus_8: landing (69,2) in west_campus blocked, moved to (68,2)
-- `science_quad`: no free tile for the signpost of Biology (way/142983684)
-- `science_quad`: exit_s_language_houses_2: landing (14,2) in language_houses blocked, moved to (16,2)
-- `science_quad`: exit_w_old_campus_0: landing (116,19) in old_campus blocked, moved to (116,20)
-- `language_houses`: exit_n_science_quad_0: landing (2,49) in science_quad blocked, moved to (12,49)
-- `language_houses`: exit_n_science_quad_1: landing (8,49) in science_quad blocked, moved to (12,49)
-- `studio_arts`: exit_n_canyon_east_0: landing (18,75) in canyon_east blocked, moved to (18,73)
-- `studio_arts`: exit_n_canyon_east_1: landing (24,75) in canyon_east blocked, moved to (26,75)
-- `studio_arts`: exit_n_canyon_east_6: landing (52,75) in canyon_east blocked, moved to (50,75)
-- `studio_arts`: exit_w_language_houses_2: landing (50,30) in language_houses blocked, moved to (48,30)
-- `canyon_east`: exit_s_studio_arts_0: landing (18,2) in studio_arts blocked, moved to (16,2)
-- `canyon_east`: exit_s_studio_arts_1: landing (24,2) in studio_arts blocked, moved to (16,2)
-- `canyon_east`: exit_s_studio_arts_2: landing (30,2) in studio_arts blocked, moved to (32,2)
-- `canyon_east`: exit_s_studio_arts_6: landing (52,2) in studio_arts blocked, moved to (50,2)
-- `canyon_east`: exit_w_science_quad_0: landing (50,32) in science_quad blocked, moved to (50,31)
-- `reed_lake`: exit_e_canyon_east_2: landing (2,1) in canyon_east blocked, moved to (2,2)
-- `reed_lake`: exit_s_science_quad_1: landing (37,2) in science_quad blocked, moved to (38,2)
-- `reed_lake`: exit_w_cross_canyon_3: landing (72,89) in cross_canyon blocked, moved to (72,87)
-- `cross_canyon`: exit_e_reed_lake_0: landing (2,32) in reed_lake blocked, moved to (2,31)
-- `cross_canyon`: exit_e_reed_lake_4: landing (2,12) in reed_lake blocked, moved to (2,14)
-- `cross_canyon`: exit_e_reed_lake_5: landing (2,8) in reed_lake blocked, moved to (4,8)
-- `cross_canyon`: exit_s_old_campus_2: landing (62,2) in old_campus blocked, moved to (64,2)
-- `cross_canyon`: exit_w_the_grove_0: landing (80,105) in the_grove blocked, moved to (80,103)
-- `the_grove`: exit_e_cross_canyon_2: landing (2,85) in cross_canyon blocked, moved to (2,86)
+- `science_quad`: signpost of Biology (way/142983684) placed on its door: no free tile beside it
 - Campus buildings under 40 % of any metatile, forced onto their best-covered metatile: way/787036016
 - Zone edge: Greywood Hall (way/119843567): 3.3 m² sliver across a zone edge, not drawn

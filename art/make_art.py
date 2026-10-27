@@ -62,6 +62,20 @@ def to_img(a, scale=1):
     return im
 
 
+def sprite_img(a):
+    """GB Studio 4.3.2 sprites: 3 colours + alpha. The kit draws sprites in
+    #071821/#306850/#86c06c with SPRITE_KEY as background; GB Studio renders
+    #306850 as black on sprites, so shift the two lighter inks up one step
+    (#306850->#86c06c, #86c06c->#e0f8cf) and make the key transparent."""
+    rgb = RGB[a].copy()
+    alpha = np.where(a == SPRITE_KEY, 0, 255).astype(np.uint8)
+    remap = {(0x30, 0x68, 0x50): (0x86, 0xc0, 0x6c), (0x86, 0xc0, 0x6c): (0xe0, 0xf8, 0xcf)}
+    out = rgb.copy()
+    for src, dst in remap.items():
+        m = np.all(rgb == src, axis=-1); out[m] = dst
+    return Image.fromarray(np.dstack([out, alpha]), "RGBA")
+
+
 # --------------------------------------------------------------------------
 # Kit container: metatiles are sliced into 8x8 tiles and deduplicated.
 # --------------------------------------------------------------------------
@@ -1145,13 +1159,12 @@ def write_all():
     # sprites
     for fn, lst in (("player.png", STRIP_MAIN), ("player_left.png", STRIP_LEFT),
                     ("player_ext.png", STRIP_EXT)):
-        p = os.path.join(ROOT, "sprites", fn); to_img(strip(lst)).save(p); written.append(p)
-    p = os.path.join(ROOT, "sprites", "signpost.png"); to_img(SIGNPOST_SPRITE).save(p); written.append(p)
+        p = os.path.join(ROOT, "sprites", fn); sprite_img(strip(lst)).save(p); written.append(p)
+    p = os.path.join(ROOT, "sprites", "signpost.png"); sprite_img(SIGNPOST_SPRITE).save(p); written.append(p)
     pj = {
         "frame_size": [16, 16],
         "transparent": PALETTE_HEX[SPRITE_KEY],
-        "transparent_note": "sprites use only #86c06c/#306850/#071821; #e0f8cf is background. "
-                            "Change SPRITE_KEY in make_art.py if GB Studio needs another key.",
+        "transparent_note": "GB Studio 4.3.2 format: RGBA, alpha 0 = transparent, inks #071821/#86c06c/#e0f8cf (see sprite_img).",
         "sheets": {
             "player.png": {"layout": "horizontal strip", "frames": STRIP_MAIN,
                            "note": "left = right mirrored (engine flip)"},
