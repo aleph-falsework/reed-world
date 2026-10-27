@@ -122,6 +122,20 @@ These assume one person directing, with AI writing the code. The art is the unkn
 
 ---
 
+## Tracking
+
+Jira project **RW** (Reed-World), at falsework.atlassian.net.
+- **RW-1 · GB Studio campus walk** (epic): RW-3 to RW-15
+- **RW-2 · World layer: high fidelity** (epic): RW-16 (bare-earth DEM), RW-17 (canopy and heights)
+
+Blocking links:
+- RW-4 zones → RW-6 exporter
+- RW-3 format spike → RW-13 scene assembly
+- RW-9 photos → RW-11 hero buildings
+- RW-16 DEM → RW-10 tile kit (ledges and slopes)
+
+---
+
 ## 6. Prompt for the next session
 
 Paste this into a new session that has the repo attached:
