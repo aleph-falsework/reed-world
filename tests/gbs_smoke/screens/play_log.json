@@ -1,0 +1,72 @@
+[
+  {
+    "name": "a_scene1_renders",
+    "path": "/home/claude/reed-world/tests/gbs_smoke/screens/a_scene1_renders.png",
+    "frame": 120,
+    "player": {
+      "px": 32,
+      "py": 80,
+      "x": 4,
+      "y": 10,
+      "dir": "right",
+      "flags": 40
+    },
+    "scene": "scene_scene1"
+  },
+  {
+    "name": "b_wall_blocks_player",
+    "path": "/home/claude/reed-world/tests/gbs_smoke/screens/b_wall_blocks_player.png",
+    "frame": 211,
+    "player": {
+      "px": 80,
+      "py": 80,
+      "x": 10,
+      "y": 10,
+      "dir": "right",
+      "flags": 40
+    },
+    "scene": "scene_scene1"
+  },
+  {
+    "name": "c_signpost_dialogue",
+    "path": "/home/claude/reed-world/tests/gbs_smoke/screens/c_signpost_dialogue.png",
+    "frame": 394,
+    "player": {
+      "px": 32,
+      "py": 56,
+      "x": 4,
+      "y": 7,
+      "dir": "up",
+      "flags": 40
+    },
+    "scene": "scene_scene1"
+  },
+  {
+    "name": "c2_dialogue_closed",
+    "path": "/home/claude/reed-world/tests/gbs_smoke/screens/c2_dialogue_closed.png",
+    "frame": 437,
+    "player": {
+      "px": 32,
+      "py": 56,
+      "x": 4,
+      "y": 7,
+      "dir": "up",
+      "flags": 40
+    },
+    "scene": "scene_scene1"
+  },
+  {
+    "name": "d_scene2_loaded",
+    "path": "/home/claude/reed-world/tests/gbs_smoke/screens/d_scene2_loaded.png",
+    "frame": 601,
+    "player": {
+      "px": 88,
+      "py": 128,
+      "x": 11,
+      "y": 16,
+      "dir": "up",
+      "flags": 40
+    },
+    "scene": "scene_scene2"
+  }
+]
