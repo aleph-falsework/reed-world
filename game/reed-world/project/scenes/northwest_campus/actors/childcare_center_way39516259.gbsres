@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 10,
+  "id": "6ca63f5e-596b-5b87-a1a1-036882b5b4e3",
+  "symbol": "actor_way_39516259",
+  "prefabId": "",
+  "name": "Childcare Center",
+  "notes": "id: way/39516259 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 42,
+  "y": 29,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "CHILDCARE CENTER"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "13f1542f-b97d-5eb9-92ec-7c944d4a1e32"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

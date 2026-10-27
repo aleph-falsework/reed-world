@@ -1,0 +1,56 @@
+{
+  "_resourceType": "trigger",
+  "_index": 16,
+  "id": "537ded13-b1ba-58bd-ab6e-157c6915b178",
+  "symbol": "trigger_the_grove_exit_s_ol",
+  "prefabId": "",
+  "name": "exit_s_old_campus_0",
+  "notes": "id: exit_s_old_campus_0 -> old_campus",
+  "x": 82,
+  "y": 107,
+  "width": 2,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "63329105-269c-5a55-b8f3-9553c4ac4c8c",
+        "x": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "xpos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": -80
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 2
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        },
+        "y": {
+          "type": "number",
+          "value": 1
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "dca3a06f-92fd-5819-ac64-325ad4a2e585"
+    }
+  ],
+  "leaveScript": []
+}

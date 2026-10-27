@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 5,
+  "id": "3ef38610-3af2-5844-8762-cbc33897652c",
+  "symbol": "actor_way_40877514",
+  "prefabId": "",
+  "name": "Student Center",
+  "notes": "id: way/40877514 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 44,
+  "y": 19,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "STUDENT CENTER\nStudent activities\noffice and",
+          "multicultural\nresource center,\nclub support."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "175c2d27-9708-5d13-bbe3-455beaf0ec44"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

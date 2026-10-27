@@ -1,0 +1,56 @@
+{
+  "_resourceType": "trigger",
+  "_index": 0,
+  "id": "895a2f21-0684-5ba4-9e2c-9c66f12bf4b8",
+  "symbol": "trigger_cross_canyon_exit_e",
+  "prefabId": "",
+  "name": "exit_e_reed_lake_0",
+  "notes": "id: exit_e_reed_lake_0 -> reed_lake",
+  "x": 75,
+  "y": 100,
+  "width": 1,
+  "height": 2,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "3722cbc3-48ee-5c28-a8bf-fc23efd7a916",
+        "x": {
+          "type": "number",
+          "value": 1
+        },
+        "y": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": -70
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 31
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 30
+          }
+        },
+        "direction": "right",
+        "fadeSpeed": "2"
+      },
+      "id": "48899bd8-8f2c-5879-a65c-a473be44cba1"
+    }
+  ],
+  "leaveScript": []
+}

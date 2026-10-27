@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "d3e3a2bd-9d65-50a7-b89e-f931c66cc7df",
+  "symbol": "actor_way_142983684",
+  "prefabId": "",
+  "name": "Biology",
+  "notes": "id: way/142983684 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 49,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "BIOLOGY\nBiology labs,\nclassrooms and an",
+          "auditorium."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "1f95be6e-b7cb-5f43-ad7c-09d971b5c809"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "19c4ab09-ef17-525c-ac82-a3446dad54ba",
+  "name": "northwest",
+  "symbol": "bg_northwest",
+  "tileColors": "",
+  "filename": "northwest.png",
+  "width": 72,
+  "height": 108,
+  "imageWidth": 576,
+  "imageHeight": 864,
+  "autoColor": false
+}

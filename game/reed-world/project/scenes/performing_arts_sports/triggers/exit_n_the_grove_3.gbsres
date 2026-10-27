@@ -1,0 +1,49 @@
+{
+  "_resourceType": "trigger",
+  "_index": 10,
+  "id": "b4c281cf-56fc-57f7-8f54-486b0c1457c7",
+  "symbol": "trigger_performing_arts_exi_9",
+  "prefabId": "",
+  "name": "exit_n_the_grove_3",
+  "notes": "id: exit_n_the_grove_3 -> the_grove",
+  "x": 72,
+  "y": 0,
+  "width": 8,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "f02b12d1-8de8-5e52-a97e-55b8b3760346",
+        "x": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 78
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 72
+          }
+        },
+        "y": {
+          "type": "number",
+          "value": 106
+        },
+        "direction": "up",
+        "fadeSpeed": "2"
+      },
+      "id": "a4de0a53-bb22-5e3f-a004-6d0f3c20a88d"
+    }
+  ],
+  "leaveScript": []
+}

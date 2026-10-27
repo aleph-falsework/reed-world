@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "8833c6c2-3835-57bf-b81e-4381c58f78ff",
+  "name": "studio_arts",
+  "symbol": "bg_studio_arts",
+  "tileColors": "",
+  "filename": "studio_arts.png",
+  "width": 54,
+  "height": 66,
+  "imageWidth": 432,
+  "imageHeight": 528,
+  "autoColor": false
+}

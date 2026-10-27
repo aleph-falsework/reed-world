@@ -1,0 +1,56 @@
+{
+  "_resourceType": "trigger",
+  "_index": 3,
+  "id": "1ba8aadd-70fe-50f8-bfac-92bd274a18f0",
+  "symbol": "trigger_science_quad_exit_e_2",
+  "prefabId": "",
+  "name": "exit_e_studio_arts_0",
+  "notes": "id: exit_e_studio_arts_0 -> studio_arts",
+  "x": 53,
+  "y": 46,
+  "width": 1,
+  "height": 4,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "fc51d511-d12e-5c86-849d-afe3a1d34a94",
+        "x": {
+          "type": "number",
+          "value": 1
+        },
+        "y": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": -40
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 13
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 12
+          }
+        },
+        "direction": "right",
+        "fadeSpeed": "2"
+      },
+      "id": "226925c1-759c-5ad9-9137-7859c4214b0c"
+    }
+  ],
+  "leaveScript": []
+}

@@ -1,0 +1,56 @@
+{
+  "_resourceType": "trigger",
+  "_index": 0,
+  "id": "d526f14f-e4a1-5562-9f7f-80efaafdee51",
+  "symbol": "trigger_west_campus_exit_e_",
+  "prefabId": "",
+  "name": "exit_e_front_lawn_0",
+  "notes": "id: exit_e_front_lawn_0 -> front_lawn",
+  "x": 79,
+  "y": 36,
+  "width": 1,
+  "height": 4,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "a7363636-b50b-55d9-9bde-a25859601447",
+        "x": {
+          "type": "number",
+          "value": 1
+        },
+        "y": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": 18
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 57
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 54
+          }
+        },
+        "direction": "right",
+        "fadeSpeed": "2"
+      },
+      "id": "65b8a46c-8b1e-5a0b-adfd-8170c5dc78c2"
+    }
+  ],
+  "leaveScript": []
+}

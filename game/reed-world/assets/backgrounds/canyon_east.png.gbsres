@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "7fb5a9e1-bcf6-5c52-9b32-0f20f067ea05",
+  "name": "canyon_east",
+  "symbol": "bg_canyon_east",
+  "tileColors": "",
+  "filename": "canyon_east.png",
+  "width": 54,
+  "height": 78,
+  "imageWidth": 432,
+  "imageHeight": 624,
+  "autoColor": false
+}

@@ -1828,7 +1828,8 @@
     "id": "way/39516256",
     "kind": "building",
     "building": "yes",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 7.8
    },
    "geometry": {
     "type": "Polygon",
@@ -1867,7 +1868,8 @@
     "name": "Childcare Center",
     "building": "yes",
     "amenity": "childcare",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 12.7
    },
    "geometry": {
     "type": "Polygon",
@@ -1964,7 +1966,8 @@
     "realm": "campus",
     "map_no": "4",
     "category": "Student services",
-    "use": "Medical care and mental-health counseling for students: appointments, short-term therapy, referrals, health education."
+    "use": "Medical care and mental-health counseling for students: appointments, short-term therapy, referrals, health education.",
+    "height_lidar_m": 11.9
    },
    "geometry": {
     "type": "Polygon",
@@ -2006,7 +2009,8 @@
     "realm": "campus",
     "map_no": "27",
     "category": "Student housing",
-    "use": "Residence hall on the north side of campus near the sports fields."
+    "use": "Residence hall on the north side of campus near the sports fields.",
+    "height_lidar_m": 10.1
    },
    "geometry": {
     "type": "Polygon",
@@ -2116,7 +2120,8 @@
     "realm": "campus",
     "map_no": "28",
     "category": "Student housing",
-    "use": "Residence hall on the north side of campus near the sports fields."
+    "use": "Residence hall on the north side of campus near the sports fields.",
+    "height_lidar_m": 9.7
    },
    "geometry": {
     "type": "Polygon",
@@ -2222,7 +2227,8 @@
     "realm": "campus",
     "map_no": "35",
     "category": "Academic / administration",
-    "use": "Reed's original 1912 academic building: humanities and social science classrooms and faculty offices, the admission office and the chapel."
+    "use": "Reed's original 1912 academic building: humanities and social science classrooms and faculty offices, the admission office and the chapel.",
+    "height_lidar_m": 16.9
    },
    "geometry": {
     "type": "Polygon",
@@ -2355,7 +2361,8 @@
     "realm": "campus",
     "map_no": "26",
     "category": "Student housing",
-    "use": "Reed's original 1912 Tudor Gothic dormitory, divided into eight halls (Abington, Doyle, Eastport, Kerr, Ladd, Quincy, Westport, Winch)."
+    "use": "Reed's original 1912 Tudor Gothic dormitory, divided into eight halls (Abington, Doyle, Eastport, Kerr, Ladd, Quincy, Westport, Winch).",
+    "height_lidar_m": 12.7
    },
    "geometry": {
     "type": "Polygon",
@@ -2409,7 +2416,8 @@
     "realm": "campus",
     "map_no": "24",
     "category": "Student life",
-    "use": "Large hall for dances, concerts, student events and Renn Fayre; houses Paradox Caf\u00e9, a coffee shop."
+    "use": "Large hall for dances, concerts, student events and Renn Fayre; houses Paradox Caf\u00e9, a coffee shop.",
+    "height_lidar_m": 17.8
    },
    "geometry": {
     "type": "Polygon",
@@ -2474,7 +2482,8 @@
     "realm": "campus",
     "map_no": "34",
     "category": "Student life",
-    "use": "Student activities office and multicultural resource center: club support, event planning and identity-based community programs."
+    "use": "Student activities office and multicultural resource center: club support, event planning and identity-based community programs.",
+    "height_lidar_m": 23.5
    },
    "geometry": {
     "type": "Polygon",
@@ -2515,7 +2524,8 @@
     "realm": "campus",
     "map_no": "23",
     "category": "Student services / dining",
-    "use": "Commons dining hall, bookstore, mail services and SEEDS (community service and engagement office)."
+    "use": "Commons dining hall, bookstore, mail services and SEEDS (community service and engagement office).",
+    "height_lidar_m": 9.2
    },
    "geometry": {
     "type": "Polygon",
@@ -2581,7 +2591,8 @@
     "realm": "campus",
     "map_no": "22",
     "category": "Performance / lectures",
-    "use": "Main auditorium for concerts, lectures, convocation and large events; includes Gray Lounge for receptions."
+    "use": "Main auditorium for concerts, lectures, convocation and large events; includes Gray Lounge for receptions.",
+    "height_lidar_m": 15.0
    },
    "geometry": {
     "type": "Polygon",
@@ -2650,7 +2661,8 @@
     "realm": "campus",
     "map_no": "20",
     "category": "Operations",
-    "use": "Facilities Services: maintenance, grounds, custodial and trades shops that keep the campus running."
+    "use": "Facilities Services: maintenance, grounds, custodial and trades shops that keep the campus running.",
+    "height_lidar_m": 11.3
    },
    "geometry": {
     "type": "Polygon",
@@ -2780,7 +2792,8 @@
     "kind": "building",
     "name": "Exhibit Hall",
     "building": "service",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.6
    },
    "geometry": {
     "type": "Polygon",
@@ -2913,7 +2926,8 @@
     "id": "way/119843545",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 14.4
    },
    "geometry": {
     "type": "Polygon",
@@ -2979,7 +2993,8 @@
     "realm": "campus",
     "map_no": "38",
     "category": "Academic",
-    "use": "Eric V. Hauser Memorial Library: stacks, study spaces, special collections and archives, thesis tower; also the Cooley Art Gallery for exhibitions."
+    "use": "Eric V. Hauser Memorial Library: stacks, study spaces, special collections and archives, thesis tower; also the Cooley Art Gallery for exhibitions.",
+    "height_lidar_m": 15.1
    },
    "geometry": {
     "type": "Polygon",
@@ -3093,7 +3108,8 @@
     "realm": "campus",
     "map_no": "37",
     "category": "Academic",
-    "use": "Lecture hall (used for large lectures such as the Humanities 110 lectures), faculty offices and a lounge."
+    "use": "Lecture hall (used for large lectures such as the Humanities 110 lectures), faculty offices and a lounge.",
+    "height_lidar_m": 11.4
    },
    "geometry": {
     "type": "Polygon",
@@ -3343,7 +3359,8 @@
     "id": "way/119843566",
     "kind": "building",
     "building": "yes",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 7.7
    },
    "geometry": {
     "type": "Polygon",
@@ -3384,7 +3401,8 @@
     "realm": "campus",
     "map_no": "42",
     "category": "Administration",
-    "use": "Alumni and parent relations, campus information and career services (Center for Life Beyond Reed)."
+    "use": "Alumni and parent relations, campus information and career services (Center for Life Beyond Reed).",
+    "height_lidar_m": 14.7
    },
    "geometry": {
     "type": "Polygon",
@@ -3434,7 +3452,8 @@
     "realm": "campus",
     "map_no": "43",
     "category": "Academic support",
-    "use": "Instructional technology support, computer labs and media services for classes and faculty."
+    "use": "Instructional technology support, computer labs and media services for classes and faculty.",
+    "height_lidar_m": 16.4
    },
    "geometry": {
     "type": "Polygon",
@@ -3547,7 +3566,8 @@
     "realm": "campus",
     "map_no": "16",
     "category": "Student housing",
-    "use": "Coed residence hall named for a former Reed president."
+    "use": "Coed residence hall named for a former Reed president.",
+    "height_lidar_m": 13.7
    },
    "geometry": {
     "type": "Polygon",
@@ -3620,7 +3640,8 @@
     "realm": "campus",
     "map_no": "15",
     "category": "Student housing",
-    "use": "Coed residence hall with divided doubles; the other half of the original Foster-Scholz."
+    "use": "Coed residence hall with divided doubles; the other half of the original Foster-Scholz.",
+    "height_lidar_m": 9.5
    },
    "geometry": {
     "type": "Polygon",
@@ -3673,7 +3694,8 @@
     "realm": "campus",
     "map_no": "25",
     "category": "Student housing",
-    "use": "Historic 1920 residence hall by A.E. Doyle, originally for women and now coed (about 32 residents)."
+    "use": "Historic 1920 residence hall by A.E. Doyle, originally for women and now coed (about 32 residents).",
+    "height_lidar_m": 26.6
    },
    "geometry": {
     "type": "Polygon",
@@ -3746,7 +3768,8 @@
     "realm": "campus",
     "map_no": "14",
     "category": "Student housing",
-    "use": "Coed residence hall built 1954\u201355; originally half of the Foster-Scholz men's dorm."
+    "use": "Coed residence hall built 1954\u201355; originally half of the Foster-Scholz men's dorm.",
+    "height_lidar_m": 17.0
    },
    "geometry": {
     "type": "Polygon",
@@ -3808,7 +3831,8 @@
     "kind": "building",
     "name": "Reed Research Reactor",
     "building": "yes",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 4.7
    },
    "geometry": {
     "type": "Polygon",
@@ -3850,7 +3874,8 @@
     "realm": "campus",
     "map_no": "45",
     "category": "Academic / science",
-    "use": "Psychology department labs, classrooms, faculty offices and an auditorium."
+    "use": "Psychology department labs, classrooms, faculty offices and an auditorium.",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -3935,7 +3960,8 @@
     "id": "way/126856901",
     "kind": "building",
     "building": "dormitory",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 16.7
    },
    "geometry": {
     "type": "Polygon",
@@ -3992,7 +4018,8 @@
     "realm": "campus",
     "map_no": "30",
     "category": "Student housing",
-    "use": "Cross Canyon residence hall, mostly first-years (about 28 residents)."
+    "use": "Cross Canyon residence hall, mostly first-years (about 28 residents).",
+    "height_lidar_m": 5.3
    },
    "geometry": {
     "type": "Polygon",
@@ -4037,7 +4064,8 @@
     "realm": "campus",
     "map_no": "32",
     "category": "Student housing",
-    "use": "Cross Canyon residence hall, mostly first-years (about 28 residents)."
+    "use": "Cross Canyon residence hall, mostly first-years (about 28 residents).",
+    "height_lidar_m": 5.4
    },
    "geometry": {
     "type": "Polygon",
@@ -4078,7 +4106,8 @@
     "realm": "campus",
     "map_no": "31",
     "category": "Student housing",
-    "use": "Cross Canyon residence hall, mostly first-years (about 28 residents)."
+    "use": "Cross Canyon residence hall, mostly first-years (about 28 residents).",
+    "height_lidar_m": 5.5
    },
    "geometry": {
     "type": "Polygon",
@@ -4119,7 +4148,8 @@
     "realm": "campus",
     "map_no": "29",
     "category": "Student housing",
-    "use": "Cross Canyon residence hall, named for an early faculty member; mostly first-year students (about 28 residents)."
+    "use": "Cross Canyon residence hall, named for an early faculty member; mostly first-year students (about 28 residents).",
+    "height_lidar_m": 15.3
    },
    "geometry": {
     "type": "Polygon",
@@ -4160,7 +4190,8 @@
     "realm": "campus",
     "map_no": "33",
     "category": "Student housing",
-    "use": "Newest Cross Canyon residence hall (1998), named for a former Reed president; mostly first-years."
+    "use": "Newest Cross Canyon residence hall (1998), named for a former Reed president; mostly first-years.",
+    "height_lidar_m": 14.8
    },
    "geometry": {
     "type": "Polygon",
@@ -6409,7 +6440,8 @@
     "realm": "campus",
     "map_no": "6",
     "category": "Student housing",
-    "use": "Furnished apartments available to students after their first year."
+    "use": "Furnished apartments available to students after their first year.",
+    "height_lidar_m": 14.6
    },
    "geometry": {
     "type": "Polygon",
@@ -6483,7 +6515,8 @@
     "realm": "campus",
     "map_no": "6",
     "category": "Student housing",
-    "use": "Furnished apartments available to students after their first year."
+    "use": "Furnished apartments available to students after their first year.",
+    "height_lidar_m": 16.5
    },
    "geometry": {
     "type": "Polygon",
@@ -6532,7 +6565,8 @@
     "realm": "campus",
     "map_no": "6",
     "category": "Student housing",
-    "use": "Furnished apartments available to students after their first year."
+    "use": "Furnished apartments available to students after their first year.",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -6581,7 +6615,8 @@
     "realm": "campus",
     "map_no": "6",
     "category": "Student housing",
-    "use": "Furnished apartments available to students after their first year."
+    "use": "Furnished apartments available to students after their first year.",
+    "height_lidar_m": 5.6
    },
    "geometry": {
     "type": "Polygon",
@@ -6638,7 +6673,8 @@
     "realm": "campus",
     "map_no": "3",
     "category": "Administration",
-    "use": "Offices for Community Safety (campus security, escorts, emergency response) and Residence Life (housing assignments, house advisors)."
+    "use": "Offices for Community Safety (campus security, escorts, emergency response) and Residence Life (housing assignments, house advisors).",
+    "height_lidar_m": 3.6
    },
    "geometry": {
     "type": "Polygon",
@@ -6700,7 +6736,8 @@
     "realm": "campus",
     "map_no": "10",
     "category": "Student housing",
-    "use": "Grove residence hall (2008) with house-style living."
+    "use": "Grove residence hall (2008) with house-style living.",
+    "height_lidar_m": 14.4
    },
    "geometry": {
     "type": "Polygon",
@@ -6782,7 +6819,8 @@
     "realm": "campus",
     "map_no": "9",
     "category": "Student housing",
-    "use": "One of the four Grove residence halls (completed 2008), with house-like suites and shared kitchens and common rooms."
+    "use": "One of the four Grove residence halls (completed 2008), with house-like suites and shared kitchens and common rooms.",
+    "height_lidar_m": 14.5
    },
    "geometry": {
     "type": "Polygon",
@@ -6864,7 +6902,8 @@
     "realm": "campus",
     "map_no": "12",
     "category": "Student housing / caf\u00e9",
-    "use": "Grove residence hall (2008); also contains a multipurpose classroom and Caff\u00e8 Paradiso, a caf\u00e9."
+    "use": "Grove residence hall (2008); also contains a multipurpose classroom and Caff\u00e8 Paradiso, a caf\u00e9.",
+    "height_lidar_m": 13.6
    },
    "geometry": {
     "type": "Polygon",
@@ -6994,7 +7033,8 @@
     "realm": "campus",
     "map_no": "11",
     "category": "Student housing",
-    "use": "Grove residence hall (2008) with house-style living."
+    "use": "Grove residence hall (2008) with house-style living.",
+    "height_lidar_m": 13.1
    },
    "geometry": {
     "type": "Polygon",
@@ -7152,7 +7192,8 @@
     "realm": "campus",
     "map_no": "40",
     "category": "Academic / science",
-    "use": "L.E. Griffin Memorial Biology Building: biology labs, classrooms and an auditorium."
+    "use": "L.E. Griffin Memorial Biology Building: biology labs, classrooms and an auditorium.",
+    "height_lidar_m": 12.3
    },
    "geometry": {
     "type": "Polygon",
@@ -7206,7 +7247,8 @@
     "realm": "campus",
     "map_no": "44",
     "category": "Academic / science",
-    "use": "A.A. Knowlton chemistry building: teaching and research labs, classrooms and faculty offices."
+    "use": "A.A. Knowlton chemistry building: teaching and research labs, classrooms and faculty offices.",
+    "height_lidar_m": 19.9
    },
    "geometry": {
     "type": "Polygon",
@@ -7264,7 +7306,8 @@
     "kind": "building",
     "name": "Greenwood Hall",
     "building": "university",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 14.8
    },
    "geometry": {
     "type": "Polygon",
@@ -7483,7 +7526,8 @@
     "map_no": "\u2014",
     "category": "Academic / arts",
     "use": "Opened 2013: theatre, dance and music departments with a studio theatre, black box, rehearsal halls, scene and costume shops.",
-    "changes": "Built after this 2010 map; replaces functions of #13 and #17."
+    "changes": "Built after this 2010 map; replaces functions of #13 and #17.",
+    "height_lidar_m": 14.7
    },
    "geometry": {
     "type": "Polygon",
@@ -7581,7 +7625,8 @@
     "realm": "campus",
     "map_no": "19",
     "category": "Athletics / recreation",
-    "use": "Gym, indoor pool, fitness rooms and courts; physical education classes, club sports and intramurals."
+    "use": "Gym, indoor pool, fitness rooms and courts; physical education classes, club sports and intramurals.",
+    "height_lidar_m": 8.8
    },
    "geometry": {
     "type": "Polygon",
@@ -7655,7 +7700,8 @@
     "kind": "building",
     "name": "7-Eleven",
     "building": "retail",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -7733,7 +7779,8 @@
     "realm": "campus",
     "map_no": "39",
     "category": "Academic / science",
-    "use": "Physics department classrooms, teaching labs and research labs."
+    "use": "Physics department classrooms, teaching labs and research labs.",
+    "height_lidar_m": 13.8
    },
    "geometry": {
     "type": "Polygon",
@@ -7778,7 +7825,8 @@
     "realm": "campus",
     "map_no": "51",
     "category": "Academic / arts",
-    "use": "Studio art department: painting, sculpture, printmaking and photo studios, critiques; Feldenheimer Gallery shows student and visiting work."
+    "use": "Studio art department: painting, sculpture, printmaking and photo studios, critiques; Feldenheimer Gallery shows student and visiting work.",
+    "height_lidar_m": 15.8
    },
    "geometry": {
     "type": "Polygon",
@@ -7885,7 +7933,8 @@
     "map_no": "17",
     "category": "Academic / arts",
     "use": "Music building on this map (a former president's residence): practice rooms, lessons and music offices.",
-    "changes": "Music largely moved to the Performing Arts Building in 2013."
+    "changes": "Music largely moved to the Performing Arts Building in 2013.",
+    "height_lidar_m": 9.2
    },
    "geometry": {
     "type": "Polygon",
@@ -7958,7 +8007,8 @@
     "realm": "campus",
     "map_no": "18",
     "category": "Guest house / events",
-    "use": "1929 Arts and Crafts house bought by Reed in 2005; three guest rooms for visiting lecturers, academics and trustees, plus meeting rooms for retreats, faculty dinners and Gray Fund student dinners."
+    "use": "1929 Arts and Crafts house bought by Reed in 2005; three guest rooms for visiting lecturers, academics and trustees, plus meeting rooms for retreats, faculty dinners and Gray Fund student dinners.",
+    "height_lidar_m": 22.7
    },
    "geometry": {
     "type": "Polygon",
@@ -8101,7 +8151,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.1
    },
    "geometry": {
     "type": "Polygon",
@@ -8156,7 +8207,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.8
    },
    "geometry": {
     "type": "Polygon",
@@ -8219,7 +8271,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.2
    },
    "geometry": {
     "type": "Polygon",
@@ -8282,7 +8335,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.2
    },
    "geometry": {
     "type": "Polygon",
@@ -8329,7 +8383,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -8384,7 +8439,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -8423,7 +8479,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.2
    },
    "geometry": {
     "type": "Polygon",
@@ -8478,7 +8535,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -8533,7 +8591,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.2
    },
    "geometry": {
     "type": "Polygon",
@@ -8588,7 +8647,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -8627,7 +8687,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.9
    },
    "geometry": {
     "type": "Polygon",
@@ -8706,7 +8767,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.6
    },
    "geometry": {
     "type": "Polygon",
@@ -8745,7 +8807,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.0
    },
    "geometry": {
     "type": "Polygon",
@@ -8800,7 +8863,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.3
    },
    "geometry": {
     "type": "Polygon",
@@ -8839,7 +8903,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -8902,7 +8967,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.4
    },
    "geometry": {
     "type": "Polygon",
@@ -8965,7 +9031,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.4
    },
    "geometry": {
     "type": "Polygon",
@@ -9020,7 +9087,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.8
    },
    "geometry": {
     "type": "Polygon",
@@ -9115,7 +9183,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.9
    },
    "geometry": {
     "type": "Polygon",
@@ -9186,7 +9255,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.5
    },
    "geometry": {
     "type": "Polygon",
@@ -9249,7 +9319,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.4
    },
    "geometry": {
     "type": "Polygon",
@@ -9328,7 +9399,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -9399,7 +9471,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 12.1
    },
    "geometry": {
     "type": "Polygon",
@@ -9458,7 +9531,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.0
    },
    "geometry": {
     "type": "Polygon",
@@ -9513,7 +9587,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.7
    },
    "geometry": {
     "type": "Polygon",
@@ -9588,7 +9663,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.5
    },
    "geometry": {
     "type": "Polygon",
@@ -9659,7 +9735,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.3
    },
    "geometry": {
     "type": "Polygon",
@@ -9706,7 +9783,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.9
    },
    "geometry": {
     "type": "Polygon",
@@ -9777,7 +9855,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -9848,7 +9927,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -9887,7 +9967,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.9
    },
    "geometry": {
     "type": "Polygon",
@@ -9934,7 +10015,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.6
    },
    "geometry": {
     "type": "Polygon",
@@ -10013,7 +10095,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -10084,7 +10167,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -10147,7 +10231,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -10194,7 +10279,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.6
    },
    "geometry": {
     "type": "Polygon",
@@ -10249,7 +10335,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -10312,7 +10399,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -10351,7 +10439,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.5
    },
    "geometry": {
     "type": "Polygon",
@@ -10426,7 +10515,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.0
    },
    "geometry": {
     "type": "Polygon",
@@ -10473,7 +10563,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.4
    },
    "geometry": {
     "type": "Polygon",
@@ -10544,7 +10635,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -10599,7 +10691,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.3
    },
    "geometry": {
     "type": "Polygon",
@@ -10670,7 +10763,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -10709,7 +10803,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.8
    },
    "geometry": {
     "type": "Polygon",
@@ -10780,7 +10875,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -10827,7 +10923,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -10882,7 +10979,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "8.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -10929,7 +11027,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -10984,7 +11083,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -11023,7 +11123,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -11070,7 +11171,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "20.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -11109,7 +11211,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -11148,7 +11251,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.2
    },
    "geometry": {
     "type": "Polygon",
@@ -11199,7 +11303,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -11262,7 +11367,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.2
    },
    "geometry": {
     "type": "Polygon",
@@ -11317,7 +11423,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.8
    },
    "geometry": {
     "type": "Polygon",
@@ -11364,7 +11471,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.4
    },
    "geometry": {
     "type": "Polygon",
@@ -11419,7 +11527,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 16.8
    },
    "geometry": {
     "type": "Polygon",
@@ -11458,7 +11567,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.0
    },
    "geometry": {
     "type": "Polygon",
@@ -11513,7 +11623,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -11584,7 +11695,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -11631,7 +11743,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -11718,7 +11831,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -11757,7 +11871,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -11820,7 +11935,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.0
    },
    "geometry": {
     "type": "Polygon",
@@ -11891,7 +12007,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.0
    },
    "geometry": {
     "type": "Polygon",
@@ -11946,7 +12063,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 21.0
    },
    "geometry": {
     "type": "Polygon",
@@ -11985,7 +12103,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -12056,7 +12175,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -12095,7 +12215,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -12134,7 +12255,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.3
    },
    "geometry": {
     "type": "Polygon",
@@ -12173,7 +12295,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -12220,7 +12343,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -12259,7 +12383,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -12306,7 +12431,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.5
    },
    "geometry": {
     "type": "Polygon",
@@ -12357,7 +12483,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.0
    },
    "geometry": {
     "type": "Polygon",
@@ -12420,7 +12547,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.8
    },
    "geometry": {
     "type": "Polygon",
@@ -12479,7 +12607,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -12518,7 +12647,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -12573,7 +12703,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -12644,7 +12775,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.8
    },
    "geometry": {
     "type": "Polygon",
@@ -12715,7 +12847,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "15.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -12754,7 +12887,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.5
    },
    "geometry": {
     "type": "Polygon",
@@ -12825,7 +12959,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -12880,7 +13015,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -12919,7 +13055,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -12966,7 +13103,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -13021,7 +13159,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.1
    },
    "geometry": {
     "type": "Polygon",
@@ -13084,7 +13223,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -13131,7 +13271,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -13178,7 +13319,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -13229,7 +13371,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -13308,7 +13451,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -13347,7 +13491,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -13402,7 +13547,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.6
    },
    "geometry": {
     "type": "Polygon",
@@ -13489,7 +13635,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -13552,7 +13699,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "22.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 19.7
    },
    "geometry": {
     "type": "Polygon",
@@ -13591,7 +13739,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "11.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 10.0
    },
    "geometry": {
     "type": "Polygon",
@@ -13638,7 +13787,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -13685,7 +13835,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "9.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -13732,7 +13883,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.7
    },
    "geometry": {
     "type": "Polygon",
@@ -13771,7 +13923,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "2.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -13810,7 +13963,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.1
    },
    "geometry": {
     "type": "Polygon",
@@ -13849,7 +14003,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.0
    },
    "geometry": {
     "type": "Polygon",
@@ -13888,7 +14043,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.2
    },
    "geometry": {
     "type": "Polygon",
@@ -13927,7 +14083,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.2
    },
    "geometry": {
     "type": "Polygon",
@@ -13966,7 +14123,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.2
    },
    "geometry": {
     "type": "Polygon",
@@ -14005,7 +14163,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.2
    },
    "geometry": {
     "type": "Polygon",
@@ -14044,7 +14203,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -14083,7 +14243,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.6
    },
    "geometry": {
     "type": "Polygon",
@@ -14122,7 +14283,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.3
    },
    "geometry": {
     "type": "Polygon",
@@ -14161,7 +14323,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.3
    },
    "geometry": {
     "type": "Polygon",
@@ -14200,7 +14363,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.3
    },
    "geometry": {
     "type": "Polygon",
@@ -14239,7 +14403,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.8
    },
    "geometry": {
     "type": "Polygon",
@@ -14278,7 +14443,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.3
    },
    "geometry": {
     "type": "Polygon",
@@ -14317,7 +14483,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.0
    },
    "geometry": {
     "type": "Polygon",
@@ -14356,7 +14523,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "3.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.4
    },
    "geometry": {
     "type": "Polygon",
@@ -14395,7 +14563,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.9
    },
    "geometry": {
     "type": "Polygon",
@@ -14434,7 +14603,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "2.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.8
    },
    "geometry": {
     "type": "Polygon",
@@ -14473,7 +14643,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.1
    },
    "geometry": {
     "type": "Polygon",
@@ -14512,7 +14683,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.8
    },
    "geometry": {
     "type": "Polygon",
@@ -14551,7 +14723,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.6
    },
    "geometry": {
     "type": "Polygon",
@@ -14590,7 +14763,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.7
    },
    "geometry": {
     "type": "Polygon",
@@ -14629,7 +14803,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.2
    },
    "geometry": {
     "type": "Polygon",
@@ -14668,7 +14843,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.6
    },
    "geometry": {
     "type": "Polygon",
@@ -14707,7 +14883,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.7
    },
    "geometry": {
     "type": "Polygon",
@@ -14746,7 +14923,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "5.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -14785,7 +14963,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.8
    },
    "geometry": {
     "type": "Polygon",
@@ -14824,7 +15003,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.8
    },
    "geometry": {
     "type": "Polygon",
@@ -14863,7 +15043,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -14902,7 +15083,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -14949,7 +15131,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -14996,7 +15179,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -15047,7 +15231,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.9
    },
    "geometry": {
     "type": "Polygon",
@@ -15102,7 +15287,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.2
    },
    "geometry": {
     "type": "Polygon",
@@ -15157,7 +15343,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.6
    },
    "geometry": {
     "type": "Polygon",
@@ -15220,7 +15407,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -15275,7 +15463,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 16.2
    },
    "geometry": {
     "type": "Polygon",
@@ -15346,7 +15535,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.9
    },
    "geometry": {
     "type": "Polygon",
@@ -15401,7 +15591,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.6
    },
    "geometry": {
     "type": "Polygon",
@@ -15472,7 +15663,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.5
    },
    "geometry": {
     "type": "Polygon",
@@ -15535,7 +15727,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.8
    },
    "geometry": {
     "type": "Polygon",
@@ -15606,7 +15799,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.4
    },
    "geometry": {
     "type": "Polygon",
@@ -15645,7 +15839,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -15700,7 +15895,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -15747,7 +15943,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.5
    },
    "geometry": {
     "type": "Polygon",
@@ -15794,7 +15991,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -15857,7 +16055,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.0
    },
    "geometry": {
     "type": "Polygon",
@@ -15912,7 +16111,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 22.0
    },
    "geometry": {
     "type": "Polygon",
@@ -15951,7 +16151,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.5
    },
    "geometry": {
     "type": "Polygon",
@@ -15998,7 +16199,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 13.9
    },
    "geometry": {
     "type": "Polygon",
@@ -16037,7 +16239,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 13.0
    },
    "geometry": {
     "type": "Polygon",
@@ -16092,7 +16295,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.3
    },
    "geometry": {
     "type": "Polygon",
@@ -16131,7 +16335,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.9
    },
    "geometry": {
     "type": "Polygon",
@@ -16182,7 +16387,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.9
    },
    "geometry": {
     "type": "Polygon",
@@ -16221,7 +16427,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.3
    },
    "geometry": {
     "type": "Polygon",
@@ -16276,7 +16483,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.2
    },
    "geometry": {
     "type": "Polygon",
@@ -16331,7 +16539,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 14.6
    },
    "geometry": {
     "type": "Polygon",
@@ -16386,7 +16595,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.7
    },
    "geometry": {
     "type": "Polygon",
@@ -16433,7 +16643,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 19.0
    },
    "geometry": {
     "type": "Polygon",
@@ -16472,7 +16683,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -16527,7 +16739,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.4
    },
    "geometry": {
     "type": "Polygon",
@@ -16578,7 +16791,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.8
    },
    "geometry": {
     "type": "Polygon",
@@ -16629,7 +16843,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.1
    },
    "geometry": {
     "type": "Polygon",
@@ -16700,7 +16915,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.1
    },
    "geometry": {
     "type": "Polygon",
@@ -16751,7 +16967,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.7
    },
    "geometry": {
     "type": "Polygon",
@@ -16822,7 +17039,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.9
    },
    "geometry": {
     "type": "Polygon",
@@ -16885,7 +17103,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.4
    },
    "geometry": {
     "type": "Polygon",
@@ -16940,7 +17159,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 19.9
    },
    "geometry": {
     "type": "Polygon",
@@ -16995,7 +17215,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -17050,7 +17271,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 11.3
    },
    "geometry": {
     "type": "Polygon",
@@ -17121,7 +17343,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.7
    },
    "geometry": {
     "type": "Polygon",
@@ -17184,7 +17407,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.6
    },
    "geometry": {
     "type": "Polygon",
@@ -17223,7 +17447,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.3
    },
    "geometry": {
     "type": "Polygon",
@@ -17270,7 +17495,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -17333,7 +17559,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.7
    },
    "geometry": {
     "type": "Polygon",
@@ -17388,7 +17615,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 24.8
    },
    "geometry": {
     "type": "Polygon",
@@ -17435,7 +17663,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.6
    },
    "geometry": {
     "type": "Polygon",
@@ -17506,7 +17735,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 11.5
    },
    "geometry": {
     "type": "Polygon",
@@ -17545,7 +17775,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.9
    },
    "geometry": {
     "type": "Polygon",
@@ -17624,7 +17855,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.3
    },
    "geometry": {
     "type": "Polygon",
@@ -17703,7 +17935,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.4
    },
    "geometry": {
     "type": "Polygon",
@@ -17750,7 +17983,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.2
    },
    "geometry": {
     "type": "Polygon",
@@ -17805,7 +18039,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -17876,7 +18111,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.2
    },
    "geometry": {
     "type": "Polygon",
@@ -17947,7 +18183,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.0
    },
    "geometry": {
     "type": "Polygon",
@@ -18002,7 +18239,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.5
    },
    "geometry": {
     "type": "Polygon",
@@ -18057,7 +18295,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.8
    },
    "geometry": {
     "type": "Polygon",
@@ -18112,7 +18351,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.7
    },
    "geometry": {
     "type": "Polygon",
@@ -18159,7 +18399,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -18214,7 +18455,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.1
    },
    "geometry": {
     "type": "Polygon",
@@ -18285,7 +18527,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.1
    },
    "geometry": {
     "type": "Polygon",
@@ -18336,7 +18579,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.5
    },
    "geometry": {
     "type": "Polygon",
@@ -18395,7 +18639,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -18462,7 +18707,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -18513,7 +18759,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.3
    },
    "geometry": {
     "type": "Polygon",
@@ -18560,7 +18807,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -18605,7 +18853,8 @@
     "id": "way/367893599",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 17.3
    },
    "geometry": {
     "type": "Polygon",
@@ -18644,7 +18893,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 15.1
    },
    "geometry": {
     "type": "Polygon",
@@ -18691,7 +18941,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -18758,7 +19009,8 @@
     "realm": "campus",
     "map_no": "52",
     "category": "Academic support",
-    "use": "Former home of alumna, history professor and archivist Dorothy Johansen; now houses academic support services (tutoring, writing and study help)."
+    "use": "Former home of alumna, history professor and archivist Dorothy Johansen; now houses academic support services (tutoring, writing and study help).",
+    "height_lidar_m": 12.2
    },
    "geometry": {
     "type": "Polygon",
@@ -18813,7 +19065,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.7
    },
    "geometry": {
     "type": "Polygon",
@@ -18864,7 +19117,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -18903,7 +19157,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.7
    },
    "geometry": {
     "type": "Polygon",
@@ -18942,7 +19197,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.6
    },
    "geometry": {
     "type": "Polygon",
@@ -18989,7 +19245,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.7
    },
    "geometry": {
     "type": "Polygon",
@@ -19044,7 +19301,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.4
    },
    "geometry": {
     "type": "Polygon",
@@ -19083,7 +19341,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.7
    },
    "geometry": {
     "type": "Polygon",
@@ -19130,7 +19389,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 10.0
    },
    "geometry": {
     "type": "Polygon",
@@ -19177,7 +19437,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.6
    },
    "geometry": {
     "type": "Polygon",
@@ -19228,7 +19489,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.7
    },
    "geometry": {
     "type": "Polygon",
@@ -19283,7 +19545,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.0
    },
    "geometry": {
     "type": "Polygon",
@@ -19330,7 +19593,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -19369,7 +19633,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "10.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 12.2
    },
    "geometry": {
     "type": "Polygon",
@@ -19424,7 +19689,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 16.6
    },
    "geometry": {
     "type": "Polygon",
@@ -19519,7 +19785,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 10.9
    },
    "geometry": {
     "type": "Polygon",
@@ -19558,7 +19825,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.0
    },
    "geometry": {
     "type": "Polygon",
@@ -19621,7 +19889,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.2
    },
    "geometry": {
     "type": "Polygon",
@@ -19700,7 +19969,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 12.2
    },
    "geometry": {
     "type": "Polygon",
@@ -19747,7 +20017,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.3
    },
    "geometry": {
     "type": "Polygon",
@@ -19794,7 +20065,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 14.5
    },
    "geometry": {
     "type": "Polygon",
@@ -19857,7 +20129,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.8
    },
    "geometry": {
     "type": "Polygon",
@@ -19896,7 +20169,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.9
    },
    "geometry": {
     "type": "Polygon",
@@ -19935,7 +20209,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.6
    },
    "geometry": {
     "type": "Polygon",
@@ -19982,7 +20257,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -20021,7 +20297,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 12.6
    },
    "geometry": {
     "type": "Polygon",
@@ -20072,7 +20349,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.2
    },
    "geometry": {
     "type": "Polygon",
@@ -20111,7 +20389,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20158,7 +20437,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 21.3
    },
    "geometry": {
     "type": "Polygon",
@@ -20197,7 +20477,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20252,7 +20533,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20323,7 +20605,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.1
    },
    "geometry": {
     "type": "Polygon",
@@ -20370,7 +20653,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20409,7 +20693,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20472,7 +20757,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20523,7 +20809,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20562,7 +20849,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20601,7 +20889,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "12.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20640,7 +20929,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20679,7 +20969,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20718,7 +21009,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20757,7 +21049,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20812,7 +21105,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20851,7 +21145,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20890,7 +21185,8 @@
     "building": "detached",
     "building:levels": "3",
     "height": "12.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20929,7 +21225,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -20968,7 +21265,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "27.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21007,7 +21305,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21046,7 +21345,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21093,7 +21393,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21140,7 +21441,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21195,7 +21497,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21234,7 +21537,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21273,7 +21577,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21312,7 +21617,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21367,7 +21673,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21414,7 +21721,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21453,7 +21761,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "10.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21508,7 +21817,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21547,7 +21857,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21586,7 +21897,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21641,7 +21953,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21688,7 +22001,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21727,7 +22041,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21774,7 +22089,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21813,7 +22129,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "16.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21852,7 +22169,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -21891,7 +22209,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.3
    },
    "geometry": {
     "type": "Polygon",
@@ -21962,7 +22281,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.0
    },
    "geometry": {
     "type": "Polygon",
@@ -22001,7 +22321,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -22056,7 +22377,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22102,7 +22424,8 @@
     "kind": "building",
     "building": "detached",
     "building:levels": "1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22141,7 +22464,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "6.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -22180,7 +22504,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22219,7 +22544,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22274,7 +22600,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22321,7 +22648,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 15.2
    },
    "geometry": {
     "type": "Polygon",
@@ -22360,7 +22688,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22407,7 +22736,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 19.3
    },
    "geometry": {
     "type": "Polygon",
@@ -22454,7 +22784,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22493,7 +22824,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "8.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22538,7 +22870,8 @@
     "id": "way/367893791",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22577,7 +22910,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "11.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22616,7 +22950,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22671,7 +23006,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "9.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22710,7 +23046,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22749,7 +23086,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22824,7 +23162,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "13.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22871,7 +23210,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22926,7 +23266,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -22965,7 +23306,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23004,7 +23346,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23043,7 +23386,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23082,7 +23426,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23121,7 +23466,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23168,7 +23514,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23207,7 +23554,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23246,7 +23594,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23293,7 +23642,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.0
    },
    "geometry": {
     "type": "Polygon",
@@ -23352,7 +23702,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.3
    },
    "geometry": {
     "type": "Polygon",
@@ -23407,7 +23758,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.1
    },
    "geometry": {
     "type": "Polygon",
@@ -23446,7 +23798,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.1
    },
    "geometry": {
     "type": "Polygon",
@@ -23484,7 +23837,8 @@
     "kind": "building",
     "building": "yes",
     "building:levels": "3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.5
    },
    "geometry": {
     "type": "Polygon",
@@ -23523,7 +23877,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "6.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.4
    },
    "geometry": {
     "type": "Polygon",
@@ -23562,7 +23917,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.4
    },
    "geometry": {
     "type": "Polygon",
@@ -23625,7 +23981,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23672,7 +24029,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.6
    },
    "geometry": {
     "type": "Polygon",
@@ -23723,7 +24081,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23778,7 +24137,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 15.7
    },
    "geometry": {
     "type": "Polygon",
@@ -23841,7 +24201,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.4
    },
    "geometry": {
     "type": "Polygon",
@@ -23888,7 +24249,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.3
    },
    "geometry": {
     "type": "Polygon",
@@ -23935,7 +24297,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -23990,7 +24353,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.8
    },
    "geometry": {
     "type": "Polygon",
@@ -24041,7 +24405,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -24096,7 +24461,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.2
    },
    "geometry": {
     "type": "Polygon",
@@ -24159,7 +24525,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "8.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -24214,7 +24581,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.5
    },
    "geometry": {
     "type": "Polygon",
@@ -24265,7 +24633,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.1
    },
    "geometry": {
     "type": "Polygon",
@@ -24320,7 +24689,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.9
    },
    "geometry": {
     "type": "Polygon",
@@ -24375,7 +24745,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.5
    },
    "geometry": {
     "type": "Polygon",
@@ -24414,7 +24785,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.4
    },
    "geometry": {
     "type": "Polygon",
@@ -24453,7 +24825,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 10.2
    },
    "geometry": {
     "type": "Polygon",
@@ -24492,7 +24865,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.5
    },
    "geometry": {
     "type": "Polygon",
@@ -24539,7 +24913,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.4
    },
    "geometry": {
     "type": "Polygon",
@@ -24610,7 +24985,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -24649,7 +25025,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.3
    },
    "geometry": {
     "type": "Polygon",
@@ -24696,7 +25073,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 14.1
    },
    "geometry": {
     "type": "Polygon",
@@ -24759,7 +25137,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.7
    },
    "geometry": {
     "type": "Polygon",
@@ -24818,7 +25197,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.8
    },
    "geometry": {
     "type": "Polygon",
@@ -24873,7 +25253,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.9
    },
    "geometry": {
     "type": "Polygon",
@@ -24920,7 +25301,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.4
    },
    "geometry": {
     "type": "Polygon",
@@ -24971,7 +25353,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.4
    },
    "geometry": {
     "type": "Polygon",
@@ -25026,7 +25409,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -25065,7 +25449,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.1
    },
    "geometry": {
     "type": "Polygon",
@@ -25120,7 +25505,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.8
    },
    "geometry": {
     "type": "Polygon",
@@ -25159,7 +25545,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 27.9
    },
    "geometry": {
     "type": "Polygon",
@@ -25198,7 +25585,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -25237,7 +25625,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.1
    },
    "geometry": {
     "type": "Polygon",
@@ -25284,7 +25673,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.9
    },
    "geometry": {
     "type": "Polygon",
@@ -25363,7 +25753,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.0
    },
    "geometry": {
     "type": "Polygon",
@@ -25402,7 +25793,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -25441,7 +25833,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.9
    },
    "geometry": {
     "type": "Polygon",
@@ -25512,7 +25905,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.4
    },
    "geometry": {
     "type": "Polygon",
@@ -25575,7 +25969,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.4
    },
    "geometry": {
     "type": "Polygon",
@@ -25634,7 +26029,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.4
    },
    "geometry": {
     "type": "Polygon",
@@ -25693,7 +26089,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.3
    },
    "geometry": {
     "type": "Polygon",
@@ -25748,7 +26145,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 18.7
    },
    "geometry": {
     "type": "Polygon",
@@ -25799,7 +26197,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -25858,7 +26257,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.8
    },
    "geometry": {
     "type": "Polygon",
@@ -25897,7 +26297,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.1
    },
    "geometry": {
     "type": "Polygon",
@@ -25948,7 +26349,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.6
    },
    "geometry": {
     "type": "Polygon",
@@ -25987,7 +26389,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -26026,7 +26429,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.4
    },
    "geometry": {
     "type": "Polygon",
@@ -26065,7 +26469,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.7
    },
    "geometry": {
     "type": "Polygon",
@@ -26104,7 +26509,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -26143,7 +26549,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 28.7
    },
    "geometry": {
     "type": "Polygon",
@@ -26182,7 +26589,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "16.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -26221,7 +26629,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.2
    },
    "geometry": {
     "type": "Polygon",
@@ -26260,7 +26669,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.8
    },
    "geometry": {
     "type": "Polygon",
@@ -26299,7 +26709,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.3
    },
    "geometry": {
     "type": "Polygon",
@@ -26338,7 +26749,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.7
    },
    "geometry": {
     "type": "Polygon",
@@ -26377,7 +26789,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "5.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.4
    },
    "geometry": {
     "type": "Polygon",
@@ -26416,7 +26829,8 @@
     "building": "garage",
     "building:levels": "2",
     "height": "7.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 19.0
    },
    "geometry": {
     "type": "Polygon",
@@ -26454,7 +26868,8 @@
     "kind": "building",
     "building": "garage",
     "building:levels": "1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.3
    },
    "geometry": {
     "type": "Polygon",
@@ -26493,7 +26908,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.3
    },
    "geometry": {
     "type": "Polygon",
@@ -26532,7 +26948,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 22.7
    },
    "geometry": {
     "type": "Polygon",
@@ -26570,7 +26987,8 @@
     "kind": "building",
     "building": "garage",
     "building:levels": "1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.3
    },
    "geometry": {
     "type": "Polygon",
@@ -26609,7 +27027,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.0
    },
    "geometry": {
     "type": "Polygon",
@@ -26648,7 +27067,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "2.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 12.0
    },
    "geometry": {
     "type": "Polygon",
@@ -26687,7 +27107,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "4.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.5
    },
    "geometry": {
     "type": "Polygon",
@@ -26726,7 +27147,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.4
    },
    "geometry": {
     "type": "Polygon",
@@ -26765,7 +27187,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -26804,7 +27227,8 @@
     "building": "apartments",
     "building:levels": "1",
     "height": "7.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -26843,7 +27267,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -26882,7 +27307,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "3.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.7
    },
    "geometry": {
     "type": "Polygon",
@@ -26921,7 +27347,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -26960,7 +27387,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.6
    },
    "geometry": {
     "type": "Polygon",
@@ -26999,7 +27427,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.1
    },
    "geometry": {
     "type": "Polygon",
@@ -27038,7 +27467,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "4.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -27076,7 +27506,8 @@
     "kind": "building",
     "building": "garage",
     "building:levels": "1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.2
    },
    "geometry": {
     "type": "Polygon",
@@ -27115,7 +27546,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -27154,7 +27586,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -27193,7 +27626,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.0
    },
    "geometry": {
     "type": "Polygon",
@@ -27232,7 +27666,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -27271,7 +27706,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "2.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.9
    },
    "geometry": {
     "type": "Polygon",
@@ -27310,7 +27746,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "2.3",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 10.2
    },
    "geometry": {
     "type": "Polygon",
@@ -27349,7 +27786,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.3
    },
    "geometry": {
     "type": "Polygon",
@@ -27388,7 +27826,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.8
    },
    "geometry": {
     "type": "Polygon",
@@ -27427,7 +27866,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "11.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -27466,7 +27906,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 22.3
    },
    "geometry": {
     "type": "Polygon",
@@ -27505,7 +27946,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 23.2
    },
    "geometry": {
     "type": "Polygon",
@@ -27543,7 +27985,8 @@
     "kind": "building",
     "building": "yes",
     "building:levels": "1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 22.2
    },
    "geometry": {
     "type": "Polygon",
@@ -27582,7 +28025,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 10.3
    },
    "geometry": {
     "type": "Polygon",
@@ -27621,7 +28065,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -27660,7 +28105,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -27699,7 +28145,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.2
    },
    "geometry": {
     "type": "Polygon",
@@ -27738,7 +28185,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.9
    },
    "geometry": {
     "type": "Polygon",
@@ -27777,7 +28225,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -27816,7 +28265,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.8
    },
    "geometry": {
     "type": "Polygon",
@@ -27859,7 +28309,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -27902,7 +28353,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.3
    },
    "geometry": {
     "type": "Polygon",
@@ -27948,7 +28400,8 @@
     "kind": "building",
     "building": "garage",
     "building:levels": "1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 13.0
    },
    "geometry": {
     "type": "Polygon",
@@ -27995,7 +28448,9 @@
     "building": "garage",
     "building:levels": "1",
     "height": "2.4",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 2.2,
+    "lidar_2014_absent": true
    },
    "geometry": {
     "type": "Polygon",
@@ -28042,7 +28497,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "5.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 15.6
    },
    "geometry": {
     "type": "Polygon",
@@ -28097,7 +28553,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "5.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.3
    },
    "geometry": {
     "type": "Polygon",
@@ -28152,7 +28609,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.8
    },
    "geometry": {
     "type": "Polygon",
@@ -28207,7 +28665,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.3
    },
    "geometry": {
     "type": "Polygon",
@@ -28270,7 +28729,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -28329,7 +28789,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.8
    },
    "geometry": {
     "type": "Polygon",
@@ -28400,7 +28861,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.7
    },
    "geometry": {
     "type": "Polygon",
@@ -28471,7 +28933,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.2
    },
    "geometry": {
     "type": "Polygon",
@@ -28518,7 +28981,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "10.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.5
    },
    "geometry": {
     "type": "Polygon",
@@ -28553,7 +29017,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.1
    },
    "geometry": {
     "type": "Polygon",
@@ -28604,7 +29069,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.0",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.6
    },
    "geometry": {
     "type": "Polygon",
@@ -28659,7 +29125,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 20.5
    },
    "geometry": {
     "type": "Polygon",
@@ -28730,7 +29197,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.7
    },
    "geometry": {
     "type": "Polygon",
@@ -28777,7 +29245,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 11.3
    },
    "geometry": {
     "type": "Polygon",
@@ -28816,7 +29285,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 14.4
    },
    "geometry": {
     "type": "Polygon",
@@ -28855,7 +29325,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.6
    },
    "geometry": {
     "type": "Polygon",
@@ -28918,7 +29389,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.0
    },
    "geometry": {
     "type": "Polygon",
@@ -28973,7 +29445,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.2
    },
    "geometry": {
     "type": "Polygon",
@@ -29012,7 +29485,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.9
    },
    "geometry": {
     "type": "Polygon",
@@ -29051,7 +29525,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.1
    },
    "geometry": {
     "type": "Polygon",
@@ -29090,7 +29565,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "8.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.8
    },
    "geometry": {
     "type": "Polygon",
@@ -29161,7 +29637,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.9
    },
    "geometry": {
     "type": "Polygon",
@@ -29216,7 +29693,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "7.6",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.5
    },
    "geometry": {
     "type": "Polygon",
@@ -29271,7 +29749,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.5
    },
    "geometry": {
     "type": "Polygon",
@@ -29342,7 +29821,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "6.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.0
    },
    "geometry": {
     "type": "Polygon",
@@ -29405,7 +29885,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "5.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.8
    },
    "geometry": {
     "type": "Polygon",
@@ -29460,7 +29941,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "4.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.0
    },
    "geometry": {
     "type": "Polygon",
@@ -29523,7 +30005,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.9
    },
    "geometry": {
     "type": "Polygon",
@@ -29562,7 +30045,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 20.8
    },
    "geometry": {
     "type": "Polygon",
@@ -29609,7 +30093,8 @@
     "building": "detached",
     "building:levels": "1",
     "height": "7.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.3
    },
    "geometry": {
     "type": "Polygon",
@@ -29680,7 +30165,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 10.1
    },
    "geometry": {
     "type": "Polygon",
@@ -29727,7 +30213,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "3.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.4
    },
    "geometry": {
     "type": "Polygon",
@@ -29766,7 +30253,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "6.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.9
    },
    "geometry": {
     "type": "Polygon",
@@ -29817,7 +30305,8 @@
     "realm": "campus",
     "map_no": "5",
     "category": "Themed housing",
-    "use": "Small themed house (about ten students) focused on sustainability and environmental justice; residents tend gardens and run related programming."
+    "use": "Small themed house (about ten students) focused on sustainability and environmental justice; residents tend gardens and run related programming.",
+    "height_lidar_m": 8.7
    },
    "geometry": {
     "type": "Polygon",
@@ -29876,7 +30365,8 @@
     "realm": "campus",
     "map_no": "7",
     "category": "Themed housing",
-    "use": "Residence hall that serves as an extension of the Garden House sustainability and environmental justice community."
+    "use": "Residence hall that serves as an extension of the Garden House sustainability and environmental justice community.",
+    "height_lidar_m": 5.0
    },
    "geometry": {
     "type": "Polygon",
@@ -29943,7 +30433,8 @@
     "building": "detached",
     "building:levels": "2",
     "height": "9.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.3
    },
    "geometry": {
     "type": "Polygon",
@@ -29982,7 +30473,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "4.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.4
    },
    "geometry": {
     "type": "Polygon",
@@ -30021,7 +30513,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.7
    },
    "geometry": {
     "type": "Polygon",
@@ -30060,7 +30553,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.9",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.7
    },
    "geometry": {
     "type": "Polygon",
@@ -30099,7 +30593,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.7
    },
    "geometry": {
     "type": "Polygon",
@@ -30138,7 +30633,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "6.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.1
    },
    "geometry": {
     "type": "Polygon",
@@ -30177,7 +30673,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "5.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.1
    },
    "geometry": {
     "type": "Polygon",
@@ -30216,7 +30713,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "4.7",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.2
    },
    "geometry": {
     "type": "Polygon",
@@ -30255,7 +30753,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "3.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.4
    },
    "geometry": {
     "type": "Polygon",
@@ -30294,7 +30793,8 @@
     "building": "garage",
     "building:levels": "1",
     "height": "5.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.1
    },
    "geometry": {
     "type": "Polygon",
@@ -30337,7 +30837,8 @@
     "building": "retail",
     "building:levels": "1",
     "height": "3.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.8
    },
    "geometry": {
     "type": "Polygon",
@@ -30388,7 +30889,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "8.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.4
    },
    "geometry": {
     "type": "Polygon",
@@ -30443,7 +30945,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.8
    },
    "geometry": {
     "type": "Polygon",
@@ -30514,7 +31017,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "10.1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.3
    },
    "geometry": {
     "type": "Polygon",
@@ -30553,7 +31057,8 @@
     "building": "dormitory",
     "building:levels": "3",
     "height": "9.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.3
    },
    "geometry": {
     "type": "Polygon",
@@ -30608,7 +31113,8 @@
     "building": "dormitory",
     "building:levels": "2",
     "height": "9.2",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.1
    },
    "geometry": {
     "type": "Polygon",
@@ -30647,7 +31153,8 @@
     "building": "dormitory",
     "building:levels": "2",
     "height": "7.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.3
    },
    "geometry": {
     "type": "Polygon",
@@ -30686,7 +31193,8 @@
     "building": "dormitory",
     "building:levels": "2",
     "height": "9.5",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.1
    },
    "geometry": {
     "type": "Polygon",
@@ -30725,7 +31233,8 @@
     "building": "dormitory",
     "building:levels": "2",
     "height": "9.4",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 9.1
    },
    "geometry": {
     "type": "Polygon",
@@ -30764,7 +31273,8 @@
     "building": "yes",
     "building:levels": "1",
     "height": "4.8",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 4.8
    },
    "geometry": {
     "type": "Polygon",
@@ -30817,7 +31327,8 @@
     "realm": "campus",
     "map_no": "47",
     "category": "Language house",
-    "use": "German language house (8 singles) with a language scholar; hosts campuswide cultural events."
+    "use": "German language house (8 singles) with a language scholar; hosts campuswide cultural events.",
+    "height_lidar_m": 27.4
    },
    "geometry": {
     "type": "Polygon",
@@ -30858,7 +31369,8 @@
     "realm": "campus",
     "map_no": "48",
     "category": "Language house",
-    "use": "French language house with a language scholar; hosts films, meals and concerts."
+    "use": "French language house with a language scholar; hosts films, meals and concerts.",
+    "height_lidar_m": 21.4
    },
    "geometry": {
     "type": "Polygon",
@@ -30899,7 +31411,8 @@
     "realm": "campus",
     "map_no": "46",
     "category": "Language house",
-    "use": "Small residence where students practice Russian, with a live-in native-speaker language scholar; hosts films, meals and cultural events."
+    "use": "Small residence where students practice Russian, with a live-in native-speaker language scholar; hosts films, meals and cultural events.",
+    "height_lidar_m": 28.7
    },
    "geometry": {
     "type": "Polygon",
@@ -30940,7 +31453,8 @@
     "realm": "campus",
     "map_no": "49",
     "category": "Language house",
-    "use": "Spanish language house with a language scholar; its plaza is a shared gathering space for the language houses."
+    "use": "Spanish language house with a language scholar; its plaza is a shared gathering space for the language houses.",
+    "height_lidar_m": 12.1
    },
    "geometry": {
     "type": "Polygon",
@@ -30982,7 +31496,8 @@
     "map_no": "50",
     "category": "Language house",
     "use": "Chinese language house with a language scholar; tea, cooking and cultural activities.",
-    "changes": "Reed has since moved the Chinese House to sit closer to the other language houses; language scholars now also include Arabic."
+    "changes": "Reed has since moved the Chinese House to sit closer to the other language houses; language scholars now also include Arabic.",
+    "height_lidar_m": 18.5
    },
    "geometry": {
     "type": "Polygon",
@@ -31023,7 +31538,8 @@
     "realm": "campus",
     "map_no": "8",
     "category": "Student housing",
-    "use": "Small house-style residence hall."
+    "use": "Small house-style residence hall.",
+    "height_lidar_m": 6.4
    },
    "geometry": {
     "type": "Polygon",
@@ -31128,7 +31644,8 @@
     "id": "way/434305102",
     "kind": "building",
     "building": "house",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.5
    },
    "geometry": {
     "type": "Polygon",
@@ -31181,7 +31698,8 @@
     "id": "way/434305104",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 3.3
    },
    "geometry": {
     "type": "Polygon",
@@ -31218,7 +31736,8 @@
     "id": "way/434307480",
     "kind": "building",
     "building": "house",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 6.1
    },
    "geometry": {
     "type": "Polygon",
@@ -31263,7 +31782,8 @@
     "id": "way/685753541",
     "kind": "building",
     "building": "yes",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 3.9
    },
    "geometry": {
     "type": "Polygon",
@@ -31398,7 +31918,8 @@
     "name": "Theatre Annex",
     "building": "university",
     "building:levels": "1",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 5.1
    },
    "geometry": {
     "type": "Polygon",
@@ -31440,7 +31961,8 @@
     "map_no": "2",
     "category": "Support / storage",
     "use": "Storage for theatre sets, props and costumes plus general college warehousing and receiving.",
-    "changes": "Most theatre production work moved to the Performing Arts Building in 2013."
+    "changes": "Most theatre production work moved to the Performing Arts Building in 2013.",
+    "height_lidar_m": 5.8
    },
    "geometry": {
     "type": "Polygon",
@@ -31493,7 +32015,8 @@
     "id": "way/685753546",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.1
    },
    "geometry": {
     "type": "Polygon",
@@ -31530,7 +32053,8 @@
     "id": "way/785269166",
     "kind": "building",
     "building": "garage",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -31567,7 +32091,8 @@
     "id": "way/785269167",
     "kind": "building",
     "building": "residential",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -31604,7 +32129,8 @@
     "id": "way/785269168",
     "kind": "building",
     "building": "residential",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.0
    },
    "geometry": {
     "type": "Polygon",
@@ -31663,7 +32189,9 @@
     "map_no": "\u2014",
     "category": "Student housing",
     "use": "Reed's largest residence hall, opened 2019 near the Grove where tennis courts used to be; about 180 first-year students, LEED Platinum.",
-    "changes": "Built after this 2010 map."
+    "changes": "Built after this 2010 map.",
+    "height_lidar_m": 2.4,
+    "lidar_2014_absent": true
    },
    "geometry": {
     "type": "Polygon",
@@ -31792,7 +32320,8 @@
     "id": "way/785269172",
     "kind": "building",
     "building": "residential",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -32685,7 +33214,8 @@
     "name": "The Horrid Art Project",
     "building": "yes",
     "height": "3",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 0.1
    },
    "geometry": {
     "type": "Polygon",
@@ -32771,7 +33301,8 @@
     "id": "way/877775556",
     "kind": "building",
     "building": "garages",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -32808,7 +33339,8 @@
     "id": "way/877775557",
     "kind": "building",
     "building": "detached",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -32845,7 +33377,8 @@
     "id": "way/877775560",
     "kind": "building",
     "building": "detached",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -32898,7 +33431,8 @@
     "id": "way/877775561",
     "kind": "building",
     "building": "detached",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -32959,7 +33493,8 @@
     "id": "way/877775562",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 11.0
    },
    "geometry": {
     "type": "Polygon",
@@ -32996,7 +33531,8 @@
     "id": "way/877775563",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 14.2
    },
    "geometry": {
     "type": "Polygon",
@@ -33033,7 +33569,8 @@
     "id": "way/877775564",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 15.4
    },
    "geometry": {
     "type": "Polygon",
@@ -33070,7 +33607,8 @@
     "id": "way/877775565",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -33123,7 +33661,8 @@
     "id": "way/877776270",
     "kind": "building",
     "building": "yes",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 3.2
    },
    "geometry": {
     "type": "Polygon",
@@ -33160,7 +33699,8 @@
     "id": "way/877776271",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 8.1
    },
    "geometry": {
     "type": "Polygon",
@@ -33197,7 +33737,8 @@
     "id": "way/877776272",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 11.0
    },
    "geometry": {
     "type": "Polygon",
@@ -33236,7 +33777,8 @@
     "name": "Gyms I and II",
     "building": "sports_hall",
     "leisure": "sports_centre",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 8.8
    },
    "geometry": {
     "type": "Polygon",
@@ -33486,7 +34028,9 @@
     "id": "way/919063711",
     "kind": "building",
     "building": "roof",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 2.5,
+    "lidar_2014_absent": true
    },
    "geometry": {
     "type": "Polygon",
@@ -33791,7 +34335,8 @@
     "id": "way/980472948",
     "kind": "building",
     "building": "detached",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -33828,7 +34373,8 @@
     "id": "way/980472949",
     "kind": "building",
     "building": "shed",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 10.0
    },
    "geometry": {
     "type": "Polygon",
@@ -33865,7 +34411,8 @@
     "id": "way/980472950",
     "kind": "building",
     "building": "garage",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 12.8
    },
    "geometry": {
     "type": "Polygon",
@@ -33902,7 +34449,8 @@
     "id": "way/980472951",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 13.5
    },
    "geometry": {
     "type": "Polygon",
@@ -33939,7 +34487,8 @@
     "id": "way/980472952",
     "kind": "building",
     "building": "detached",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 24.5
    },
    "geometry": {
     "type": "Polygon",
@@ -33976,7 +34525,8 @@
     "id": "way/980472953",
     "kind": "building",
     "building": "detached",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": 7.0
    },
    "geometry": {
     "type": "Polygon",
@@ -34021,7 +34571,8 @@
     "id": "way/1047023983",
     "kind": "building",
     "building": "yes",
-    "realm": "campus"
+    "realm": "campus",
+    "height_lidar_m": 4.0
    },
    "geometry": {
     "type": "Polygon",
@@ -34349,7 +34900,8 @@
     "id": "way/1434419152",
     "kind": "building",
     "building": "yes",
-    "realm": "neighborhood"
+    "realm": "neighborhood",
+    "height_lidar_m": null
    },
    "geometry": {
     "type": "Polygon",
@@ -36682,7 +37234,9 @@
     "id": "way/51249833",
     "kind": "path",
     "highway": "path",
-    "surface": "wood"
+    "surface": "wood",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -36889,7 +37443,9 @@
     "kind": "path",
     "name": "Low Bridge",
     "highway": "footway",
-    "surface": "wood"
+    "surface": "wood",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -37455,7 +38011,8 @@
    "properties": {
     "id": "way/109330266",
     "kind": "path",
-    "highway": "footway"
+    "highway": "footway",
+    "bridge": true
    },
    "geometry": {
     "type": "LineString",
@@ -37877,7 +38434,9 @@
     "kind": "path",
     "name": "Blue Bridge",
     "highway": "path",
-    "surface": "paved"
+    "surface": "paved",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -38296,7 +38855,9 @@
     "kind": "path",
     "name": "High Bridge",
     "highway": "footway",
-    "surface": "asphalt"
+    "surface": "asphalt",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -39366,7 +39927,9 @@
     "kind": "path",
     "name": "Bouncy Bridge",
     "highway": "footway",
-    "surface": "paved"
+    "surface": "paved",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -39562,7 +40125,8 @@
     "id": "way/119017542",
     "kind": "path",
     "highway": "footway",
-    "surface": "paved"
+    "surface": "paved",
+    "bridge": true
    },
    "geometry": {
     "type": "LineString",
@@ -42260,7 +42824,9 @@
     "id": "way/137141823",
     "kind": "path",
     "highway": "footway",
-    "surface": "asphalt"
+    "surface": "asphalt",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -44064,7 +44630,9 @@
     "kind": "road",
     "name": "Southeast 28th Avenue",
     "highway": "tertiary",
-    "surface": "asphalt"
+    "surface": "asphalt",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -49498,7 +50066,9 @@
     "kind": "service_road",
     "name": "Ground Bridge",
     "highway": "service",
-    "surface": "gravel"
+    "surface": "gravel",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -51622,7 +52192,9 @@
    "properties": {
     "id": "way/966928644",
     "kind": "path",
-    "highway": "footway"
+    "highway": "footway",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -53581,7 +54153,9 @@
    "properties": {
     "id": "way/1264398276",
     "kind": "path",
-    "highway": "path"
+    "highway": "path",
+    "bridge": true,
+    "layer": "1"
    },
    "geometry": {
     "type": "LineString",
@@ -54146,6 +54720,24 @@
   },
   {
    "type": "Feature",
+   "id": "node/1345232658",
+   "properties": {
+    "id": "node/1345232658",
+    "kind": "entrance",
+    "entrance": "staircase",
+    "building_id": "way/119843557",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     784.56,
+     409.29
+    ]
+   }
+  },
+  {
+   "type": "Feature",
    "id": "node/1564467846",
    "properties": {
     "id": "node/1564467846",
@@ -54183,6 +54775,118 @@
   },
   {
    "type": "Feature",
+   "id": "node/3260493259",
+   "properties": {
+    "id": "node/3260493259",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     43.7,
+     5.04
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493260",
+   "properties": {
+    "id": "node/3260493260",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     61.53,
+     2.29
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493461",
+   "properties": {
+    "id": "node/3260493461",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     70.54,
+     2.75
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493538",
+   "properties": {
+    "id": "node/3260493538",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     633.89,
+     322.44
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493539",
+   "properties": {
+    "id": "node/3260493539",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     583.87,
+     305.07
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493540",
+   "properties": {
+    "id": "node/3260493540",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     610.94,
+     299.14
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493541",
+   "properties": {
+    "id": "node/3260493541",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     604.36,
+     318.75
+    ]
+   }
+  },
+  {
+   "type": "Feature",
    "id": "node/3260493542",
    "properties": {
     "id": "node/3260493542",
@@ -54195,6 +54899,966 @@
     "coordinates": [
      694.51,
      224.31
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493543",
+   "properties": {
+    "id": "node/3260493543",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     618.49,
+     344.51
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493544",
+   "properties": {
+    "id": "node/3260493544",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     600.01,
+     350.69
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493545",
+   "properties": {
+    "id": "node/3260493545",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     583.43,
+     354.38
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493546",
+   "properties": {
+    "id": "node/3260493546",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     552.68,
+     340.66
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493547",
+   "properties": {
+    "id": "node/3260493547",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     562.29,
+     348.43
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/3260493548",
+   "properties": {
+    "id": "node/3260493548",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     565.75,
+     324.63
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004606",
+   "properties": {
+    "id": "node/4089004606",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     631.01,
+     778.23
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004607",
+   "properties": {
+    "id": "node/4089004607",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     627.78,
+     797.65
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004608",
+   "properties": {
+    "id": "node/4089004608",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     616.46,
+     798.01
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004609",
+   "properties": {
+    "id": "node/4089004609",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     605.14,
+     797.96
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004610",
+   "properties": {
+    "id": "node/4089004610",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     591.1,
+     797.48
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004611",
+   "properties": {
+    "id": "node/4089004611",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     579.36,
+     797.22
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004612",
+   "properties": {
+    "id": "node/4089004612",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     567.2,
+     797.37
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004613",
+   "properties": {
+    "id": "node/4089004613",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     554.21,
+     797.1
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004614",
+   "properties": {
+    "id": "node/4089004614",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     541.84,
+     797.67
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004615",
+   "properties": {
+    "id": "node/4089004615",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     530.94,
+     797.21
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004616",
+   "properties": {
+    "id": "node/4089004616",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     518.37,
+     796.73
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004617",
+   "properties": {
+    "id": "node/4089004617",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     507.04,
+     797.72
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004618",
+   "properties": {
+    "id": "node/4089004618",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     494.26,
+     797.45
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004619",
+   "properties": {
+    "id": "node/4089004619",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     483.78,
+     796.78
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004620",
+   "properties": {
+    "id": "node/4089004620",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     470.57,
+     796.3
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004621",
+   "properties": {
+    "id": "node/4089004621",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     459.25,
+     797.5
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004622",
+   "properties": {
+    "id": "node/4089004622",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     447.31,
+     796.82
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004623",
+   "properties": {
+    "id": "node/4089004623",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     434.52,
+     797.18
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004624",
+   "properties": {
+    "id": "node/4089004624",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     422.36,
+     796.92
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004625",
+   "properties": {
+    "id": "node/4089004625",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     410.21,
+     797.28
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004626",
+   "properties": {
+    "id": "node/4089004626",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     398.26,
+     796.81
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004627",
+   "properties": {
+    "id": "node/4089004627",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     385.69,
+     796.75
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004628",
+   "properties": {
+    "id": "node/4089004628",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     373.94,
+     796.9
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004629",
+   "properties": {
+    "id": "node/4089004629",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     361.37,
+     796.43
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004630",
+   "properties": {
+    "id": "node/4089004630",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     349.42,
+     796.38
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004631",
+   "properties": {
+    "id": "node/4089004631",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     313.37,
+     795.79
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004632",
+   "properties": {
+    "id": "node/4089004632",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     326.57,
+     796.68
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004633",
+   "properties": {
+    "id": "node/4089004633",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     337.27,
+     796.32
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004635",
+   "properties": {
+    "id": "node/4089004635",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     633.23,
+     753.38
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004636",
+   "properties": {
+    "id": "node/4089004636",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640.05,
+     728.76
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004637",
+   "properties": {
+    "id": "node/4089004637",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     658.74,
+     766.03
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004638",
+   "properties": {
+    "id": "node/4089004638",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     645.07,
+     775.59
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004639",
+   "properties": {
+    "id": "node/4089004639",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     646.17,
+     765.14
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004640",
+   "properties": {
+    "id": "node/4089004640",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     646.84,
+     755.74
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004641",
+   "properties": {
+    "id": "node/4089004641",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     650.25,
+     743.23
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004642",
+   "properties": {
+    "id": "node/4089004642",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     654.07,
+     733.42
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004643",
+   "properties": {
+    "id": "node/4089004643",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     661.07,
+     715.07
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004644",
+   "properties": {
+    "id": "node/4089004644",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     612.47,
+     707.95
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004645",
+   "properties": {
+    "id": "node/4089004645",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     626.92,
+     710.73
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004646",
+   "properties": {
+    "id": "node/4089004646",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1045.31,
+     463.28
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004647",
+   "properties": {
+    "id": "node/4089004647",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     586.49,
+     704.69
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004648",
+   "properties": {
+    "id": "node/4089004648",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     520.0,
+     714.21
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004649",
+   "properties": {
+    "id": "node/4089004649",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     535.09,
+     715.53
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004650",
+   "properties": {
+    "id": "node/4089004650",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     547.87,
+     716.43
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004651",
+   "properties": {
+    "id": "node/4089004651",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     561.93,
+     713.36
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004652",
+   "properties": {
+    "id": "node/4089004652",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     480.2,
+     709.02
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004653",
+   "properties": {
+    "id": "node/4089004653",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     507.43,
+     711.85
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004654",
+   "properties": {
+    "id": "node/4089004654",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     887.15,
+     374.31
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004655",
+   "properties": {
+    "id": "node/4089004655",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     873.41,
+     398.68
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004656",
+   "properties": {
+    "id": "node/4089004656",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     905.48,
+     399.26
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004657",
+   "properties": {
+    "id": "node/4089004657",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     889.34,
+     399.59
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004658",
+   "properties": {
+    "id": "node/4089004658",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     902.39,
+     388.16
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004659",
+   "properties": {
+    "id": "node/4089004659",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     905.99,
+     380.66
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/4089004660",
+   "properties": {
+    "id": "node/4089004660",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     900.11,
+     383.98
     ]
    }
   },
@@ -54285,6 +55949,26 @@
   },
   {
    "type": "Feature",
+   "id": "node/8322743580",
+   "properties": {
+    "id": "node/8322743580",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "wheelchair": "yes",
+    "access": "private",
+    "building_id": "way/39516409",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     518.62,
+     661.02
+    ]
+   }
+  },
+  {
+   "type": "Feature",
    "id": "node/8336727377",
    "properties": {
     "id": "node/8336727377",
@@ -54297,6 +55981,481 @@
     "coordinates": [
      1045.08,
      91.65
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8372912421",
+   "properties": {
+    "id": "node/8372912421",
+    "kind": "entrance",
+    "entrance": "main",
+    "wheelchair": "yes",
+    "access": "private",
+    "building_id": "way/39516409",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     524.56,
+     679.43
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8372912424",
+   "properties": {
+    "id": "node/8372912424",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "wheelchair": "yes",
+    "access": "private",
+    "building_id": "way/39516409",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     542.15,
+     660.76
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8456154699",
+   "properties": {
+    "id": "node/8456154699",
+    "kind": "entrance",
+    "entrance": "staircase",
+    "wheelchair": "no",
+    "access": "private",
+    "building_id": "way/39516409",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     547.66,
+     691.52
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8456167389",
+   "properties": {
+    "id": "node/8456167389",
+    "kind": "entrance",
+    "entrance": "yes",
+    "level": "2",
+    "building_id": "way/39516532",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     650.59,
+     395.56
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8456167390",
+   "properties": {
+    "id": "node/8456167390",
+    "kind": "entrance",
+    "entrance": "yes",
+    "wheelchair": "no",
+    "level": "2",
+    "building_id": "way/39516532",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     650.67,
+     379.08
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8777894218",
+   "properties": {
+    "id": "node/8777894218",
+    "kind": "entrance",
+    "entrance": "main",
+    "wheelchair": "yes",
+    "level": "1",
+    "building_id": "way/785269171",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     354.21,
+     639.32
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8777894219",
+   "properties": {
+    "id": "node/8777894219",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "level": "1",
+    "building_id": "way/785269171",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     352.69,
+     615.93
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8777894220",
+   "properties": {
+    "id": "node/8777894220",
+    "kind": "entrance",
+    "entrance": "staircase",
+    "level": "2",
+    "building_id": "way/785269171",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     382.48,
+     631.16
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8777894223",
+   "properties": {
+    "id": "node/8777894223",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "wheelchair": "yes",
+    "level": "2",
+    "building_id": "way/785269171",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     363.58,
+     641.44
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8777894226",
+   "properties": {
+    "id": "node/8777894226",
+    "kind": "entrance",
+    "entrance": "staircase",
+    "level": "1",
+    "building_id": "way/785269171",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     317.8,
+     656.74
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8777894227",
+   "properties": {
+    "id": "node/8777894227",
+    "kind": "entrance",
+    "entrance": "staircase",
+    "level": "2",
+    "building_id": "way/785269171",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     372.24,
+     677.63
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8777894229",
+   "properties": {
+    "id": "node/8777894229",
+    "kind": "entrance",
+    "entrance": "yes",
+    "access": "no",
+    "building_id": "way/785269171",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     355.95,
+     653.72
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8777894233",
+   "properties": {
+    "id": "node/8777894233",
+    "kind": "entrance",
+    "entrance": "service",
+    "building_id": "way/785269171",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     355.92,
+     673.51
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8778150669",
+   "properties": {
+    "id": "node/8778150669",
+    "kind": "entrance",
+    "entrance": "main",
+    "wheelchair": "yes",
+    "level": "0",
+    "building_id": "way/119843557",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     735.24,
+     411.1
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8778150671",
+   "properties": {
+    "id": "node/8778150671",
+    "kind": "entrance",
+    "entrance": "main",
+    "wheelchair": "no",
+    "building_id": "way/218153556",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     385.21,
+     371.76
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8778150674",
+   "properties": {
+    "id": "node/8778150674",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "building_id": "way/119843581",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     351.58,
+     224.65
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/8945851201",
+   "properties": {
+    "id": "node/8945851201",
+    "kind": "entrance",
+    "entrance": "main",
+    "wheelchair": "yes",
+    "building_id": "way/218153556",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     385.18,
+     377.51
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/9163452297",
+   "properties": {
+    "id": "node/9163452297",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "level": "1",
+    "building_id": "way/119843557",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     739.08,
+     411.15
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/9163452303",
+   "properties": {
+    "id": "node/9163452303",
+    "kind": "entrance",
+    "entrance": "yes",
+    "wheelchair": "yes",
+    "level": "2",
+    "building_id": "way/39516532",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     688.84,
+     387.98
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/9628035051",
+   "properties": {
+    "id": "node/9628035051",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "building_id": "way/119843578",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     402.16,
+     254.11
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/9628035061",
+   "properties": {
+    "id": "node/9628035061",
+    "kind": "tree",
+    "natural": "tree"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     365.13,
+     263.62
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/9628035067",
+   "properties": {
+    "id": "node/9628035067",
+    "kind": "entrance",
+    "entrance": "main",
+    "building_id": "way/119843581",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     356.12,
+     258.76
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/9628035073",
+   "properties": {
+    "id": "node/9628035073",
+    "kind": "entrance",
+    "entrance": "yes",
+    "building_id": "way/119843578",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     370.71,
+     259.41
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/9628035078",
+   "properties": {
+    "id": "node/9628035078",
+    "kind": "entrance",
+    "entrance": "garage",
+    "building_id": "way/1047023983",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     356.07,
+     263.38
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/9628035084",
+   "properties": {
+    "id": "node/9628035084",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "wheelchair": "no",
+    "level": "1",
+    "building_id": "way/39516532",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     609.91,
+     386.9
     ]
    }
   },
@@ -54330,6 +56489,79 @@
     "coordinates": [
      498.65,
      300.92
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/12950981398",
+   "properties": {
+    "id": "node/12950981398",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "building_id": "way/39516532",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     615.18,
+     373.49
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/12951055205",
+   "properties": {
+    "id": "node/12951055205",
+    "kind": "entrance",
+    "entrance": "secondary",
+    "building_id": "way/40877451",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     571.43,
+     366.07
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/12951055209",
+   "properties": {
+    "id": "node/12951055209",
+    "kind": "entrance",
+    "entrance": "service",
+    "building_id": "way/218153556",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     375.58,
+     402.11
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "node/12951055216",
+   "properties": {
+    "id": "node/12951055216",
+    "kind": "entrance",
+    "entrance": "service",
+    "level": "-1",
+    "building_id": "way/302430449",
+    "building_dist_m": 0.0
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     839.61,
+     394.08
     ]
    }
   }

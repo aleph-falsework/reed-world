@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 6,
+  "id": "27e6d58b-4bff-5378-846d-9400be5cd4c6",
+  "symbol": "actor_way_119843572",
+  "prefabId": "",
+  "name": "Educational Technology Center",
+  "notes": "id: way/119843572 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 23,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "EDUCATIONAL\nTECHNOLOGY CENTER\nInstructional",
+          "technology\nsupport."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "3c1e211e-35d0-5f00-bd57-f3904259397b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

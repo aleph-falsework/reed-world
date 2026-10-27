@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 3,
+  "id": "274b949f-d3ee-5709-b105-64eef16f67f4",
+  "symbol": "actor_way_119843567",
+  "prefabId": "",
+  "name": "Greywood Hall",
+  "notes": "id: way/119843567 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 33,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "GREYWOOD HALL\nAlumni and parent\nrelations, campus",
+          "information and\ncareer services."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "d1e6d89b-e944-5055-a87e-7971a3a3a0fb"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

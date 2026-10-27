@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 7,
+  "id": "7d2f468f-062b-5173-bada-de607cc38876",
+  "symbol": "actor_node_1564467846",
+  "prefabId": "",
+  "name": "Cerf Amphitheatre",
+  "notes": "id: node/1564467846",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 3,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "CERF AMPHITHEATRE\nOutdoor\namphitheatre on",
+          "the canyon used\nfor concerts."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "0f174bfc-a985-575d-afad-702553609bd5"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

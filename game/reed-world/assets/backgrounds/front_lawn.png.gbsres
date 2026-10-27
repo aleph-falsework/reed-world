@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "89df1533-1ffd-5600-b758-b2ab47a5bb0b",
+  "name": "front_lawn",
+  "symbol": "bg_front_lawn",
+  "tileColors": "",
+  "filename": "front_lawn.png",
+  "width": 120,
+  "height": 58,
+  "imageWidth": 960,
+  "imageHeight": 464,
+  "autoColor": false
+}

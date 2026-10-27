@@ -1,0 +1,49 @@
+{
+  "_resourceType": "trigger",
+  "_index": 7,
+  "id": "9e1c40a9-980e-53ec-8285-2343b984ee67",
+  "symbol": "trigger_science_quad_exit_s_0",
+  "prefabId": "",
+  "name": "exit_s_language_houses_1",
+  "notes": "id: exit_s_language_houses_1 -> language_houses",
+  "x": 12,
+  "y": 51,
+  "width": 4,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "508a97d7-6e18-5029-8ea6-f05b6175b5d9",
+        "x": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 14
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 12
+          }
+        },
+        "y": {
+          "type": "number",
+          "value": 1
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "83496e13-61bc-5716-8679-58bfc1284fc2"
+    }
+  ],
+  "leaveScript": []
+}

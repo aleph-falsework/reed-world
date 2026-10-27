@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 2,
+  "id": "32c6b676-adf4-5511-8a0e-a2bbc730cccc",
+  "symbol": "actor_way_367919775",
+  "prefabId": "",
+  "name": "Canyon House",
+  "notes": "id: way/367919775 (door estimated, mounted on facade)",
+  "coordinateType": "tiles",
+  "x": 60,
+  "y": 83,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "CANYON HOUSE\nResidence hall\nthat serves as an",
+          "extension of the\nGarden House\nsustainability..."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "b7020caf-4063-52b6-89b8-1974ea44d88f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

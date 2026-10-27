@@ -1,0 +1,140 @@
+"""Headless GB Studio 4.3.2 builds via its own CLI (src/apps/gb-studio-cli).
+
+    build_rom(project_dir, out_rom, verbose=False) -> Path
+    build_web(project_dir, out_dir, verbose=False) -> Path (index.html)
+
+The CLI is `out/cli/gb-studio-cli.js` in a GB Studio checkout built by
+tools/gbs/setup_gbstudio.sh. Override its location with $GBS_SRC.
+
+Each build gets a private TMPDIR: the CLI always builds in
+`os.tmpdir()/_gbsbuild`, so two builds sharing a TMPDIR would clobber each
+other. The ROM's .sym/.map/.noi files are copied next to the ROM (PyBoy
+picks up `<rom>.sym` automatically; tools/gbs/play.py uses it to read state).
+"""
+from __future__ import annotations
+
+import os
+import shutil
+import subprocess
+import tempfile
+import time
+from pathlib import Path
+
+from .constants import DEFAULT_GBS_SRC
+
+
+class BuildError(RuntimeError):
+    pass
+
+
+def gbs_src() -> Path:
+    return Path(os.environ.get("GBS_SRC", DEFAULT_GBS_SRC))
+
+
+def cli_path() -> Path:
+    cli = gbs_src() / "out" / "cli" / "gb-studio-cli.js"
+    if not cli.exists():
+        raise BuildError(f"GB Studio CLI not found at {cli}; run tools/gbs/setup_gbstudio.sh")
+    return cli
+
+
+def _project_file(project_dir) -> Path:
+    p = Path(project_dir)
+    if p.suffix == ".gbsproj":
+        return p
+    found = sorted(p.glob("*.gbsproj"))
+    if not found:
+        raise BuildError(f"no .gbsproj in {p}")
+    return found[0]
+
+
+def _run(command: str, project_dir, dest: Path, verbose: bool, tmp: Path):
+    proj = _project_file(project_dir).resolve()
+    env = dict(os.environ, TMPDIR=str(tmp), TMP=str(tmp), TEMP=str(tmp))
+    cmd = ["node", str(cli_path()), command, "-v", str(proj), str(dest)]
+    t0 = time.time()
+    r = subprocess.run(cmd, env=env, capture_output=True, text=True, cwd=gbs_src())
+    log = r.stdout + r.stderr
+    (tmp / "build.log").write_text(log)
+    if verbose:
+        print(log)
+    if r.returncode != 0:
+        tail = "\n".join(log.strip().splitlines()[-25:])
+        raise BuildError(f"gb-studio-cli {command} failed (exit {r.returncode}):\n{tail}")
+    # The CLI prints compiler warnings with -v; surface the important ones.
+    warnings = [l for l in log.splitlines() if "warning" in l.lower() or "Warning" in l]
+    return time.time() - t0, warnings, log
+
+
+def build_rom(project_dir, out_rom, verbose: bool = False) -> Path:
+    """Compile the project to a .gb ROM. Also writes <rom>.sym/.map/.noi and <rom>.build.log."""
+    out_rom = Path(out_rom).resolve()
+    out_rom.parent.mkdir(parents=True, exist_ok=True)
+    tmp = Path(tempfile.mkdtemp(prefix="gbsbuild_"))
+    try:
+        secs, warnings, log = _run("make:rom", project_dir, out_rom, verbose, tmp)
+        if not out_rom.exists():
+            raise BuildError(f"CLI exited 0 but no ROM at {out_rom}")
+        romdir = tmp / "_gbsbuild" / "build" / "rom"
+        for ext in (".sym", ".map", ".noi"):
+            for f in romdir.glob(f"*{ext}"):
+                shutil.copyfile(f, out_rom.with_suffix(ext))
+        out_rom.with_suffix(".build.log").write_text(
+            f"# built in {secs:.1f}s\n" + log
+        )
+        build_rom.last_seconds = secs  # type: ignore[attr-defined]
+        build_rom.last_warnings = warnings  # type: ignore[attr-defined]
+        return out_rom
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# binjgb built-in palette 62 is the DMG green set: each shade within 3.5 RGB units of DMG_HEX
+# (88c070 346856 e0f8d0 081820, measured by running the template's binjgb.wasm under node).
+DMG_WEB_PALETTE = 62
+
+
+def build_web(project_dir, out_dir, verbose: bool = False, palette: int | None = DMG_WEB_PALETTE) -> Path:
+    """Build the HTML5 export (binjgb wasm emulator + ROM). Returns index.html.
+
+    palette: the template's own default-palette option (DEFAULT_PALETTE_IDX in js/script.js, an
+    index into binjgb's 84 built-in DMG palettes; the template ships 83). None keeps the template's."""
+    out_dir = Path(out_dir).resolve()
+    if out_dir.exists():
+        shutil.rmtree(out_dir)
+    tmp = Path(tempfile.mkdtemp(prefix="gbsweb_"))
+    try:
+        secs, warnings, log = _run("make:web", project_dir, out_dir, verbose, tmp)
+        index = out_dir / "index.html"
+        if not index.exists():
+            raise BuildError(f"CLI exited 0 but no {index}")
+        if palette is not None:
+            js = out_dir / "js" / "script.js"
+            src = js.read_text()
+            if "const DEFAULT_PALETTE_IDX = 83;" not in src:
+                raise BuildError(f"{js}: DEFAULT_PALETTE_IDX line not found; template changed?")
+            js.write_text(src.replace("const DEFAULT_PALETTE_IDX = 83;", f"const DEFAULT_PALETTE_IDX = {int(palette)};"))
+        build_web.last_seconds = secs  # type: ignore[attr-defined]
+        return index
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def check_project(project_dir) -> dict:
+    """Load the project with GB Studio 4.3.2's own loader and check every
+    .gbsres strictly against its TypeBox schemas (tools/gbs/node/check_project.ts).
+    Returns the checker's JSON report; report["ok"] is False on any schema
+    problem, if loading would migrate the project, or if a sprite lacks frames."""
+    import json
+
+    checker = gbs_src() / "out" / "cli" / "gbs-check.js"
+    if not checker.exists():
+        raise BuildError(f"{checker} missing; run tools/gbs/node/build_checker.sh")
+    proj = _project_file(project_dir).resolve()
+    r = subprocess.run(
+        ["node", str(checker), str(proj)], capture_output=True, text=True, cwd=gbs_src()
+    )
+    try:
+        return json.loads(r.stdout[r.stdout.index("{"):])
+    except ValueError:
+        raise BuildError(f"checker failed (exit {r.returncode}):\n{r.stderr[-2000:]}")

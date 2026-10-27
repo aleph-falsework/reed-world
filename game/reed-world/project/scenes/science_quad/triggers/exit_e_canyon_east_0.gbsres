@@ -1,0 +1,56 @@
+{
+  "_resourceType": "trigger",
+  "_index": 0,
+  "id": "8042000b-4528-5b8b-b751-e057aeb72331",
+  "symbol": "trigger_science_quad_exit_e",
+  "prefabId": "",
+  "name": "exit_e_canyon_east_0",
+  "notes": "id: exit_e_canyon_east_0 -> canyon_east",
+  "x": 53,
+  "y": 28,
+  "width": 1,
+  "height": 2,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "a561454c-2d94-5fc7-9df4-e2a578b04e60",
+        "x": {
+          "type": "number",
+          "value": 1
+        },
+        "y": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": 38
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 69
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 66
+          }
+        },
+        "direction": "right",
+        "fadeSpeed": "2"
+      },
+      "id": "441e2411-43bd-5501-b8af-3a7298f41433"
+    }
+  ],
+  "leaveScript": []
+}

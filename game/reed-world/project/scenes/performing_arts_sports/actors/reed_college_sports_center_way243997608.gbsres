@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 4,
+  "id": "17458220-8bc1-595c-8cc5-31ce487a3163",
+  "symbol": "actor_way_243997608",
+  "prefabId": "",
+  "name": "Reed College Sports Center",
+  "notes": "id: way/243997608 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 60,
+  "y": 13,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "REED COLLEGE\nSPORTS CENTER\nGym, indoor pool,",
+          "fitness rooms and\ncourts, physical\neducation classes."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "578d8542-5117-59f5-bf59-7483b151f4f7"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

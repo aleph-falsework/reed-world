@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 1,
+  "id": "d92991be-6faf-5a8a-bf31-930507cb7963",
+  "symbol": "actor_way_787036016",
+  "prefabId": "",
+  "name": "The Horrid Art Project",
+  "notes": "id: way/787036016 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 46,
+  "y": 19,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THE HORRID ART\nPROJECT"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "de110534-cd09-56cb-bd03-cff4c78731c3"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

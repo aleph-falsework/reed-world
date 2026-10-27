@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "c03516bd-17bd-55f6-9e91-3ee3872dae2c",
+  "symbol": "actor_way_367893606",
+  "prefabId": "",
+  "name": "Dorothy Johansen House",
+  "notes": "id: way/367893606 (door estimated, mounted on facade)",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 41,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "DOROTHY JOHANSEN\nHOUSE\nFormer home of",
+          "history professor\nJohansen; now\nacademic support."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "7b1cdf51-479e-591b-be6a-c689a9bc46af"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

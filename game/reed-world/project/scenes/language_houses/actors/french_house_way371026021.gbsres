@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 1,
+  "id": "999a33a3-bf6a-5de0-92ee-63531efc6c99",
+  "symbol": "actor_way_371026021",
+  "prefabId": "",
+  "name": "French House",
+  "notes": "id: way/371026021 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 38,
+  "y": 39,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "FRENCH HOUSE\nFrench language\nhouse with a",
+          "language scholar,\nhosts films, meals\nand concerts."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "056b1f75-4aa5-5d24-a069-67863b7af3fd"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

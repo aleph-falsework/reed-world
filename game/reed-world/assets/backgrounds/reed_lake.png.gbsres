@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "0175b836-13df-53b9-ab73-415b84451595",
+  "name": "reed_lake",
+  "symbol": "bg_reed_lake",
+  "tileColors": "",
+  "filename": "reed_lake.png",
+  "width": 94,
+  "height": 38,
+  "imageWidth": 752,
+  "imageHeight": 304,
+  "autoColor": false
+}

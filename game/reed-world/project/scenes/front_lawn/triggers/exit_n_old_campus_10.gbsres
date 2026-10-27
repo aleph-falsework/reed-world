@@ -1,0 +1,49 @@
+{
+  "_resourceType": "trigger",
+  "_index": 8,
+  "id": "a7848cd0-ebf1-59d0-a4ca-1658c65459b3",
+  "symbol": "trigger_front_lawn_exit_n_o_0",
+  "prefabId": "",
+  "name": "exit_n_old_campus_10",
+  "notes": "id: exit_n_old_campus_10 -> old_campus",
+  "x": 102,
+  "y": 0,
+  "width": 6,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "63329105-269c-5a55-b8f3-9553c4ac4c8c",
+        "x": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 106
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 102
+          }
+        },
+        "y": {
+          "type": "number",
+          "value": 42
+        },
+        "direction": "up",
+        "fadeSpeed": "2"
+      },
+      "id": "2cb96bda-f3e8-5c0d-9e27-50d2b65bf96e"
+    }
+  ],
+  "leaveScript": []
+}

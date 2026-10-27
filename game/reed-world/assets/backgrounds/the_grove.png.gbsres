@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "ce796820-f722-5676-9c07-6b7d7f171bce",
+  "name": "the_grove",
+  "symbol": "bg_the_grove",
+  "tileColors": "",
+  "filename": "the_grove.png",
+  "width": 84,
+  "height": 108,
+  "imageWidth": 672,
+  "imageHeight": 864,
+  "autoColor": false
+}

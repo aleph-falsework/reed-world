@@ -1,0 +1,1839 @@
+{
+ "pass": 248,
+ "fail": 0,
+ "info": 19,
+ "checks": [
+  {
+   "group": "static",
+   "name": "validate() ok",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "front_lawn: tiles 78 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "front_lawn: actors 1 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "front_lawn: triggers 23 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "old_campus: tiles 70 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "old_campus: actors 8 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "old_campus: triggers 21 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "west_campus: tiles 98 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "west_campus: actors 5 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "west_campus: triggers 12 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "performing_arts: tiles 78 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "performing_arts: actors 5 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "performing_arts: triggers 20 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "science_quad: tiles 62 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "science_quad: actors 5 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "science_quad: triggers 9 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "language_houses: tiles 79 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "language_houses: actors 7 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "language_houses: triggers 16 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "studio_arts: tiles 64 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "studio_arts: actors 3 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "studio_arts: triggers 12 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "canyon_east: tiles 79 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "canyon_east: actors 1 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "canyon_east: triggers 8 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "reed_lake: tiles 88 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "reed_lake: actors 1 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "reed_lake: triggers 5 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "cross_canyon: tiles 89 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "cross_canyon: actors 7 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "cross_canyon: triggers 19 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "the_grove: tiles 73 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "the_grove: actors 7 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "the_grove: triggers 28 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "northwest: tiles 91 <= 180 (hard 192)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "northwest: actors 11 <= 20",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "limits",
+   "name": "northwest: triggers 9 <= 30",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "all dialogue lines ASCII and <= 18 chars",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "static",
+   "name": "spawn ('front_lawn', 92, 47) clear of collision and triggers",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "every exit lands clear of collision and triggers",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "all 12 scenes reachable from spawn",
+   "ok": true,
+   "detail": "missing []"
+  },
+  {
+   "group": "static",
+   "name": "every signpost readable from a reachable tile",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "static",
+   "name": "no exit lands the player where no exit can be walked to (stuck)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "play",
+   "name": "boot: player spawns in front_lawn at (92,47)",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 92, 47)"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: pushing right into LONETREE at (92,46) does not move the player",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 92, 46) facing right; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: control step left away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 91, 46), expected ('front_lawn', 91, 46)"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: pushing left into TREE at (86,46) does not move the player",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 86, 46) facing left; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: control step right away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 87, 46), expected ('front_lawn', 87, 46)"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: pushing right into FACADE at (104,29) does not move the player",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 104, 29) facing right; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: control step left away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 103, 29), expected ('front_lawn', 103, 29)"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: pushing right into ROOF at (104,27) does not move the player",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 104, 27) facing right; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: control step left away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('front_lawn', 103, 27), expected ('front_lawn', 103, 27)"
+  },
+  {
+   "group": "sign",
+   "name": "front_lawn: read 'Eric V. Hauser Memorial Library' at (102,21) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "front_lawn -> old_campus via exit_n_old_campus_9: lands at (98,42)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: pushing up into TREE at (98,38) does not move the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 98, 38) facing up; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: control step down away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 98, 39), expected ('old_campus', 98, 39)"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Eliot Circle' at (86,35) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: pushing left into ROOF at (78,35) does not move the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 78, 35) facing left; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: control step right away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 79, 35), expected ('old_campus', 79, 35)"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: pushing left into FACADE at (76,36) does not move the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 76, 36) facing left; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: control step right away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 77, 36), expected ('old_campus', 77, 36)"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Vollum College Center' at (88,27) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: pushing left into LONETREE at (74,19) does not move the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 74, 19) facing left; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: control step right away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 75, 19), expected ('old_campus', 75, 19)"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: pushing up into WATER at (63,6) does not move the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 63, 6) facing up; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: control step down away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('old_campus', 63, 7), expected ('old_campus', 63, 7)"
+  },
+  {
+   "group": "boundary",
+   "name": "old_campus -> cross_canyon via exit_n_cross_canyon_3: lands at (58,106)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: pushing right into WATER at (58,105) does not move the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 58, 105) facing right; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: control step left away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 57, 105), expected ('cross_canyon', 57, 105)"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: pushing up into LONETREE at (57,104) does not move the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 57, 104) facing up; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: control step down away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 57, 105), expected ('cross_canyon', 57, 105)"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: pushing down into TREE at (55,101) does not move the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 55, 101) facing down; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: control step up away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 55, 100), expected ('cross_canyon', 55, 100)"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Bragdon Hall' at (58,95) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: pushing up into ROOF at (58,92) does not move the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 58, 92) facing up; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: control step down away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 58, 93), expected ('cross_canyon', 58, 93)"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: pushing left into FACADE at (50,95) does not move the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 50, 95) facing left; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: control step right away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 51, 95), expected ('cross_canyon', 51, 95)"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Chittick' at (38,93) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'McKinley Hall' at (22,75) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Woodbridge Hall' at (22,80) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "cross_canyon -> the_grove via exit_w_the_grove_3: lands at (81,77)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: pushing down into TREE at (81,77) does not move the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 81, 77) facing down; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: control step up away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 81, 76), expected ('the_grove', 81, 76)"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: pushing down into WATER at (70,87) does not move the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 70, 87) facing down; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: control step up away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 70, 86), expected ('the_grove', 70, 86)"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Physical Plant' at (72,99) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: pushing up into LONETREE at (74,102) does not move the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 74, 102) facing up; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: control step down away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 74, 103), expected ('the_grove', 74, 103)"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: pushing up into FACADE at (77,102) does not move the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 77, 102) facing up; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: control step down away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 77, 103), expected ('the_grove', 77, 103)"
+  },
+  {
+   "group": "boundary",
+   "name": "the_grove -> performing_arts via exit_s_performing_arts_3: lands at (77,1)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: pushing right into TREE at (76,2) does not move the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 76, 2) facing right; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: control step left away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 75, 2), expected ('performing_arts', 75, 2)"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: pushing left into ROOF at (74,2) does not move the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 74, 2) facing left; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: control step right away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 75, 2), expected ('performing_arts', 75, 2)"
+  },
+  {
+   "group": "boundary",
+   "name": "the_grove -> old_campus via exit_s_old_campus_0: lands at (2,1)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Cerf Amphitheatre' at (12,2) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "old_campus -> performing_arts via exit_w_performing_arts_4: lands at (77,10)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: pushing left into FACADE at (74,10) does not move the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 74, 10) facing left; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: control step right away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 75, 10), expected ('performing_arts', 75, 10)"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: pushing down into LONETREE at (75,15) does not move the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 75, 15) facing down; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: control step up away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 75, 14), expected ('performing_arts', 75, 14)"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Gray Campus Center' at (2,22) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Reed College Sports Center' at (62,13) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Kaul Auditorium' at (54,26) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Gyms I and II' at (42,21) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Performing Arts Building' at (58,40) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "performing_arts -> west_campus via exit_s_west_campus_7: lands at (56,1)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: pushing right into TREE at (56,1) does not move the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 56, 1) facing right; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: control step left away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 55, 1), expected ('west_campus', 55, 1)"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: pushing down into ROOF at (48,9) does not move the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 48, 9) facing down; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: control step up away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 48, 8), expected ('west_campus', 48, 8)"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: pushing down into FACADE at (50,11) does not move the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 50, 11) facing down; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: control step up away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 50, 10), expected ('west_campus', 50, 10)"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'Foster Hall' at (60,18) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'MacNaughton Hall' at (64,18) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: pushing down into LONETREE at (64,25) does not move the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 64, 25) facing down; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: control step up away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 64, 24), expected ('west_campus', 64, 24)"
+  },
+  {
+   "group": "boundary",
+   "name": "west_campus -> front_lawn via exit_e_front_lawn_1: lands at (1,48)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "boundary",
+   "name": "performing_arts -> front_lawn via exit_e_front_lawn_0: lands at (1,15)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "performing_arts: read 'Anna Mann Hall' at (76,54) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Old Dorm Block' at (36,41) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Eliot Hall' at (48,39) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Student Union' at (33,34) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "old_campus: read 'Student Center' at (42,19) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "cross_canyon -> reed_lake via exit_e_reed_lake_0: lands at (1,30)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: pushing up into TREE at (1,30) does not move the player",
+   "ok": true,
+   "detail": "RAM ('reed_lake', 1, 30) facing up; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: control step down away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('reed_lake', 1, 31), expected ('reed_lake', 1, 31)"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: pushing down into WATER at (2,31) does not move the player",
+   "ok": true,
+   "detail": "RAM ('reed_lake', 2, 31) facing down; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: control step up away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('reed_lake', 2, 30), expected ('reed_lake', 2, 30)"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: pushing right into LONETREE at (26,32) does not move the player",
+   "ok": true,
+   "detail": "RAM ('reed_lake', 26, 32) facing right; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: control step left away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('reed_lake', 25, 32), expected ('reed_lake', 25, 32)"
+  },
+  {
+   "group": "sign",
+   "name": "reed_lake: read 'Reed Lake' at (53,21) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: pushing up into STEEP at (72,16) does not move the player",
+   "ok": true,
+   "detail": "RAM ('reed_lake', 72, 16) facing up; solid ['STEEP']"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: control step down away from STEEP moves the player",
+   "ok": true,
+   "detail": "RAM ('reed_lake', 72, 17), expected ('reed_lake', 72, 17)"
+  },
+  {
+   "group": "boundary",
+   "name": "reed_lake -> canyon_east via exit_e_canyon_east_0: lands at (1,11)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: pushing down into TREE at (1,11) does not move the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 1, 11) facing down; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: control step up away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 1, 10), expected ('canyon_east', 1, 10)"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: pushing down into LONETREE at (19,17) does not move the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 19, 17) facing down; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: control step up away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 19, 16), expected ('canyon_east', 19, 16)"
+  },
+  {
+   "group": "sign",
+   "name": "canyon_east: read 'Reed Canyon' at (18,21) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: pushing right into ROOF at (42,21) does not move the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 42, 21) facing right; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: control step left away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 41, 21), expected ('canyon_east', 41, 21)"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: pushing right into FACADE at (42,19) does not move the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 42, 19) facing right; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: control step left away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 41, 19), expected ('canyon_east', 41, 19)"
+  },
+  {
+   "group": "boundary",
+   "name": "canyon_east -> science_quad via exit_w_science_quad_3: lands at (51,4)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: pushing up into TREE at (51,4) does not move the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 51, 4) facing up; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: control step down away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 51, 5), expected ('science_quad', 51, 5)"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: pushing right into LONETREE at (50,16) does not move the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 50, 16) facing right; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: control step left away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 49, 16), expected ('science_quad', 49, 16)"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: pushing up into WATER at (10,56) does not move the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 10, 56) facing up; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: control step down away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('canyon_east', 10, 57), expected ('canyon_east', 10, 57)"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: pushing left into FACADE at (36,26) does not move the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 36, 26) facing left; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: control step right away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 37, 26), expected ('science_quad', 37, 26)"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: pushing down into ROOF at (34,31) does not move the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 34, 31) facing down; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: control step up away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 34, 30), expected ('science_quad', 34, 30)"
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Reed Research Reactor' at (30,36) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "boundary",
+   "name": "science_quad -> studio_arts via exit_e_studio_arts_0: lands at (1,12)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: pushing up into TREE at (1,12) does not move the player",
+   "ok": true,
+   "detail": "RAM ('studio_arts', 1, 12) facing up; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: control step down away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('studio_arts', 1, 13), expected ('studio_arts', 1, 13)"
+  },
+  {
+   "group": "boundary",
+   "name": "studio_arts -> language_houses via exit_w_language_houses_7: lands at (51,1)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: pushing down into TREE at (51,1) does not move the player",
+   "ok": true,
+   "detail": "RAM ('language_houses', 51, 1) facing down; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: control step up away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('language_houses', 51, 0), expected ('language_houses', 51, 0)"
+  },
+  {
+   "group": "sign",
+   "name": "studio_arts: read 'Studio Arts' at (10,12) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: pushing right into LONETREE at (10,11) does not move the player",
+   "ok": true,
+   "detail": "RAM ('studio_arts', 10, 11) facing right; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: control step left away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('studio_arts', 9, 11), expected ('studio_arts', 9, 11)"
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: pushing up into FACADE at (15,12) does not move the player",
+   "ok": true,
+   "detail": "RAM ('studio_arts', 15, 12) facing up; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: control step down away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('studio_arts', 15, 13), expected ('studio_arts', 15, 13)"
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: pushing up into ROOF at (14,10) does not move the player",
+   "ok": true,
+   "detail": "RAM ('studio_arts', 14, 10) facing up; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: control step down away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('studio_arts', 14, 11), expected ('studio_arts', 14, 11)"
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: pushing down into ROOF at (51,23) does not move the player",
+   "ok": true,
+   "detail": "RAM ('language_houses', 51, 23) facing down; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: control step up away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('language_houses', 51, 22), expected ('language_houses', 51, 22)"
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: pushing down into LONETREE at (46,23) does not move the player",
+   "ok": true,
+   "detail": "RAM ('language_houses', 46, 23) facing down; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: control step up away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('language_houses', 46, 22), expected ('language_houses', 46, 22)"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Chinese House' at (44,30) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: pushing right into FACADE at (48,29) does not move the player",
+   "ok": true,
+   "detail": "RAM ('language_houses', 48, 29) facing right; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: control step left away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('language_houses', 47, 29), expected ('language_houses', 47, 29)"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Spanish House' at (46,39) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'French House' at (40,39) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'German House' at (27,33) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Russian House' at (22,27) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Educational Technology Center' at (12,23) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "language_houses -> front_lawn via exit_w_front_lawn_4: lands at (117,29)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "language_houses: read 'Greywood Hall' at (6,32) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "language_houses -> science_quad via exit_n_science_quad_0: lands at (8,50)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Biology' at (11,50) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Psychology' at (14,47) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Physics' at (12,31) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "science_quad: read 'Chemistry' at (12,29) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "science_quad -> old_campus via exit_w_old_campus_0: lands at (117,12)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: pushing up into WATER at (26,4) does not move the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 26, 4) facing up; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: control step down away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('science_quad', 26, 5), expected ('science_quad', 26, 5)"
+  },
+  {
+   "group": "boundary",
+   "name": "science_quad -> reed_lake via exit_n_reed_lake_0: lands at (68,36)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "boundary",
+   "name": "canyon_east -> studio_arts via exit_s_studio_arts_2: lands at (40,1)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "sign",
+   "name": "studio_arts: read 'The Horrid Art Project' at (48,18) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "studio_arts: read 'Dorothy Johansen House' at (18,41) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'Prexy Hall' at (61,38) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: pushing down into STEEP at (52,53) does not move the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 52, 53) facing down; solid ['STEEP']"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: control step up away from STEEP moves the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 52, 52), expected ('west_campus', 52, 52)"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'Parker House' at (70,61) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "west_campus: read 'Scholz Hall' at (40,25) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: pushing down into WATER at (10,23) does not move the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 10, 23) facing down; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: control step up away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('west_campus', 10, 22), expected ('west_campus', 10, 22)"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: pushing up into STEEP at (2,60) does not move the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 2, 60) facing up; solid ['STEEP']"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: control step down away from STEEP moves the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 2, 61), expected ('performing_arts', 2, 61)"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: pushing up into WATER at (0,56) does not move the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 0, 56) facing up; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: control step down away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('performing_arts', 0, 57), expected ('performing_arts', 0, 57)"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: pushing up into ROOF at (30,102) does not move the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 30, 102) facing up; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: control step down away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 30, 103), expected ('the_grove', 30, 103)"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Greenwood Hall' at (36,102) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: pushing right into STEEP at (48,67) does not move the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 48, 67) facing right; solid ['STEEP']"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: control step left away from STEEP moves the player",
+   "ok": true,
+   "detail": "RAM ('the_grove', 47, 67), expected ('the_grove', 47, 67)"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Trillium' at (42,58) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Bidwell House' at (20,64) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Aspen House' at (18,71) facing down",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Sequoia House' at (8,74) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "the_grove: read 'Sitka House' at (8,59) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "boundary",
+   "name": "the_grove -> northwest via exit_w_northwest_2: lands at (69,49)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "wall",
+   "name": "northwest: pushing up into TREE at (69,40) does not move the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 69, 40) facing up; solid ['TREE']"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: control step down away from TREE moves the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 69, 41), expected ('northwest', 69, 41)"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: pushing left into FACADE at (64,44) does not move the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 64, 44) facing left; solid ['FACADE']"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: control step right away from FACADE moves the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 65, 44), expected ('northwest', 65, 44)"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: pushing left into ROOF at (64,62) does not move the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 64, 62) facing left; solid ['ROOF']"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: control step right away from ROOF moves the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 65, 62), expected ('northwest', 65, 62)"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed College Apartments' at (60,76) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed College Apartments' at (48,76) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed College Apartments' at (44,71) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: pushing down into LONETREE at (42,79) does not move the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 42, 79) facing down; solid ['LONETREE']"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: control step up away from LONETREE moves the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 42, 78), expected ('northwest', 42, 78)"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed College Apartments' at (38,77) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read '28 West' at (42,61) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Childcare Center' at (44,29) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Health and Counseling Center' at (32,40) facing up",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Reed Warehouse' at (4,55) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: pushing down into WATER at (14,103) does not move the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 14, 103) facing down; solid ['WATER']"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: control step up away from WATER moves the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 14, 102), expected ('northwest', 14, 102)"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Farm House' at (30,99) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=1/1"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Garden House' at (40,85) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: pushing right into STEEP at (46,88) does not move the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 46, 88) facing right; solid ['STEEP']"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: control step left away from STEEP moves the player",
+   "ok": true,
+   "detail": "RAM ('northwest', 45, 88), expected ('northwest', 45, 88)"
+  },
+  {
+   "group": "sign",
+   "name": "northwest: read 'Canyon House' at (62,83) facing left",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Naito Hall' at (4,54) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Griffin Hall' at (6,68) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "sign",
+   "name": "cross_canyon: read 'Sullivan Hall' at (26,43) facing right",
+   "ok": true,
+   "detail": "opened=True closed=True boxes=2/2"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: pushing right into STEEP at (64,44) does not move the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 64, 44) facing right; solid ['STEEP']"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: control step left away from STEEP moves the player",
+   "ok": true,
+   "detail": "RAM ('cross_canyon', 63, 44), expected ('cross_canyon', 63, 44)"
+  },
+  {
+   "group": "play",
+   "name": "no stuck steps (RAM matched the planned tile at every step)",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "infos": [
+  {
+   "group": "static",
+   "name": "exit triggers unreachable from the spawn",
+   "detail": "front_lawn/exit_e_language_houses_2, old_campus/exit_w_performing_arts_3, science_quad/exit_n_reed_lake_1, language_houses/exit_w_front_lawn_0, language_houses/exit_w_front_lawn_2, studio_arts/exit_w_science_quad_0, reed_lake/exit_s_science_quad_1, reed_lake/exit_w_cross_canyon_2, cross_canyon/exit_e_reed_lake_2"
+  },
+  {
+   "group": "static",
+   "name": "open ground reachable per scene",
+   "detail": "front_lawn 97%, old_campus 94%, west_campus 96%, performing_arts 96%, science_quad 94%, language_houses 93%, studio_arts 92%, canyon_east 87%, reed_lake 25%, cross_canyon 94%, the_grove 97%, northwest 98%"
+  },
+  {
+   "group": "static",
+   "name": "exit landing sideways shift (tiles)",
+   "detail": "max 6; 764/790 entry tiles shift <= 1; over 1: science_quad/exit_e_studio_arts_0@46 by 6, science_quad/exit_e_studio_arts_0@47 by 5, science_quad/exit_e_studio_arts_0@48 by 4, the_grove/exit_e_cross_canyon_1b@103 by 3, the_grove/exit_e_cross_canyon_1@102 by 3, science_quad/exit_e_studio_arts_0@49 by 3, west_campus/exit_e_front_lawn_1@28 by 2, the_grove/exit_e_cross_canyon_3@79 by 2"
+  },
+  {
+   "group": "wall",
+   "name": "front_lawn: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "old_campus: STEEP not tested",
+   "detail": "no open tile beside it with room to step back"
+  },
+  {
+   "group": "wall",
+   "name": "west_campus: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "performing_arts: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "science_quad: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "language_houses: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "studio_arts: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "canyon_east: STEEP not tested",
+   "detail": "no open tile beside it with room to step back"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: ROOF not tested",
+   "detail": "open ground beside it is unreachable from the spawn"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: FACADE not tested",
+   "detail": "open ground beside it is unreachable from the spawn"
+  },
+  {
+   "group": "wall",
+   "name": "reed_lake: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "cross_canyon: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "the_grove: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  },
+  {
+   "group": "wall",
+   "name": "northwest: FOREST not tested",
+   "detail": "no open tile beside it (FOREST interior is ringed by TREE; tested via TREE)"
+  }
+ ],
+ "signs": {
+  "front_lawn/0": [
+   "Eric V. Hauser Memorial Library",
+   "sign_front_lawn_00.png"
+  ],
+  "old_campus/6": [
+   "Eliot Circle",
+   "sign_old_campus_06.png"
+  ],
+  "old_campus/3": [
+   "Vollum College Center",
+   "sign_old_campus_03.png"
+  ],
+  "cross_canyon/1": [
+   "Bragdon Hall",
+   "sign_cross_canyon_01.png"
+  ],
+  "cross_canyon/0": [
+   "Chittick",
+   "sign_cross_canyon_00.png"
+  ],
+  "cross_canyon/3": [
+   "McKinley Hall",
+   "sign_cross_canyon_03.png"
+  ],
+  "cross_canyon/2": [
+   "Woodbridge Hall",
+   "sign_cross_canyon_02.png"
+  ],
+  "the_grove/1": [
+   "Physical Plant",
+   "sign_the_grove_01.png"
+  ],
+  "old_campus/7": [
+   "Cerf Amphitheatre",
+   "sign_old_campus_07.png"
+  ],
+  "old_campus/4": [
+   "Gray Campus Center",
+   "sign_old_campus_04.png"
+  ],
+  "performing_arts/4": [
+   "Reed College Sports Center",
+   "sign_performing_arts_04.png"
+  ],
+  "performing_arts/2": [
+   "Kaul Auditorium",
+   "sign_performing_arts_02.png"
+  ],
+  "performing_arts/3": [
+   "Gyms I and II",
+   "sign_performing_arts_03.png"
+  ],
+  "performing_arts/1": [
+   "Performing Arts Building",
+   "sign_performing_arts_01.png"
+  ],
+  "west_campus/3": [
+   "Foster Hall",
+   "sign_west_campus_03.png"
+  ],
+  "west_campus/4": [
+   "MacNaughton Hall",
+   "sign_west_campus_04.png"
+  ],
+  "performing_arts/0": [
+   "Anna Mann Hall",
+   "sign_performing_arts_00.png"
+  ],
+  "old_campus/0": [
+   "Old Dorm Block",
+   "sign_old_campus_00.png"
+  ],
+  "old_campus/1": [
+   "Eliot Hall",
+   "sign_old_campus_01.png"
+  ],
+  "old_campus/2": [
+   "Student Union",
+   "sign_old_campus_02.png"
+  ],
+  "old_campus/5": [
+   "Student Center",
+   "sign_old_campus_05.png"
+  ],
+  "reed_lake/0": [
+   "Reed Lake",
+   "sign_reed_lake_00.png"
+  ],
+  "canyon_east/0": [
+   "Reed Canyon",
+   "sign_canyon_east_00.png"
+  ],
+  "science_quad/2": [
+   "Reed Research Reactor",
+   "sign_science_quad_02.png"
+  ],
+  "studio_arts/2": [
+   "Studio Arts",
+   "sign_studio_arts_02.png"
+  ],
+  "language_houses/4": [
+   "Chinese House",
+   "sign_language_houses_04.png"
+  ],
+  "language_houses/0": [
+   "Spanish House",
+   "sign_language_houses_00.png"
+  ],
+  "language_houses/1": [
+   "French House",
+   "sign_language_houses_01.png"
+  ],
+  "language_houses/2": [
+   "German House",
+   "sign_language_houses_02.png"
+  ],
+  "language_houses/5": [
+   "Russian House",
+   "sign_language_houses_05.png"
+  ],
+  "language_houses/6": [
+   "Educational Technology Center",
+   "sign_language_houses_06.png"
+  ],
+  "language_houses/3": [
+   "Greywood Hall",
+   "sign_language_houses_03.png"
+  ],
+  "science_quad/0": [
+   "Biology",
+   "sign_science_quad_00.png"
+  ],
+  "science_quad/1": [
+   "Psychology",
+   "sign_science_quad_01.png"
+  ],
+  "science_quad/3": [
+   "Physics",
+   "sign_science_quad_03.png"
+  ],
+  "science_quad/4": [
+   "Chemistry",
+   "sign_science_quad_04.png"
+  ],
+  "studio_arts/1": [
+   "The Horrid Art Project",
+   "sign_studio_arts_01.png"
+  ],
+  "studio_arts/0": [
+   "Dorothy Johansen House",
+   "sign_studio_arts_00.png"
+  ],
+  "west_campus/1": [
+   "Prexy Hall",
+   "sign_west_campus_01.png"
+  ],
+  "west_campus/0": [
+   "Parker House",
+   "sign_west_campus_00.png"
+  ],
+  "west_campus/2": [
+   "Scholz Hall",
+   "sign_west_campus_02.png"
+  ],
+  "the_grove/0": [
+   "Greenwood Hall",
+   "sign_the_grove_00.png"
+  ],
+  "the_grove/4": [
+   "Trillium",
+   "sign_the_grove_04.png"
+  ],
+  "the_grove/5": [
+   "Bidwell House",
+   "sign_the_grove_05.png"
+  ],
+  "the_grove/3": [
+   "Aspen House",
+   "sign_the_grove_03.png"
+  ],
+  "the_grove/2": [
+   "Sequoia House",
+   "sign_the_grove_02.png"
+  ],
+  "the_grove/6": [
+   "Sitka House",
+   "sign_the_grove_06.png"
+  ],
+  "northwest/5": [
+   "Reed College Apartments",
+   "sign_northwest_05.png"
+  ],
+  "northwest/4": [
+   "Reed College Apartments",
+   "sign_northwest_04.png"
+  ],
+  "northwest/6": [
+   "Reed College Apartments",
+   "sign_northwest_06.png"
+  ],
+  "northwest/3": [
+   "Reed College Apartments",
+   "sign_northwest_03.png"
+  ],
+  "northwest/7": [
+   "28 West",
+   "sign_northwest_07.png"
+  ],
+  "northwest/10": [
+   "Childcare Center",
+   "sign_northwest_10.png"
+  ],
+  "northwest/9": [
+   "Health and Counseling Center",
+   "sign_northwest_09.png"
+  ],
+  "northwest/8": [
+   "Reed Warehouse",
+   "sign_northwest_08.png"
+  ],
+  "northwest/0": [
+   "Farm House",
+   "sign_northwest_00.png"
+  ],
+  "northwest/1": [
+   "Garden House",
+   "sign_northwest_01.png"
+  ],
+  "northwest/2": [
+   "Canyon House",
+   "sign_northwest_02.png"
+  ],
+  "cross_canyon/5": [
+   "Naito Hall",
+   "sign_cross_canyon_05.png"
+  ],
+  "cross_canyon/4": [
+   "Griffin Hall",
+   "sign_cross_canyon_04.png"
+  ],
+  "cross_canyon/6": [
+   "Sullivan Hall",
+   "sign_cross_canyon_06.png"
+  ]
+ },
+ "stuck": []
+}

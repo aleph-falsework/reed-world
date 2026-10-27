@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 3,
+  "id": "44f2b798-f211-5734-aef5-54046091b970",
+  "symbol": "actor_way_302430449",
+  "prefabId": "",
+  "name": "Physics",
+  "notes": "id: way/302430449",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 31,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "PHYSICS\nTeaching labs and\nresearch labs."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "0ac8d8a1-440a-5d97-98f5-85e2a141bd8b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

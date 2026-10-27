@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "4e8cda30-6fe9-575a-9841-6fd01485bd57",
+  "symbol": "actor_way_119843553",
+  "prefabId": "",
+  "name": "Eric V. Hauser Memorial Library",
+  "notes": "id: way/119843553 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 100,
+  "y": 21,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "ERIC V. HAUSER\nMEMORIAL LIBRARY\nStacks, study",
+          "spaces, special\ncollections and\narchives."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "e53ccd9a-6e70-5757-a7e7-bddb59c37cba"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

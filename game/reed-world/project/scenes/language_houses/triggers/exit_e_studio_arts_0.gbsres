@@ -1,0 +1,56 @@
+{
+  "_resourceType": "trigger",
+  "_index": 0,
+  "id": "4294d1ec-cd62-50c5-97e4-442ef9f260bd",
+  "symbol": "trigger_language_houses_exi",
+  "prefabId": "",
+  "name": "exit_e_studio_arts_0",
+  "notes": "id: exit_e_studio_arts_0 -> studio_arts",
+  "x": 53,
+  "y": 46,
+  "width": 1,
+  "height": 6,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "fc51d511-d12e-5c86-849d-afe3a1d34a94",
+        "x": {
+          "type": "number",
+          "value": 1
+        },
+        "y": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": 12
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 63
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 54
+          }
+        },
+        "direction": "right",
+        "fadeSpeed": "2"
+      },
+      "id": "38cbc6e4-586a-5f68-b7e0-364351e0a4d6"
+    }
+  ],
+  "leaveScript": []
+}

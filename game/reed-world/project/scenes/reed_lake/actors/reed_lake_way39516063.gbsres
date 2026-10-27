@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "0d912e5e-87cc-5df3-ab7b-a3d65692ad1e",
+  "symbol": "actor_way_39516063",
+  "prefabId": "",
+  "name": "Reed Lake",
+  "notes": "id: way/39516063",
+  "coordinateType": "tiles",
+  "x": 54,
+  "y": 23,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "REED LAKE\nReed College's\nlake."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "2b31d360-1f30-59fc-be55-f9c07e46c647"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

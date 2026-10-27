@@ -2,3 +2,11 @@ tiled_preview.png
 __pycache__/
 *.pyc
 .DS_Store
+
+# generated build output (scripts/build_game.py, tests/gbs_smoke/run_smoke.py)
+tests/gbs_smoke/out/
+build/*.build.log
+*.map
+*.noi
+build/gbs-project/
+game/*.bak-*/

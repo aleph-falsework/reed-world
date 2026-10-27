@@ -1,0 +1,214 @@
+{
+ "units": "world metres, x east, y north; edges are multiples of 6 m (one 16 px metatile)",
+ "metres_per_metatile": 6,
+ "proposal": {
+  "columns": [
+   0,
+   215,
+   470,
+   700,
+   960,
+   1273
+  ],
+  "rows": [
+   60,
+   300,
+   480,
+   810
+  ]
+ },
+ "proposal_check": [
+  "column x=215: building-free 6 m positions within +-40 m over the full height: [198, 204, 210, 216, 222]",
+  "column x=470: building-free 6 m positions within +-40 m over the full height: none",
+  "column x=700: building-free 6 m positions within +-40 m over the full height: [690, 696, 702, 708]",
+  "column x=960: building-free 6 m positions within +-40 m over the full height: [960, 978, 984, 990, 996]",
+  "row y=300: building-free 6 m positions within +-40 m across the full width: none",
+  "row y=480: building-free 6 m positions within +-40 m across the full width: [486, 492]"
+ ],
+ "zones": [
+  {
+   "id": "front_lawn",
+   "name": "Front Lawn",
+   "x0": 456,
+   "x1": 816,
+   "y0": 180,
+   "y1": 354,
+   "width_px": 960,
+   "height_px": 464,
+   "width_tiles": 120,
+   "height_tiles": 58,
+   "from_proposal_cells": [
+    "C-S",
+    "EC-S (west)"
+   ]
+  },
+  {
+   "id": "old_campus",
+   "name": "Old Campus",
+   "x0": 456,
+   "x1": 816,
+   "y0": 354,
+   "y1": 486,
+   "width_px": 960,
+   "height_px": 352,
+   "width_tiles": 120,
+   "height_tiles": 44,
+   "from_proposal_cells": [
+    "C-M",
+    "EC-M (west)"
+   ]
+  },
+  {
+   "id": "west_campus",
+   "name": "West Campus",
+   "x0": 216,
+   "x1": 456,
+   "y0": 108,
+   "y1": 300,
+   "width_px": 640,
+   "height_px": 512,
+   "width_tiles": 80,
+   "height_tiles": 64,
+   "from_proposal_cells": [
+    "WC-S"
+   ]
+  },
+  {
+   "id": "performing_arts",
+   "name": "Performing Arts & Sports",
+   "x0": 216,
+   "x1": 456,
+   "y0": 300,
+   "y1": 486,
+   "width_px": 640,
+   "height_px": 496,
+   "width_tiles": 80,
+   "height_tiles": 62,
+   "from_proposal_cells": [
+    "WC-M"
+   ]
+  },
+  {
+   "id": "science_quad",
+   "name": "Science Quad",
+   "x0": 816,
+   "x1": 978,
+   "y0": 330,
+   "y1": 486,
+   "width_px": 432,
+   "height_px": 416,
+   "width_tiles": 54,
+   "height_tiles": 52,
+   "from_proposal_cells": [
+    "EC-M (east)"
+   ]
+  },
+  {
+   "id": "language_houses",
+   "name": "Language Houses",
+   "x0": 816,
+   "x1": 978,
+   "y0": 168,
+   "y1": 330,
+   "width_px": 432,
+   "height_px": 432,
+   "width_tiles": 54,
+   "height_tiles": 54,
+   "from_proposal_cells": [
+    "EC-S (east)"
+   ]
+  },
+  {
+   "id": "studio_arts",
+   "name": "Studio Arts",
+   "x0": 978,
+   "x1": 1140,
+   "y0": 168,
+   "y1": 366,
+   "width_px": 432,
+   "height_px": 528,
+   "width_tiles": 54,
+   "height_tiles": 66,
+   "from_proposal_cells": [
+    "E-S",
+    "E-M (south)"
+   ]
+  },
+  {
+   "id": "canyon_east",
+   "name": "Reed Canyon East",
+   "x0": 978,
+   "x1": 1140,
+   "y0": 366,
+   "y1": 600,
+   "width_px": 432,
+   "height_px": 624,
+   "width_tiles": 54,
+   "height_tiles": 78,
+   "from_proposal_cells": [
+    "E-M (north)",
+    "E-N (south)"
+   ]
+  },
+  {
+   "id": "reed_lake",
+   "name": "Reed Lake",
+   "x0": 696,
+   "x1": 978,
+   "y0": 486,
+   "y1": 600,
+   "width_px": 752,
+   "height_px": 304,
+   "width_tiles": 94,
+   "height_tiles": 38,
+   "from_proposal_cells": [
+    "EC-N (south)"
+   ]
+  },
+  {
+   "id": "cross_canyon",
+   "name": "Cross Canyon",
+   "x0": 468,
+   "x1": 696,
+   "y0": 486,
+   "y1": 810,
+   "width_px": 608,
+   "height_px": 864,
+   "width_tiles": 76,
+   "height_tiles": 108,
+   "from_proposal_cells": [
+    "C-N"
+   ]
+  },
+  {
+   "id": "the_grove",
+   "name": "The Grove",
+   "x0": 216,
+   "x1": 468,
+   "y0": 486,
+   "y1": 810,
+   "width_px": 672,
+   "height_px": 864,
+   "width_tiles": 84,
+   "height_tiles": 108,
+   "from_proposal_cells": [
+    "WC-N"
+   ]
+  },
+  {
+   "id": "northwest",
+   "name": "Northwest Campus",
+   "x0": 0,
+   "x1": 216,
+   "y0": 486,
+   "y1": 810,
+   "width_px": 576,
+   "height_px": 864,
+   "width_tiles": 72,
+   "height_tiles": 108,
+   "from_proposal_cells": [
+    "W-N"
+   ]
+  }
+ ]
+}

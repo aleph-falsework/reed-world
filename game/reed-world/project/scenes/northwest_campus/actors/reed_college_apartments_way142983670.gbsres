@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 3,
+  "id": "236ec697-b74f-5490-860b-5f6b0e6fac76",
+  "symbol": "actor_way_142983670",
+  "prefabId": "",
+  "name": "Reed College Apartments",
+  "notes": "id: way/142983670 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 36,
+  "y": 77,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "REED COLLEGE\nAPARTMENTS\nFurnished",
+          "apartments\navailable to\nstudents after..."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "062c3a0a-c0e5-5044-852a-5d8625d4b8ee"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

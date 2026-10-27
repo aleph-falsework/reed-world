@@ -1,0 +1,49 @@
+{
+  "_resourceType": "trigger",
+  "_index": 0,
+  "id": "cddba808-ae92-5b0f-9181-d8898a36e3b8",
+  "symbol": "trigger_studio_arts_exit_n_",
+  "prefabId": "",
+  "name": "exit_n_canyon_east_0",
+  "notes": "id: exit_n_canyon_east_0 -> canyon_east",
+  "x": 28,
+  "y": 0,
+  "width": 4,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "a561454c-2d94-5fc7-9df4-e2a578b04e60",
+        "x": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 30
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 28
+          }
+        },
+        "y": {
+          "type": "number",
+          "value": 76
+        },
+        "direction": "up",
+        "fadeSpeed": "2"
+      },
+      "id": "4e0678f6-2a2f-5375-9831-39ce3dbb4449"
+    }
+  ],
+  "leaveScript": []
+}

@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 4,
+  "id": "e025c0fe-73d4-5c09-890f-df15665881c0",
+  "symbol": "actor_way_371026024",
+  "prefabId": "",
+  "name": "Chinese House",
+  "notes": "id: way/371026024 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 46,
+  "y": 31,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "CHINESE HOUSE\nChinese language\nhouse with a",
+          "language scholar,\ntea."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "45baaded-7392-580b-b9b4-413693b9405d"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

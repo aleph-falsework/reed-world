@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 2,
+  "id": "01ac7564-c47f-5041-b099-48f946c6b7ed",
+  "symbol": "actor_way_371022333",
+  "prefabId": "",
+  "name": "German House",
+  "notes": "id: way/371022333 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 28,
+  "y": 35,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "GERMAN HOUSE\nGerman language\nhouse, 8 singles,",
+          "with a language\nscholar."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "636f0011-156a-5a69-bde1-d66fff7ecbfa"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

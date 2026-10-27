@@ -1,0 +1,49 @@
+{
+  "_resourceType": "trigger",
+  "_index": 12,
+  "id": "ce277aa8-95b4-5b75-a51e-ba0dc9043cd6",
+  "symbol": "trigger_cross_canyon_exit_w_5",
+  "prefabId": "",
+  "name": "exit_w_the_grove_3",
+  "notes": "id: exit_w_the_grove_3 -> the_grove",
+  "x": 0,
+  "y": 76,
+  "width": 1,
+  "height": 4,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "f02b12d1-8de8-5e52-a97e-55b8b3760346",
+        "x": {
+          "type": "number",
+          "value": 81
+        },
+        "y": {
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "ypos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 77
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 76
+          }
+        },
+        "direction": "left",
+        "fadeSpeed": "2"
+      },
+      "id": "00231795-fd89-52cb-ac68-d516a40e109f"
+    }
+  ],
+  "leaveScript": []
+}

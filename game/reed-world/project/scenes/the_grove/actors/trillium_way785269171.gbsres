@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 4,
+  "id": "d262275d-f814-5e4a-8aeb-74364ce7331b",
+  "symbol": "actor_way_785269171",
+  "prefabId": "",
+  "name": "Trillium",
+  "notes": "id: way/785269171",
+  "coordinateType": "tiles",
+  "x": 42,
+  "y": 57,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "TRILLIUM\nReed's largest\nresidence hall."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "65206657-43b4-5c0b-84bc-73fa2549109c"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

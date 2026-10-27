@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 9,
+  "id": "e03e68cc-ca84-57a6-9f47-9e39a824dbb6",
+  "symbol": "actor_way_39516260",
+  "prefabId": "",
+  "name": "Health and Counseling Center",
+  "notes": "id: way/39516260 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 32,
+  "y": 39,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "HEALTH AND\nCOUNSELING CENTER\nMedical care and",
+          "mental-health\ncounseling for\nstudents."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "36cc2371-8af5-5e39-8d78-326db4922695"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

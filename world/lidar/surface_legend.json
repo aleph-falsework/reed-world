@@ -1,0 +1,128 @@
+{
+ "raster": "surface_1m.tif",
+ "size_px": [
+  1274,
+  811
+ ],
+ "cell_m": 1,
+ "frame": "world frame (see reed_world.geojson meta); row 0 = north edge y=811, col 0 = x=0",
+ "priority": [
+  "building",
+  "water (bridges excepted)",
+  "road",
+  "path",
+  "tree",
+  "steep",
+  "paved/lawn",
+  "nodata"
+ ],
+ "classes": [
+  {
+   "value": 0,
+   "name": "nodata",
+   "color": "#000000",
+   "meaning": "Outside the lidar survey and no OSM class",
+   "cells": 89404,
+   "pct": 8.65
+  },
+  {
+   "value": 1,
+   "name": "building",
+   "color": "#d7301f",
+   "meaning": "OSM building footprint",
+   "cells": 119116,
+   "pct": 11.53
+  },
+  {
+   "value": 2,
+   "name": "water",
+   "color": "#2166ac",
+   "meaning": "OSM water polygon or stream (~2 m)",
+   "cells": 54589,
+   "pct": 5.28
+  },
+  {
+   "value": 3,
+   "name": "road",
+   "color": "#404040",
+   "meaning": "OSM street, ~6 m wide",
+   "cells": 52654,
+   "pct": 5.1
+  },
+  {
+   "value": 4,
+   "name": "path",
+   "color": "#f4c542",
+   "meaning": "OSM footway/path/steps/pedestrian ~2.5 m, service road ~4 m",
+   "cells": 55999,
+   "pct": 5.42
+  },
+  {
+   "value": 5,
+   "name": "tree",
+   "color": "#1b7837",
+   "meaning": "Lidar canopy: nDSM > 2.5 m outside footprints",
+   "cells": 351006,
+   "pct": 33.97
+  },
+  {
+   "value": 6,
+   "name": "steep",
+   "color": "#8c510a",
+   "meaning": "Bare-earth slope > 25 deg (ledge / cliff)",
+   "cells": 2753,
+   "pct": 0.27
+  },
+  {
+   "value": 7,
+   "name": "paved",
+   "color": "#a6a6a6",
+   "meaning": "Open low ground, low lidar intensity, or OSM parking",
+   "cells": 171225,
+   "pct": 16.57
+  },
+  {
+   "value": 8,
+   "name": "lawn",
+   "color": "#a6d96a",
+   "meaning": "Open low ground, high lidar intensity, or OSM lawn / pitch",
+   "cells": 136468,
+   "pct": 13.21
+  }
+ ],
+ "thresholds": {
+  "canopy_ndsm_m": 2.5,
+  "building_buffer_m": 1.0,
+  "steep_slope_deg": 25.0,
+  "road_width_m": 6.0,
+  "path_width_m": 2.5,
+  "service_width_m": 4.0,
+  "stream_width_m": 2.0,
+  "paved_lawn_intensity": 137
+ },
+ "intensity_calibration": {
+  "threshold_intensity": 137,
+  "balanced_accuracy": 0.994,
+  "paved_ref_px": 9779,
+  "lawn_ref_px": 29944,
+  "paved_ref_percentiles_10_50_90": [
+   22.0,
+   34.0,
+   59.0
+  ],
+  "lawn_ref_percentiles_10_50_90": [
+   156.0,
+   174.0,
+   191.0
+  ],
+  "south_lawn_box_xy": [
+   470,
+   230,
+   720,
+   330
+  ],
+  "paved_ref_as_paved": 0.993,
+  "lawn_ref_as_lawn": 0.996
+ },
+ "source": "DOGAMI 2014 OLC Metro lidar (bare earth, highest hit, intensity) + OpenStreetMap"
+}

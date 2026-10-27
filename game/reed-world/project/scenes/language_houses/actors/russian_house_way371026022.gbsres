@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 5,
+  "id": "5da4e2a4-a0e3-5574-941b-53d3ac625ad8",
+  "symbol": "actor_way_371026022",
+  "prefabId": "",
+  "name": "Russian House",
+  "notes": "id: way/371026022 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 27,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "RUSSIAN HOUSE\nSmall residence\nwhere students",
+          "practice Russian."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "b41b7501-9620-5157-9df5-4deed684ab81"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

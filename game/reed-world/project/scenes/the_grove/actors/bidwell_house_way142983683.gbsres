@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 5,
+  "id": "82b74a16-9b92-551a-871f-2ed3a4527089",
+  "symbol": "actor_way_142983683",
+  "prefabId": "",
+  "name": "Bidwell House",
+  "notes": "id: way/142983683 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 18,
+  "y": 65,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "BIDWELL HOUSE\nGrove residence\nhall, 2008, with",
+          "house-style\nliving."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "3c844076-4dfe-51c5-8d5f-2f778ade5aaf"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

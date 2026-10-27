@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 2,
+  "id": "140c62b2-5023-585f-a753-3e4de22efa1b",
+  "symbol": "actor_way_40877933",
+  "prefabId": "",
+  "name": "Kaul Auditorium",
+  "notes": "id: way/40877933 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 56,
+  "y": 27,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "KAUL AUDITORIUM\nMain auditorium\nfor concerts,",
+          "lectures,\nconvocation and\nlarge events."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "97bb9a5c-2080-551b-b276-c2b48a31f604"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 3,
+  "id": "500dfd9d-4683-55dc-8546-0de59fdec258",
+  "symbol": "actor_way_119843557",
+  "prefabId": "",
+  "name": "Vollum College Center",
+  "notes": "id: way/119843557",
+  "coordinateType": "tiles",
+  "x": 90,
+  "y": 27,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "VOLLUM COLLEGE\nCENTER\nLecture hall."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "258c2d45-a12a-5cca-9eda-1faae85f4afb"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

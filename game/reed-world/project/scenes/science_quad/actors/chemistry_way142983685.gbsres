@@ -1,0 +1,44 @@
+{
+  "_resourceType": "actor",
+  "_index": 4,
+  "id": "6f7b1a13-f5df-5348-a504-3ef4b82f0d60",
+  "symbol": "actor_way_142983685",
+  "prefabId": "",
+  "name": "Chemistry",
+  "notes": "id: way/142983685 (door estimated)",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 29,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "CHEMISTRY\nTeaching and\nresearch labs,",
+          "classrooms and\nfaculty offices."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "79a694a0-164e-5b97-b087-29159228a895"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,177 @@
+[
+ {
+  "check": "boots into front_lawn at (92,47)",
+  "ok": true,
+  "detail": "RAM ('front_lawn', 92, 47)"
+ },
+ {
+  "check": "walk to trees edge in front_lawn (1 steps)",
+  "ok": true,
+  "detail": "RAM ('front_lawn', 92, 46)"
+ },
+ {
+  "check": "front_lawn: pushing right into trees (['PATH', 'LONETREE']) blocked",
+  "ok": true,
+  "detail": "before ('front_lawn', 92, 46) after ('front_lawn', 92, 46) facing right"
+ },
+ {
+  "check": "front_lawn: control step left away from trees moves",
+  "ok": true,
+  "detail": "RAM ('front_lawn', 91, 46) expected ('front_lawn', 91, 46)"
+ },
+ {
+  "check": "walk to building edge in front_lawn (30 steps)",
+  "ok": true,
+  "detail": "RAM ('front_lawn', 104, 29)"
+ },
+ {
+  "check": "front_lawn: pushing right into building (['PATH', 'FACADE']) blocked",
+  "ok": true,
+  "detail": "before ('front_lawn', 104, 29) after ('front_lawn', 104, 29) facing right"
+ },
+ {
+  "check": "front_lawn: control step left away from building moves",
+  "ok": true,
+  "detail": "RAM ('front_lawn', 103, 29) expected ('front_lawn', 103, 29)"
+ },
+ {
+  "check": "walk to sign Eric V. Hauser Memorial Library (10 steps)",
+  "ok": true,
+  "detail": "RAM ('front_lawn', 100, 22)"
+ },
+ {
+  "check": "front_lawn: sign 'Eric V. Hauser Memorial Library' opens and closes",
+  "ok": true,
+  "detail": "boxes expected 2; first box 'ERIC V. HAUSER\\nMEMORIAL LIBRARY\\nStacks, study'"
+ },
+ {
+  "check": "walk to old_campus (28 steps)",
+  "ok": true,
+  "detail": "RAM ('old_campus', 98, 41)"
+ },
+ {
+  "check": "walk to water edge in old_campus (70 steps)",
+  "ok": true,
+  "detail": "RAM ('old_campus', 63, 6)"
+ },
+ {
+  "check": "old_campus: pushing up into water (['WATER', 'BRIDGE']) blocked",
+  "ok": true,
+  "detail": "before ('old_campus', 63, 6) after ('old_campus', 63, 6) facing up"
+ },
+ {
+  "check": "old_campus: control step down away from water moves",
+  "ok": true,
+  "detail": "RAM ('old_campus', 63, 7) expected ('old_campus', 63, 7)"
+ },
+ {
+  "check": "walk to building edge in old_campus (23 steps)",
+  "ok": true,
+  "detail": "RAM ('old_campus', 64, 29)"
+ },
+ {
+  "check": "old_campus: pushing down into building (['ROOF', 'ROOF']) blocked",
+  "ok": true,
+  "detail": "before ('old_campus', 64, 29) after ('old_campus', 64, 29) facing down"
+ },
+ {
+  "check": "old_campus: control step up away from building moves",
+  "ok": true,
+  "detail": "RAM ('old_campus', 64, 28) expected ('old_campus', 64, 28)"
+ },
+ {
+  "check": "walk to sign Eliot Hall (29 steps)",
+  "ok": true,
+  "detail": "RAM ('old_campus', 48, 39)"
+ },
+ {
+  "check": "old_campus: sign 'Eliot Hall' opens and closes",
+  "ok": true,
+  "detail": "boxes expected 2; first box \"ELIOT HALL\\nReed's original\\n1912 academic\""
+ },
+ {
+  "check": "walk to science_quad (137 steps)",
+  "ok": true,
+  "detail": "RAM ('science_quad', 8, 49)"
+ },
+ {
+  "check": "walk to water edge in science_quad (73 steps)",
+  "ok": true,
+  "detail": "RAM ('science_quad', 26, 4)"
+ },
+ {
+  "check": "science_quad: pushing up into water (['WATER', 'WATER']) blocked",
+  "ok": true,
+  "detail": "before ('science_quad', 26, 4) after ('science_quad', 26, 4) facing up"
+ },
+ {
+  "check": "science_quad: control step down away from water moves",
+  "ok": true,
+  "detail": "RAM ('science_quad', 26, 5) expected ('science_quad', 26, 5)"
+ },
+ {
+  "check": "walk to trees edge in science_quad (1 steps)",
+  "ok": true,
+  "detail": "RAM ('science_quad', 26, 4)"
+ },
+ {
+  "check": "science_quad: pushing left into trees (['TREE', 'PATH']) blocked",
+  "ok": true,
+  "detail": "before ('science_quad', 26, 4) after ('science_quad', 26, 4) facing left"
+ },
+ {
+  "check": "science_quad: control step right away from trees moves",
+  "ok": true,
+  "detail": "RAM ('science_quad', 27, 4) expected ('science_quad', 27, 4)"
+ },
+ {
+  "check": "walk to sign Chemistry (51 steps)",
+  "ok": true,
+  "detail": "RAM ('science_quad', 14, 30)"
+ },
+ {
+  "check": "science_quad: sign 'Chemistry' opens and closes",
+  "ok": true,
+  "detail": "boxes expected 2; first box 'CHEMISTRY\\nTeaching and\\nresearch labs,'"
+ },
+ {
+  "check": "walk to reed_lake (56 steps)",
+  "ok": true,
+  "detail": "RAM ('reed_lake', 68, 35)"
+ },
+ {
+  "check": "walk to water edge in reed_lake (7 steps)",
+  "ok": true,
+  "detail": "RAM ('reed_lake', 61, 35)"
+ },
+ {
+  "check": "reed_lake: pushing down into water (['WATER', 'TREE']) blocked",
+  "ok": true,
+  "detail": "before ('reed_lake', 61, 35) after ('reed_lake', 61, 35) facing down"
+ },
+ {
+  "check": "reed_lake: control step up away from water moves",
+  "ok": true,
+  "detail": "RAM ('reed_lake', 61, 34) expected ('reed_lake', 61, 34)"
+ },
+ {
+  "check": "walk to cross_canyon (244 steps)",
+  "ok": true,
+  "detail": "RAM ('cross_canyon', 73, 99)"
+ },
+ {
+  "check": "walk to building edge in cross_canyon (28 steps)",
+  "ok": true,
+  "detail": "RAM ('cross_canyon', 58, 92)"
+ },
+ {
+  "check": "cross_canyon: pushing up into building (['ROOF', 'ROOF']) blocked",
+  "ok": true,
+  "detail": "before ('cross_canyon', 58, 92) after ('cross_canyon', 58, 92) facing up"
+ },
+ {
+  "check": "cross_canyon: control step down away from building moves",
+  "ok": true,
+  "detail": "RAM ('cross_canyon', 58, 93) expected ('cross_canyon', 58, 93)"
+ }
+]

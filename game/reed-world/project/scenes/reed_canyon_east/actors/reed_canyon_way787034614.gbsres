@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actor",
+  "_index": 0,
+  "id": "74399de2-4c49-5416-9ff9-312850d66846",
+  "symbol": "actor_way_787034614",
+  "prefabId": "",
+  "name": "Reed Canyon",
+  "notes": "id: way/787034614",
+  "coordinateType": "tiles",
+  "x": 18,
+  "y": 23,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8f07b8c6-fd35-5600-9141-cd166494f18a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "REED CANYON\nReed College's\ncanyon."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7
+      },
+      "id": "21b0240d-a9eb-59ee-b871-92b3722d44bf"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "4c646c57-c745-5b9e-8427-cddebb21f93d",
+  "name": "science_quad",
+  "symbol": "bg_science_quad",
+  "tileColors": "",
+  "filename": "science_quad.png",
+  "width": 54,
+  "height": 52,
+  "imageWidth": 432,
+  "imageHeight": 416,
+  "autoColor": false
+}
