@@ -171,7 +171,7 @@ def load_styles():
 def resolve_style(b, row):
     fam = None
     if row:
-        fam = (row.get('style_family') or row.get('family') or row.get('style') or '').strip()
+        fam = (row.get('style') or row.get('style_family') or row.get('family') or '').strip()
     if fam not in STYLES:
         fam = fallback_family(b)
     S = dict(STYLES[fam])
@@ -181,6 +181,8 @@ def resolve_style(b, row):
         w = word_mat(row.get('wall_material') or row.get('wall'), WALL_OK)
         r = word_mat(row.get('roof_material') or row.get('roof'), ROOF_OK)
         t = word_mat(row.get('trim_material') or row.get('trim'), TRIM_OK)
+        if (row.get('trim') or '').strip().lower() in ('metal', 'aluminium', 'aluminum'):
+            t = 'Metal_Dark'
         if w:
             if w == 'Brick_Common' and fam == 'collegiate_gothic_brick':
                 w = 'Brick_Gothic'
@@ -196,12 +198,14 @@ def resolve_style(b, row):
             if word in wt:
                 S['window'] = kind
                 break
-    # neighbourhood variety: stable per-building pick of cladding
-    if b['neighbourhood'] and S['source'] == 'fallback' or (b['neighbourhood'] and fam in ('small_house', 'unknown')
-                                                            and not (row and (row.get('wall_material') or row.get('wall')))):
+    # neighbourhood variety: rule-based rows (no researched source) get a stable per-building cladding pick
+    rule = (not row) or (row.get('source') or '').strip() in ('rule', '')
+    if b['neighbourhood'] and rule and fam in ('small_house', 'unknown', 'utility'):
         h = int(hashlib.md5(b['osm_id'].encode()).hexdigest()[:8], 16)
         S['wall'] = ['Siding_Wood', 'Siding_Wood', 'Siding_Wood_Dark', 'Stucco', 'Brick_Common'][h % 5]
         S['trim'] = 'Paint_Trim'
+        if fam == 'utility':                      # mostly garages and sheds in the neighbourhood
+            S['roof'] = 'Roof_Shingle'
     return S
 
 
