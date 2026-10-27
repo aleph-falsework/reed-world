@@ -46,6 +46,7 @@ for r in rows:
         csv_by_osmname[n] = r
 
 def kind_of(p, gtype):
+    if 'entrance' in p and gtype == 'Point': return 'entrance'  # RW-7
     if 'building' in p: return 'building'
     hw = p.get('highway')
     if hw in ('footway', 'path', 'pedestrian', 'steps', 'cycleway', 'track'): return 'path'
@@ -61,6 +62,7 @@ def kind_of(p, gtype):
     if p.get('amenity') == 'university': return 'campus_boundary'
     if p.get('leisure') == 'golf_course': return 'golf'
     if p.get('natural') == 'tree' and p.get('name'): return 'landmark_tree'
+    if p.get('natural') == 'tree' and gtype == 'Point': return 'tree'  # RW-7: unnamed trees
     if p.get('amenity') == 'theatre': return 'venue'
     return None
 
@@ -83,6 +85,15 @@ for f in feats:
     if p.get('name'): props['name'] = p['name']
     for t in ('building', 'highway', 'building:levels', 'height', 'leisure', 'landuse', 'natural', 'amenity', 'surface', 'sport'):
         if t in p: props[t] = p[t]
+    if p.get('bridge') == 'yes' and k in ('path', 'road', 'service_road'):  # RW-7
+        props['bridge'] = True
+        if 'layer' in p: props['layer'] = p['layer']
+    if k == 'entrance':  # RW-7
+        for t in ('entrance', 'door', 'wheelchair', 'access', 'ref', 'level', 'addr:housenumber', 'addr:street'):
+            if t in p: props[t] = p[t]
+    if k == 'tree':  # RW-7
+        for t in ('genus', 'species', 'leaf_type', 'leaf_cycle', 'denotation', 'circumference', 'height'):
+            if t in p: props[t] = p[t]
     if k == 'building':
         c = P(shape(f['geometry'])).representative_point()
         on_campus = campus.buffer(5).contains(c)
@@ -98,6 +109,19 @@ for f in feats:
             used_csv.add(r['Building'])
             props.update({'map_no': r['Map #'], 'category': r['Category'], 'use': r['What happens there']})
     world.append({'type': 'Feature', 'id': fid, 'properties': props, 'geometry': mapping(local(g))})
+
+# ---- RW-7: link each entrance to the building it touches or is nearest to (<= 3 m) ----
+ENTRANCE_LINK_M = 3.0
+_bld = [(f, shape(f['geometry'])) for f in world if f['properties']['kind'] == 'building']
+for f in world:
+    if f['properties']['kind'] != 'entrance': continue
+    pt = shape(f['geometry'])
+    best = min(((bg.boundary.distance(pt) if not bg.contains(pt) else 0.0, bf) for bf, bg in _bld), key=lambda t: t[0], default=None)
+    if best and best[0] <= ENTRANCE_LINK_M:
+        f['properties']['building_id'] = best[1]['id']
+        f['properties']['building_dist_m'] = round(best[0], 2)
+    else:
+        f['properties']['building_id'] = None
 
 meta = {
     'title': 'Reed College — world layer (state only)',
@@ -119,6 +143,12 @@ gaps = {
     'buildings_with_height': sum(1 for f in camp_b if 'height' in f['properties']),
     'neighborhood_buildings': sum(1 for f in world if f['properties']['kind'] == 'building' and f['properties']['realm'] == 'neighborhood'),
     'skipped': skipped,
+    'entrances': sum(1 for f in world if f['properties']['kind'] == 'entrance'),
+    'entrances_unlinked': [f['id'] for f in world if f['properties']['kind'] == 'entrance' and not f['properties'].get('building_id')],
+    'bridges': [f['id'] for f in world if f['properties'].get('bridge')],
+    'trees': sum(1 for f in world if f['properties']['kind'] == 'tree'),
+    'named_campus_buildings_without_entrance': sorted({f['properties']['name'] for f in camp_b if 'name' in f['properties']} - {
+        b['properties'].get('name') for b in camp_b if any(e['properties'].get('building_id') == b['id'] for e in world if e['properties']['kind'] == 'entrance')} - {None}),
     'world_size_m': meta['size_m'],
 }
 json.dump(gaps, open(f'{out}/gaps.json', 'w'), indent=1)
