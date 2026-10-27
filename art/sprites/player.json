@@ -1,0 +1,59 @@
+{
+ "frame_size": [
+  16,
+  16
+ ],
+ "transparent": "#e0f8cf",
+ "transparent_note": "sprites use only #86c06c/#306850/#071821; #e0f8cf is background. Change SPRITE_KEY in make_art.py if GB Studio needs another key.",
+ "sheets": {
+  "player.png": {
+   "layout": "horizontal strip",
+   "frames": [
+    "down_idle",
+    "down_walk",
+    "up_idle",
+    "up_walk",
+    "right_idle",
+    "right_walk"
+   ],
+   "note": "left = right mirrored (engine flip)"
+  },
+  "player_left.png": {
+   "layout": "horizontal strip",
+   "frames": [
+    "down_idle",
+    "down_walk",
+    "up_idle",
+    "up_walk",
+    "left_idle",
+    "left_walk"
+   ]
+  },
+  "player_ext.png": {
+   "layout": "horizontal strip",
+   "frames": [
+    "down_idle",
+    "down_walk",
+    "down_walk_b",
+    "up_idle",
+    "up_walk",
+    "up_walk_b",
+    "right_idle",
+    "right_walk",
+    "right_walk_b",
+    "left_idle",
+    "left_walk",
+    "left_walk_b"
+   ],
+   "note": "walk cycle per direction: idle, walk, idle, walk_b"
+  }
+ },
+ "suggested_collision_box": {
+  "x": 0,
+  "y": 8,
+  "w": 16,
+  "h": 8,
+  "note": "feet half of the frame, pixels from top-left"
+ },
+ "relayout": "edit STRIP_* lists in make_art.py and rerun"
+}

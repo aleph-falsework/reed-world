@@ -1,0 +1,2799 @@
+{
+ "palette": [
+  "#e0f8cf",
+  "#86c06c",
+  "#306850",
+  "#071821"
+ ],
+ "palette_note": "index 0 lightest .. 3 darkest",
+ "tile_size": 8,
+ "metatile_size": 16,
+ "metres_per_metatile": 6,
+ "atlas": "kit.png",
+ "atlas_columns": 16,
+ "tile_count": 128,
+ "tiles": {
+  "lawn_a.tl": 0,
+  "lawn_b.tl": 1,
+  "lawn_b.br": 2,
+  "lawn_c.tr": 3,
+  "path_00.tl": 4,
+  "path_00.tr": 5,
+  "path_00.bl": 6,
+  "path_00.br": 7,
+  "path_01.tl": 8,
+  "path_01.tr": 9,
+  "path_02.tr": 10,
+  "path_02.br": 11,
+  "path_03.tr": 12,
+  "path_06.br": 13,
+  "path_09.tl": 14,
+  "path_12.bl": 15,
+  "paved_plaza.tl": 16,
+  "paved_parking.tl": 17,
+  "paved_parking.tr": 18,
+  "road_000.tl": 19,
+  "road_000.tr": 20,
+  "road_000.bl": 21,
+  "road_000.br": 22,
+  "road_001.tl": 23,
+  "road_001.tr": 24,
+  "road_002.tr": 25,
+  "road_002.br": 26,
+  "road_003.tr": 27,
+  "road_006.br": 28,
+  "road_009.tl": 29,
+  "road_012.bl": 30,
+  "water_000.tl": 31,
+  "water_000.tr": 32,
+  "water_000.bl": 33,
+  "water_000.br": 34,
+  "water_001.tl": 35,
+  "water_001.tr": 36,
+  "water_002.tr": 37,
+  "water_002.br": 38,
+  "water_003.tr": 39,
+  "water_006.br": 40,
+  "water_009.tl": 41,
+  "water_012.bl": 42,
+  "water_019.tr": 43,
+  "water_fill_b.tr": 44,
+  "tree.tl": 45,
+  "tree.tr": 46,
+  "tree.bl": 47,
+  "tree.br": 48,
+  "forest_000.tl": 49,
+  "forest_000.tr": 50,
+  "forest_000.bl": 51,
+  "forest_000.br": 52,
+  "forest_001.tl": 53,
+  "forest_001.tr": 54,
+  "forest_002.tr": 55,
+  "forest_002.br": 56,
+  "forest_003.tr": 57,
+  "forest_006.br": 58,
+  "forest_009.tl": 59,
+  "forest_012.bl": 60,
+  "forest_019.tr": 61,
+  "forest_fill_b.tr": 62,
+  "ledge.bl": 63,
+  "ledge_l.bl": 64,
+  "ledge_r.br": 65,
+  "cliff_top.bl": 66,
+  "cliff_face.tl": 67,
+  "cliff_face.tr": 68,
+  "cliff_base.bl": 69,
+  "cliff_face_l.tl": 70,
+  "cliff_face_r.tr": 71,
+  "stairs.tl": 72,
+  "stairs.tr": 73,
+  "bridge_h.tl": 74,
+  "bridge_h.bl": 75,
+  "bridge_v.tl": 76,
+  "bridge_v.tr": 77,
+  "roof_tudor.tl": 78,
+  "roof_tudor_w.tl": 79,
+  "roof_tudor_e.tr": 80,
+  "roof_tudor_n.tl": 81,
+  "roof_tudor_nw.tl": 82,
+  "roof_tudor_ne.tr": 83,
+  "roof_flat.tl": 84,
+  "roof_flat_w.tl": 85,
+  "roof_flat_e.tr": 86,
+  "roof_flat_n.tl": 87,
+  "roof_flat_nw.tl": 88,
+  "roof_flat_ne.tr": 89,
+  "facade_wall.tl": 90,
+  "facade_wall.bl": 91,
+  "facade_wall_l.tl": 92,
+  "facade_wall_l.bl": 93,
+  "facade_wall_r.tr": 94,
+  "facade_wall_r.br": 95,
+  "facade_window.tl": 96,
+  "facade_window.bl": 97,
+  "facade_door.tl": 98,
+  "facade_door.tr": 99,
+  "facade_door.bl": 100,
+  "facade_door.br": 101,
+  "facade_ddoor_l.tr": 102,
+  "facade_ddoor_l.bl": 103,
+  "facade_ddoor_l.br": 104,
+  "facade_ddoor_r.bl": 105,
+  "facade_plaque.tl": 106,
+  "facade_plaque.tr": 107,
+  "facade_ribbon.tl": 108,
+  "facade_ribbon.bl": 109,
+  "roof_tudor_gable.tl": 110,
+  "roof_tudor_gable.tr": 111,
+  "roof_tudor_gable.bl": 112,
+  "roof_tudor_gable.br": 113,
+  "signpost.tl": 114,
+  "signpost.tr": 115,
+  "signpost.bl": 116,
+  "signpost.br": 117,
+  "fence_h.bl": 118,
+  "fence_v.tl": 119,
+  "hedge.tl": 120,
+  "hedge.bl": 121,
+  "hedge_l.tl": 122,
+  "hedge_l.bl": 123,
+  "hedge_r.tr": 124,
+  "hedge_r.br": 125,
+  "bench.bl": 126,
+  "bench.br": 127
+ },
+ "tile_family": {
+  "0": "lawn",
+  "1": "lawn",
+  "2": "lawn",
+  "3": "lawn",
+  "4": "path",
+  "5": "path",
+  "6": "path",
+  "7": "path",
+  "8": "path",
+  "9": "path",
+  "10": "path",
+  "11": "path",
+  "12": "path",
+  "13": "path",
+  "14": "path",
+  "15": "path",
+  "16": "paved",
+  "17": "paved",
+  "18": "paved",
+  "19": "road",
+  "20": "road",
+  "21": "road",
+  "22": "road",
+  "23": "road",
+  "24": "road",
+  "25": "road",
+  "26": "road",
+  "27": "road",
+  "28": "road",
+  "29": "road",
+  "30": "road",
+  "31": "water",
+  "32": "water",
+  "33": "water",
+  "34": "water",
+  "35": "water",
+  "36": "water",
+  "37": "water",
+  "38": "water",
+  "39": "water",
+  "40": "water",
+  "41": "water",
+  "42": "water",
+  "43": "water",
+  "44": "water",
+  "45": "tree",
+  "46": "tree",
+  "47": "tree",
+  "48": "tree",
+  "49": "forest",
+  "50": "forest",
+  "51": "forest",
+  "52": "forest",
+  "53": "forest",
+  "54": "forest",
+  "55": "forest",
+  "56": "forest",
+  "57": "forest",
+  "58": "forest",
+  "59": "forest",
+  "60": "forest",
+  "61": "forest",
+  "62": "forest",
+  "63": "steep",
+  "64": "steep",
+  "65": "steep",
+  "66": "steep",
+  "67": "steep",
+  "68": "steep",
+  "69": "steep",
+  "70": "steep",
+  "71": "steep",
+  "72": "steep",
+  "73": "steep",
+  "74": "bridge",
+  "75": "bridge",
+  "76": "bridge",
+  "77": "bridge",
+  "78": "building",
+  "79": "building",
+  "80": "building",
+  "81": "building",
+  "82": "building",
+  "83": "building",
+  "84": "building",
+  "85": "building",
+  "86": "building",
+  "87": "building",
+  "88": "building",
+  "89": "building",
+  "90": "building",
+  "91": "building",
+  "92": "building",
+  "93": "building",
+  "94": "building",
+  "95": "building",
+  "96": "building",
+  "97": "building",
+  "98": "building",
+  "99": "building",
+  "100": "building",
+  "101": "building",
+  "102": "building",
+  "103": "building",
+  "104": "building",
+  "105": "building",
+  "106": "building",
+  "107": "building",
+  "108": "building",
+  "109": "building",
+  "110": "building",
+  "111": "building",
+  "112": "building",
+  "113": "building",
+  "114": "prop",
+  "115": "prop",
+  "116": "prop",
+  "117": "prop",
+  "118": "prop",
+  "119": "prop",
+  "120": "prop",
+  "121": "prop",
+  "122": "prop",
+  "123": "prop",
+  "124": "prop",
+  "125": "prop",
+  "126": "prop",
+  "127": "prop"
+ },
+ "metatile_order": "[top-left, top-right, bottom-left, bottom-right] tile indices",
+ "metatiles": {
+  "lawn_a": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "lawn_b": [
+   1,
+   0,
+   0,
+   2
+  ],
+  "lawn_c": [
+   0,
+   3,
+   2,
+   0
+  ],
+  "path_00": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "path_01": [
+   8,
+   9,
+   6,
+   7
+  ],
+  "path_02": [
+   4,
+   10,
+   6,
+   11
+  ],
+  "path_03": [
+   8,
+   12,
+   6,
+   11
+  ],
+  "path_04": [
+   4,
+   5,
+   8,
+   9
+  ],
+  "path_05": [
+   8,
+   9,
+   8,
+   9
+  ],
+  "path_06": [
+   4,
+   10,
+   8,
+   13
+  ],
+  "path_07": [
+   8,
+   12,
+   8,
+   13
+  ],
+  "path_08": [
+   10,
+   5,
+   11,
+   7
+  ],
+  "path_09": [
+   14,
+   9,
+   11,
+   7
+  ],
+  "path_10": [
+   10,
+   10,
+   11,
+   11
+  ],
+  "path_11": [
+   14,
+   12,
+   11,
+   11
+  ],
+  "path_12": [
+   10,
+   5,
+   15,
+   9
+  ],
+  "path_13": [
+   14,
+   9,
+   15,
+   9
+  ],
+  "path_14": [
+   10,
+   10,
+   15,
+   13
+  ],
+  "path_15": [
+   14,
+   12,
+   15,
+   13
+  ],
+  "paved_plaza": [
+   16,
+   16,
+   16,
+   16
+  ],
+  "paved_parking": [
+   17,
+   18,
+   17,
+   18
+  ],
+  "road_000": [
+   19,
+   20,
+   21,
+   22
+  ],
+  "road_001": [
+   23,
+   24,
+   21,
+   22
+  ],
+  "road_002": [
+   19,
+   25,
+   21,
+   26
+  ],
+  "road_003": [
+   23,
+   27,
+   21,
+   26
+  ],
+  "road_004": [
+   19,
+   20,
+   23,
+   24
+  ],
+  "road_005": [
+   23,
+   24,
+   23,
+   24
+  ],
+  "road_006": [
+   19,
+   25,
+   23,
+   28
+  ],
+  "road_007": [
+   23,
+   27,
+   23,
+   28
+  ],
+  "road_008": [
+   25,
+   20,
+   26,
+   22
+  ],
+  "road_009": [
+   29,
+   24,
+   26,
+   22
+  ],
+  "road_010": [
+   25,
+   25,
+   26,
+   26
+  ],
+  "road_011": [
+   29,
+   27,
+   26,
+   26
+  ],
+  "road_012": [
+   25,
+   20,
+   30,
+   24
+  ],
+  "road_013": [
+   29,
+   24,
+   30,
+   24
+  ],
+  "road_014": [
+   25,
+   25,
+   30,
+   28
+  ],
+  "road_015": [
+   29,
+   27,
+   30,
+   28
+  ],
+  "road_019": [
+   23,
+   18,
+   21,
+   26
+  ],
+  "road_023": [
+   23,
+   18,
+   23,
+   28
+  ],
+  "road_027": [
+   29,
+   18,
+   26,
+   26
+  ],
+  "road_031": [
+   29,
+   18,
+   30,
+   28
+  ],
+  "road_038": [
+   19,
+   25,
+   23,
+   18
+  ],
+  "road_039": [
+   23,
+   27,
+   23,
+   18
+  ],
+  "road_046": [
+   25,
+   25,
+   30,
+   18
+  ],
+  "road_047": [
+   29,
+   27,
+   30,
+   18
+  ],
+  "road_055": [
+   23,
+   18,
+   23,
+   18
+  ],
+  "road_063": [
+   29,
+   18,
+   30,
+   18
+  ],
+  "road_076": [
+   25,
+   20,
+   18,
+   24
+  ],
+  "road_077": [
+   29,
+   24,
+   18,
+   24
+  ],
+  "road_078": [
+   25,
+   25,
+   18,
+   28
+  ],
+  "road_079": [
+   29,
+   27,
+   18,
+   28
+  ],
+  "road_095": [
+   29,
+   18,
+   18,
+   28
+  ],
+  "road_110": [
+   25,
+   25,
+   18,
+   18
+  ],
+  "road_111": [
+   29,
+   27,
+   18,
+   18
+  ],
+  "road_127": [
+   29,
+   18,
+   18,
+   18
+  ],
+  "road_137": [
+   18,
+   24,
+   26,
+   22
+  ],
+  "road_139": [
+   18,
+   27,
+   26,
+   26
+  ],
+  "road_141": [
+   18,
+   24,
+   30,
+   24
+  ],
+  "road_143": [
+   18,
+   27,
+   30,
+   28
+  ],
+  "road_155": [
+   18,
+   18,
+   26,
+   26
+  ],
+  "road_159": [
+   18,
+   18,
+   30,
+   28
+  ],
+  "road_175": [
+   18,
+   27,
+   30,
+   18
+  ],
+  "road_191": [
+   18,
+   18,
+   30,
+   18
+  ],
+  "road_205": [
+   18,
+   24,
+   18,
+   24
+  ],
+  "road_207": [
+   18,
+   27,
+   18,
+   28
+  ],
+  "road_223": [
+   18,
+   18,
+   18,
+   28
+  ],
+  "road_239": [
+   18,
+   27,
+   18,
+   18
+  ],
+  "road_255": [
+   18,
+   18,
+   18,
+   18
+  ],
+  "water_000": [
+   31,
+   32,
+   33,
+   34
+  ],
+  "water_001": [
+   35,
+   36,
+   33,
+   34
+  ],
+  "water_002": [
+   31,
+   37,
+   33,
+   38
+  ],
+  "water_003": [
+   35,
+   39,
+   33,
+   38
+  ],
+  "water_004": [
+   31,
+   32,
+   35,
+   36
+  ],
+  "water_005": [
+   35,
+   36,
+   35,
+   36
+  ],
+  "water_006": [
+   31,
+   37,
+   35,
+   40
+  ],
+  "water_007": [
+   35,
+   39,
+   35,
+   40
+  ],
+  "water_008": [
+   37,
+   32,
+   38,
+   34
+  ],
+  "water_009": [
+   41,
+   36,
+   38,
+   34
+  ],
+  "water_010": [
+   37,
+   37,
+   38,
+   38
+  ],
+  "water_011": [
+   41,
+   39,
+   38,
+   38
+  ],
+  "water_012": [
+   37,
+   32,
+   42,
+   36
+  ],
+  "water_013": [
+   41,
+   36,
+   42,
+   36
+  ],
+  "water_014": [
+   37,
+   37,
+   42,
+   40
+  ],
+  "water_015": [
+   41,
+   39,
+   42,
+   40
+  ],
+  "water_019": [
+   35,
+   43,
+   33,
+   38
+  ],
+  "water_023": [
+   35,
+   43,
+   35,
+   40
+  ],
+  "water_027": [
+   41,
+   43,
+   38,
+   38
+  ],
+  "water_031": [
+   41,
+   43,
+   42,
+   40
+  ],
+  "water_038": [
+   31,
+   37,
+   35,
+   43
+  ],
+  "water_039": [
+   35,
+   39,
+   35,
+   43
+  ],
+  "water_046": [
+   37,
+   37,
+   42,
+   43
+  ],
+  "water_047": [
+   41,
+   39,
+   42,
+   43
+  ],
+  "water_055": [
+   35,
+   43,
+   35,
+   43
+  ],
+  "water_063": [
+   41,
+   43,
+   42,
+   43
+  ],
+  "water_076": [
+   37,
+   32,
+   43,
+   36
+  ],
+  "water_077": [
+   41,
+   36,
+   43,
+   36
+  ],
+  "water_078": [
+   37,
+   37,
+   43,
+   40
+  ],
+  "water_079": [
+   41,
+   39,
+   43,
+   40
+  ],
+  "water_095": [
+   41,
+   43,
+   43,
+   40
+  ],
+  "water_110": [
+   37,
+   37,
+   43,
+   43
+  ],
+  "water_111": [
+   41,
+   39,
+   43,
+   43
+  ],
+  "water_127": [
+   41,
+   43,
+   43,
+   43
+  ],
+  "water_137": [
+   43,
+   36,
+   38,
+   34
+  ],
+  "water_139": [
+   43,
+   39,
+   38,
+   38
+  ],
+  "water_141": [
+   43,
+   36,
+   42,
+   36
+  ],
+  "water_143": [
+   43,
+   39,
+   42,
+   40
+  ],
+  "water_155": [
+   43,
+   43,
+   38,
+   38
+  ],
+  "water_159": [
+   43,
+   43,
+   42,
+   40
+  ],
+  "water_175": [
+   43,
+   39,
+   42,
+   43
+  ],
+  "water_191": [
+   43,
+   43,
+   42,
+   43
+  ],
+  "water_205": [
+   43,
+   36,
+   43,
+   36
+  ],
+  "water_207": [
+   43,
+   39,
+   43,
+   40
+  ],
+  "water_223": [
+   43,
+   43,
+   43,
+   40
+  ],
+  "water_239": [
+   43,
+   39,
+   43,
+   43
+  ],
+  "water_255": [
+   43,
+   43,
+   43,
+   43
+  ],
+  "water_fill_b": [
+   43,
+   44,
+   44,
+   43
+  ],
+  "tree": [
+   45,
+   46,
+   47,
+   48
+  ],
+  "forest_000": [
+   49,
+   50,
+   51,
+   52
+  ],
+  "forest_001": [
+   53,
+   54,
+   51,
+   52
+  ],
+  "forest_002": [
+   49,
+   55,
+   51,
+   56
+  ],
+  "forest_003": [
+   53,
+   57,
+   51,
+   56
+  ],
+  "forest_004": [
+   49,
+   50,
+   53,
+   54
+  ],
+  "forest_005": [
+   53,
+   54,
+   53,
+   54
+  ],
+  "forest_006": [
+   49,
+   55,
+   53,
+   58
+  ],
+  "forest_007": [
+   53,
+   57,
+   53,
+   58
+  ],
+  "forest_008": [
+   55,
+   50,
+   56,
+   52
+  ],
+  "forest_009": [
+   59,
+   54,
+   56,
+   52
+  ],
+  "forest_010": [
+   55,
+   55,
+   56,
+   56
+  ],
+  "forest_011": [
+   59,
+   57,
+   56,
+   56
+  ],
+  "forest_012": [
+   55,
+   50,
+   60,
+   54
+  ],
+  "forest_013": [
+   59,
+   54,
+   60,
+   54
+  ],
+  "forest_014": [
+   55,
+   55,
+   60,
+   58
+  ],
+  "forest_015": [
+   59,
+   57,
+   60,
+   58
+  ],
+  "forest_019": [
+   53,
+   61,
+   51,
+   56
+  ],
+  "forest_023": [
+   53,
+   61,
+   53,
+   58
+  ],
+  "forest_027": [
+   59,
+   61,
+   56,
+   56
+  ],
+  "forest_031": [
+   59,
+   61,
+   60,
+   58
+  ],
+  "forest_038": [
+   49,
+   55,
+   53,
+   61
+  ],
+  "forest_039": [
+   53,
+   57,
+   53,
+   61
+  ],
+  "forest_046": [
+   55,
+   55,
+   60,
+   61
+  ],
+  "forest_047": [
+   59,
+   57,
+   60,
+   61
+  ],
+  "forest_055": [
+   53,
+   61,
+   53,
+   61
+  ],
+  "forest_063": [
+   59,
+   61,
+   60,
+   61
+  ],
+  "forest_076": [
+   55,
+   50,
+   61,
+   54
+  ],
+  "forest_077": [
+   59,
+   54,
+   61,
+   54
+  ],
+  "forest_078": [
+   55,
+   55,
+   61,
+   58
+  ],
+  "forest_079": [
+   59,
+   57,
+   61,
+   58
+  ],
+  "forest_095": [
+   59,
+   61,
+   61,
+   58
+  ],
+  "forest_110": [
+   55,
+   55,
+   61,
+   61
+  ],
+  "forest_111": [
+   59,
+   57,
+   61,
+   61
+  ],
+  "forest_127": [
+   59,
+   61,
+   61,
+   61
+  ],
+  "forest_137": [
+   61,
+   54,
+   56,
+   52
+  ],
+  "forest_139": [
+   61,
+   57,
+   56,
+   56
+  ],
+  "forest_141": [
+   61,
+   54,
+   60,
+   54
+  ],
+  "forest_143": [
+   61,
+   57,
+   60,
+   58
+  ],
+  "forest_155": [
+   61,
+   61,
+   56,
+   56
+  ],
+  "forest_159": [
+   61,
+   61,
+   60,
+   58
+  ],
+  "forest_175": [
+   61,
+   57,
+   60,
+   61
+  ],
+  "forest_191": [
+   61,
+   61,
+   60,
+   61
+  ],
+  "forest_205": [
+   61,
+   54,
+   61,
+   54
+  ],
+  "forest_207": [
+   61,
+   57,
+   61,
+   58
+  ],
+  "forest_223": [
+   61,
+   61,
+   61,
+   58
+  ],
+  "forest_239": [
+   61,
+   57,
+   61,
+   61
+  ],
+  "forest_255": [
+   61,
+   61,
+   61,
+   61
+  ],
+  "forest_fill_b": [
+   61,
+   62,
+   62,
+   61
+  ],
+  "ledge": [
+   0,
+   0,
+   63,
+   63
+  ],
+  "ledge_l": [
+   0,
+   0,
+   64,
+   63
+  ],
+  "ledge_r": [
+   0,
+   0,
+   63,
+   65
+  ],
+  "cliff_top": [
+   0,
+   0,
+   66,
+   66
+  ],
+  "cliff_face": [
+   67,
+   68,
+   68,
+   67
+  ],
+  "cliff_base": [
+   67,
+   68,
+   69,
+   69
+  ],
+  "cliff_face_l": [
+   70,
+   68,
+   70,
+   67
+  ],
+  "cliff_face_r": [
+   67,
+   71,
+   68,
+   71
+  ],
+  "stairs": [
+   72,
+   73,
+   72,
+   73
+  ],
+  "bridge_h": [
+   74,
+   74,
+   75,
+   75
+  ],
+  "bridge_v": [
+   76,
+   77,
+   76,
+   77
+  ],
+  "roof_tudor": [
+   78,
+   78,
+   78,
+   78
+  ],
+  "roof_tudor_w": [
+   79,
+   78,
+   79,
+   78
+  ],
+  "roof_tudor_e": [
+   78,
+   80,
+   78,
+   80
+  ],
+  "roof_tudor_ew": [
+   79,
+   80,
+   79,
+   80
+  ],
+  "roof_tudor_n": [
+   81,
+   81,
+   78,
+   78
+  ],
+  "roof_tudor_nw": [
+   82,
+   81,
+   79,
+   78
+  ],
+  "roof_tudor_ne": [
+   81,
+   83,
+   78,
+   80
+  ],
+  "roof_tudor_new": [
+   82,
+   83,
+   79,
+   80
+  ],
+  "roof_flat": [
+   84,
+   84,
+   84,
+   84
+  ],
+  "roof_flat_w": [
+   85,
+   84,
+   85,
+   84
+  ],
+  "roof_flat_e": [
+   84,
+   86,
+   84,
+   86
+  ],
+  "roof_flat_ew": [
+   85,
+   86,
+   85,
+   86
+  ],
+  "roof_flat_n": [
+   87,
+   87,
+   84,
+   84
+  ],
+  "roof_flat_nw": [
+   88,
+   87,
+   85,
+   84
+  ],
+  "roof_flat_ne": [
+   87,
+   89,
+   84,
+   86
+  ],
+  "roof_flat_new": [
+   88,
+   89,
+   85,
+   86
+  ],
+  "facade_wall": [
+   90,
+   90,
+   91,
+   91
+  ],
+  "facade_wall_l": [
+   92,
+   90,
+   93,
+   91
+  ],
+  "facade_wall_r": [
+   90,
+   94,
+   91,
+   95
+  ],
+  "facade_window": [
+   96,
+   96,
+   97,
+   97
+  ],
+  "facade_window_l": [
+   92,
+   96,
+   93,
+   97
+  ],
+  "facade_window_r": [
+   96,
+   94,
+   97,
+   95
+  ],
+  "facade_door": [
+   98,
+   99,
+   100,
+   101
+  ],
+  "facade_ddoor_l": [
+   98,
+   102,
+   103,
+   104
+  ],
+  "facade_ddoor_r": [
+   102,
+   99,
+   105,
+   101
+  ],
+  "facade_plaque": [
+   106,
+   107,
+   91,
+   91
+  ],
+  "facade_ribbon": [
+   108,
+   108,
+   109,
+   109
+  ],
+  "roof_tudor_gable": [
+   110,
+   111,
+   112,
+   113
+  ],
+  "signpost": [
+   114,
+   115,
+   116,
+   117
+  ],
+  "fence_h": [
+   0,
+   0,
+   118,
+   118
+  ],
+  "fence_v": [
+   119,
+   0,
+   119,
+   0
+  ],
+  "hedge": [
+   120,
+   120,
+   121,
+   121
+  ],
+  "hedge_l": [
+   122,
+   120,
+   123,
+   121
+  ],
+  "hedge_r": [
+   120,
+   124,
+   121,
+   125
+  ],
+  "bench": [
+   0,
+   0,
+   126,
+   127
+  ]
+ },
+ "metatile_info": {
+  "lawn_a": {
+   "family": "lawn",
+   "solid": false
+  },
+  "lawn_b": {
+   "family": "lawn",
+   "solid": false
+  },
+  "lawn_c": {
+   "family": "lawn",
+   "solid": false
+  },
+  "path_00": {
+   "family": "path",
+   "solid": false,
+   "mask": 0
+  },
+  "path_01": {
+   "family": "path",
+   "solid": false,
+   "mask": 1
+  },
+  "path_02": {
+   "family": "path",
+   "solid": false,
+   "mask": 2
+  },
+  "path_03": {
+   "family": "path",
+   "solid": false,
+   "mask": 3
+  },
+  "path_04": {
+   "family": "path",
+   "solid": false,
+   "mask": 4
+  },
+  "path_05": {
+   "family": "path",
+   "solid": false,
+   "mask": 5
+  },
+  "path_06": {
+   "family": "path",
+   "solid": false,
+   "mask": 6
+  },
+  "path_07": {
+   "family": "path",
+   "solid": false,
+   "mask": 7
+  },
+  "path_08": {
+   "family": "path",
+   "solid": false,
+   "mask": 8
+  },
+  "path_09": {
+   "family": "path",
+   "solid": false,
+   "mask": 9
+  },
+  "path_10": {
+   "family": "path",
+   "solid": false,
+   "mask": 10
+  },
+  "path_11": {
+   "family": "path",
+   "solid": false,
+   "mask": 11
+  },
+  "path_12": {
+   "family": "path",
+   "solid": false,
+   "mask": 12
+  },
+  "path_13": {
+   "family": "path",
+   "solid": false,
+   "mask": 13
+  },
+  "path_14": {
+   "family": "path",
+   "solid": false,
+   "mask": 14
+  },
+  "path_15": {
+   "family": "path",
+   "solid": false,
+   "mask": 15
+  },
+  "paved_plaza": {
+   "family": "paved",
+   "solid": false
+  },
+  "paved_parking": {
+   "family": "paved",
+   "solid": false
+  },
+  "road_000": {
+   "family": "road",
+   "solid": false,
+   "mask": 0
+  },
+  "road_001": {
+   "family": "road",
+   "solid": false,
+   "mask": 1
+  },
+  "road_002": {
+   "family": "road",
+   "solid": false,
+   "mask": 2
+  },
+  "road_003": {
+   "family": "road",
+   "solid": false,
+   "mask": 3
+  },
+  "road_004": {
+   "family": "road",
+   "solid": false,
+   "mask": 4
+  },
+  "road_005": {
+   "family": "road",
+   "solid": false,
+   "mask": 5
+  },
+  "road_006": {
+   "family": "road",
+   "solid": false,
+   "mask": 6
+  },
+  "road_007": {
+   "family": "road",
+   "solid": false,
+   "mask": 7
+  },
+  "road_008": {
+   "family": "road",
+   "solid": false,
+   "mask": 8
+  },
+  "road_009": {
+   "family": "road",
+   "solid": false,
+   "mask": 9
+  },
+  "road_010": {
+   "family": "road",
+   "solid": false,
+   "mask": 10
+  },
+  "road_011": {
+   "family": "road",
+   "solid": false,
+   "mask": 11
+  },
+  "road_012": {
+   "family": "road",
+   "solid": false,
+   "mask": 12
+  },
+  "road_013": {
+   "family": "road",
+   "solid": false,
+   "mask": 13
+  },
+  "road_014": {
+   "family": "road",
+   "solid": false,
+   "mask": 14
+  },
+  "road_015": {
+   "family": "road",
+   "solid": false,
+   "mask": 15
+  },
+  "road_019": {
+   "family": "road",
+   "solid": false,
+   "mask": 19
+  },
+  "road_023": {
+   "family": "road",
+   "solid": false,
+   "mask": 23
+  },
+  "road_027": {
+   "family": "road",
+   "solid": false,
+   "mask": 27
+  },
+  "road_031": {
+   "family": "road",
+   "solid": false,
+   "mask": 31
+  },
+  "road_038": {
+   "family": "road",
+   "solid": false,
+   "mask": 38
+  },
+  "road_039": {
+   "family": "road",
+   "solid": false,
+   "mask": 39
+  },
+  "road_046": {
+   "family": "road",
+   "solid": false,
+   "mask": 46
+  },
+  "road_047": {
+   "family": "road",
+   "solid": false,
+   "mask": 47
+  },
+  "road_055": {
+   "family": "road",
+   "solid": false,
+   "mask": 55
+  },
+  "road_063": {
+   "family": "road",
+   "solid": false,
+   "mask": 63
+  },
+  "road_076": {
+   "family": "road",
+   "solid": false,
+   "mask": 76
+  },
+  "road_077": {
+   "family": "road",
+   "solid": false,
+   "mask": 77
+  },
+  "road_078": {
+   "family": "road",
+   "solid": false,
+   "mask": 78
+  },
+  "road_079": {
+   "family": "road",
+   "solid": false,
+   "mask": 79
+  },
+  "road_095": {
+   "family": "road",
+   "solid": false,
+   "mask": 95
+  },
+  "road_110": {
+   "family": "road",
+   "solid": false,
+   "mask": 110
+  },
+  "road_111": {
+   "family": "road",
+   "solid": false,
+   "mask": 111
+  },
+  "road_127": {
+   "family": "road",
+   "solid": false,
+   "mask": 127
+  },
+  "road_137": {
+   "family": "road",
+   "solid": false,
+   "mask": 137
+  },
+  "road_139": {
+   "family": "road",
+   "solid": false,
+   "mask": 139
+  },
+  "road_141": {
+   "family": "road",
+   "solid": false,
+   "mask": 141
+  },
+  "road_143": {
+   "family": "road",
+   "solid": false,
+   "mask": 143
+  },
+  "road_155": {
+   "family": "road",
+   "solid": false,
+   "mask": 155
+  },
+  "road_159": {
+   "family": "road",
+   "solid": false,
+   "mask": 159
+  },
+  "road_175": {
+   "family": "road",
+   "solid": false,
+   "mask": 175
+  },
+  "road_191": {
+   "family": "road",
+   "solid": false,
+   "mask": 191
+  },
+  "road_205": {
+   "family": "road",
+   "solid": false,
+   "mask": 205
+  },
+  "road_207": {
+   "family": "road",
+   "solid": false,
+   "mask": 207
+  },
+  "road_223": {
+   "family": "road",
+   "solid": false,
+   "mask": 223
+  },
+  "road_239": {
+   "family": "road",
+   "solid": false,
+   "mask": 239
+  },
+  "road_255": {
+   "family": "road",
+   "solid": false,
+   "mask": 255
+  },
+  "water_000": {
+   "family": "water",
+   "solid": true,
+   "mask": 0
+  },
+  "water_001": {
+   "family": "water",
+   "solid": true,
+   "mask": 1
+  },
+  "water_002": {
+   "family": "water",
+   "solid": true,
+   "mask": 2
+  },
+  "water_003": {
+   "family": "water",
+   "solid": true,
+   "mask": 3
+  },
+  "water_004": {
+   "family": "water",
+   "solid": true,
+   "mask": 4
+  },
+  "water_005": {
+   "family": "water",
+   "solid": true,
+   "mask": 5
+  },
+  "water_006": {
+   "family": "water",
+   "solid": true,
+   "mask": 6
+  },
+  "water_007": {
+   "family": "water",
+   "solid": true,
+   "mask": 7
+  },
+  "water_008": {
+   "family": "water",
+   "solid": true,
+   "mask": 8
+  },
+  "water_009": {
+   "family": "water",
+   "solid": true,
+   "mask": 9
+  },
+  "water_010": {
+   "family": "water",
+   "solid": true,
+   "mask": 10
+  },
+  "water_011": {
+   "family": "water",
+   "solid": true,
+   "mask": 11
+  },
+  "water_012": {
+   "family": "water",
+   "solid": true,
+   "mask": 12
+  },
+  "water_013": {
+   "family": "water",
+   "solid": true,
+   "mask": 13
+  },
+  "water_014": {
+   "family": "water",
+   "solid": true,
+   "mask": 14
+  },
+  "water_015": {
+   "family": "water",
+   "solid": true,
+   "mask": 15
+  },
+  "water_019": {
+   "family": "water",
+   "solid": true,
+   "mask": 19
+  },
+  "water_023": {
+   "family": "water",
+   "solid": true,
+   "mask": 23
+  },
+  "water_027": {
+   "family": "water",
+   "solid": true,
+   "mask": 27
+  },
+  "water_031": {
+   "family": "water",
+   "solid": true,
+   "mask": 31
+  },
+  "water_038": {
+   "family": "water",
+   "solid": true,
+   "mask": 38
+  },
+  "water_039": {
+   "family": "water",
+   "solid": true,
+   "mask": 39
+  },
+  "water_046": {
+   "family": "water",
+   "solid": true,
+   "mask": 46
+  },
+  "water_047": {
+   "family": "water",
+   "solid": true,
+   "mask": 47
+  },
+  "water_055": {
+   "family": "water",
+   "solid": true,
+   "mask": 55
+  },
+  "water_063": {
+   "family": "water",
+   "solid": true,
+   "mask": 63
+  },
+  "water_076": {
+   "family": "water",
+   "solid": true,
+   "mask": 76
+  },
+  "water_077": {
+   "family": "water",
+   "solid": true,
+   "mask": 77
+  },
+  "water_078": {
+   "family": "water",
+   "solid": true,
+   "mask": 78
+  },
+  "water_079": {
+   "family": "water",
+   "solid": true,
+   "mask": 79
+  },
+  "water_095": {
+   "family": "water",
+   "solid": true,
+   "mask": 95
+  },
+  "water_110": {
+   "family": "water",
+   "solid": true,
+   "mask": 110
+  },
+  "water_111": {
+   "family": "water",
+   "solid": true,
+   "mask": 111
+  },
+  "water_127": {
+   "family": "water",
+   "solid": true,
+   "mask": 127
+  },
+  "water_137": {
+   "family": "water",
+   "solid": true,
+   "mask": 137
+  },
+  "water_139": {
+   "family": "water",
+   "solid": true,
+   "mask": 139
+  },
+  "water_141": {
+   "family": "water",
+   "solid": true,
+   "mask": 141
+  },
+  "water_143": {
+   "family": "water",
+   "solid": true,
+   "mask": 143
+  },
+  "water_155": {
+   "family": "water",
+   "solid": true,
+   "mask": 155
+  },
+  "water_159": {
+   "family": "water",
+   "solid": true,
+   "mask": 159
+  },
+  "water_175": {
+   "family": "water",
+   "solid": true,
+   "mask": 175
+  },
+  "water_191": {
+   "family": "water",
+   "solid": true,
+   "mask": 191
+  },
+  "water_205": {
+   "family": "water",
+   "solid": true,
+   "mask": 205
+  },
+  "water_207": {
+   "family": "water",
+   "solid": true,
+   "mask": 207
+  },
+  "water_223": {
+   "family": "water",
+   "solid": true,
+   "mask": 223
+  },
+  "water_239": {
+   "family": "water",
+   "solid": true,
+   "mask": 239
+  },
+  "water_255": {
+   "family": "water",
+   "solid": true,
+   "mask": 255
+  },
+  "water_fill_b": {
+   "family": "water",
+   "solid": true
+  },
+  "tree": {
+   "family": "tree",
+   "solid": true
+  },
+  "forest_000": {
+   "family": "forest",
+   "solid": true,
+   "mask": 0
+  },
+  "forest_001": {
+   "family": "forest",
+   "solid": true,
+   "mask": 1
+  },
+  "forest_002": {
+   "family": "forest",
+   "solid": true,
+   "mask": 2
+  },
+  "forest_003": {
+   "family": "forest",
+   "solid": true,
+   "mask": 3
+  },
+  "forest_004": {
+   "family": "forest",
+   "solid": true,
+   "mask": 4
+  },
+  "forest_005": {
+   "family": "forest",
+   "solid": true,
+   "mask": 5
+  },
+  "forest_006": {
+   "family": "forest",
+   "solid": true,
+   "mask": 6
+  },
+  "forest_007": {
+   "family": "forest",
+   "solid": true,
+   "mask": 7
+  },
+  "forest_008": {
+   "family": "forest",
+   "solid": true,
+   "mask": 8
+  },
+  "forest_009": {
+   "family": "forest",
+   "solid": true,
+   "mask": 9
+  },
+  "forest_010": {
+   "family": "forest",
+   "solid": true,
+   "mask": 10
+  },
+  "forest_011": {
+   "family": "forest",
+   "solid": true,
+   "mask": 11
+  },
+  "forest_012": {
+   "family": "forest",
+   "solid": true,
+   "mask": 12
+  },
+  "forest_013": {
+   "family": "forest",
+   "solid": true,
+   "mask": 13
+  },
+  "forest_014": {
+   "family": "forest",
+   "solid": true,
+   "mask": 14
+  },
+  "forest_015": {
+   "family": "forest",
+   "solid": true,
+   "mask": 15
+  },
+  "forest_019": {
+   "family": "forest",
+   "solid": true,
+   "mask": 19
+  },
+  "forest_023": {
+   "family": "forest",
+   "solid": true,
+   "mask": 23
+  },
+  "forest_027": {
+   "family": "forest",
+   "solid": true,
+   "mask": 27
+  },
+  "forest_031": {
+   "family": "forest",
+   "solid": true,
+   "mask": 31
+  },
+  "forest_038": {
+   "family": "forest",
+   "solid": true,
+   "mask": 38
+  },
+  "forest_039": {
+   "family": "forest",
+   "solid": true,
+   "mask": 39
+  },
+  "forest_046": {
+   "family": "forest",
+   "solid": true,
+   "mask": 46
+  },
+  "forest_047": {
+   "family": "forest",
+   "solid": true,
+   "mask": 47
+  },
+  "forest_055": {
+   "family": "forest",
+   "solid": true,
+   "mask": 55
+  },
+  "forest_063": {
+   "family": "forest",
+   "solid": true,
+   "mask": 63
+  },
+  "forest_076": {
+   "family": "forest",
+   "solid": true,
+   "mask": 76
+  },
+  "forest_077": {
+   "family": "forest",
+   "solid": true,
+   "mask": 77
+  },
+  "forest_078": {
+   "family": "forest",
+   "solid": true,
+   "mask": 78
+  },
+  "forest_079": {
+   "family": "forest",
+   "solid": true,
+   "mask": 79
+  },
+  "forest_095": {
+   "family": "forest",
+   "solid": true,
+   "mask": 95
+  },
+  "forest_110": {
+   "family": "forest",
+   "solid": true,
+   "mask": 110
+  },
+  "forest_111": {
+   "family": "forest",
+   "solid": true,
+   "mask": 111
+  },
+  "forest_127": {
+   "family": "forest",
+   "solid": true,
+   "mask": 127
+  },
+  "forest_137": {
+   "family": "forest",
+   "solid": true,
+   "mask": 137
+  },
+  "forest_139": {
+   "family": "forest",
+   "solid": true,
+   "mask": 139
+  },
+  "forest_141": {
+   "family": "forest",
+   "solid": true,
+   "mask": 141
+  },
+  "forest_143": {
+   "family": "forest",
+   "solid": true,
+   "mask": 143
+  },
+  "forest_155": {
+   "family": "forest",
+   "solid": true,
+   "mask": 155
+  },
+  "forest_159": {
+   "family": "forest",
+   "solid": true,
+   "mask": 159
+  },
+  "forest_175": {
+   "family": "forest",
+   "solid": true,
+   "mask": 175
+  },
+  "forest_191": {
+   "family": "forest",
+   "solid": true,
+   "mask": 191
+  },
+  "forest_205": {
+   "family": "forest",
+   "solid": true,
+   "mask": 205
+  },
+  "forest_207": {
+   "family": "forest",
+   "solid": true,
+   "mask": 207
+  },
+  "forest_223": {
+   "family": "forest",
+   "solid": true,
+   "mask": 223
+  },
+  "forest_239": {
+   "family": "forest",
+   "solid": true,
+   "mask": 239
+  },
+  "forest_255": {
+   "family": "forest",
+   "solid": true,
+   "mask": 255
+  },
+  "forest_fill_b": {
+   "family": "forest",
+   "solid": true
+  },
+  "ledge": {
+   "family": "steep",
+   "solid": false,
+   "ledge": "S"
+  },
+  "ledge_l": {
+   "family": "steep",
+   "solid": false,
+   "ledge": "S"
+  },
+  "ledge_r": {
+   "family": "steep",
+   "solid": false,
+   "ledge": "S"
+  },
+  "cliff_top": {
+   "family": "steep",
+   "solid": true
+  },
+  "cliff_face": {
+   "family": "steep",
+   "solid": true
+  },
+  "cliff_base": {
+   "family": "steep",
+   "solid": true
+  },
+  "cliff_face_l": {
+   "family": "steep",
+   "solid": true
+  },
+  "cliff_face_r": {
+   "family": "steep",
+   "solid": true
+  },
+  "stairs": {
+   "family": "steep",
+   "solid": false
+  },
+  "bridge_h": {
+   "family": "bridge",
+   "solid": false
+  },
+  "bridge_v": {
+   "family": "bridge",
+   "solid": false
+  },
+  "roof_tudor": {
+   "family": "building",
+   "solid": true,
+   "roof": "tudor"
+  },
+  "roof_tudor_w": {
+   "family": "building",
+   "solid": true,
+   "roof": "tudor"
+  },
+  "roof_tudor_e": {
+   "family": "building",
+   "solid": true,
+   "roof": "tudor"
+  },
+  "roof_tudor_ew": {
+   "family": "building",
+   "solid": true,
+   "roof": "tudor"
+  },
+  "roof_tudor_n": {
+   "family": "building",
+   "solid": true,
+   "roof": "tudor"
+  },
+  "roof_tudor_nw": {
+   "family": "building",
+   "solid": true,
+   "roof": "tudor"
+  },
+  "roof_tudor_ne": {
+   "family": "building",
+   "solid": true,
+   "roof": "tudor"
+  },
+  "roof_tudor_new": {
+   "family": "building",
+   "solid": true,
+   "roof": "tudor"
+  },
+  "roof_flat": {
+   "family": "building",
+   "solid": true,
+   "roof": "flat"
+  },
+  "roof_flat_w": {
+   "family": "building",
+   "solid": true,
+   "roof": "flat"
+  },
+  "roof_flat_e": {
+   "family": "building",
+   "solid": true,
+   "roof": "flat"
+  },
+  "roof_flat_ew": {
+   "family": "building",
+   "solid": true,
+   "roof": "flat"
+  },
+  "roof_flat_n": {
+   "family": "building",
+   "solid": true,
+   "roof": "flat"
+  },
+  "roof_flat_nw": {
+   "family": "building",
+   "solid": true,
+   "roof": "flat"
+  },
+  "roof_flat_ne": {
+   "family": "building",
+   "solid": true,
+   "roof": "flat"
+  },
+  "roof_flat_new": {
+   "family": "building",
+   "solid": true,
+   "roof": "flat"
+  },
+  "facade_wall": {
+   "family": "building",
+   "solid": true
+  },
+  "facade_wall_l": {
+   "family": "building",
+   "solid": true
+  },
+  "facade_wall_r": {
+   "family": "building",
+   "solid": true
+  },
+  "facade_window": {
+   "family": "building",
+   "solid": true
+  },
+  "facade_window_l": {
+   "family": "building",
+   "solid": true
+  },
+  "facade_window_r": {
+   "family": "building",
+   "solid": true
+  },
+  "facade_door": {
+   "family": "building",
+   "solid": false,
+   "door": true
+  },
+  "facade_ddoor_l": {
+   "family": "building",
+   "solid": false,
+   "door": true
+  },
+  "facade_ddoor_r": {
+   "family": "building",
+   "solid": false,
+   "door": true
+  },
+  "facade_plaque": {
+   "family": "building",
+   "solid": true,
+   "sign": true
+  },
+  "facade_ribbon": {
+   "family": "building",
+   "solid": true
+  },
+  "roof_tudor_gable": {
+   "family": "building",
+   "solid": true
+  },
+  "signpost": {
+   "family": "prop",
+   "solid": true,
+   "sign": true
+  },
+  "fence_h": {
+   "family": "prop",
+   "solid": true
+  },
+  "fence_v": {
+   "family": "prop",
+   "solid": true
+  },
+  "hedge": {
+   "family": "prop",
+   "solid": true
+  },
+  "hedge_l": {
+   "family": "prop",
+   "solid": true
+  },
+  "hedge_r": {
+   "family": "prop",
+   "solid": true
+  },
+  "bench": {
+   "family": "prop",
+   "solid": true
+  }
+ },
+ "autotile": {
+  "convention": {
+   "bits": {
+    "N": 1,
+    "E": 2,
+    "S": 4,
+    "W": 8,
+    "NE": 16,
+    "SE": 32,
+    "SW": 64,
+    "NW": 128
+   },
+   "meaning": "bit set = that neighbour is the same terrain (connects); off-map neighbours count as connected",
+   "blob47": "diagonal bits only count when both adjacent orthogonals are set; reduce any 8-bit mask with canon(mask) before lookup",
+   "n4_on_blob": "to drive a blob family from 4 neighbours, look up canon(mask4 | 0xF0)",
+   "outside": "edges are drawn against lawn (L); place lawn on the other side"
+  },
+  "path": {
+   "type": "n4",
+   "masks": {
+    "0": "path_00",
+    "1": "path_01",
+    "2": "path_02",
+    "3": "path_03",
+    "4": "path_04",
+    "5": "path_05",
+    "6": "path_06",
+    "7": "path_07",
+    "8": "path_08",
+    "9": "path_09",
+    "10": "path_10",
+    "11": "path_11",
+    "12": "path_12",
+    "13": "path_13",
+    "14": "path_14",
+    "15": "path_15"
+   },
+   "connects_to": [
+    "path",
+    "paved_plaza",
+    "bridge",
+    "facade_door",
+    "stairs"
+   ]
+  },
+  "road": {
+   "type": "blob47",
+   "masks": {
+    "0": "road_000",
+    "1": "road_001",
+    "2": "road_002",
+    "3": "road_003",
+    "4": "road_004",
+    "5": "road_005",
+    "6": "road_006",
+    "7": "road_007",
+    "8": "road_008",
+    "9": "road_009",
+    "10": "road_010",
+    "11": "road_011",
+    "12": "road_012",
+    "13": "road_013",
+    "14": "road_014",
+    "15": "road_015",
+    "19": "road_019",
+    "23": "road_023",
+    "27": "road_027",
+    "31": "road_031",
+    "38": "road_038",
+    "39": "road_039",
+    "46": "road_046",
+    "47": "road_047",
+    "55": "road_055",
+    "63": "road_063",
+    "76": "road_076",
+    "77": "road_077",
+    "78": "road_078",
+    "79": "road_079",
+    "95": "road_095",
+    "110": "road_110",
+    "111": "road_111",
+    "127": "road_127",
+    "137": "road_137",
+    "139": "road_139",
+    "141": "road_141",
+    "143": "road_143",
+    "155": "road_155",
+    "159": "road_159",
+    "175": "road_175",
+    "191": "road_191",
+    "205": "road_205",
+    "207": "road_207",
+    "223": "road_223",
+    "239": "road_239",
+    "255": "road_255"
+   }
+  },
+  "water": {
+   "type": "blob47",
+   "masks": {
+    "0": "water_000",
+    "1": "water_001",
+    "2": "water_002",
+    "3": "water_003",
+    "4": "water_004",
+    "5": "water_005",
+    "6": "water_006",
+    "7": "water_007",
+    "8": "water_008",
+    "9": "water_009",
+    "10": "water_010",
+    "11": "water_011",
+    "12": "water_012",
+    "13": "water_013",
+    "14": "water_014",
+    "15": "water_015",
+    "19": "water_019",
+    "23": "water_023",
+    "27": "water_027",
+    "31": "water_031",
+    "38": "water_038",
+    "39": "water_039",
+    "46": "water_046",
+    "47": "water_047",
+    "55": "water_055",
+    "63": "water_063",
+    "76": "water_076",
+    "77": "water_077",
+    "78": "water_078",
+    "79": "water_079",
+    "95": "water_095",
+    "110": "water_110",
+    "111": "water_111",
+    "127": "water_127",
+    "137": "water_137",
+    "139": "water_139",
+    "141": "water_141",
+    "143": "water_143",
+    "155": "water_155",
+    "159": "water_159",
+    "175": "water_175",
+    "191": "water_191",
+    "205": "water_205",
+    "207": "water_207",
+    "223": "water_223",
+    "239": "water_239",
+    "255": "water_255"
+   },
+   "fill_variants": [
+    "water_255",
+    "water_fill_b"
+   ],
+   "note": "count bridge cells as water when computing masks"
+  },
+  "forest": {
+   "type": "blob47",
+   "masks": {
+    "0": "forest_000",
+    "1": "forest_001",
+    "2": "forest_002",
+    "3": "forest_003",
+    "4": "forest_004",
+    "5": "forest_005",
+    "6": "forest_006",
+    "7": "forest_007",
+    "8": "forest_008",
+    "9": "forest_009",
+    "10": "forest_010",
+    "11": "forest_011",
+    "12": "forest_012",
+    "13": "forest_013",
+    "14": "forest_014",
+    "15": "forest_015",
+    "19": "forest_019",
+    "23": "forest_023",
+    "27": "forest_027",
+    "31": "forest_031",
+    "38": "forest_038",
+    "39": "forest_039",
+    "46": "forest_046",
+    "47": "forest_047",
+    "55": "forest_055",
+    "63": "forest_063",
+    "76": "forest_076",
+    "77": "forest_077",
+    "78": "forest_078",
+    "79": "forest_079",
+    "95": "forest_095",
+    "110": "forest_110",
+    "111": "forest_111",
+    "127": "forest_127",
+    "137": "forest_137",
+    "139": "forest_139",
+    "141": "forest_141",
+    "143": "forest_143",
+    "155": "forest_155",
+    "159": "forest_159",
+    "175": "forest_175",
+    "191": "forest_191",
+    "205": "forest_205",
+    "207": "forest_207",
+    "223": "forest_223",
+    "239": "forest_239",
+    "255": "forest_255"
+   },
+   "fill_variants": [
+    "forest_255",
+    "forest_fill_b"
+   ]
+  }
+ },
+ "building": {
+  "rule": "w x h metatiles; rows 0..h-2 roof, row h-1 facade. Roof edges: _n on row 0, _w on column 0, _e on column w-1 (combine, e.g. roof_tudor_nw). Facade: *_l / *_r on the end columns. roof_tudor_gable may replace any roof cell in row h-2. facade_ddoor_l + facade_ddoor_r form a 2-wide door.",
+  "roof_styles": [
+   "tudor",
+   "flat"
+  ],
+  "facades": [
+   "facade_wall",
+   "facade_window",
+   "facade_ribbon",
+   "facade_door",
+   "facade_ddoor_l",
+   "facade_ddoor_r",
+   "facade_plaque"
+  ],
+  "helper": "make_art.building_layout(w, h, roof, doors, ddoors, gables, plaques)"
+ }
+}
