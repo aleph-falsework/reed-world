@@ -5,6 +5,7 @@ Material for a talk at Reed College on the difference between a **world** (a map
 Every stage is built on one canonical file, `world/lowfi/reed_world.geojson`. Each feature in it keeps its OpenStreetMap id, so later layers attach to the same objects instead of redrawing them.
 
 ## Layout
+- `docs/GB_STUDIO_PLAN.md`: plan, references and the next-session prompt for a GB Studio (Game Boy) version of the campus.
 - `docs/PROCESS.md`: how this was built, the problems hit along the way, and an estimate of the effort without AI assistance.
 - `data/raw/`: inputs. These are the Overpass export, the building-use CSV and the 2010 campus map, which is used only as a reference.
 - `scripts/`: the pipeline (Python 3, `shapely`, `pyproj`, `Pillow`).
@@ -26,7 +27,7 @@ python gen_walk.py ../world/lowfi/reed_world.geojson ../world/walk/reed_walk.htm
 - [x] World, low fidelity
 - [ ] World, high fidelity: DEM terrain, building heights, canyon vegetation
 - [ ] Simulation
-- [ ] Game
+- [ ] Game: GB Studio campus walk (see `docs/GB_STUDIO_PLAN.md`; tracked in Jira project RW)
 - [ ] Engine export
 
 Map data © OpenStreetMap contributors, ODbL.
