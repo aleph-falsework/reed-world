@@ -157,9 +157,10 @@ class Roof:
         if self.n_valid < 5:
             return
         idx = np.argwhere(cand)
-        min_sup = max(8, int(0.03 * self.n_valid))
+        min_sup = max(8, min(int(0.03 * self.n_valid), 40))
         free = cand.copy()
         k = 0
+        fails = 0
         while k < max_planes:
             fi = np.argwhere(free)
             if len(fi) < min_sup:
@@ -169,27 +170,28 @@ class Roof:
             tree = cKDTree(np.c_[xs, ys])
             n = len(xs)
             trials = 250 if n > 60 else 120
-            seeds = RNG.integers(0, n, trials)
-            nb = tree.query_ball_point(np.c_[xs[seeds], ys[seeds]], r=4.0)
+            rs_ = self.r3[free]
+            smooth = np.nonzero(np.nan_to_num(rs_, nan=9) < 0.2)[0]
+            pool = smooth if len(smooth) >= 10 else np.arange(n)
+            seeds = pool[RNG.integers(0, len(pool), trials)]
+            nb = tree.query_ball_point(np.c_[xs[seeds], ys[seeds]], r=2.3)
             planes = []
-            for s, lst in zip(seeds, nb):
-                if len(lst) < 3:
+            for s_, lst in zip(seeds, nb):
+                if len(lst) < 6:
                     continue
-                o = RNG.choice(lst, 2, replace=False)
-                P = np.array([[xs[s], ys[s], zs[s]], [xs[o[0]], ys[o[0]], zs[o[0]]],
-                              [xs[o[1]], ys[o[1]], zs[o[1]]]])
-                nrm = np.cross(P[1] - P[0], P[2] - P[0])
-                if abs(nrm[2]) < 1e-6:
+                lst = np.asarray(lst)
+                pp = plane_lsq(xs[lst], ys[lst], zs[lst])
+                rr_ = np.abs(zs[lst] - (pp[0] * xs[lst] + pp[1] * ys[lst] + pp[2]))
+                if np.median(rr_) > TOL:
                     continue
-                nrm = nrm / np.linalg.norm(nrm)
-                if abs(nrm[2]) < math.cos(math.radians(70)):
+                if math.degrees(math.atan(math.hypot(pp[0], pp[1]))) > 70:
                     continue
-                a = -nrm[0] / nrm[2]
-                bb = -nrm[1] / nrm[2]
-                c = P[0, 2] - a * P[0, 0] - bb * P[0, 1]
-                planes.append((a, bb, c))
+                planes.append(tuple(pp))
             if not planes:
-                break
+                fails += 1
+                if fails >= 3:
+                    break
+                continue
             Pm = np.array(planes)
             res = np.abs(zs[None, :] - (Pm[:, 0:1] * xs[None, :] + Pm[:, 1:2] * ys[None, :] + Pm[:, 2:3]))
             cnt = (res < TOL).sum(1)
@@ -203,7 +205,10 @@ class Roof:
                     best = (sz, m, Pm[j])
             sz, m, p = best
             if sz < min_sup:
-                break
+                fails += 1
+                if fails >= 3:
+                    break
+                continue
             for _ in range(3):  # refit and regrow
                 p = plane_lsq(self.X[m], self.Y[m], self.hh[m])
                 if not np.all(np.isfinite(p)):
@@ -219,7 +224,10 @@ class Roof:
                     break
                 m = m2
             if m.sum() < min_sup:
-                break
+                fails += 1
+                if fails >= 3:
+                    break
+                continue
             k += 1
             self.labels[m] = k
             free &= ~m
@@ -275,11 +283,21 @@ class Roof:
             f['h_med'] = f['z_med'] - ground
             f['pitched'] = f['slope'] >= FLAT_DEG
             f['mask'] = m
+            inner = m & ndi.binary_erosion(m)
+            rv = self.r3[inner if inner.sum() >= 3 else m]
+            f['rough'] = float(np.nanmedian(rv)) if np.isfinite(rv).any() else 9.0
+        # facets fitted into canopy: rough interior -> vegetation, not roof
+        self.veg_facet_px = 0
+        for f in list(self.facets):
+            if f['rough'] > 0.35 and f['n'] < 400:
+                self.labels[f['mask']] = 0
+                self.veg_facet_px += f['n']
+                self.facets.remove(f)
 
     # ---------------------------------------------------------------- blobs
     def blobs(self):
         self.features = []
-        self.veg_px = 0
+        self.veg_px = getattr(self, 'veg_facet_px', 0)
         if not self.facets:
             un = self.valid
             self.veg_px = int((self.valid & (self.r3 > 0.6)).sum())
@@ -294,6 +312,7 @@ class Roof:
         dz = self.hh - planez
         self.dz = dz
         un = self.valid & (self.labels == 0)
+        known_veg = un & (self.r3 > ROUGH_DROP)
         high = un & (dz > STEP_OVER)
         lab, n = ndi.label(high, structure=np.ones((3, 3)))
         outside_can = self.can & ~self.full
@@ -321,12 +340,12 @@ class Roof:
                 continue
             if over > 4 and area >= 9:
                 kind = 'tower'
+            elif not hf['pitched'] and area <= 400:
+                kind = 'mechanical'
             elif area <= 6:
                 kind = 'chimney'
             elif hf['pitched'] and area <= 40 and over <= 3.5:
                 kind = 'dormer'
-            elif not hf['pitched'] and area <= 400:
-                kind = 'mechanical'
             else:
                 kind = 'raised_block'
             self.features.append({'type': kind, 'x': round(cx, 2), 'y': round(cy, 2),
@@ -348,11 +367,13 @@ class Roof:
     # ---------------------------------------------------------------- lines
     def lines(self):
         self.ridges, self.hips, self.valleys = [], [], []
-        P = [f for f in self.facets if f['pitched'] and f.get('role') != 'tower' and f['n'] >= 6]
+        P = [f for f in self.facets if f.get('role') != 'tower' and f['n'] >= 6]
         dil = {f['id']: ndi.binary_dilation(f['mask'], iterations=2) for f in P}
         for i in range(len(P)):
             for j in range(i + 1, len(P)):
                 fi, fj = P[i], P[j]
+                if not (fi['pitched'] or fj['pitched']):
+                    continue
                 both = dil[fi['id']] & dil[fj['id']]
                 if both.sum() < 3:
                     continue
@@ -400,14 +421,27 @@ class Roof:
                        'azimuth_deg': round((math.degrees(math.atan2(bx_ - ax_, by_ - ay_)) + 360) % 180, 1),
                        'length_m': round(ln.length, 2), 'facets': [fi['id'], fj['id']]}
                 level = abs(za - zb) / max(ln.length, 1e-6) < math.tan(math.radians(6))
-                opposite = angdiff(fi['aspect'], fj['aspect']) > 140
-                if convex and level and opposite:
-                    self.ridges.append(seg)
+                if fi['pitched'] and fj['pitched']:
+                    opposite = angdiff(fi['aspect'], fj['aspect']) > 140
+                    if convex and level and opposite:
+                        seg['kind'] = 'ridge'
+                        self.ridges.append(seg)
+                        continue
+                else:
+                    # pitched facet meeting a flat deck above it -> deck edge (truncated ridge)
+                    pf, ff = (fi, fj) if fi['pitched'] else (fj, fi)
+                    if ff['z_med'] > pf['z_med'] + 0.2 and level and ln.length >= 3:
+                        seg['kind'] = 'deck_edge'
+                        self.ridges.append(seg)
+                    continue
+                if False:
+                    pass
                 elif convex and not level:
                     self.hips.append(seg)
                 elif not convex and zl < min(zc_i, zc_j) - 0.2:
                     self.valleys.append(seg)
-        self.ridges.sort(key=lambda r: -r['length_m'])
+        self.ridges = merge_ridges(self.ridges, self.b['ground_mean_z'])
+        self.ridges.sort(key=lambda r: (r['kind'] != 'ridge', -r['length_m']))
 
     # ---------------------------------------------------------------- classify
     def classify(self):
@@ -434,28 +468,43 @@ class Roof:
         major.sort(key=lambda f: -f['n'])
         fill = self.poly.area / max(self.poly.minimum_rotated_rectangle.area, 1e-6)
         self.fill = fill
+        # aspect clusters of the pitched facets (weighted, 30 deg)
+        cl = []
+        for f in sorted(pit, key=lambda f: -f['n']):
+            for c in cl:
+                if angdiff(c['a'], f['aspect']) < 30:
+                    c['n'] += f['n']
+                    break
+            else:
+                cl.append({'a': f['aspect'], 'n': f['n']})
+        cl = [c for c in cl if c['n'] >= 0.10 * max(pit_n, 1)]
+        self.aspect_clusters = cl
+        # deck: flat facets at the top of a pitched roof (truncated / mansard-like)
+        self.deck = None
+        if pit:
+            ptop = np.percentile(np.concatenate([self.hh[f['mask']] for f in pit]), 95)
+            decks = [f for f in main if not f['pitched'] and f['z_med'] >= ptop - 0.7]
+            deck_n = sum(f['n'] for f in decks)
+            if decks and pit_n >= 0.25 * npts and deck_n >= 0.7 * flat_n:
+                self.deck = max(decks, key=lambda f: f['n'])
         typ = 'complex'
+        nridge = len([r for r in self.ridges if r['kind'] == 'ridge'])
         if frac_flat >= 0.75:
             typ = 'flat'
-        elif frac_flat <= 0.25 and major:
-            maj_n = sum(f['n'] for f in major)
-            if len(major) == 1 and major[0]['n'] >= 0.85 * pit_n:
-                typ = 'shed'
-            elif (len(major) == 2 and angdiff(major[0]['aspect'], major[1]['aspect']) > 150
-                  and maj_n >= 0.85 * pit_n):
+        elif (frac_flat <= 0.25 or self.deck is not None) and cl:
+            if len(cl) == 1:
+                typ = 'shed' if self.deck is None else 'complex'
+            elif len(cl) == 2 and angdiff(cl[0]['a'], cl[1]['a']) > 150:
                 typ = 'gabled'
-            elif 3 <= len(major) <= 4 and fill > 0.85 and len(self.ridges) <= 1:
-                # at least 3 of 4 aspect directions relative to the dominant facet
-                base = major[0]['aspect']
-                dirs = {int(round(((f['aspect'] - base) % 360) / 90.0)) % 4 for f in major}
-                big_opp = [f for f in major if angdiff(f['aspect'], base) > 150]
-                if len(dirs) >= 3 and len(self.hips) >= 2:
+                # multiple ridges must be parallel for a (multi-)gable
+                azs = [r['azimuth_deg'] for r in self.ridges if r['kind'] == 'ridge']
+                if azs and max(angdiff(a, azs[0], 180) for a in azs) > 20:
+                    typ = 'complex'
+            elif len(cl) in (3, 4) and fill > 0.85:
+                dirs = {int(round(((c['a'] - cl[0]['a']) % 360) / 90.0)) % 4 for c in cl}
+                spaced = all(min(angdiff(c['a'], cl[0]['a'] + 90 * k) for k in range(4)) < 25 for c in cl)
+                if len(dirs) >= 3 and spaced and nridge <= 1 and (len(self.hips) >= 1 or self.deck is not None):
                     typ = 'hipped'
-                elif len(dirs) >= 3 and big_opp and len(self.hips) >= 1:
-                    typ = 'hipped'
-            elif len(major) == 2 and maj_n >= 0.85 * pit_n and fill > 0.85:
-                # two facets not opposite: odd, treat as complex
-                typ = 'complex'
         self.type = typ
         self.major = major
 
@@ -488,11 +537,12 @@ class Roof:
             eaves.append(np.percentile(zz, 20))
             w.append(f['n'])
         e = float(np.average(eaves, weights=w))
+        zz = np.concatenate([self.hh[f['mask']] for f in pit])
+        r = float(np.percentile(zz, 97))
         if self.ridges:
-            r = max(max(x['z0'], x['z1']) for x in self.ridges)
-        else:
-            zz = np.concatenate([self.hh[f['mask']] for f in pit])
-            r = float(np.percentile(zz, 97))
+            r = max(r, max(max(x['z0'], x['z1']) for x in self.ridges))
+        if getattr(self, 'deck', None) is not None:
+            r = max(r, self.deck['z_med'])
         pitch = float(np.average([f['slope'] for f in pit], weights=[f['n'] for f in pit]))
         return e, max(r, e), pitch
 
@@ -512,6 +562,49 @@ class Roof:
                 continue
             res[k] = u
         return res
+
+
+def merge_ridges(rs, ground):
+    """Merge parallel, laterally close (< 2.5 m) overlapping segments of the same kind."""
+    rs = [dict(r) for r in rs]
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(rs)):
+            for j in range(i + 1, len(rs)):
+                a, b = rs[i], rs[j]
+                if a['kind'] != b['kind'] or angdiff(a['azimuth_deg'], b['azimuth_deg'], 180) > 10:
+                    continue
+                p0, p1 = np.array(a['p0']), np.array(a['p1'])
+                u = (p1 - p0) / max(np.linalg.norm(p1 - p0), 1e-6)
+                nrm = np.array([-u[1], u[0]])
+                q0, q1 = np.array(b['p0']), np.array(b['p1'])
+                off = max(abs((q0 - p0) @ nrm), abs((q1 - p0) @ nrm))
+                sa = sorted([0.0, (p1 - p0) @ u]); sb = sorted([(q0 - p0) @ u, (q1 - p0) @ u])
+                overlap = min(sa[1], sb[1]) - max(sa[0], sb[0])
+                if off > 2.5 or overlap < -1.0:
+                    continue
+                if a['kind'] == 'deck_edge' and abs(a['h_m'] - b['h_m']) > 0.6:
+                    continue
+                lo, hi = min(sa[0], sb[0]), max(sa[1], sb[1])
+                big = a if a['length_m'] >= b['length_m'] else b
+                bp = np.array(big['p0']); bu = u
+                # keep the longer one's line, extend to the union span
+                c0 = p0 + lo * u; c1 = p0 + hi * u
+                shift = ((bp - p0) @ nrm) * nrm
+                c0, c1 = c0 + shift, c1 + shift
+                z = max(a['z0'], a['z1'], b['z0'], b['z1'])
+                m = {'p0': [round(c0[0], 2), round(c0[1], 2)], 'p1': [round(c1[0], 2), round(c1[1], 2)],
+                     'z0': round(z, 2), 'z1': round(z, 2), 'h_m': round(z - ground, 2),
+                     'azimuth_deg': big['azimuth_deg'], 'length_m': round(hi - lo, 2),
+                     'kind': a['kind'], 'facets': sorted(set(a.get('facets', []) + b.get('facets', [])))}
+                rs[i] = m
+                del rs[j]
+                changed = True
+                break
+            if changed:
+                break
+    return rs
 
 
 def r2(v, n=2):
@@ -537,7 +630,7 @@ def estimate(b, reason):
     h = b['height_m'] if b.get('height_source') not in ('lidar_p90',) else None
     lv_h = h if h else (7.0 if poly.area < 400 else 14.0)
     if poly.area >= 600:
-        rule = ('estimate: no 2014 lidar (%s). Footprint >= 600 m2 -> flat roof at the '
+        rule = ('estimate: no usable 2014 lidar roof (%s). Footprint >= 600 m2 -> flat roof at the '
                 'non-lidar height from buildings.json (OSM height or levels x 3.5 m; '
                 'default 14 m).' % reason)
         return {'type': 'flat', 'eave_h_m': r2(lv_h), 'ridge_h_m': r2(lv_h), 'pitch_deg': 0.0,
@@ -545,7 +638,7 @@ def estimate(b, reason):
     pitch = 30.0
     rise = 0.5 * short * math.tan(math.radians(pitch))
     eave = max(lv_h - rise, 2.4) if lv_h > 3.5 else 2.4
-    rule = ('estimate: no 2014 lidar (%s). Footprint < 600 m2 -> gabled, 30 deg, ridge along '
+    rule = ('estimate: no usable 2014 lidar roof (%s). Footprint < 600 m2 -> gabled, 30 deg, ridge along '
             'the long axis of the minimum rotated rectangle; eave = height - rise (min 2.4 m), '
             'height = OSM height/levels x 3.5 m, else 7 m.' % reason)
     c = mrr.centroid
@@ -569,9 +662,10 @@ def process(b, hh, can, rough):
                     ridge_z=r2(b['ground_mean_z'] + e['ridge_h_m']),
                     facets=[], hips=[], features=[], **e), None
     R = Roof(b, hh, can, rough)
-    R.fit(max_planes=12 if b['realm'] == 'campus' or b['area_m2'] > 400 else 6)
+    R.fit(max_planes=16 if b['realm'] == 'campus' or b['area_m2'] > 400 else 6)
     if R.n_valid < 5 or not R.facets:
-        e = estimate(b, 'too few lidar returns inside the footprint (%d)' % R.n_valid)
+        e = estimate(b, ('outside the survey (east of x ~1136 m)' if Polygon(b['ring']).centroid.x > 1130
+                         else 'too few lidar returns inside the footprint (%d)' % R.n_valid))
         return dict(base, source='estimate', confidence='low', confidence_score=0.15,
                     eave_z=r2(b['ground_mean_z'] + e['eave_h_m']),
                     ridge_z=r2(b['ground_mean_z'] + e['ridge_h_m']),
@@ -581,6 +675,13 @@ def process(b, hh, can, rough):
     R.classify()
     e, r, pitch = R.heights()
     ground = b['ground_mean_z']
+    # canopy-occluded small buildings: roof plane found in the trees
+    if b['area_m2'] < 500 and (e - ground) > 12 and R.veg_frac > 0.3:
+        est = estimate(b, 'canopy-occluded: fitted eave %.1f m above ground with %.0f %% vegetation '
+                          'on a < 500 m2 footprint' % (e - ground, 100 * R.veg_frac))
+        return dict(base, source='estimate', confidence='low', confidence_score=0.2,
+                    eave_z=r2(ground + est['eave_h_m']), ridge_z=r2(ground + est['ridge_h_m']),
+                    facets=[], hips=[], features=[], **est), R
     fp = R.facet_polys()
     facets = []
     for f in R.facets:
@@ -599,10 +700,10 @@ def process(b, hh, can, rough):
     elif R.type == 'shed' and R.major:
         ridge_az = round((R.major[0]['aspect'] + 90) % 180, 1)  # high edge direction
     feats = list(R.features)
-    if R.ridges:
+    if R.ridges and R.ridges[0]['kind'] == 'ridge':
         main_az = R.ridges[0]['azimuth_deg']
         for k, rg in enumerate(R.ridges[1:], 1):
-            if angdiff(rg['azimuth_deg'], main_az, 180) > 60 and rg['length_m'] >= 3:
+            if rg['kind'] == 'ridge' and angdiff(rg['azimuth_deg'], main_az, 180) > 60 and rg['length_m'] >= 3:
                 feats.append({'type': 'cross_gable', 'ridge_index': k,
                               'x': r2(0.5 * (rg['p0'][0] + rg['p1'][0])),
                               'y': r2(0.5 * (rg['p0'][1] + rg['p1'][1])),
@@ -633,7 +734,14 @@ def process(b, hh, can, rough):
                       'n_facets': len(R.facets)})
     if levels:
         out['flat_levels_h_m'] = levels
-    for s in out['ridges'] + out['hips'] + out['valleys']:
+    if getattr(R, 'deck', None) is not None and R.type != 'flat':
+        out['form'] = 'deck'
+        out['deck_h_m'] = r2(R.deck['h_med'])
+        out['deck_facet'] = R.deck['id']
+    if R.type == 'flat':
+        out['edges'] = out['ridges']   # step / deck edges on a flat roof, not ridges
+        out['ridges'] = []
+    for s in out['ridges'] + out['hips'] + out['valleys'] + out.get('edges', []):
         s.pop('facets', None)
     return out, R
 
@@ -660,7 +768,8 @@ def qa_map(blds, roofs, path, extent=None, dpi=200, label=False):
         alpha = {'high': 0.8, 'medium': 0.6, 'low': 0.35}[r['confidence']]
         ax.add_patch(MP(b['ring'], closed=True, fc=TYPE_COL[key], ec='k', lw=0.4, alpha=alpha))
         for s in r['ridges']:
-            ax.plot([s['p0'][0], s['p1'][0]], [s['p0'][1], s['p1'][1]], color='#ffff33', lw=1.6,
+            ax.plot([s['p0'][0], s['p1'][0]], [s['p0'][1], s['p1'][1]],
+                    color='#ffff33' if s.get('kind', 'ridge') == 'ridge' else '#33e0ff', lw=1.6,
                     solid_capstyle='round')
         for s in r.get('hips', []):
             ax.plot([s['p0'][0], s['p1'][0]], [s['p0'][1], s['p1'][1]], color='#ffffff', lw=0.7)
@@ -680,6 +789,7 @@ def qa_map(blds, roofs, path, extent=None, dpi=200, label=False):
     from matplotlib.lines import Line2D
     hl = [MP([[0, 0]], fc=c, ec='k', lw=0.4, label=k) for k, c in TYPE_COL.items()]
     hl += [Line2D([], [], color='#ffff33', lw=1.6, label='ridge'),
+           Line2D([], [], color='#33e0ff', lw=1.6, label='deck edge'),
            Line2D([], [], color='w', lw=0.7, label='hip'),
            Line2D([], [], marker='^', ls='', mfc='k', mec='w', label='tower'),
            Line2D([], [], marker='s', ls='', ms=4, mfc='k', mec='w', label='chimney'),
@@ -747,8 +857,9 @@ def profile_plot(b, r, R, path, hh):
     ax.set_ylabel('height above ground_mean_z (m)')
     ax.set_title('%s  %s: %s, pitch %s deg, conf %s' % (
         b['name'], b['osm_id'], r['type'], r['pitch_deg'], r['confidence']), fontsize=9)
-    ax.legend(fontsize=6.5, loc='upper right', ncol=2)
     ax.set_aspect('equal', adjustable='datalim')
+    ax.legend(fontsize=6.5, loc='upper center', bbox_to_anchor=(0.5, -0.22), ncol=3, frameon=False)
+    fig.set_size_inches(8, 4.4)
     fig.tight_layout()
     fig.savefig(path, dpi=150)
     plt.close(fig)
@@ -756,6 +867,66 @@ def profile_plot(b, r, R, path, hh):
 
 PROFILES = ['way/39516532', 'way/40877451', 'way/142983685', 'way/119843553', 'way/40877485',
             'way/339603988']
+
+
+# ====================================================================== styles
+STYLE_DEFAULTS = {  # inferred family defaults, used only where a row has no sourced value
+    'collegiate_gothic_brick': ('red brick, limestone dressings', 'slate or tile, steep', 'limestone', 'leaded casement, stone mullions'),
+    'arts_crafts_house': ('wood shingle / clapboard', 'composition shingle', 'painted wood', 'multi-pane double-hung'),
+    'midcentury_residence': ('brick and wood siding', 'low-pitch or flat membrane', 'painted wood', 'ribbon / aluminium sliding'),
+    'midcentury_academic': ('brick, concrete', 'flat membrane', 'concrete', 'steel ribbon'),
+    'modern_residence': ('brick veneer, fibre-cement / metal panel', 'standing-seam metal or membrane', 'metal', 'aluminium-clad casement'),
+    'contemporary_academic': ('brick, glass curtain wall', 'membrane / metal', 'metal', 'aluminium curtain wall'),
+    'small_house': ('wood siding', 'asphalt shingle', 'painted wood', 'double-hung'),
+    'utility': ('metal panel / concrete block', 'metal or membrane', 'none', 'few, industrial'),
+    'unknown': ('', '', '', ''),
+}
+STYLE_COLS = ['osm_id', 'name', 'style', 'year_built', 'architect', 'wall_material', 'roof_material', 'trim',
+              'window_type', 'source', 'confidence', 'notes']
+
+
+def build_styles(blds):
+    import csv
+    raw = {}
+    with open(os.path.join(ROOT, 'data/raw/building_styles.csv'), newline='') as f:
+        for row in csv.DictReader(f):
+            raw[row['osm_id']] = row
+    out = []
+    for b in blds:
+        if b['osm_id'] in raw:
+            r = dict(raw[b['osm_id']])
+            d = STYLE_DEFAULTS[r['style']]
+            filled = []
+            for k, v in zip(('wall_material', 'roof_material', 'trim', 'window_type'), d):
+                if not r[k] and v:
+                    r[k] = v
+                    filled.append(k)
+            if filled:
+                r['notes'] = (r['notes'] + ' ' if r['notes'] else '') + \
+                    '[%s = family default, inferred]' % ', '.join(filled)
+        else:
+            tag = b['building']
+            small = b['area_m2'] < 40 if b['realm'] != 'campus' else b['area_m2'] < 60
+            if tag in ('garage', 'garages', 'shed', 'roof', 'service', 'retail', 'carport') or small \
+                    or b['area_m2'] > 800:
+                st, why = 'utility', 'rule: OSM building=%s, %.0f m2 -> utility' % (tag, b['area_m2'])
+            else:
+                st, why = 'small_house', 'rule: unnamed %s building=%s, %.0f m2 -> small_house' % (
+                    b['realm'], tag, b['area_m2'])
+            d = STYLE_DEFAULTS[st]
+            r = {'osm_id': b['osm_id'], 'name': b['name'] or '', 'style': st, 'year_built': '',
+                 'architect': '', 'wall_material': d[0], 'roof_material': d[1], 'trim': d[2],
+                 'window_type': d[3], 'source': 'rule', 'confidence': 'low',
+                 'notes': why + '; materials = family default, inferred'}
+        out.append(r)
+    with open(os.path.join(OUT, 'styles.csv'), 'w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=STYLE_COLS)
+        w.writeheader()
+        for r in out:
+            w.writerow({k: r.get(k, '') for k in STYLE_COLS})
+    missing = [b['osm_id'] for b in blds if b['name'] and b['osm_id'] not in raw]
+    from collections import Counter
+    return Counter(r['style'] for r in out), out, missing
 
 
 def main():
@@ -827,6 +998,26 @@ def main():
         b = byid[oid]
         nm = (b['name'] or oid).lower().replace(' ', '_').replace('.', '')
         profile_plot(b, roofs[oid], keep[oid], os.path.join(OUT, 'profiles', nm + '.png'), hh)
+    cnt_s, rows, missing = build_styles(blds)
+    print('styles.csv', dict(cnt_s), 'named without curated row:', missing)
+    ready = {
+        'ready': True, 'generated': time.strftime('%Y-%m-%dT%H:%M:%S%z'), 'generator': 'scripts/roofs.py',
+        'files': {
+            'roofs.json': {'count': len(roofs), 'desc': 'roof form per building (osm_id), facets with planes and '
+                           'outlines, ridges/deck edges/hips/valleys, features, eave/ridge heights'},
+            'styles.csv': {'count': len(rows), 'desc': 'style family + materials per building (osm_id)'},
+            'roofs_qa.png': {}, 'roofs_qa_campus.png': {}, 'profiles/': {},
+        },
+        'roof_counts': dict(cnt), 'roof_counts_campus': dict(cnt_c), 'style_counts': dict(cnt_s),
+        'notes': ['Join on osm_id with world/3d/buildings.json.',
+                  'Heights *_h_m are above ground_mean_z; *_z are NAVD88 elevations.',
+                  'ridges[].kind = ridge | deck_edge (edge of a flat deck atop steep slopes, e.g. Eliot Hall); '
+                  'roofs with a deck have form = deck and deck_h_m.',
+                  'type flat: step/deck edges are in `edges`, `ridges` is empty.',
+                  'source = estimate rows carry a `rule` string.'],
+    }
+    with open(os.path.join(OUT, 'ROOFS_READY.json'), 'w') as f:
+        json.dump(ready, f, indent=1)
     print('done %.1fs' % (time.time() - t0))
 
 

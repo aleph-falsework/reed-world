@@ -1,0 +1,51 @@
+{
+ "ready": true,
+ "generated": "2026-10-27T09:43:03-0700",
+ "generator": "scripts/roofs.py",
+ "files": {
+  "roofs.json": {
+   "count": 549,
+   "desc": "roof form per building (osm_id), facets with planes and outlines, ridges/deck edges/hips/valleys, features, eave/ridge heights"
+  },
+  "styles.csv": {
+   "count": 549,
+   "desc": "style family + materials per building (osm_id)"
+  },
+  "roofs_qa.png": {},
+  "roofs_qa_campus.png": {},
+  "profiles/": {}
+ },
+ "roof_counts": {
+  "flat": 63,
+  "complex": 132,
+  "gabled": 129,
+  "estimate": 157,
+  "shed": 52,
+  "hipped": 16
+ },
+ "roof_counts_campus": {
+  "flat": 25,
+  "complex": 18,
+  "gabled": 9,
+  "estimate": 8,
+  "shed": 5
+ },
+ "style_counts": {
+  "small_house": 390,
+  "unknown": 4,
+  "midcentury_academic": 8,
+  "modern_residence": 8,
+  "collegiate_gothic_brick": 5,
+  "contemporary_academic": 6,
+  "utility": 110,
+  "midcentury_residence": 11,
+  "arts_crafts_house": 7
+ },
+ "notes": [
+  "Join on osm_id with world/3d/buildings.json.",
+  "Heights *_h_m are above ground_mean_z; *_z are NAVD88 elevations.",
+  "ridges[].kind = ridge | deck_edge (edge of a flat deck atop steep slopes, e.g. Eliot Hall); roofs with a deck have form = deck and deck_h_m.",
+  "type flat: step/deck edges are in `edges`, `ridges` is empty.",
+  "source = estimate rows carry a `rule` string."
+ ]
+}

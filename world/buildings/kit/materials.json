@@ -1,0 +1,245 @@
+{
+ "note": "tile_m = real-world size covered by one texture repeat; mesh UVs = metres / tile_m. Normals are OpenGL (+Y up). ORM = (AO, roughness, metallic).",
+ "materials": {
+  "Brick_Gothic": {
+   "tile_m": [
+    2.1,
+    2.1
+   ],
+   "size": 1024,
+   "note": "10 bricks x 28 courses, running bond",
+   "base_color": "T_Brick_Gothic_BC.png",
+   "normal": "T_Brick_Gothic_N.png",
+   "orm": "T_Brick_Gothic_ORM.png",
+   "slot": "M_Brick_Gothic"
+  },
+  "Brick_Common": {
+   "tile_m": [
+    2.1,
+    2.1
+   ],
+   "size": 1024,
+   "note": "10 bricks x 28 courses, running bond",
+   "base_color": "T_Brick_Common_BC.png",
+   "normal": "T_Brick_Common_N.png",
+   "orm": "T_Brick_Common_ORM.png",
+   "slot": "M_Brick_Common"
+  },
+  "Trim_Stone": {
+   "tile_m": [
+    1.2,
+    1.2
+   ],
+   "size": 512,
+   "note": "ashlar 2x4 blocks",
+   "base_color": "T_Trim_Stone_BC.png",
+   "normal": "T_Trim_Stone_N.png",
+   "orm": "T_Trim_Stone_ORM.png",
+   "slot": "M_Trim_Stone"
+  },
+  "Roof_Slate": {
+   "tile_m": [
+    1.2,
+    1.2
+   ],
+   "size": 1024,
+   "note": "4 slates x 6 courses, 30 x 20 cm exposure",
+   "base_color": "T_Roof_Slate_BC.png",
+   "normal": "T_Roof_Slate_N.png",
+   "orm": "T_Roof_Slate_ORM.png",
+   "slot": "M_Roof_Slate"
+  },
+  "Roof_Shingle": {
+   "tile_m": [
+    1.0,
+    1.0
+   ],
+   "size": 512,
+   "note": "3-tab, 1/3 m tabs, 12.5 cm exposure",
+   "base_color": "T_Roof_Shingle_BC.png",
+   "normal": "T_Roof_Shingle_N.png",
+   "orm": "T_Roof_Shingle_ORM.png",
+   "slot": "M_Roof_Shingle"
+  },
+  "Roof_Metal": {
+   "tile_m": [
+    0.9,
+    0.9
+   ],
+   "size": 512,
+   "note": "2 pans, 45 cm seams along V",
+   "base_color": "T_Roof_Metal_BC.png",
+   "normal": "T_Roof_Metal_N.png",
+   "orm": "T_Roof_Metal_ORM.png",
+   "slot": "M_Roof_Metal"
+  },
+  "Roof_Flat": {
+   "tile_m": [
+    2.0,
+    2.0
+   ],
+   "size": 512,
+   "note": "ballasted membrane (flat roofs)",
+   "base_color": "T_Roof_Flat_BC.png",
+   "normal": "T_Roof_Flat_N.png",
+   "orm": "T_Roof_Flat_ORM.png",
+   "slot": "M_Roof_Flat"
+  },
+  "Stucco": {
+   "tile_m": [
+    2.0,
+    2.0
+   ],
+   "size": 512,
+   "note": "trowelled render / stucco",
+   "base_color": "T_Stucco_BC.png",
+   "normal": "T_Stucco_N.png",
+   "orm": "T_Stucco_ORM.png",
+   "slot": "M_Stucco"
+  },
+  "Concrete": {
+   "tile_m": [
+    2.4,
+    2.4
+   ],
+   "size": 512,
+   "note": "board-marked, 1.2 x 0.6 m form panels",
+   "base_color": "T_Concrete_BC.png",
+   "normal": "T_Concrete_N.png",
+   "orm": "T_Concrete_ORM.png",
+   "slot": "M_Concrete"
+  },
+  "Glass_Curtain": {
+   "tile_m": [
+    3.0,
+    3.0
+   ],
+   "size": 512,
+   "note": "1.5 m panels, 6 cm dark mullions",
+   "base_color": "T_Glass_Curtain_BC.png",
+   "normal": "T_Glass_Curtain_N.png",
+   "orm": "T_Glass_Curtain_ORM.png",
+   "slot": "M_Glass_Curtain"
+  },
+  "Siding_Wood": {
+   "tile_m": [
+    1.2,
+    1.2
+   ],
+   "size": 512,
+   "note": "8 boards, 15 cm exposure",
+   "base_color": "T_Siding_Wood_BC.png",
+   "normal": "T_Siding_Wood_N.png",
+   "orm": "T_Siding_Wood_ORM.png",
+   "slot": "M_Siding_Wood"
+  },
+  "Siding_Wood_Dark": {
+   "tile_m": [
+    1.2,
+    1.2
+   ],
+   "size": 512,
+   "note": "8 boards, 15 cm exposure",
+   "base_color": "T_Siding_Wood_Dark_BC.png",
+   "normal": "T_Siding_Wood_Dark_N.png",
+   "orm": "T_Siding_Wood_Dark_ORM.png",
+   "slot": "M_Siding_Wood_Dark"
+  },
+  "Glass": {
+   "tile_m": [
+    1.0,
+    1.0
+   ],
+   "size": 256,
+   "note": "clear glass",
+   "base_color": "T_Glass_BC.png",
+   "normal": "T_Glass_N.png",
+   "orm": "T_Glass_ORM.png",
+   "slot": "M_Glass"
+  },
+  "Glass_Leaded": {
+   "tile_m": [
+    0.6,
+    0.6
+   ],
+   "size": 512,
+   "note": "leaded quarries",
+   "base_color": "T_Glass_Leaded_BC.png",
+   "normal": "T_Glass_Leaded_N.png",
+   "orm": "T_Glass_Leaded_ORM.png",
+   "slot": "M_Glass_Leaded"
+  },
+  "Paint_Trim": {
+   "tile_m": [
+    1.0,
+    1.0
+   ],
+   "size": 256,
+   "note": "painted / finished",
+   "base_color": "T_Paint_Trim_BC.png",
+   "normal": "T_Paint_Trim_N.png",
+   "orm": "T_Paint_Trim_ORM.png",
+   "slot": "M_Paint_Trim"
+  },
+  "Metal_Dark": {
+   "tile_m": [
+    1.0,
+    1.0
+   ],
+   "size": 256,
+   "note": "painted / finished",
+   "base_color": "T_Metal_Dark_BC.png",
+   "normal": "T_Metal_Dark_N.png",
+   "orm": "T_Metal_Dark_ORM.png",
+   "slot": "M_Metal_Dark"
+  },
+  "Wood_Timber": {
+   "tile_m": [
+    1.0,
+    1.0
+   ],
+   "size": 256,
+   "note": "painted / finished",
+   "base_color": "T_Wood_Timber_BC.png",
+   "normal": "T_Wood_Timber_N.png",
+   "orm": "T_Wood_Timber_ORM.png",
+   "slot": "M_Wood_Timber"
+  },
+  "Window_House": {
+   "tile_m": null,
+   "size": [
+    256,
+    384
+   ],
+   "note": "whole-window decal (double_hung), UV 0..1 over the window",
+   "base_color": "T_Window_House_BC.png",
+   "normal": "T_Window_House_N.png",
+   "orm": "T_Window_House_ORM.png",
+   "slot": "M_Window_House"
+  },
+  "Window_Dark": {
+   "tile_m": null,
+   "size": [
+    256,
+    384
+   ],
+   "note": "whole-window decal (casement), UV 0..1 over the window",
+   "base_color": "T_Window_Dark_BC.png",
+   "normal": "T_Window_Dark_N.png",
+   "orm": "T_Window_Dark_ORM.png",
+   "slot": "M_Window_Dark"
+  },
+  "Door_Wood": {
+   "tile_m": null,
+   "size": [
+    256,
+    512
+   ],
+   "note": "panelled door leaf, UV 0..1",
+   "base_color": "T_Door_Wood_BC.png",
+   "normal": "T_Door_Wood_N.png",
+   "orm": "T_Door_Wood_ORM.png",
+   "slot": "M_Door_Wood"
+  }
+ }
+}
