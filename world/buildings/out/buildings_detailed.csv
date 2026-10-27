@@ -1,0 +1,550 @@
+mesh,osm_id,name,realm,map_no,style,roof,triangles
+B_way_39516256,way/39516256,,campus,,small_house,flat,892
+B_way_39516259,way/39516259,Childcare Center,campus,,unknown,flat,676
+B_way_39516260,way/39516260,Health and Counseling Center,campus,4,midcentury_academic,flat,182
+B_way_39516352,way/39516352,Naito Hall,campus,27,modern_residence,complex/lidar_2014/4 wings,1897
+B_way_39516409,way/39516409,Sullivan Hall,campus,28,modern_residence,complex/lidar_2014/5 wings,1920
+B_way_39516532,way/39516532,Eliot Hall,campus,35,collegiate_gothic_brick,gabled/lidar_2014/3 wings,9886
+B_way_40877451,way/40877451,Old Dorm Block,campus,26,collegiate_gothic_brick,gabled/lidar_2014/1 wings,7029
+B_way_40877485,way/40877485,Student Union,campus,24,collegiate_gothic_brick,complex/lidar_2014/3 wings,2568
+B_way_40877514,way/40877514,Student Center,campus,34,unknown,gabled/estimate/1 wings,417
+B_way_40877553,way/40877553,Gray Campus Center,campus,23,midcentury_academic,flat,422
+B_way_40877933,way/40877933,Kaul Auditorium,campus,22,contemporary_academic,complex/lidar_2014/3 wings,559
+B_way_40912073,way/40912073,Physical Plant,campus,20,utility,complex/lidar_2014/2 wings,678
+B_way_113108060,way/113108060,Exhibit Hall,neighbourhood,,unknown,complex/lidar_2014/2 wings,183
+B_way_119843545,way/119843545,,neighbourhood,,small_house,gabled/estimate/2 wings,154
+B_way_119843553,way/119843553,Eric V. Hauser Memorial Library,campus,38,collegiate_gothic_brick,complex/lidar_2014/5 wings,12824
+B_way_119843557,way/119843557,Vollum College Center,campus,37,contemporary_academic,flat,803
+B_way_119843566,way/119843566,,campus,,small_house,flat,64
+B_way_119843567,way/119843567,Greywood Hall,campus,42,midcentury_academic,flat,205
+B_way_119843572,way/119843572,Educational Technology Center,campus,43,contemporary_academic,complex/lidar_2014/4 wings,779
+B_way_119843576,way/119843576,MacNaughton Hall,campus,16,midcentury_residence,flat,422
+B_way_119843578,way/119843578,Foster Hall,campus,15,midcentury_residence,flat,231
+B_way_119843580,way/119843580,Anna Mann Hall,campus,25,collegiate_gothic_brick,complex/lidar_2014/2 wings,2431
+B_way_119843581,way/119843581,Scholz Hall,campus,14,midcentury_residence,flat,339
+B_way_119846263,way/119846263,Reed Research Reactor,campus,,utility,flat,224
+B_way_119846265,way/119846265,Psychology,campus,45,midcentury_academic,flat,394
+B_way_126856901,way/126856901,,campus,,small_house,shed/lidar_2014/1 wings,109
+B_way_126856902,way/126856902,McKinley Hall,campus,30,midcentury_residence,shed/lidar_2014/1 wings,234
+B_way_126856903,way/126856903,Chittick,campus,32,midcentury_residence,shed/lidar_2014/1 wings,204
+B_way_126856904,way/126856904,Woodbridge Hall,campus,31,midcentury_residence,shed/lidar_2014/1 wings,200
+B_way_126856905,way/126856905,Griffin Hall,campus,29,midcentury_residence,shed/lidar_2014/1 wings,227
+B_way_126856906,way/126856906,Bragdon Hall,campus,33,modern_residence,complex/lidar_2014/3 wings,1796
+B_way_142983669,way/142983669,Reed College Apartments,campus,6,midcentury_residence,gabled/estimate/4 wings,430
+B_way_142983670,way/142983670,Reed College Apartments,campus,6,midcentury_residence,flat,228
+B_way_142983671,way/142983671,Reed College Apartments,campus,6,midcentury_residence,flat,182
+B_way_142983672,way/142983672,Reed College Apartments,campus,6,midcentury_residence,flat,168
+B_way_142983673,way/142983673,28 West,campus,3,midcentury_academic,flat,119
+B_way_142983680,way/142983680,Sitka House,campus,10,modern_residence,complex/lidar_2014/3 wings,1588
+B_way_142983681,way/142983681,Sequoia House,campus,9,modern_residence,gabled/lidar_2014/3 wings,1408
+B_way_142983682,way/142983682,Aspen House,campus,12,modern_residence,complex/lidar_2014/4 wings,1932
+B_way_142983683,way/142983683,Bidwell House,campus,11,modern_residence,complex/lidar_2014/5 wings,1738
+B_way_142983684,way/142983684,Biology,campus,40,midcentury_academic,flat,493
+B_way_142983685,way/142983685,Chemistry,campus,44,contemporary_academic,complex/lidar_2014/2 wings,430
+B_way_160952269,way/160952269,Greenwood Hall,campus,,unknown,flat,1832
+B_way_218153556,way/218153556,Performing Arts Building,campus,—,contemporary_academic,flat,1079
+B_way_243997608,way/243997608,Reed College Sports Center,campus,19,midcentury_academic,flat,475
+B_way_286682403,way/286682403,7-Eleven,neighbourhood,,utility,flat,46
+B_way_302430449,way/302430449,Physics,campus,39,midcentury_academic,flat,226
+B_way_302430850,way/302430850,Studio Arts,campus,51,contemporary_academic,gabled/lidar_2014/2 wings,369
+B_way_331521983,way/331521983,Prexy Hall,campus,17,arts_crafts_house,complex/lidar_2014/2 wings,1286
+B_way_339603988,way/339603988,Parker House,campus,18,arts_crafts_house,complex/lidar_2014/4 wings,1466
+B_way_367891034,way/367891034,,neighbourhood,,small_house,gabled/lidar_2014/4 wings,275
+B_way_367891037,way/367891037,,neighbourhood,,small_house,complex/lidar_2014/2 wings,154
+B_way_367891046,way/367891046,,neighbourhood,,small_house,complex/lidar_2014/3 wings,203
+B_way_367891051,way/367891051,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,151
+B_way_367891058,way/367891058,,neighbourhood,,small_house,complex/lidar_2014/3 wings,217
+B_way_367891061,way/367891061,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,85
+B_way_367891066,way/367891066,,neighbourhood,,small_house,hipped/lidar_2014/3 wings,219
+B_way_367891067,way/367891067,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,173
+B_way_367891068,way/367891068,,neighbourhood,,small_house,complex/lidar_2014/4 wings,261
+B_way_367891070,way/367891070,,neighbourhood,,small_house,hipped/lidar_2014/1 wings,109
+B_way_367891072,way/367891072,,neighbourhood,,small_house,complex/lidar_2014/3 wings,259
+B_way_367891073,way/367891073,,neighbourhood,,small_house,hipped/lidar_2014/1 wings,90
+B_way_367891077,way/367891077,,neighbourhood,,small_house,flat,98
+B_way_367891080,way/367891080,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,80
+B_way_367891083,way/367891083,,neighbourhood,,small_house,gabled/lidar_2014/4 wings,273
+B_way_367891088,way/367891088,,neighbourhood,,small_house,complex/lidar_2014/3 wings,196
+B_way_367891089,way/367891089,,neighbourhood,,small_house,complex/lidar_2014/2 wings,172
+B_way_367891090,way/367891090,,neighbourhood,,small_house,gabled/lidar_2014/4 wings,388
+B_way_367891091,way/367891091,,neighbourhood,,small_house,flat,138
+B_way_367891094,way/367891094,,neighbourhood,,small_house,complex/lidar_2014/5 wings,267
+B_way_367891096,way/367891096,,neighbourhood,,small_house,complex/lidar_2014/5 wings,333
+B_way_367891099,way/367891099,,neighbourhood,,small_house,complex/lidar_2014/2 wings,201
+B_way_367891100,way/367891100,,neighbourhood,,small_house,complex/lidar_2014/3 wings,208
+B_way_367891103,way/367891103,,neighbourhood,,small_house,complex/lidar_2014/3 wings,213
+B_way_367891106,way/367891106,,neighbourhood,,small_house,gabled/lidar_2014/5 wings,317
+B_way_367891107,way/367891107,,neighbourhood,,small_house,flat,128
+B_way_367891108,way/367891108,,neighbourhood,,small_house,complex/lidar_2014/4 wings,224
+B_way_367891112,way/367891112,,neighbourhood,,small_house,flat,142
+B_way_367891113,way/367891113,,neighbourhood,,small_house,complex/lidar_2014/3 wings,229
+B_way_367891120,way/367891120,,neighbourhood,,small_house,flat,54
+B_way_367891125,way/367891125,,neighbourhood,,small_house,complex/lidar_2014/2 wings,146
+B_way_367891133,way/367891133,,neighbourhood,,small_house,flat,146
+B_way_367891134,way/367891134,,neighbourhood,,small_house,complex/lidar_2014/3 wings,247
+B_way_367891136,way/367891136,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,243
+B_way_367891138,way/367891138,,neighbourhood,,small_house,complex/lidar_2014/2 wings,122
+B_way_367891141,way/367891141,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,202
+B_way_367891142,way/367891142,,neighbourhood,,small_house,complex/lidar_2014/3 wings,233
+B_way_367891143,way/367891143,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,132
+B_way_367891144,way/367891144,,neighbourhood,,small_house,gabled/lidar_2014/4 wings,293
+B_way_367891146,way/367891146,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,145
+B_way_367891148,way/367891148,,neighbourhood,,small_house,complex/lidar_2014/4 wings,261
+B_way_367891149,way/367891149,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,172
+B_way_367891150,way/367891150,,neighbourhood,,small_house,complex/lidar_2014/4 wings,262
+B_way_367891151,way/367891151,,neighbourhood,,small_house,hipped/lidar_2014/2 wings,194
+B_way_367891159,way/367891159,,neighbourhood,,small_house,gabled/lidar_2014/4 wings,269
+B_way_367891191,way/367891191,,neighbourhood,,small_house,gabled/estimate/2 wings,92
+B_way_367891193,way/367891193,,neighbourhood,,small_house,gabled/estimate/2 wings,112
+B_way_367891195,way/367891195,,neighbourhood,,small_house,gabled/estimate/2 wings,144
+B_way_367891198,way/367891198,,neighbourhood,,small_house,gabled/estimate/2 wings,110
+B_way_367891199,way/367891199,,neighbourhood,,small_house,gabled/estimate/1 wings,84
+B_way_367891203,way/367891203,,neighbourhood,,small_house,gabled/estimate/2 wings,174
+B_way_367891214,way/367891214,,neighbourhood,,small_house,gabled/estimate/1 wings,192
+B_way_367891216,way/367891216,,neighbourhood,,utility,gabled/estimate/1 wings,53
+B_way_367891707,way/367891707,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,161
+B_way_367891708,way/367891708,,neighbourhood,,small_house,complex/lidar_2014/3 wings,203
+B_way_367891711,way/367891711,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,142
+B_way_367891712,way/367891712,,neighbourhood,,small_house,complex/lidar_2014/2 wings,124
+B_way_367891713,way/367891713,,neighbourhood,,small_house,hipped/lidar_2014/2 wings,148
+B_way_367891716,way/367891716,,neighbourhood,,small_house,complex/lidar_2014/1 wings,90
+B_way_367891719,way/367891719,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,138
+B_way_367891722,way/367891722,,neighbourhood,,small_house,gabled/lidar_2014/5 wings,257
+B_way_367891726,way/367891726,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,182
+B_way_367891732,way/367891732,,neighbourhood,,small_house,complex/lidar_2014/5 wings,384
+B_way_367891735,way/367891735,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,154
+B_way_367891737,way/367891737,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,151
+B_way_367891742,way/367891742,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,226
+B_way_367891743,way/367891743,,neighbourhood,,small_house,complex/lidar_2014/2 wings,165
+B_way_367891745,way/367891745,,neighbourhood,,small_house,shed/lidar_2014/1 wings,86
+B_way_367891747,way/367891747,,neighbourhood,,small_house,complex/lidar_2014/3 wings,174
+B_way_367891748,way/367891748,,neighbourhood,,small_house,complex/lidar_2014/1 wings,90
+B_way_367891751,way/367891751,,neighbourhood,,small_house,gabled/estimate/1 wings,57
+B_way_367891761,way/367891761,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,92
+B_way_367891763,way/367891763,,neighbourhood,,small_house,gabled/estimate/2 wings,104
+B_way_367891767,way/367891767,,neighbourhood,,small_house,gabled/estimate/1 wings,68
+B_way_367891772,way/367891772,,neighbourhood,,small_house,gabled/estimate/2 wings,106
+B_way_367891774,way/367891774,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,146
+B_way_367891775,way/367891775,,neighbourhood,,small_house,complex/lidar_2014/3 wings,178
+B_way_367891778,way/367891778,,neighbourhood,,small_house,complex/lidar_2014/3 wings,181
+B_way_367891782,way/367891782,,neighbourhood,,small_house,gabled/estimate/1 wings,60
+B_way_367891787,way/367891787,,neighbourhood,,small_house,gabled/estimate/2 wings,113
+B_way_367891791,way/367891791,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,222
+B_way_367891793,way/367891793,,neighbourhood,,small_house,gabled/lidar_2014/4 wings,256
+B_way_367891796,way/367891796,,neighbourhood,,small_house,gabled/estimate/1 wings,180
+B_way_367891799,way/367891799,,neighbourhood,,small_house,complex/lidar_2014/4 wings,300
+B_way_367891801,way/367891801,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,150
+B_way_367891804,way/367891804,,neighbourhood,,small_house,shed/lidar_2014/1 wings,85
+B_way_367891806,way/367891806,,neighbourhood,,small_house,gabled/estimate/2 wings,123
+B_way_367891807,way/367891807,,neighbourhood,,small_house,gabled/estimate/4 wings,176
+B_way_367891809,way/367891809,,neighbourhood,,small_house,gabled/estimate/3 wings,150
+B_way_367891811,way/367891811,,neighbourhood,,small_house,gabled/estimate/2 wings,112
+B_way_367891812,way/367891812,,neighbourhood,,small_house,gabled/estimate/2 wings,92
+B_way_367891813,way/367891813,,neighbourhood,,small_house,complex/lidar_2014/2 wings,127
+B_way_367891814,way/367891814,,neighbourhood,,small_house,complex/lidar_2014/4 wings,256
+B_way_367891815,way/367891815,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,86
+B_way_367891816,way/367891816,,neighbourhood,,small_house,gabled/estimate/3 wings,149
+B_way_367891817,way/367891817,,neighbourhood,,small_house,complex/lidar_2014/5 wings,334
+B_way_367891818,way/367891818,,neighbourhood,,small_house,gabled/estimate/2 wings,164
+B_way_367891819,way/367891819,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,92
+B_way_367891825,way/367891825,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,193
+B_way_367891826,way/367891826,,neighbourhood,,small_house,gabled/estimate/2 wings,152
+B_way_367891827,way/367891827,,neighbourhood,,small_house,gabled/estimate/2 wings,179
+B_way_367891835,way/367891835,,neighbourhood,,utility,shed/lidar_2014/2 wings,125
+B_way_367891838,way/367891838,,neighbourhood,,utility,gabled/estimate/1 wings,53
+B_way_367891846,way/367891846,,neighbourhood,,utility,shed/lidar_2014/2 wings,134
+B_way_367891850,way/367891850,,neighbourhood,,utility,flat,34
+B_way_367891865,way/367891865,,neighbourhood,,utility,shed/lidar_2014/2 wings,119
+B_way_367891873,way/367891873,,neighbourhood,,utility,flat,34
+B_way_367891877,way/367891877,,neighbourhood,,utility,shed/lidar_2014/1 wings,64
+B_way_367891885,way/367891885,,neighbourhood,,utility,shed/lidar_2014/1 wings,65
+B_way_367891887,way/367891887,,neighbourhood,,utility,gabled/estimate/1 wings,52
+B_way_367891889,way/367891889,,neighbourhood,,utility,gabled/estimate/1 wings,52
+B_way_367891903,way/367891903,,neighbourhood,,utility,flat,34
+B_way_367891921,way/367891921,,neighbourhood,,utility,flat,34
+B_way_367891929,way/367891929,,neighbourhood,,utility,flat,38
+B_way_367891931,way/367891931,,neighbourhood,,utility,complex/lidar_2014/1 wings,59
+B_way_367891933,way/367891933,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367891934,way/367891934,,neighbourhood,,utility,flat,26
+B_way_367891935,way/367891935,,neighbourhood,,utility,gabled/estimate/1 wings,53
+B_way_367891944,way/367891944,,neighbourhood,,utility,complex/lidar_2014/1 wings,54
+B_way_367891949,way/367891949,,neighbourhood,,utility,gabled/estimate/1 wings,52
+B_way_367891951,way/367891951,,neighbourhood,,utility,flat,34
+B_way_367891953,way/367891953,,neighbourhood,,utility,shed/lidar_2014/1 wings,65
+B_way_367891954,way/367891954,,neighbourhood,,utility,gabled/lidar_2014/1 wings,56
+B_way_367891958,way/367891958,,neighbourhood,,utility,shed/lidar_2014/2 wings,130
+B_way_367891962,way/367891962,,neighbourhood,,utility,flat,34
+B_way_367891965,way/367891965,,neighbourhood,,utility,shed/lidar_2014/1 wings,62
+B_way_367891976,way/367891976,,neighbourhood,,utility,shed/lidar_2014/1 wings,64
+B_way_367891979,way/367891979,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367891980,way/367891980,,neighbourhood,,utility,gabled/lidar_2014/1 wings,61
+B_way_367891984,way/367891984,,neighbourhood,,utility,shed/lidar_2014/2 wings,95
+B_way_367892003,way/367892003,,neighbourhood,,utility,gabled/estimate/1 wings,56
+B_way_367892015,way/367892015,,neighbourhood,,small_house,gabled/estimate/2 wings,172
+B_way_367892018,way/367892018,,neighbourhood,,utility,gabled/estimate/2 wings,106
+B_way_367892031,way/367892031,,neighbourhood,,small_house,flat,74
+B_way_367892033,way/367892033,,neighbourhood,,utility,gabled/lidar_2014/2 wings,109
+B_way_367892038,way/367892038,,neighbourhood,,utility,gabled/lidar_2014/3 wings,204
+B_way_367893466,way/367893466,,neighbourhood,,small_house,complex/lidar_2014/3 wings,232
+B_way_367893471,way/367893471,,neighbourhood,,small_house,hipped/lidar_2014/2 wings,168
+B_way_367893474,way/367893474,,neighbourhood,,small_house,complex/lidar_2014/4 wings,292
+B_way_367893478,way/367893478,,neighbourhood,,small_house,complex/lidar_2014/2 wings,171
+B_way_367893481,way/367893481,,neighbourhood,,small_house,complex/lidar_2014/4 wings,305
+B_way_367893486,way/367893486,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,220
+B_way_367893489,way/367893489,,neighbourhood,,small_house,gabled/lidar_2014/4 wings,332
+B_way_367893493,way/367893493,,neighbourhood,,small_house,hipped/lidar_2014/1 wings,127
+B_way_367893497,way/367893497,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,200
+B_way_367893501,way/367893501,,neighbourhood,,small_house,complex/lidar_2014/3 wings,221
+B_way_367893503,way/367893503,,neighbourhood,,small_house,complex/lidar_2014/2 wings,125
+B_way_367893506,way/367893506,,neighbourhood,,small_house,flat,120
+B_way_367893507,way/367893507,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,184
+B_way_367893508,way/367893508,,neighbourhood,,small_house,shed/lidar_2014/1 wings,105
+B_way_367893509,way/367893509,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,151
+B_way_367893511,way/367893511,,neighbourhood,,small_house,hipped/lidar_2014/2 wings,197
+B_way_367893512,way/367893512,,neighbourhood,,small_house,complex/lidar_2014/3 wings,197
+B_way_367893513,way/367893513,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,151
+B_way_367893514,way/367893514,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,181
+B_way_367893515,way/367893515,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,100
+B_way_367893517,way/367893517,,neighbourhood,,small_house,complex/lidar_2014/2 wings,222
+B_way_367893520,way/367893520,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,231
+B_way_367893522,way/367893522,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,232
+B_way_367893524,way/367893524,,neighbourhood,,small_house,flat,84
+B_way_367893527,way/367893527,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,120
+B_way_367893528,way/367893528,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,192
+B_way_367893530,way/367893530,,neighbourhood,,small_house,complex/lidar_2014/2 wings,188
+B_way_367893532,way/367893532,,neighbourhood,,small_house,complex/lidar_2014/3 wings,217
+B_way_367893534,way/367893534,,neighbourhood,,small_house,flat,152
+B_way_367893535,way/367893535,,neighbourhood,,small_house,complex/lidar_2014/2 wings,168
+B_way_367893536,way/367893536,,neighbourhood,,small_house,complex/lidar_2014/3 wings,218
+B_way_367893537,way/367893537,,neighbourhood,,small_house,complex/lidar_2014/3 wings,213
+B_way_367893538,way/367893538,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,254
+B_way_367893539,way/367893539,,neighbourhood,,small_house,flat,110
+B_way_367893541,way/367893541,,neighbourhood,,small_house,complex/lidar_2014/2 wings,146
+B_way_367893543,way/367893543,,neighbourhood,,small_house,complex/lidar_2014/3 wings,233
+B_way_367893544,way/367893544,,neighbourhood,,small_house,complex/lidar_2014/2 wings,172
+B_way_367893545,way/367893545,,neighbourhood,,small_house,hipped/lidar_2014/1 wings,106
+B_way_367893548,way/367893548,,neighbourhood,,small_house,shed/lidar_2014/2 wings,132
+B_way_367893550,way/367893550,,neighbourhood,,small_house,complex/lidar_2014/3 wings,209
+B_way_367893553,way/367893553,,neighbourhood,,small_house,complex/lidar_2014/4 wings,284
+B_way_367893554,way/367893554,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,189
+B_way_367893556,way/367893556,,neighbourhood,,small_house,complex/lidar_2014/4 wings,312
+B_way_367893557,way/367893557,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,92
+B_way_367893558,way/367893558,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,175
+B_way_367893559,way/367893559,,neighbourhood,,small_house,complex/lidar_2014/5 wings,412
+B_way_367893560,way/367893560,,neighbourhood,,small_house,complex/lidar_2014/2 wings,151
+B_way_367893562,way/367893562,,neighbourhood,,small_house,gabled/lidar_2014/4 wings,318
+B_way_367893563,way/367893563,,neighbourhood,,small_house,gabled/lidar_2014/5 wings,306
+B_way_367893564,way/367893564,,neighbourhood,,small_house,complex/lidar_2014/6 wings,389
+B_way_367893566,way/367893566,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,153
+B_way_367893570,way/367893570,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,177
+B_way_367893572,way/367893572,,neighbourhood,,small_house,complex/lidar_2014/2 wings,149
+B_way_367893574,way/367893574,,neighbourhood,,small_house,complex/lidar_2014/2 wings,109
+B_way_367893575,way/367893575,,neighbourhood,,small_house,complex/lidar_2014/2 wings,215
+B_way_367893576,way/367893576,,neighbourhood,,small_house,gabled/lidar_2014/6 wings,443
+B_way_367893581,way/367893581,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,172
+B_way_367893583,way/367893583,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,219
+B_way_367893592,way/367893592,,neighbourhood,,small_house,complex/lidar_2014/3 wings,172
+B_way_367893594,way/367893594,,neighbourhood,,small_house,complex/lidar_2014/2 wings,103
+B_way_367893597,way/367893597,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,158
+B_way_367893598,way/367893598,,neighbourhood,,small_house,hipped/lidar_2014/2 wings,153
+B_way_367893599,way/367893599,,neighbourhood,,small_house,shed/lidar_2014/1 wings,105
+B_way_367893601,way/367893601,,neighbourhood,,small_house,complex/lidar_2014/2 wings,133
+B_way_367893605,way/367893605,,neighbourhood,,small_house,complex/lidar_2014/2 wings,236
+B_way_367893606,way/367893606,Dorothy Johansen House,campus,52,small_house,flat,806
+B_way_367893608,way/367893608,,neighbourhood,,small_house,complex/lidar_2014/2 wings,138
+B_way_367893610,way/367893610,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,80
+B_way_367893611,way/367893611,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,108
+B_way_367893612,way/367893612,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,209
+B_way_367893613,way/367893613,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,167
+B_way_367893615,way/367893615,,neighbourhood,,small_house,complex/lidar_2014/1 wings,138
+B_way_367893616,way/367893616,,neighbourhood,,small_house,complex/lidar_2014/2 wings,181
+B_way_367893618,way/367893618,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,128
+B_way_367893619,way/367893619,,neighbourhood,,small_house,hipped/lidar_2014/2 wings,125
+B_way_367893620,way/367893620,,neighbourhood,,small_house,flat,110
+B_way_367893621,way/367893621,,neighbourhood,,small_house,complex/lidar_2014/3 wings,187
+B_way_367893622,way/367893622,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,81
+B_way_367893627,way/367893627,,neighbourhood,,small_house,complex/lidar_2014/3 wings,155
+B_way_367893628,way/367893628,,neighbourhood,,small_house,complex/lidar_2014/6 wings,439
+B_way_367893631,way/367893631,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,98
+B_way_367893636,way/367893636,,neighbourhood,,small_house,complex/lidar_2014/3 wings,240
+B_way_367893638,way/367893638,,neighbourhood,,small_house,complex/lidar_2014/5 wings,275
+B_way_367893640,way/367893640,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,154
+B_way_367893642,way/367893642,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,132
+B_way_367893645,way/367893645,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,245
+B_way_367893648,way/367893648,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,106
+B_way_367893649,way/367893649,,neighbourhood,,small_house,shed/lidar_2014/1 wings,84
+B_way_367893650,way/367893650,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,179
+B_way_367893651,way/367893651,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,68
+B_way_367893652,way/367893652,,neighbourhood,,small_house,hipped/lidar_2014/2 wings,113
+B_way_367893657,way/367893657,,neighbourhood,,small_house,shed/lidar_2014/1 wings,124
+B_way_367893658,way/367893658,,neighbourhood,,small_house,gabled/estimate/2 wings,185
+B_way_367893659,way/367893659,,neighbourhood,,small_house,gabled/estimate/1 wings,112
+B_way_367893661,way/367893661,,neighbourhood,,small_house,gabled/estimate/2 wings,161
+B_way_367893663,way/367893663,,neighbourhood,,small_house,gabled/estimate/6 wings,366
+B_way_367893664,way/367893664,,neighbourhood,,small_house,gabled/estimate/1 wings,77
+B_way_367893667,way/367893667,,neighbourhood,,small_house,gabled/estimate/1 wings,77
+B_way_367893668,way/367893668,,neighbourhood,,small_house,gabled/estimate/3 wings,182
+B_way_367893669,way/367893669,,neighbourhood,,small_house,gabled/estimate/2 wings,115
+B_way_367893673,way/367893673,,neighbourhood,,small_house,gabled/estimate/1 wings,84
+B_way_367893674,way/367893674,,neighbourhood,,small_house,gabled/estimate/1 wings,112
+B_way_367893675,way/367893675,,neighbourhood,,small_house,gabled/estimate/1 wings,124
+B_way_367893676,way/367893676,,neighbourhood,,small_house,gabled/estimate/1 wings,80
+B_way_367893680,way/367893680,,neighbourhood,,small_house,gabled/estimate/1 wings,76
+B_way_367893687,way/367893687,,neighbourhood,,small_house,gabled/estimate/1 wings,84
+B_way_367893688,way/367893688,,neighbourhood,,small_house,gabled/estimate/2 wings,144
+B_way_367893689,way/367893689,,neighbourhood,,small_house,gabled/estimate/1 wings,76
+B_way_367893691,way/367893691,,neighbourhood,,small_house,gabled/estimate/1 wings,108
+B_way_367893692,way/367893692,,neighbourhood,,small_house,gabled/estimate/1 wings,132
+B_way_367893694,way/367893694,,neighbourhood,,small_house,gabled/estimate/1 wings,73
+B_way_367893695,way/367893695,,neighbourhood,,small_house,gabled/estimate/1 wings,293
+B_way_367893696,way/367893696,,neighbourhood,,small_house,gabled/estimate/1 wings,80
+B_way_367893698,way/367893698,,neighbourhood,,small_house,gabled/estimate/2 wings,120
+B_way_367893700,way/367893700,,neighbourhood,,small_house,gabled/estimate/2 wings,149
+B_way_367893702,way/367893702,,neighbourhood,,small_house,gabled/estimate/3 wings,182
+B_way_367893704,way/367893704,,neighbourhood,,small_house,gabled/estimate/1 wings,113
+B_way_367893705,way/367893705,,neighbourhood,,small_house,gabled/estimate/1 wings,73
+B_way_367893706,way/367893706,,neighbourhood,,small_house,gabled/estimate/1 wings,56
+B_way_367893707,way/367893707,,neighbourhood,,small_house,gabled/estimate/2 wings,123
+B_way_367893708,way/367893708,,neighbourhood,,small_house,gabled/estimate/2 wings,134
+B_way_367893709,way/367893709,,neighbourhood,,small_house,gabled/estimate/1 wings,118
+B_way_367893712,way/367893712,,neighbourhood,,small_house,gabled/estimate/3 wings,317
+B_way_367893713,way/367893713,,neighbourhood,,small_house,gabled/estimate/1 wings,72
+B_way_367893714,way/367893714,,neighbourhood,,small_house,gabled/estimate/1 wings,72
+B_way_367893716,way/367893716,,neighbourhood,,small_house,gabled/estimate/2 wings,107
+B_way_367893717,way/367893717,,neighbourhood,,small_house,gabled/estimate/1 wings,104
+B_way_367893719,way/367893719,,neighbourhood,,small_house,gabled/estimate/1 wings,96
+B_way_367893720,way/367893720,,neighbourhood,,utility,gabled/estimate/1 wings,79
+B_way_367893721,way/367893721,,neighbourhood,,small_house,gabled/estimate/1 wings,88
+B_way_367893722,way/367893722,,neighbourhood,,utility,flat,22
+B_way_367893729,way/367893729,,neighbourhood,,small_house,gabled/estimate/1 wings,60
+B_way_367893765,way/367893765,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,254
+B_way_367893768,way/367893768,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,90
+B_way_367893770,way/367893770,,neighbourhood,,small_house,complex/lidar_2014/2 wings,195
+B_way_367893771,way/367893771,,neighbourhood,,small_house,gabled/estimate/2 wings,123
+B_way_367893772,way/367893772,,neighbourhood,,small_house,gabled/estimate/1 wings,69
+B_way_367893773,way/367893773,,neighbourhood,,small_house,complex/lidar_2014/2 wings,142
+B_way_367893775,way/367893775,,neighbourhood,,small_house,gabled/estimate/1 wings,61
+B_way_367893779,way/367893779,,neighbourhood,,small_house,gabled/estimate/2 wings,163
+B_way_367893780,way/367893780,,neighbourhood,,small_house,gabled/estimate/2 wings,141
+B_way_367893781,way/367893781,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,84
+B_way_367893783,way/367893783,,neighbourhood,,small_house,gabled/estimate/2 wings,131
+B_way_367893787,way/367893787,,neighbourhood,,small_house,complex/lidar_2014/2 wings,172
+B_way_367893788,way/367893788,,neighbourhood,,small_house,gabled/estimate/1 wings,77
+B_way_367893789,way/367893789,,neighbourhood,,small_house,gabled/estimate/2 wings,163
+B_way_367893791,way/367893791,,neighbourhood,,small_house,gabled/estimate/1 wings,73
+B_way_367893793,way/367893793,,neighbourhood,,small_house,gabled/estimate/1 wings,104
+B_way_367893796,way/367893796,,neighbourhood,,small_house,gabled/estimate/2 wings,124
+B_way_367893797,way/367893797,,neighbourhood,,small_house,gabled/estimate/1 wings,112
+B_way_367893799,way/367893799,,neighbourhood,,small_house,gabled/estimate/1 wings,96
+B_way_367893803,way/367893803,,neighbourhood,,small_house,gabled/estimate/4 wings,300
+B_way_367893810,way/367893810,,neighbourhood,,small_house,gabled/estimate/2 wings,174
+B_way_367893812,way/367893812,,neighbourhood,,small_house,gabled/estimate/3 wings,232
+B_way_367893816,way/367893816,,neighbourhood,,small_house,gabled/estimate/1 wings,69
+B_way_367893817,way/367893817,,neighbourhood,,small_house,gabled/estimate/1 wings,80
+B_way_367893821,way/367893821,,neighbourhood,,small_house,gabled/estimate/1 wings,60
+B_way_367893823,way/367893823,,neighbourhood,,utility,gabled/estimate/1 wings,53
+B_way_367893827,way/367893827,,neighbourhood,,small_house,gabled/estimate/1 wings,57
+B_way_367893830,way/367893830,,neighbourhood,,small_house,gabled/estimate/2 wings,130
+B_way_367893831,way/367893831,,neighbourhood,,small_house,gabled/estimate/1 wings,65
+B_way_367893832,way/367893832,,neighbourhood,,small_house,gabled/estimate/1 wings,72
+B_way_367893833,way/367893833,,neighbourhood,,small_house,gabled/estimate/2 wings,140
+B_way_367893834,way/367893834,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,146
+B_way_367893835,way/367893835,,neighbourhood,,small_house,complex/lidar_2014/3 wings,202
+B_way_367893836,way/367893836,,neighbourhood,,small_house,complex/lidar_2014/1 wings,92
+B_way_367893837,way/367893837,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,155
+B_way_367893838,way/367893838,,neighbourhood,,small_house,hipped/lidar_2014/1 wings,134
+B_way_367893840,way/367893840,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,84
+B_way_367893842,way/367893842,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,228
+B_way_367893843,way/367893843,,neighbourhood,,small_house,gabled/estimate/2 wings,126
+B_way_367893844,way/367893844,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,181
+B_way_367893845,way/367893845,,neighbourhood,,small_house,gabled/estimate/2 wings,156
+B_way_367893846,way/367893846,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,264
+B_way_367893847,way/367893847,,neighbourhood,,small_house,complex/lidar_2014/2 wings,144
+B_way_367893848,way/367893848,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,163
+B_way_367893852,way/367893852,,neighbourhood,,small_house,gabled/estimate/2 wings,134
+B_way_367893853,way/367893853,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,195
+B_way_367893854,way/367893854,,neighbourhood,,small_house,gabled/estimate/2 wings,156
+B_way_367893855,way/367893855,,neighbourhood,,small_house,complex/lidar_2014/3 wings,213
+B_way_367893856,way/367893856,,neighbourhood,,small_house,hipped/lidar_2014/3 wings,233
+B_way_367893858,way/367893858,,neighbourhood,,small_house,complex/lidar_2014/2 wings,152
+B_way_367893859,way/367893859,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,176
+B_way_367893860,way/367893860,,neighbourhood,,small_house,complex/lidar_2014/2 wings,207
+B_way_367893861,way/367893861,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,120
+B_way_367893862,way/367893862,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,104
+B_way_367893863,way/367893863,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,108
+B_way_367893864,way/367893864,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,137
+B_way_367893867,way/367893867,,neighbourhood,,small_house,complex/lidar_2014/2 wings,166
+B_way_367893868,way/367893868,,neighbourhood,,small_house,gabled/estimate/1 wings,68
+B_way_367893869,way/367893869,,neighbourhood,,small_house,complex/lidar_2014/2 wings,171
+B_way_367893870,way/367893870,,neighbourhood,,small_house,complex/lidar_2014/2 wings,186
+B_way_367893871,way/367893871,,neighbourhood,,small_house,complex/lidar_2014/3 wings,209
+B_way_367893872,way/367893872,,neighbourhood,,small_house,complex/lidar_2014/3 wings,216
+B_way_367893873,way/367893873,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,102
+B_way_367893874,way/367893874,,neighbourhood,,small_house,flat,72
+B_way_367893879,way/367893879,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,133
+B_way_367893880,way/367893880,,neighbourhood,,small_house,gabled/estimate/1 wings,68
+B_way_367893881,way/367893881,,neighbourhood,,small_house,complex/lidar_2014/3 wings,201
+B_way_367893882,way/367893882,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,121
+B_way_367893885,way/367893885,,neighbourhood,,small_house,shed/lidar_2014/1 wings,108
+B_way_367893904,way/367893904,,neighbourhood,,small_house,gabled/estimate/1 wings,68
+B_way_367893910,way/367893910,,neighbourhood,,small_house,complex/lidar_2014/2 wings,159
+B_way_367893915,way/367893915,,neighbourhood,,small_house,complex/lidar_2014/4 wings,326
+B_way_367893920,way/367893920,,neighbourhood,,small_house,complex/lidar_2014/2 wings,150
+B_way_367893929,way/367893929,,neighbourhood,,small_house,gabled/estimate/1 wings,84
+B_way_367893935,way/367893935,,neighbourhood,,small_house,shed/lidar_2014/3 wings,215
+B_way_367893948,way/367893948,,neighbourhood,,small_house,flat,114
+B_way_367893951,way/367893951,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,223
+B_way_367893953,way/367893953,,neighbourhood,,small_house,complex/lidar_2014/3 wings,197
+B_way_367893954,way/367893954,,neighbourhood,,small_house,hipped/lidar_2014/1 wings,140
+B_way_367893957,way/367893957,,neighbourhood,,small_house,shed/lidar_2014/1 wings,138
+B_way_367893958,way/367893958,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,176
+B_way_367893959,way/367893959,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,84
+B_way_367893960,way/367893960,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,181
+B_way_367893964,way/367893964,,neighbourhood,,small_house,complex/lidar_2014/1 wings,76
+B_way_367893965,way/367893965,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,68
+B_way_367893968,way/367893968,,neighbourhood,,utility,flat,14
+B_way_367894053,way/367894053,,neighbourhood,,utility,shed/lidar_2014/1 wings,56
+B_way_367894054,way/367894054,,neighbourhood,,utility,gabled/estimate/1 wings,44
+B_way_367894055,way/367894055,,neighbourhood,,utility,gabled/estimate/1 wings,52
+B_way_367894059,way/367894059,,neighbourhood,,utility,gabled/estimate/1 wings,69
+B_way_367894066,way/367894066,,neighbourhood,,utility,shed/lidar_2014/1 wings,44
+B_way_367894075,way/367894075,,neighbourhood,,utility,shed/lidar_2014/2 wings,128
+B_way_367894078,way/367894078,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367894085,way/367894085,,neighbourhood,,utility,flat,26
+B_way_367894087,way/367894087,,neighbourhood,,utility,flat,26
+B_way_367894097,way/367894097,,neighbourhood,,utility,shed/lidar_2014/2 wings,149
+B_way_367894101,way/367894101,,neighbourhood,,utility,shed/lidar_2014/1 wings,61
+B_way_367894104,way/367894104,,neighbourhood,,utility,flat,34
+B_way_367894105,way/367894105,,neighbourhood,,utility,gabled/estimate/1 wings,52
+B_way_367894106,way/367894106,,neighbourhood,,utility,shed/lidar_2014/1 wings,64
+B_way_367894110,way/367894110,,neighbourhood,,utility,shed/lidar_2014/2 wings,116
+B_way_367894112,way/367894112,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367894115,way/367894115,,neighbourhood,,small_house,complex/lidar_2014/1 wings,67
+B_way_367894116,way/367894116,,neighbourhood,,utility,flat,34
+B_way_367894118,way/367894118,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367894119,way/367894119,,neighbourhood,,small_house,gabled/estimate/1 wings,84
+B_way_367894121,way/367894121,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367894131,way/367894131,,neighbourhood,,utility,gabled/estimate/1 wings,49
+B_way_367894134,way/367894134,,neighbourhood,,utility,gabled/estimate/1 wings,42
+B_way_367894135,way/367894135,,neighbourhood,,utility,gabled/estimate/1 wings,44
+B_way_367894137,way/367894137,,neighbourhood,,utility,gabled/lidar_2014/1 wings,61
+B_way_367894138,way/367894138,,neighbourhood,,small_house,gabled/estimate/1 wings,48
+B_way_367894141,way/367894141,,neighbourhood,,utility,flat,26
+B_way_367894142,way/367894142,,neighbourhood,,utility,gabled/estimate/1 wings,52
+B_way_367894151,way/367894151,,neighbourhood,,utility,gabled/estimate/1 wings,44
+B_way_367894152,way/367894152,,neighbourhood,,utility,shed/lidar_2014/1 wings,67
+B_way_367894153,way/367894153,,neighbourhood,,utility,gabled/estimate/1 wings,52
+B_way_367894157,way/367894157,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367894158,way/367894158,,neighbourhood,,small_house,flat,26
+B_way_367894161,way/367894161,,neighbourhood,,utility,gabled/estimate/1 wings,56
+B_way_367894177,way/367894177,,neighbourhood,,utility,shed/lidar_2014/1 wings,65
+B_way_367894181,way/367894181,,neighbourhood,,small_house,gabled/estimate/1 wings,144
+B_way_367894185,way/367894185,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367894189,way/367894189,,neighbourhood,,utility,shed/lidar_2014/1 wings,66
+B_way_367894190,way/367894190,,neighbourhood,,small_house,flat,82
+B_way_367894192,way/367894192,,neighbourhood,,utility,shed/lidar_2014/2 wings,131
+B_way_367894193,way/367894193,,neighbourhood,,utility,gabled/estimate/1 wings,56
+B_way_367894194,way/367894194,,neighbourhood,,utility,flat,26
+B_way_367894195,way/367894195,,neighbourhood,,utility,flat,26
+B_way_367894199,way/367894199,,neighbourhood,,utility,complex/lidar_2014/1 wings,51
+B_way_367894200,way/367894200,,neighbourhood,,utility,gabled/estimate/1 wings,44
+B_way_367894202,way/367894202,,neighbourhood,,utility,shed/lidar_2014/1 wings,70
+B_way_367894203,way/367894203,,neighbourhood,,utility,flat,34
+B_way_367894206,way/367894206,,neighbourhood,,utility,shed/lidar_2014/1 wings,80
+B_way_367894208,way/367894208,,neighbourhood,,utility,shed/lidar_2014/2 wings,147
+B_way_367894209,way/367894209,,campus,,utility,gabled/estimate/2 wings,103
+B_way_367894210,way/367894210,,neighbourhood,,small_house,shed/lidar_2014/3 wings,148
+B_way_367894215,way/367894215,,neighbourhood,,utility,complex/lidar_2014/2 wings,119
+B_way_367919680,way/367919680,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,257
+B_way_367919682,way/367919682,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,247
+B_way_367919684,way/367919684,,neighbourhood,,small_house,complex/lidar_2014/4 wings,256
+B_way_367919686,way/367919686,,neighbourhood,,small_house,complex/lidar_2014/4 wings,322
+B_way_367919688,way/367919688,,neighbourhood,,small_house,complex/lidar_2014/3 wings,250
+B_way_367919692,way/367919692,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,225
+B_way_367919694,way/367919694,,neighbourhood,,utility,flat,31
+B_way_367919701,way/367919701,,neighbourhood,,small_house,complex/lidar_2014/2 wings,145
+B_way_367919705,way/367919705,,neighbourhood,,small_house,complex/lidar_2014/3 wings,232
+B_way_367919708,way/367919708,,neighbourhood,,small_house,complex/lidar_2014/5 wings,337
+B_way_367919709,way/367919709,,neighbourhood,,small_house,complex/lidar_2014/3 wings,252
+B_way_367919711,way/367919711,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_367919712,way/367919712,,neighbourhood,,small_house,hipped/lidar_2014/1 wings,120
+B_way_367919717,way/367919717,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,250
+B_way_367919718,way/367919718,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,228
+B_way_367919724,way/367919724,,neighbourhood,,small_house,complex/lidar_2014/1 wings,101
+B_way_367919725,way/367919725,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,96
+B_way_367919726,way/367919726,,neighbourhood,,small_house,shed/lidar_2014/1 wings,113
+B_way_367919735,way/367919735,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,234
+B_way_367919737,way/367919737,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,208
+B_way_367919740,way/367919740,,neighbourhood,,small_house,complex/lidar_2014/2 wings,158
+B_way_367919744,way/367919744,,neighbourhood,,small_house,flat,112
+B_way_367919747,way/367919747,,neighbourhood,,small_house,complex/lidar_2014/3 wings,268
+B_way_367919748,way/367919748,,neighbourhood,,small_house,complex/lidar_2014/3 wings,182
+B_way_367919749,way/367919749,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,242
+B_way_367919753,way/367919753,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,142
+B_way_367919757,way/367919757,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,203
+B_way_367919762,way/367919762,,neighbourhood,,small_house,complex/lidar_2014/4 wings,310
+B_way_367919766,way/367919766,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,179
+B_way_367919771,way/367919771,,neighbourhood,,small_house,flat,26
+B_way_367919773,way/367919773,,neighbourhood,,small_house,gabled/lidar_2014/2 wings,151
+B_way_367919774,way/367919774,Garden House,campus,5,small_house,complex/lidar_2014/2 wings,919
+B_way_367919775,way/367919775,Canyon House,campus,7,small_house,gabled/lidar_2014/4 wings,907
+B_way_367919777,way/367919777,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,113
+B_way_367920139,way/367920139,,neighbourhood,,small_house,shed/lidar_2014/1 wings,72
+B_way_367920146,way/367920146,,neighbourhood,,utility,gabled/lidar_2014/1 wings,64
+B_way_367920161,way/367920161,,neighbourhood,,utility,flat,34
+B_way_367920195,way/367920195,,neighbourhood,,utility,shed/lidar_2014/1 wings,88
+B_way_367920233,way/367920233,,neighbourhood,,utility,gabled/lidar_2014/1 wings,70
+B_way_367920240,way/367920240,,neighbourhood,,utility,gabled/lidar_2014/1 wings,66
+B_way_367920280,way/367920280,,neighbourhood,,utility,flat,34
+B_way_367920282,way/367920282,,neighbourhood,,utility,flat,34
+B_way_367920322,way/367920322,,neighbourhood,,utility,flat,34
+B_way_367920351,way/367920351,,neighbourhood,,utility,flat,54
+B_way_368088969,way/368088969,,neighbourhood,,utility,gabled/lidar_2014/1 wings,115
+B_way_368088972,way/368088972,,neighbourhood,,small_house,flat,150
+B_way_368089385,way/368089385,,neighbourhood,,small_house,flat,212
+B_way_368089392,way/368089392,,neighbourhood,,small_house,gabled/lidar_2014/3 wings,351
+B_way_368089424,way/368089424,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,160
+B_way_368089455,way/368089455,,neighbourhood,,small_house,shed/lidar_2014/1 wings,78
+B_way_368089537,way/368089537,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,121
+B_way_368089567,way/368089567,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,145
+B_way_368089600,way/368089600,,neighbourhood,,small_house,flat,88
+B_way_371022333,way/371022333,German House,campus,47,arts_crafts_house,complex/lidar_2014/1 wings,1466
+B_way_371026021,way/371026021,French House,campus,48,arts_crafts_house,gabled/lidar_2014/1 wings,926
+B_way_371026022,way/371026022,Russian House,campus,46,arts_crafts_house,gabled/estimate/1 wings,682
+B_way_371026023,way/371026023,Spanish House,campus,49,arts_crafts_house,gabled/lidar_2014/1 wings,2271
+B_way_371026024,way/371026024,Chinese House,campus,50,arts_crafts_house,gabled/estimate/1 wings,334
+B_way_371026025,way/371026025,Farm House,campus,8,small_house,gabled/lidar_2014/1 wings,604
+B_way_434305102,way/434305102,,neighbourhood,,small_house,complex/lidar_2014/3 wings,151
+B_way_434305104,way/434305104,,neighbourhood,,utility,shed/lidar_2014/1 wings,62
+B_way_434307480,way/434307480,,neighbourhood,,small_house,complex/lidar_2014/2 wings,118
+B_way_685753541,way/685753541,,campus,,utility,flat,34
+B_way_685753544,way/685753544,Theatre Annex,neighbourhood,,utility,flat,54
+B_way_685753545,way/685753545,Reed Warehouse,campus,2,utility,gabled/lidar_2014/4 wings,559
+B_way_685753546,way/685753546,,neighbourhood,,small_house,flat,154
+B_way_785269166,way/785269166,,neighbourhood,,utility,gabled/estimate/1 wings,58
+B_way_785269167,way/785269167,,neighbourhood,,small_house,gabled/estimate/1 wings,88
+B_way_785269168,way/785269168,,neighbourhood,,small_house,complex/lidar_2014/2 wings,161
+B_way_785269171,way/785269171,Trillium,campus,—,modern_residence,flat,5117
+B_way_785269172,way/785269172,,neighbourhood,,small_house,gabled/estimate/3 wings,199
+B_way_787036016,way/787036016,The Horrid Art Project,campus,,utility,gabled/estimate/1 wings,124
+B_way_877775556,way/877775556,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_877775557,way/877775557,,neighbourhood,,small_house,gabled/estimate/1 wings,80
+B_way_877775560,way/877775560,,neighbourhood,,small_house,gabled/estimate/2 wings,154
+B_way_877775561,way/877775561,,neighbourhood,,small_house,gabled/estimate/3 wings,202
+B_way_877775562,way/877775562,,neighbourhood,,small_house,gabled/lidar_2014/1 wings,92
+B_way_877775563,way/877775563,,neighbourhood,,small_house,shed/lidar_2014/1 wings,102
+B_way_877775564,way/877775564,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_877775565,way/877775565,,neighbourhood,,small_house,gabled/estimate/2 wings,130
+B_way_877776270,way/877776270,,campus,,utility,flat,34
+B_way_877776271,way/877776271,,neighbourhood,,small_house,complex/lidar_2014/1 wings,115
+B_way_877776272,way/877776272,,neighbourhood,,small_house,flat,42
+B_way_910685692,way/910685692,Gyms I and II,campus,,midcentury_academic,flat,443
+B_way_919063711,way/919063711,,campus,,utility,gabled/estimate/1 wings,63
+B_way_980472948,way/980472948,,neighbourhood,,small_house,gabled/estimate/1 wings,80
+B_way_980472949,way/980472949,,neighbourhood,,utility,gabled/estimate/1 wings,46
+B_way_980472950,way/980472950,,neighbourhood,,utility,gabled/estimate/1 wings,48
+B_way_980472951,way/980472951,,neighbourhood,,small_house,shed/lidar_2014/1 wings,131
+B_way_980472952,way/980472952,,neighbourhood,,small_house,gabled/estimate/1 wings,64
+B_way_980472953,way/980472953,,neighbourhood,,small_house,complex/lidar_2014/2 wings,135
+B_way_1047023983,way/1047023983,,campus,,small_house,complex/lidar_2014/1 wings,112
+B_way_1434419152,way/1434419152,,neighbourhood,,small_house,gabled/estimate/2 wings,116

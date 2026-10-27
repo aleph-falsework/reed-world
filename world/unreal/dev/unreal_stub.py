@@ -303,7 +303,11 @@ class SubobjectDataBlueprintFunctionLibrary:
         return handle
 
     @staticmethod
-    def get_object(data):
+    def get_object(data):            # deprecated in 5.8 (still present)
+        return data.get_editor_property('comp')
+
+    @staticmethod
+    def get_associated_object(data):  # 5.8 replacement for get_object
         return data.get_editor_property('comp')
 
 
@@ -408,6 +412,13 @@ class MaterialEditingLibrary:
     def set_material_instance_scalar_parameter_value(mi, n, v):
         return True
 
+    @staticmethod
+    def set_material_instance_texture_parameter_value(mi, n, v):
+        assert isinstance(v, Texture2D), (n, v)
+        STATS.setdefault('texture_params', 0)
+        STATS['texture_params'] += 1
+        return True
+
 
 class ScopedSlowTask:
     def __init__(self, n, msg):
@@ -448,13 +459,18 @@ class _Enum:
 
 
 for _n in ('MaterialProperty', 'CollisionTraceFlag', 'CollisionEnabled', 'ComponentMobility', 'AttachmentRule',
-           'HorizTextAligment', 'VerticalTextAligment', 'TextureAddress', 'ScriptingCollisionShapeType'):
+           'HorizTextAligment', 'VerticalTextAligment', 'TextureAddress', 'ScriptingCollisionShapeType',
+           'TextureCompressionSettings', 'MaterialSamplerType'):
     setattr(sys.modules[__name__], _n, _Enum())
 
 for _n in ('MaterialExpressionVectorParameter', 'MaterialExpressionScalarParameter', 'MaterialExpressionWorldPosition',
            'MaterialExpressionComponentMask', 'MaterialExpressionConstant2Vector', 'MaterialExpressionAdd',
            'MaterialExpressionMultiply', 'MaterialExpressionTextureSampleParameter2D', 'MaterialExpressionConstant',
-           'MaterialFactoryNew', 'MaterialInstanceConstantFactoryNew'):
+           'MaterialFactoryNew', 'MaterialInstanceConstantFactoryNew',
+           # detailed-building parent material (M_ReedKit)
+           'MaterialExpressionTextureCoordinate', 'MaterialExpressionVertexNormalWS', 'MaterialExpressionConstant3Vector',
+           'MaterialExpressionCrossProduct', 'MaterialExpressionNormalize', 'MaterialExpressionDotProduct',
+           'MaterialExpressionAppendVector', 'MaterialExpressionDivide', 'MaterialExpressionStaticSwitchParameter'):
     setattr(sys.modules[__name__], _n, type(_n, (Obj,), {}))
 
 LOG = []

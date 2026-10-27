@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """Export the Reed College 3D world (world/3d/, written by scripts/export_3d.py) as an Unreal Engine import kit.
 
-    python3 scripts/export_unreal.py            # reads world/3d/, writes world/unreal/
+    python3 scripts/export_unreal.py                  # reads world/3d/, writes world/unreal/
+    python3 scripts/export_unreal.py --detailed-only  # only (re)copy the detailed buildings from world/buildings/out/
+
+Detailed buildings: when scripts/build_buildings.py has written world/buildings/out/reed_buildings_detailed.glb,
+the export copies it into world/unreal/ with buildings_detailed.csv, the style-kit textures (textures/) and
+reed_materials.json, and adds `reference_detailed` (Eliot Hall bounds of the detailed mesh) to reed_kit.json.
 
 Coordinate mapping (used everywhere in the kit)
     world frame:  metres, x east, y north, z = elevation above sea level (NAVD88), right-handed
@@ -530,8 +535,65 @@ def water_glb(water, path):
     return g.save(path), rows
 
 
+# =============================================================== detailed buildings (scripts/build_buildings.py)
+DETAILED = os.path.join(ROOT, 'world', 'buildings', 'out')
+
+
+def glb_node_bounds_cm(path, node_name):
+    """Bounds of one node's mesh in UE cm, using the glTF accessor min/max and the importer mapping
+    glTF (X, Y, Z) m -> UE (X, Z, Y) * 100 cm."""
+    with open(path, 'rb') as f:
+        f.read(12)
+        n = struct.unpack('<I', f.read(4))[0]
+        f.read(4)
+        j = json.loads(f.read(n))
+    node = [nd for nd in j['nodes'] if nd['name'] == node_name][0]
+    mn, mx = [1e18] * 3, [-1e18] * 3
+    for p in j['meshes'][node['mesh']]['primitives']:
+        a = j['accessors'][p['attributes']['POSITION']]
+        for i in range(3):
+            mn[i], mx[i] = min(mn[i], a['min'][i]), max(mx[i], a['max'][i])
+    return ([round(mn[0] * 100, 1), round(mn[2] * 100, 1), round(mn[1] * 100, 1)],
+            [round(mx[0] * 100, 1), round(mx[2] * 100, 1), round(mx[1] * 100, 1)])
+
+
+def copy_detailed(kit):
+    """Copy the detailed buildings + style kit into world/unreal/ and add their axis reference to `kit`.
+    Returns the copied file names (empty if build_buildings.py has not been run)."""
+    src = os.path.join(DETAILED, 'reed_buildings_detailed.glb')
+    if not os.path.isfile(src):
+        log('  no world/buildings/out/reed_buildings_detailed.glb (run scripts/build_buildings.py); boxes only')
+        kit.pop('reference_detailed', None)
+        return []
+    import shutil
+    copied = []
+    for fn in ('reed_buildings_detailed.glb', 'buildings_detailed.csv'):
+        shutil.copy2(os.path.join(DETAILED, fn), os.path.join(OUT, fn))
+        copied.append(fn)
+    td = os.path.join(OUT, 'textures')
+    os.makedirs(td, exist_ok=True)
+    for fn in sorted(os.listdir(os.path.join(DETAILED, 'textures'))):
+        shutil.copy2(os.path.join(DETAILED, 'textures', fn), os.path.join(td, fn))
+        copied.append('textures/' + fn)
+    shutil.copy2(os.path.join(ROOT, 'world', 'buildings', 'kit', 'materials.json'), os.path.join(OUT, 'reed_materials.json'))
+    copied.append('reed_materials.json')
+    mn, mx = glb_node_bounds_cm(os.path.join(OUT, 'reed_buildings_detailed.glb'), 'B_way_39516532')
+    kit['reference_detailed'] = dict(mesh='B_way_39516532', name='Eliot Hall (detailed mesh)', min_cm=mn, max_cm=mx)
+    kit['detailed_buildings'] = dict(glb='reed_buildings_detailed.glb', csv='buildings_detailed.csv',
+                                     materials='reed_materials.json', textures='textures/',
+                                     generator='scripts/build_buildings.py')
+    log(f'  detailed buildings: copied {len(copied)} files; Eliot reference {mn} .. {mx}')
+    return copied
+
+
 # =============================================================== main
 def main():
+    if '--detailed-only' in sys.argv:
+        kp = need(os.path.join(OUT, 'reed_kit.json'))
+        kit = json.load(open(kp))
+        copy_detailed(kit)
+        json.dump(kit, open(kp, 'w'), indent=1)
+        return
     need(os.path.join(SRC, 'MANIFEST.json'))
     manifest = json.load(open(os.path.join(SRC, 'MANIFEST.json')))
     if manifest.get('status') != 'complete':
@@ -681,6 +743,7 @@ def main():
         sign_board=SIGN_BOARD,
         counts=dict(buildings=len(brows), trees=len(trees), signs=len(signs), water=len(wrows)),
     )
+    copy_detailed(kit)
     json.dump(kit, open(os.path.join(OUT, 'reed_kit.json'), 'w'), indent=1)
     for fn in sorted(os.listdir(OUT)):
         p = os.path.join(OUT, fn)

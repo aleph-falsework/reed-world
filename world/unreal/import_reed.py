@@ -16,6 +16,11 @@ It reads the kit next to this file (the folder written by scripts/export_unreal.
 Safe to re-run: every actor it makes is tagged "ReedWorld" and removed at the start of the next run;
 assets are re-imported in place.
 
+Detailed buildings (scripts/build_buildings.py): when reed_buildings_detailed.glb is in the kit folder it is imported
+instead of the extruded boxes, together with the style-kit textures in textures/. The script builds one parent
+material, M_ReedKit (BaseColor / Normal / ORM texture parameters, UVScale, Tint, and a UseWorldUV switch), and one
+material instance per glTF material slot (MI_Brick_Gothic, MI_Trim_Stone, MI_Roof_Slate, ...).
+
 Coordinates (see reed_kit.json): UE.X = east*100, UE.Y = -north*100 (south), UE.Z = elevation*100, cm.
 """
 import csv
@@ -36,6 +41,8 @@ SIGNS = True
 REIMPORT = True                # False = reuse already-imported assets (faster second runs)
 TEXT_YAW_OFFSET = 0.0          # if sign text reads mirrored/backwards in your version, set to 180.0
 TREE_COLLISION = False         # trees are walk-through by default (their crowns are low ellipsoids)
+DETAILED_BUILDINGS = None      # None = use reed_buildings_detailed.glb when it is in the kit folder (else the boxes);
+                               # True/False to force. Detailed meshes go to /Game/ReedWorld/BuildingsDetailed.
 
 ROOT = '/Game/ReedWorld'
 LEVEL_PATH = ROOT + '/Maps/L_ReedCampus'
@@ -341,6 +348,124 @@ def collision(mesh, complex_as_simple=True):
         return False
 
 
+# ------------------------------------------------------------------ style kit (detailed buildings)
+def import_kit_textures(K, folder, mats):
+    """Import textures/T_<Name>_{BC,N,ORM}.png and set their compression: N = normal map (OpenGL source, so the
+    green channel is flipped for Unreal), ORM = masks (linear)."""
+    out = {}
+    for name, info in mats.items():
+        for key, suffix in (('base_color', 'BC'), ('normal', 'N'), ('orm', 'ORM')):
+            fn = info[key]
+            asset = os.path.splitext(fn)[0]
+            path = folder + '/' + asset
+            src = os.path.join(K, 'textures', fn)
+            if not os.path.isfile(src):
+                warn('kit texture %s is missing from %s/textures' % (fn, K))
+                continue
+            if REIMPORT or not unreal.EditorAssetLibrary.does_asset_exist(path):
+                import_file(src, folder, asset)
+            t = unreal.EditorAssetLibrary.load_asset(path)
+            if t is None:
+                warn('texture %s did not import' % asset)
+                continue
+            if suffix == 'N':
+                set_props(t, compression_settings=unreal.TextureCompressionSettings.TC_NORMALMAP, srgb=False,
+                          flip_green_channel=True)
+            elif suffix == 'ORM':
+                set_props(t, compression_settings=unreal.TextureCompressionSettings.TC_MASKS, srgb=False)
+            if info.get('tile_m') is None:             # decals (whole-window, door): no wrapping
+                set_props(t, address_x=unreal.TextureAddress.TA_CLAMP, address_y=unreal.TextureAddress.TA_CLAMP)
+            unreal.EditorAssetLibrary.save_loaded_asset(t)
+            out[(name, suffix)] = t
+    return out
+
+
+def make_kit_parent_builder(bc, nm, orm):
+    """M_ReedKit: BaseColor * Tint, Normal, ORM (G roughness, B metallic). UVs = mesh UV * UVScale (the meshes
+    already carry true-scale UVs), or with UseWorldUV on: U = WorldPos . horizontal wall tangent / (TileM*100),
+    V = -WorldPos.Z / (TileM*100) (walls only; for art-directing texel density)."""
+    def build(mat):
+        MEL = unreal.MaterialEditingLibrary
+        E = lambda cls, x, y: MEL.create_material_expression(mat, cls, x, y)
+        tc = E(unreal.MaterialExpressionTextureCoordinate, -1600, -200)
+        uvs = E(unreal.MaterialExpressionScalarParameter, -1600, -100)
+        set_props(uvs, parameter_name='UVScale', default_value=1.0)
+        muv = E(unreal.MaterialExpressionMultiply, -1400, -200)
+        MEL.connect_material_expressions(tc, '', muv, 'A')
+        MEL.connect_material_expressions(uvs, '', muv, 'B')
+        # world-aligned wall UV
+        wp = E(unreal.MaterialExpressionWorldPosition, -1900, 100)
+        vn = E(unreal.MaterialExpressionVertexNormalWS, -1900, 250)
+        up = E(unreal.MaterialExpressionConstant3Vector, -1900, 350)
+        set_props(up, constant=unreal.LinearColor(0.0, 0.0, 1.0, 0.0))
+        cr = E(unreal.MaterialExpressionCrossProduct, -1700, 250)
+        MEL.connect_material_expressions(up, '', cr, 'A')
+        MEL.connect_material_expressions(vn, '', cr, 'B')
+        nz = E(unreal.MaterialExpressionNormalize, -1550, 250)
+        MEL.connect_material_expressions(cr, '', nz, '')
+        dot = E(unreal.MaterialExpressionDotProduct, -1400, 150)
+        MEL.connect_material_expressions(wp, '', dot, 'A')
+        MEL.connect_material_expressions(nz, '', dot, 'B')
+        zc = E(unreal.MaterialExpressionComponentMask, -1550, 50)
+        set_props(zc, r=False, g=False, b=True, a=False)
+        MEL.connect_material_expressions(wp, '', zc, '')
+        neg = E(unreal.MaterialExpressionMultiply, -1400, 50)
+        set_props(neg, const_b=-1.0)
+        MEL.connect_material_expressions(zc, '', neg, 'A')
+        app = E(unreal.MaterialExpressionAppendVector, -1250, 100)
+        MEL.connect_material_expressions(dot, '', app, 'A')
+        MEL.connect_material_expressions(neg, '', app, 'B')
+        tile = E(unreal.MaterialExpressionScalarParameter, -1250, 250)
+        set_props(tile, parameter_name='TileM', default_value=2.1)
+        cm = E(unreal.MaterialExpressionMultiply, -1100, 250)
+        set_props(cm, const_b=100.0)
+        MEL.connect_material_expressions(tile, '', cm, 'A')
+        div = E(unreal.MaterialExpressionDivide, -1000, 100)
+        MEL.connect_material_expressions(app, '', div, 'A')
+        MEL.connect_material_expressions(cm, '', div, 'B')
+        sw = E(unreal.MaterialExpressionStaticSwitchParameter, -850, -100)
+        set_props(sw, parameter_name='UseWorldUV', default_value=False)
+        MEL.connect_material_expressions(div, '', sw, 'True')
+        MEL.connect_material_expressions(muv, '', sw, 'False')
+        # textures
+        tbc = E(unreal.MaterialExpressionTextureSampleParameter2D, -600, -300)
+        set_props(tbc, parameter_name='BaseColor', texture=bc)
+        tn = E(unreal.MaterialExpressionTextureSampleParameter2D, -600, 0)
+        set_props(tn, parameter_name='Normal', texture=nm, sampler_type=unreal.MaterialSamplerType.SAMPLERTYPE_NORMAL)
+        to = E(unreal.MaterialExpressionTextureSampleParameter2D, -600, 300)
+        set_props(to, parameter_name='ORM', texture=orm, sampler_type=unreal.MaterialSamplerType.SAMPLERTYPE_MASKS)
+        for t in (tbc, tn, to):
+            MEL.connect_material_expressions(sw, '', t, 'UVs')
+        tint = E(unreal.MaterialExpressionVectorParameter, -600, -450)
+        set_props(tint, parameter_name='Tint', default_value=unreal.LinearColor(1.0, 1.0, 1.0, 1.0))
+        mul = E(unreal.MaterialExpressionMultiply, -300, -350)
+        MEL.connect_material_expressions(tbc, 'RGB', mul, 'A')
+        MEL.connect_material_expressions(tint, '', mul, 'B')
+        MEL.connect_material_property(mul, '', unreal.MaterialProperty.MP_BASE_COLOR)
+        MEL.connect_material_property(tn, 'RGB', unreal.MaterialProperty.MP_NORMAL)
+        MEL.connect_material_property(to, 'G', unreal.MaterialProperty.MP_ROUGHNESS)
+        MEL.connect_material_property(to, 'B', unreal.MaterialProperty.MP_METALLIC)
+    return build
+
+
+def kit_instances(folder, parent, textures, mats):
+    """MI_<Name> per kit material, textures set as parameters. Returns [(slot substring, MI)] longest first."""
+    MEL = unreal.MaterialEditingLibrary
+    rules = []
+    for name, info in mats.items():
+        mi = material_instance('MI_' + name, folder, parent)
+        for param, suffix in (('BaseColor', 'BC'), ('Normal', 'N'), ('ORM', 'ORM')):
+            t = textures.get((name, suffix))
+            if t is not None:
+                MEL.set_material_instance_texture_parameter_value(mi, param, t)
+        if info.get('tile_m'):
+            MEL.set_material_instance_scalar_parameter_value(mi, 'TileM', float(info['tile_m'][0]))
+        unreal.EditorAssetLibrary.save_loaded_asset(mi)
+        rules.append(('M_' + name, mi))
+    rules.sort(key=lambda r: -len(r[0]))           # M_Glass_Leaded before M_Glass, M_Siding_Wood_Dark before ...
+    return rules
+
+
 # ------------------------------------------------------------------ axis/unit self-check
 def check_axes(mesh, ref):
     """Compare the imported Eliot Hall bounds with reed_kit.json; return the actor scale that corrects
@@ -410,7 +535,15 @@ def add_hism(host, mesh):
     res = sds.add_new_subobject(params)
     handle = res[0] if isinstance(res, (tuple, list)) else res
     BFL = unreal.SubobjectDataBlueprintFunctionLibrary
-    comp = BFL.get_object(BFL.get_data(handle))
+    data = BFL.get_data(handle)
+    comp = None
+    if hasattr(BFL, 'get_associated_object'):          # 5.8: get_object is deprecated
+        try:
+            comp = BFL.get_associated_object(data)
+        except Exception:
+            comp = None
+    if comp is None:
+        comp = BFL.get_object(data)
     if comp is None:
         raise RuntimeError('SubobjectDataSubsystem returned no component')
     comp.set_static_mesh(mesh)
@@ -562,7 +695,18 @@ def main():
         raise RuntimeError('T_ReedGround did not import')
     set_props(texture, address_x=unreal.TextureAddress.TA_CLAMP, address_y=unreal.TextureAddress.TA_CLAMP)
 
-    glbs = [('reed_buildings.glb', folders['bld']), ('reed_water.glb', folders['water']),
+    detailed = DETAILED_BUILDINGS
+    if detailed is None:
+        detailed = os.path.isfile(os.path.join(K, 'reed_buildings_detailed.glb'))
+    if detailed and not os.path.isfile(os.path.join(K, 'reed_buildings_detailed.glb')):
+        warn('DETAILED_BUILDINGS is on but reed_buildings_detailed.glb is not in the kit folder; using the boxes')
+        detailed = False
+    folders['bld_d'] = ROOT + '/BuildingsDetailed'
+    folders['kit_tex'] = ROOT + '/Textures/Kit'
+    bld_glb, bld_dest = (('reed_buildings_detailed.glb', folders['bld_d']) if detailed
+                         else ('reed_buildings.glb', folders['bld']))
+    log('buildings: %s' % ('DETAILED (reed_buildings_detailed.glb)' if detailed else 'boxes (reed_buildings.glb)'))
+    glbs = [(bld_glb, bld_dest), ('reed_water.glb', folders['water']),
             ('reed_tree.glb', folders['props']), ('reed_sign.glb', folders['props'])]
     if TERRAIN_MODE == 'mesh':
         glbs.insert(0, ('reed_terrain.glb', folders['terrain']))
@@ -574,8 +718,11 @@ def main():
                 task.enter_progress_frame(1)
     meshes = {}
     for dest in set(d for _, d in glbs):
-        meshes.update(static_meshes_in(dest))
-    log('%d static meshes under %s' % (len(meshes), ROOT))
+        if dest != bld_dest:
+            meshes.update(static_meshes_in(dest))
+    # building meshes looked up only in the folder of the active variant (both variants use the same B_* names)
+    bmeshes = static_meshes_in(bld_dest)
+    log('%d static meshes under %s (+ %d buildings in %s)' % (len(meshes), ROOT, len(bmeshes), bld_dest))
 
     # ---- 2. materials
     base = ensure_material('M_ReedBase', folders['mat'], build_base)
@@ -592,6 +739,16 @@ def main():
         post=material_instance('MI_SignPost', folders['mat'], base, (0.08, 0.06, 0.04), 0.9),
         edge=material_instance('MI_EdgeWall', folders['mat'], base, (0.8, 0.1, 0.1), 1.0))
     MI['ground'] = ground
+    kit_rules = []
+    if detailed:
+        mats = json.load(open(os.path.join(K, 'reed_materials.json'), encoding='utf-8'))['materials']
+        ktex = import_kit_textures(K, folders['kit_tex'], mats)
+        need = [ktex.get(('Brick_Gothic', s_)) for s_ in ('BC', 'N', 'ORM')]
+        if None in need:
+            raise RuntimeError('kit textures missing: copy world/unreal/textures/ with the kit')
+        kparent = ensure_material('M_ReedKit', folders['mat'], make_kit_parent_builder(*need))
+        kit_rules = kit_instances(folders['mat'], kparent, ktex, mats)
+        log('style kit: %d textures, %d material instances' % (len(ktex), len(kit_rules)))
 
     # ---- 3. level
     open_level()
@@ -602,7 +759,9 @@ def main():
 
     # ---- axis self-check on Eliot Hall
     ref = kit['reference']
-    eliot = find_mesh(meshes, ref['mesh'])
+    if detailed and kit.get('reference_detailed'):
+        ref = kit['reference_detailed']
+    eliot = find_mesh(bmeshes, ref['mesh'])
     S = check_axes(eliot, ref) if eliot else (1.0, 1.0, 1.0)
     if eliot is None:
         warn('reference mesh %s not found; skipping the axis self-check' % ref['mesh'])
@@ -634,24 +793,30 @@ def main():
             landscape_help(kit)
 
     # ---- 5. buildings
-    rows = read_csv(os.path.join(K, 'buildings.csv'))
+    csv_name = 'buildings_detailed.csv' if detailed and os.path.isfile(os.path.join(K, 'buildings_detailed.csv')) \
+        else 'buildings.csv'
+    rows = read_csv(os.path.join(K, csv_name))
     nb = 0
     for r in rows:
         if r['realm'] == 'neighbourhood' and not SPAWN_NEIGHBOURHOOD:
             continue
-        m = find_mesh(meshes, r['mesh'])
+        m = find_mesh(bmeshes, r['mesh'])
         if m is None:
             warn('building mesh %s missing' % r['mesh'])
             continue
         campus = r['realm'] == 'campus'
-        assign_slots(m, [('Wall', MI['wall_c'] if campus else MI['wall_n']),
-                         ('Roof', MI['roof_c'] if campus else MI['roof_n'])])
+        if detailed:
+            assign_slots(m, kit_rules)
+        else:
+            assign_slots(m, [('Wall', MI['wall_c'] if campus else MI['wall_n']),
+                             ('Roof', MI['roof_c'] if campus else MI['roof_n'])])
         collision(m)
         label = r['mesh'] + (' ' + r['name'] if r['name'] else '')
         spawn_mesh(m, 'Buildings/' + ('Campus' if campus else 'Neighbourhood'), label, scale=S,
-                   extra_tags=['osm:' + r['osm_id']] + (['name:' + r['name']] if r['name'] else []))
+                   extra_tags=['osm:' + r['osm_id']] + (['name:' + r['name']] if r['name'] else [])
+                   + (['style:' + r['style']] if r.get('style') else []))
         nb += 1
-    log('buildings: %d' % nb)
+    log('buildings: %d (%s)' % (nb, 'detailed' if detailed else 'boxes'))
 
     # ---- water (no collision: the lake bed is carved 1.5 m into the terrain, you can wade)
     for r in read_csv(os.path.join(K, 'water.csv')):

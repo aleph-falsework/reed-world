@@ -4,13 +4,61 @@ This folder turns the Reed College world (`world/3d/`, the same data the three.j
 
 > **Honest status:** the kit was built and checked on Linux **without Unreal**. The geometry, numbers and script logic were verified (see [What was verified](#what-was-verified)). The Unreal API calls themselves have not been run. Read [Unverified](#unverified-for-ue-58) before you rely on anything.
 
-Rebuild the kit: `python3 scripts/export_3d.py && python3 scripts/export_unreal.py` (needs numpy, scipy, shapely, pillow, trimesh, mapbox_earcut).
+Rebuild the kit: `python3 scripts/export_3d.py && python3 scripts/build_buildings.py && python3 scripts/export_unreal.py` (needs numpy, scipy, shapely, pillow, trimesh, mapbox_earcut).
+
+## Detailed buildings (new)
+
+The buildings now look like Reed's, not like extruded boxes:
+- brick Collegiate Gothic halls with slate roofs, stone mullioned windows, string courses, plinths, an arched stone portal, chimneys and dormers;
+- mid-century brick with ribbon windows;
+- contemporary glass;
+- painted-siding houses.
+
+Roofs come from the lidar fit in `world/buildings/roofs.json`: gable, hip, shed, deck (Eliot Hall's flat-topped steep roof) and multi-level flat roofs with parapets. Styles come from `world/buildings/styles.csv`. The generator is `scripts/build_buildings.py`, and the style kit is described in `world/buildings/kit/README.md`.
+
+**To update an existing project** (the level from the first run stays):
+1. Copy these files over `<YourProject>/ReedWorldKit/` (overwrite):
+   - `import_reed.py`
+   - `reed_kit.json`
+   - `reed_buildings_detailed.glb` (new)
+   - `buildings_detailed.csv` (new)
+   - `reed_materials.json` (new)
+   - the `textures/` folder (new, 60 PNGs)
+
+   Nothing else changed.
+2. Run `import_reed.py` again (**Tools → Execute Python Script…**). It finds the detailed glb and logs `buildings: DETAILED`. It imports the meshes into `/Game/ReedWorld/BuildingsDetailed`, the textures into `/Game/ReedWorld/Textures/Kit`, builds `M_ReedKit` and 20 `MI_*` instances, and then replaces every actor from the previous run by tag. You get the same 549 building actors with the same names, and trees and signs are rebuilt once, not duplicated. The old box meshes stay in `/Game/ReedWorld/Buildings` and are not used. Delete them if you like.
+3. To go back to the boxes, set `DETAILED_BUILDINGS = False` and re-run.
+
+| File | Size | What it is |
+|---|---:|---|
+| `reed_buildings_detailed.glb` | 13.3 MB | 549 nodes named exactly as in `reed_buildings.glb` (`B_way_39516532` = Eliot Hall), about 147k triangles in total. Material slots are named by material (`M_Brick_Gothic`, `M_Trim_Stone`, `M_Roof_Slate`, `M_Glass_Leaded`, ...). Textures are external, in `textures/`. Node extras add style, roof model and triangle count. |
+| `buildings_detailed.csv` | 47 kB | mesh, osm_id, name, realm, map_no, style, roof, triangles |
+| `reed_materials.json` | 6 kB | The 20 kit materials: texture files and real-world tile size |
+| `textures/` | 13 MB | `T_<Name>_BC` (sRGB), `_N` (normal, OpenGL; the script flips green), `_ORM` (G roughness, B metallic) |
+
+**Materials.** `M_ReedKit` has these parameters:
+- **BaseColor**, **Normal** and **ORM** textures, and **Tint**;
+- **UVScale** (1 = the true scale baked into the mesh UVs);
+- **UseWorldUV** (static switch) plus **TileM**: world-aligned UVs for walls only, for art-directing texel density.
+
+Each `MI_<Name>` sets the three textures and TileM. Slots are matched to instances by name, longest first, so `M_Glass_Leaded` gets `MI_Glass_Leaded`, not `MI_Glass`. The axis self-check uses `reference_detailed` in `reed_kit.json` (the Eliot Hall bounds of the detailed mesh).
+
+**Triangle counts.** Neighbourhood houses run to about 130 triangles each; their windows are 2-triangle decals. Campus buildings have a median of about 640. The hero Gothic buildings are the heaviest because of their stone-framed windows:
+
+| Building | Triangles |
+|---|---:|
+| Library | 12.8k |
+| Eliot Hall | 9.9k |
+| Old Dorm Block | 7.0k |
+| Trillium | 5.1k |
+
+Enable Nanite on `/Game/ReedWorld/BuildingsDetailed` if you want.
 
 ## What's in the folder
 
 | File | Size | What it is |
 |---|---:|---|
-| `import_reed.py` | 32 kB | The editor script. Run it in Unreal. |
+| `import_reed.py` | 42 kB | The editor script. Run it in Unreal. |
 | `reed_kit.json` | 4 kB | Coordinate mapping, Landscape numbers, PlayerStart, the self-check reference and counts. The script reads it. |
 | `reed_terrain.glb` | 17.7 MB | Terrain as 12 mesh tiles (2 m grid, 515k triangles), plus 4 invisible edge walls. The albedo texture is embedded. |
 | `reed_buildings.glb` | 1.6 MB | 549 buildings, one mesh node each, named `B_<osm-type>_<osm-id>` (e.g. `B_way_39516532` = Eliot Hall). Walls and roofs are separate material slots, gable roofs come from the lidar, and normals are flat-shaded. The node `extras` hold osm_id, name, map number, realm, height and its source, and roof type. |
@@ -90,7 +138,7 @@ Mesh tiles are the default because they need no manual step. A Landscape gives y
 
 ## What to expect
 
-- Stylised ground: lawns, paths, roads and water are painted from the lidar surface map, not photographed. Buildings are flat-coloured extrusions with gabled or flat roofs; campus buildings are warm brick and the neighbourhood is grey.
+- Stylised ground: lawns, paths, roads and water are painted from the lidar surface map, not photographed. Buildings are the detailed style-kit meshes (see above); with `DETAILED_BUILDINGS = False` they are flat-coloured extrusions.
 - The lakes are carved 1.5 m into the terrain, and the streams 0.3 m, so the water planes are never pierced. Water has no collision, so you can wade.
 - Trees are low-poly lollipops and cones scaled from lidar. They are walk-through (`TREE_COLLISION = False`).
 - Signs stand beside doors, 2.6 m out from the door, with the board facing away from the building. The board shows the building name and map number. The **full text** (the CSV "what happens there", plus changes since 2010) is in the sign actor's **Tags** (`text:…`), along with `osm:…`, `name:…`, `map_no:…` and `door_estimated:…`. Doors marked `door_estimated:true` were guessed; there was no OSM entrance.
@@ -124,6 +172,38 @@ All of these were checked here, without Unreal:
   - Both runs give the same 703 actors, with nothing untagged, no errors and no warnings. The second run deletes the first run's actors.
   - The axis self-check passes, and it auto-corrects when the stub mirrors Y or drops the ×100.
   - Landscape mode prints the table above.
+
+## Verified on Matthew's machine (UE 5.8.4, box buildings)
+
+The first version of `import_reed.py` ran cleanly:
+- the axis self-check passed;
+- 549 buildings, 12 terrain tiles, 10,097 + 776 tree instances, 60 signs, a PlayerStart and Play-in-Editor all worked.
+
+Its one warning, the deprecated `SubobjectDataBlueprintFunctionLibrary.get_object`, is fixed: the script now uses `get_associated_object` and falls back to `get_object`.
+
+## Detailed buildings: verified here, unverified in Unreal
+
+**Verified without Unreal:**
+- `world/buildings/kit/verify_glb.py`:
+  - the glb loads in trimesh, and its 549 node names are identical to `reed_buildings.glb`;
+  - every triangle's winding agrees with its normal;
+  - every campus wall on the footprint faces outward. 18 of 20,176 neighbourhood wall faces don't, because those footprints are simplified by 0.4 m;
+  - all roof faces point up;
+  - wall UVs are exactly 1/tile per metre.
+- Renders in `world/buildings/out/preview/`, made with three.js r128 and SwiftShader.
+- `dev/run_stub.py`, run twice, with and without the detailed glb: 0 errors, 0 warnings, every building material slot assigned a kit instance, and the second run replaces the first run's 703 actors.
+- `import_reed.py` compiles under Python 3.11.
+
+**Unverified in UE 5.8:**
+1. The Interchange slot names for a glb with 20 materials. The script expects them to contain the glTF material name (`M_Brick_Gothic`). If buildings come out with Interchange's own textured materials, they will still look right, because the glb carries the textures.
+2. The `M_ReedKit` graph built through `MaterialEditingLibrary`:
+   - the pin names `'True'`/`'False'` on the static switch, and `'UVs'`;
+   - `sampler_type` `SAMPLERTYPE_NORMAL`/`SAMPLERTYPE_MASKS`;
+   - `const_b` on Multiply.
+
+   If the material shows the default checker, open `M_ReedKit` and check the switch wiring.
+3. The texture properties `compression_settings`, `srgb` and `flip_green_channel` (each set with a logged fallback). If the bricks look lit from below, toggle **Flip Green Channel** on `T_*_N`.
+4. Interchange may also import the glb's own copies of the textures into `/Game/ReedWorld/BuildingsDetailed`. That's harmless, just duplicates.
 
 ## Unverified (for UE 5.8)
 

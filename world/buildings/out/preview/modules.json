@@ -1,0 +1,92 @@
+[
+ {
+  "name": "gothic_window",
+  "center": [
+   2.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 48
+ },
+ {
+  "name": "gothic_portal",
+  "center": [
+   8.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 78
+ },
+ {
+  "name": "double_hung",
+  "center": [
+   14.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 36
+ },
+ {
+  "name": "house_entry",
+  "center": [
+   20.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 28
+ },
+ {
+  "name": "punched",
+  "center": [
+   26.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 22
+ },
+ {
+  "name": "modern_casement",
+  "center": [
+   32.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 16
+ },
+ {
+  "name": "ribbon",
+  "center": [
+   38.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 18
+ },
+ {
+  "name": "glass_entry",
+  "center": [
+   44.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 62
+ },
+ {
+  "name": "decal_windows",
+  "center": [
+   50.0,
+   0.0,
+   2.3
+  ],
+  "dist": 7.5,
+  "triangles": 8
+ }
+]

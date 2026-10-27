@@ -67,7 +67,7 @@ def log(*a):
 # floor_h: storey height; sill: sill above floor; win: (w, h); bay: window spacing; margin: from corners
 STYLES = {
     'collegiate_gothic_brick': dict(wall='Brick_Gothic', roof='Roof_Slate', trim='Trim_Stone', flat='Roof_Flat',
-                                    floor_h=4.0, plinth=0.7, sill=0.9, win=(1.5, 2.3), bay=3.1, margin=1.4,
+                                    floor_h=3.6, plinth=0.6, sill=0.8, win=(1.5, 2.2), bay=3.1, margin=1.4,
                                     window='gothic', entry='gothic', overhang=0.2, chimney='Brick_Gothic',
                                     bands=True, parapet=1.0),
     'arts_crafts_house': dict(wall='Siding_Wood_Dark', roof='Roof_Shingle', trim='Paint_Trim', flat='Roof_Flat',
@@ -277,7 +277,7 @@ class Mesh:
             # drop degenerate triangles
             a, b, c = P[F[:, 0]], P[F[:, 1]], P[F[:, 2]]
             area = np.linalg.norm(np.cross(b - a, c - a), axis=1)
-            F = F[area > 1e-7]
+            F = F[area > 2e-4]                     # < 1 cm2: slivers whose winding float32 cannot hold
             if len(F) == 0:
                 continue
             t = tiles.get(mat)
@@ -360,12 +360,12 @@ def win_gothic(M, fr, a, z0, w, h, S, hero=True):
     lquad(M, fr, 'Glass_Leaded', [(ia0, iz0, 0.01), (ia1, iz0, 0.01), (ia1, iz1, 0.01), (ia0, iz1, 0.01)], (0, 0, 1))
     lbox(M, fr, st, a - 0.06, a + 0.06, iz0, iz1, 0.01, 0.12, 'FLR')                    # mullion
     zt = iz0 + (iz1 - iz0) * 0.72
-    lbox(M, fr, st, ia0, ia1, zt - 0.05, zt + 0.05, 0.01, 0.12, 'FTB')                  # transom
+    lbox(M, fr, st, ia0, ia1, zt - 0.05, zt + 0.05, 0.01, 0.12, 'F')                    # transom
     if hero:
         # label mould: bar above the head with short returns, projecting 0.2
-        lbox(M, fr, st, a0 - 0.14, a1 + 0.14, z1 + 0.04, z1 + 0.20, 0.0, 0.22, 'FLRTB')
-        lbox(M, fr, st, a0 - 0.14, a0 - 0.02, z1 - 0.30, z1 + 0.04, 0.0, 0.18, 'FLRB')
-        lbox(M, fr, st, a1 + 0.02, a1 + 0.14, z1 - 0.30, z1 + 0.04, 0.0, 0.18, 'FLRB')
+        lbox(M, fr, st, a0 - 0.14, a1 + 0.14, z1 + 0.04, z1 + 0.20, 0.0, 0.22, 'FTB')
+        lbox(M, fr, st, a0 - 0.14, a0 - 0.02, z1 - 0.30, z1 + 0.04, 0.0, 0.2, 'FB')
+        lbox(M, fr, st, a1 + 0.02, a1 + 0.14, z1 - 0.30, z1 + 0.04, 0.0, 0.2, 'FB')
     lbox(M, fr, st, a0 - 0.06, a1 + 0.06, z0 - 0.14, z0, 0.0, 0.2, 'FT')               # sill
 
 
@@ -390,8 +390,7 @@ def win_punched(M, fr, a, z0, w, h, S, hero=True):
         lquad(M, fr, 'Window_Dark', [(a0, z0, 0.02), (a1, z0, 0.02), (a1, z1, 0.02), (a0, z1, 0.02)], (0, 0, 1),
               uv=[(0, 1), (1, 1), (1, 0), (0, 0)])
         return
-    ia0, ia1, iz0, iz1 = lframe_ring(M, fr, 'Metal_Dark', a0, a1, z0, z1, 0.06, 0.04)
-    # deep reveal: the glass sits 0.15 behind the brick face (a sleeve of wall material)
+    ia0, ia1, iz0, iz1 = lframe_ring(M, fr, 'Metal_Dark', a0, a1, z0, z1, 0.06, 0.04, reveal=False)
     lquad(M, fr, 'Glass', [(ia0, iz0, 0.01), (ia1, iz0, 0.01), (ia1, iz1, 0.01), (ia0, iz1, 0.01)], (0, 0, 1))
     for k in (1, 2):
         am = a0 + w * k / 3
@@ -406,7 +405,7 @@ def win_modern(M, fr, a, z0, w, h, S, hero=True):
         lquad(M, fr, 'Window_Dark', [(a0, z0, 0.02), (a1, z0, 0.02), (a1, z1, 0.02), (a0, z1, 0.02)], (0, 0, 1),
               uv=[(0, 1), (1, 1), (1, 0), (0, 0)])
         return
-    ia0, ia1, iz0, iz1 = lframe_ring(M, fr, 'Metal_Dark', a0, a1, z0, z1, 0.05, 0.08)
+    ia0, ia1, iz0, iz1 = lframe_ring(M, fr, 'Metal_Dark', a0, a1, z0, z1, 0.05, 0.08, reveal=False)
     lquad(M, fr, 'Glass', [(ia0, iz0, 0.01), (ia1, iz0, 0.01), (ia1, iz1, 0.01), (ia0, iz1, 0.01)], (0, 0, 1))
     lbox(M, fr, 'Metal_Dark', a - 0.02, a + 0.02, iz0, iz1, 0.01, 0.05, 'F')
 
@@ -695,13 +694,20 @@ def build_roof(b, r, S, P):
                 if f.get('kind') != 'flat' or f.get('n_px', 0) < 40 or not f.get('outline'):
                     continue
                 zf = ground + f['h_med_m']
-                if abs(zf - flat_z) < 1.2:
+                if abs(zf - flat_z) < 1.5:
                     continue
                 g = unary_union([Polygon(o[0], o[1:]) for o in [f['outline']]] if isinstance(f['outline'][0][0], list)
                                 else [Polygon(f['outline'])])
-                g = g.buffer(0).buffer(-1.0, join_style=2).buffer(1.0, join_style=2).intersection(P)
-                g = g.simplify(0.5)
-                g = clean(g, 15.0)
+                g = g.buffer(0).buffer(-2.0, join_style=2).buffer(2.0, join_style=2).intersection(P)
+                parts = []
+                for q in polys(g):
+                    if q.area < 40.0:
+                        continue
+                    rr = q.minimum_rotated_rectangle
+                    if q.area > 0.8 * rr.area:          # nearly rectangular: snap to the rectangle
+                        q = rr.intersection(P)
+                    parts.append(q.simplify(0.8))
+                g = clean(unary_union(parts), 40.0) if parts else Polygon()
                 if not g.is_empty:
                     regions.append((g, zf))
         rest = P
@@ -977,6 +983,8 @@ def add_step_walls(M, R, S):
                     mid = (q0 + q1) / 2 + nrm * 0.05
                     if not R.outline.buffer(-0.02).contains(Point(mid)):
                         continue
+                    if R.outline.exterior.distance(Point((q0 + q1) / 2)) < 0.08:   # on the outer wall already
+                        continue
                     zo = R.z_at(np.array([mid[0]]), np.array([mid[1]]), R.eave_z)[0]
                     z0, z1 = plane_eval(pl, *q0), plane_eval(pl, *q1)
                     zm = (z0 + z1) / 2
@@ -1185,11 +1193,16 @@ def add_features(M, R, r, S, P, ground, u):
         if not P.buffer(-0.3).contains(Point(x, y)):
             continue
         zr = R.z_at(np.array([x]), np.array([y]), R.eave_z)[0]
-        ztop = ground + f['top_h_m']
+        if f.get('top_h_m') is not None:
+            ztop = ground + f['top_h_m']
+        else:
+            ztop = zr + float(f.get('above_roof_m') or 1.5)
         t = f['type']
         if t == 'chimney':
+            if f.get('roughness_m', 0) > 0.5:
+                continue
             s = float(np.clip(math.sqrt(f.get('area_m2', 1)) * 0.45, 0.6, 1.3))
-            ztop = max(ztop, zr + 1.0)
+            ztop = float(np.clip(ztop, zr + 1.0, zr + 3.0))
             add_box(M, x, y, ux, uy, s / 2, s / 2 * 0.8, zr - 0.5, ztop, S['chimney'])
             add_box(M, x, y, ux, uy, s / 2 + 0.06, s / 2 * 0.8 + 0.06, ztop - 0.15, ztop + 0.05,
                     'Trim_Stone' if S['chimney'] == 'Brick_Gothic' else 'Concrete')
@@ -1202,6 +1215,10 @@ def add_features(M, R, r, S, P, ground, u):
             add_box(M, x, y, ux, uy, s / 2, s / 2 * 0.7, zr, zr + h, 'Metal_Dark')
             out['mechanical'] += 1
         elif t == 'tower':
+            # lidar 'towers' over houses are nearly always trees; elsewhere cap them to a plausible stair/clock tower
+            if S['family'] in ('small_house', 'arts_crafts_house', 'unknown') or f.get('roughness_m', 0) > 0.35:
+                continue
+            ztop = min(ztop, zr + 6.0, R.eave_z + (r.get('ridge_h_m', 0) - r.get('eave_h_m', 0)) + 6.0)
             s = float(np.clip(math.sqrt(f.get('area_m2', 9)), 2.5, 6.0))
             if ztop < zr + 1.0:
                 continue
@@ -1209,7 +1226,7 @@ def add_features(M, R, r, S, P, ground, u):
             if S['family'] == 'collegiate_gothic_brick':
                 add_box(M, x, y, ux, uy, s / 2 + 0.12, s / 2 + 0.12, ztop - 0.35, ztop, 'Trim_Stone')
             else:
-                add_box(M, x, y, ux, uy, s / 2, s / 2, ztop - 0.05, ztop, S['flat'])
+                add_box(M, x, y, ux, uy, s / 2 + 0.05, s / 2 + 0.05, ztop - 0.25, ztop, S['trim'] if S['trim'] != 'Paint_Trim' else 'Concrete')
             out['tower'] += 1
         elif t == 'dormer':
             # find the roof piece under the dormer: build a small gabled dormer facing downslope
@@ -1307,11 +1324,11 @@ def build_building(b, r, S, sign, ground_fn):
             add_band(M, P, R.eave_z - 0.45, R.eave_z - 0.05, 0.09, S['trim'])
     elif hero and S['family'] in ('midcentury_academic', 'contemporary_academic') and not is_flat:
         pass
+    add_step_walls(M, R, S)              # before the parapet inset changes the pieces
     if is_flat:
         add_parapet(M, R, P, S)
     add_roof(M, R, S)
     add_soffits(M, R, P, S)
-    add_step_walls(M, R, S)
     u = (1.0, 0.0)
     if R.wings:
         u = tuple(R.wings[0]['u'])
@@ -1351,6 +1368,46 @@ class KitGLB(GLB):
         self.mat_index[slot] = len(self.j['materials']) - 1
 
 
+# =============================================================== module showcase (for the kit contact sheet)
+def modules_showcase(mats, tiles):
+    """One wall panel per module, side by side along +x at the origin -> out/preview/modules.glb + modules.json."""
+    G = STYLES['collegiate_gothic_brick']
+    items = [('gothic_window', 'collegiate_gothic_brick', lambda M, fr: win_gothic(M, fr, 2.0, 0.9, 1.5, 2.2, G)),
+             ('gothic_portal', 'collegiate_gothic_brick', lambda M, fr: entry_gothic(M, fr, 2.0, 0.0, G)),
+             ('double_hung', 'arts_crafts_house', lambda M, fr: win_double_hung(M, fr, 2.0, 0.9, 1.0, 1.5, STYLES['arts_crafts_house'])),
+             ('house_entry', 'small_house', lambda M, fr: entry_house(M, fr, 2.0, 0.0, STYLES['small_house'])),
+             ('punched', 'midcentury_academic', lambda M, fr: win_punched(M, fr, 2.0, 0.9, 2.0, 1.8, STYLES['midcentury_academic'])),
+             ('modern_casement', 'modern_residence', lambda M, fr: win_modern(M, fr, 2.0, 0.9, 1.2, 1.6, STYLES['modern_residence'])),
+             ('ribbon', 'contemporary_academic', lambda M, fr: ribbon(M, fr, 0.4, 3.6, 0.9, 2.0)),
+             ('glass_entry', 'contemporary_academic', lambda M, fr: entry_modern(M, fr, 2.0, 0.0, STYLES['contemporary_academic'])),
+             ('decal_windows', 'small_house', lambda M, fr: (win_double_hung(M, fr, 1.1, 0.9, 1.0, 1.5, STYLES['small_house'], False),
+                                                          win_punched(M, fr, 2.9, 0.9, 1.0, 1.5, STYLES['small_house'], False)))]
+    g = KitGLB()
+    meta = []
+    for k, (name, fam, fn) in enumerate(items):
+        S = STYLES[fam]
+        M = Mesh()
+        x0 = k * 6.0
+        fr = Frame(x0, 0.0, 1.0, 0.0, 0.0, -1.0)           # wall faces south (-y), a runs east
+        M.poly(S['wall'], [(x0, 0, 0), (x0 + 4, 0, 0), (x0 + 4, 0, 5), (x0, 0, 5)], (0, -1, 0),
+               [(0, 0), (4, 0), (4, -5), (0, -5)])
+        M.poly('Concrete', [(x0 - 1, -3, -0.01), (x0 + 5, -3, -0.01), (x0 + 5, 0, -0.01), (x0 - 1, 0, -0.01)], (0, 0, 1),
+               [(0, 0), (6, 0), (6, 3), (0, 3)])
+        fn(M, fr)
+        prims = M.finalize(tiles)
+        for p in prims:
+            g.kit_material(p['mat'], mats[p['mat'][2:]])
+        g.mesh('MOD_' + name, prims, extras=dict(module=name, style=fam, triangles=sum(len(p['idx']) for p in prims)))
+        meta.append(dict(name=name, center=[x0 + 2.0, 0.0, 2.3], dist=7.5, triangles=M.count()))
+    os.makedirs(os.path.join(OUT, 'preview'), exist_ok=True)
+    # textures resolve relative to the glb: preview/../textures
+    for im in g.j.get('images', []):
+        im['uri'] = '../' + im['uri']
+    g.save(os.path.join(OUT, 'preview', 'modules.glb'))
+    json.dump(meta, open(os.path.join(OUT, 'preview', 'modules.json'), 'w'), indent=1)
+    log('modules:', ', '.join(f"{m['name']} {m['triangles']} tris" for m in meta))
+
+
 # =============================================================== main
 def main():
     argv = sys.argv[1:]
@@ -1367,6 +1424,8 @@ def main():
     if os.path.isfile(rp):
         roofs = {r['osm_id']: r for r in json.load(open(rp))['roofs']}
     ready = os.path.isfile(os.path.join(BLD, 'ROOFS_READY.json'))
+    if '--modules' in argv:
+        modules_showcase(mats, tiles)
     styles = load_styles()
     signs = {s['osm_id']: s for s in json.load(open(os.path.join(SRC, 'signs.json')))['signs'] if s['kind'] == 'building'}
     log(f'{len(blds)} buildings, {len(roofs)} roofs (ROOFS_READY={ready}), {len(styles)} style rows')
@@ -1408,8 +1467,8 @@ def main():
     td = os.path.join(OUT, 'textures')
     os.makedirs(td, exist_ok=True)
     used = set(im['uri'] for im in g.j.get('images', []))
-    for u in used:
-        shutil.copy2(os.path.join(KIT, u), os.path.join(td, os.path.basename(u)))
+    for fn in os.listdir(os.path.join(KIT, 'textures')):        # the whole kit (Unreal builds an MI per material)
+        shutil.copy2(os.path.join(KIT, 'textures', fn), os.path.join(td, fn))
     if not only:
         with open(os.path.join(OUT, 'buildings_detailed.csv'), 'w', newline='') as f:
             w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')

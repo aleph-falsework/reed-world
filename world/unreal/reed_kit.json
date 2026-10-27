@@ -223,5 +223,26 @@
   "trees": 10873,
   "signs": 60,
   "water": 10
+ },
+ "reference_detailed": {
+  "mesh": "B_way_39516532",
+  "name": "Eliot Hall (detailed mesh)",
+  "min_cm": [
+   60957.0,
+   -40067.4,
+   3917.0
+  ],
+  "max_cm": [
+   68912.2,
+   -37216.8,
+   5765.9
+  ]
+ },
+ "detailed_buildings": {
+  "glb": "reed_buildings_detailed.glb",
+  "csv": "buildings_detailed.csv",
+  "materials": "reed_materials.json",
+  "textures": "textures/",
+  "generator": "scripts/build_buildings.py"
  }
 }

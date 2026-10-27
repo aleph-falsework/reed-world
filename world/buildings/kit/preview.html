@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Reed buildings preview</title>
+<style>html,body{margin:0;background:#9fb4c8;overflow:hidden}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+</head><body>
+<script>
+// Headless preview of reed_buildings_detailed.glb (+ terrain for context). Driven by render_preview.py:
+//   await setup({buildings: url, terrain: url|null, w, h});  await shot({pos:[x,y,z], target:[x,y,z], fov})
+let renderer, scene, camera, sun;
+window.setup = async function (o) {
+  renderer = new THREE.WebGLRenderer({antialias: true, preserveDrawingBuffer: true});
+  renderer.setSize(o.w, o.h);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  document.body.appendChild(renderer.domElement);
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xa9c0d6);
+  scene.fog = new THREE.Fog(0xa9c0d6, 400, 1600);
+  camera = new THREE.PerspectiveCamera(45, o.w / o.h, 0.5, 4000);
+  scene.add(new THREE.HemisphereLight(0xdfe9f5, 0x5b5247, 0.75));
+  sun = new THREE.DirectionalLight(0xfff1dc, 2.2);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048);
+  sun.shadow.bias = -0.0004;
+  scene.add(sun); scene.add(sun.target);
+  const loader = new THREE.GLTFLoader();
+  const load = (u) => new Promise((res, rej) => loader.load(u, res, undefined, rej));
+  const b = await load(o.buildings);
+  b.scene.traverse(m => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true;
+    if (m.material.map) m.material.map.anisotropy = 8; } });
+  scene.add(b.scene);
+  window.names = []; b.scene.traverse(m => { if (m.name && m.name.startsWith('B_')) window.names.push(m.name); });
+  if (o.terrain) {
+    const t = await load(o.terrain);
+    t.scene.traverse(m => { if (m.isMesh) { m.receiveShadow = true; if (m.name.startsWith('T_EdgeWall')) m.visible = false; } });
+    scene.add(t.scene);
+  }
+  return window.names.length;
+};
+window.shot = function (c) {
+  camera.fov = c.fov || 45; camera.updateProjectionMatrix();
+  camera.position.set(...c.pos); camera.lookAt(...c.target);
+  // sun from the south-west, afternoon; shadow box around the target
+  const T = new THREE.Vector3(...c.target);
+  const S = c.shadow || 120;
+  sun.position.set(T.x - 0.45 * 300, T.y + 0.75 * 300, T.z + 0.5 * 300);
+  sun.target.position.copy(T);
+  Object.assign(sun.shadow.camera, {left: -S, right: S, top: S, bottom: -S, near: 1, far: 900});
+  sun.shadow.camera.updateProjectionMatrix();
+  renderer.render(scene, camera);
+  return true;
+};
+</script></body></html>

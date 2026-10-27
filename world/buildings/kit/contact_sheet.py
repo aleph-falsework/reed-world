@@ -45,7 +45,7 @@ def main():
     mods = sorted(glob.glob(os.path.join(PREV, 'module_*.png')))
     rows = (len(names) + cols - 1) // cols
     mrows = (len(mods) + cols - 1) // cols
-    W, H = cols * (CELL + 10) + 10, rows * (CELL + 40) + mrows * (CELL + 40) + 60
+    W, H = cols * (CELL + 10) + 10, rows * (CELL + 40) + mrows * (CELL * 5 // 8 + 40) + 60
     sheet = Image.new('RGB', (W, H), (28, 28, 30))
     d = ImageDraw.Draw(sheet)
     d.text((10, 12), 'Reed style kit: materials (2x2 tiles, lit from upper left) and modules', fill=(230, 230, 230), font=font(22))
@@ -55,16 +55,16 @@ def main():
         x, y = 10 + c * (CELL + 10), 50 + r * (CELL + 40)
         tm = M[nm]['tile_m']
         sheet.paste(lit(nm, 2 if tm else 1), (x, y))
-        lab = f"M_{nm}  " + (f"{tm[0]:.2f} m tile (shown {2 * tm[0]:.1f} m)" if tm else 'decal 0..1')
+        lab = f"M_{nm}  " + (f"{tm[0]:.2f} m/tile" if tm else 'decal')
         d.text((x, y + CELL + 4), lab, fill=(220, 220, 220), font=f)
     y0 = 50 + rows * (CELL + 40)
     for k, p in enumerate(mods):
         r, c = divmod(k, cols)
-        x, y = 10 + c * (CELL + 10), y0 + r * (CELL + 40)
+        x, y = 10 + c * (CELL + 10), y0 + r * (CELL * 5 // 8 + 40)
         im = Image.open(p).convert('RGB')
         im.thumbnail((CELL, CELL))
         sheet.paste(im, (x, y))
-        d.text((x, y + CELL + 4), os.path.basename(p)[7:-4], fill=(220, 220, 220), font=f)
+        d.text((x, y + CELL * 5 // 8 + 4), os.path.basename(p)[7:-4], fill=(220, 220, 220), font=f)
     out = os.path.join(HERE, 'contact_sheet.png')
     sheet.save(out, optimize=True)
     print('wrote', out, sheet.size)

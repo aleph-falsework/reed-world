@@ -90,7 +90,7 @@ def grid_cells(N, nx, ny, stagger=0.5, Wpx=None):
 
 
 # ------------------------------------------------------------------ materials
-def brick(name, N, tile_m, base, spread, clinker_frac, clinker_rgb, mortar_rgb, seed, headers=False):
+def brick(name, N, tile_m, base, spread, clinker_frac, clinker_rgb, mortar_rgb, seed, headers=False, low=1.0):
     """Running bond, 20 x 6.5 cm bricks, 1 cm joints. tile_m must be a multiple of the 0.21 x 0.075 m module."""
     nx, ny = round(tile_m / 0.21), round(tile_m / 0.075)
     rng = np.random.default_rng(seed)
@@ -128,7 +128,7 @@ def brick(name, N, tile_m, base, spread, clinker_frac, clinker_rgb, mortar_rgb, 
     col_rgb = col_rgb * (1 - 0.35 * flash[..., None])
     n1 = fnoise(N, N, 1.2, seed + 1)
     n2 = fnoise(N, N, 2.4, seed + 2)
-    col_rgb = col_rgb * (1 + 0.06 * n1[..., None] + 0.05 * n2[..., None])
+    col_rgb = col_rgb * (1 + 0.06 * low * n1[..., None] + 0.05 * n2[..., None])
     mor = mortar_rgb * (1 + 0.08 * n1[..., None])
     bc = np.where(is_brick[..., None], col_rgb, mor)
     # soften the edge into the joint
@@ -210,10 +210,10 @@ def shingle(name, N, tile_m, seed, base=(70, 66, 64)):
     grit2 = fnoise(N, N, 1.0, seed + 1)
     slot = 0.006 * N / tile_m
     t = ly / ch
-    rgb = srgb(*base)[None, None] * (1 + 0.09 * tone[..., None] + 0.10 * grit[..., None] + 0.04 * grit2[..., None])
+    rgb = srgb(*base)[None, None] * (1 + 0.04 * tone[..., None] + 0.12 * grit[..., None] + 0.04 * grit2[..., None])
     # occasional lighter/darker granule blends
     rgb *= (1 + 0.05 * np.sign(fnoise(N, N, 1.8, seed + 2))[..., None] * 0.5)
-    rgb *= (0.6 + 0.4 * smooth(t, 0.0, 0.12))[..., None]
+    rgb *= (0.45 + 0.55 * smooth(t, 0.0, 0.16))[..., None]
     gap = (lx < slot) | (lx > cw - slot)
     rgb = np.where(gap[..., None], rgb * 0.45, rgb)
     hgt = 0.3 + 0.7 * t + 0.05 * grit
@@ -237,7 +237,7 @@ def standing_seam(name, N, tile_m, seed, base=(64, 70, 72)):
     hgt = h1 + 0.003 * n1
     rgb = srgb(*base)[None, None] * (1 + 0.05 * stretch[..., None] + 0.03 * n1[..., None])
     rgb = rgb * (1 + 0.12 * h1[..., None])
-    save_set(name, rgb, hgt, 6.0, np.clip(0.38 + 0.06 * stretch, 0, 1), 0.65)
+    save_set(name, rgb, hgt, 6.0, np.clip(0.42 + 0.06 * stretch, 0, 1), 0.25)
     return dict(tile_m=[tile_m, tile_m], size=N, note=f'{ns} pans, 45 cm seams along V')
 
 
@@ -290,7 +290,7 @@ def curtain(name, N, tile_m, seed):
     rgb = np.where(mull[..., None], srgb(46, 48, 50), rgb)
     hgt = np.where(mull, 1.0, 0.0) * smooth(mw - dm + 1, 0, 2)
     rough = np.where(mull, 0.45, 0.06)
-    metal = np.where(mull, 0.6, 0.0)
+    metal = np.where(mull, 0.3, 0.0)
     save_set(name, rgb, hgt, 3.0, rough, metal)
     return dict(tile_m=[tile_m, tile_m], size=N, note='1.5 m panels, 6 cm dark mullions')
 
@@ -319,7 +319,7 @@ def siding(name, N, tile_m, seed, base):
 
 def gravel_roof(name, N, tile_m, seed):
     n1, n2 = fnoise(N, N, 0.2, seed), fnoise(N, N, 1.8, seed + 1)
-    rgb = srgb(118, 116, 110)[None, None] * (1 + 0.16 * n1[..., None] + 0.06 * n2[..., None])
+    rgb = srgb(92, 92, 90)[None, None] * (1 + 0.10 * n1[..., None] + 0.035 * n2[..., None])
     save_set(name, rgb, 0.6 * n1 + 0.4 * n2, 0.7, np.clip(0.93 + 0.03 * n1, 0, 1))
     return dict(tile_m=[tile_m, tile_m], size=N, note='ballasted membrane (flat roofs)')
 
@@ -328,8 +328,8 @@ def glass(name, N, tile_m, base, seed, lead=None):
     """Window glass. lead=(cols, rows) adds leaded quarries (Gothic) with dark cames."""
     i, j = np.mgrid[0:N, 0:N].astype(np.float64)
     n1 = fnoise(N, N, 2.4, seed)
-    g = i / N
-    rgb = srgb(*base)[None, None] * (1 + 0.15 * n1[..., None]) + (0.06 * (1 - g))[..., None]
+    g = 0.5 + 0.5 * np.cos(2 * np.pi * i / N)
+    rgb = srgb(*base)[None, None] * (1 + 0.06 * n1[..., None]) + (0.05 * g)[..., None]
     hgt = 0.02 * n1
     rough = np.full((N, N), 0.05)
     metal = np.zeros((N, N))
@@ -406,14 +406,14 @@ def door(name, W, H, seed, wood=(92, 52, 30)):
 # ------------------------------------------------------------------ the kit
 def build():
     M = {}
-    M['Brick_Gothic'] = brick('Brick_Gothic', 1024, 2.10, srgb(128, 58, 42), 0.11, 0.10, srgb(58, 34, 36),
+    M['Brick_Gothic'] = brick('Brick_Gothic', 1024, 2.10, srgb(128, 58, 42), 0.11, 0.07, srgb(82, 46, 44),
                               srgb(176, 166, 148), seed=11, headers=True)
     M['Brick_Common'] = brick('Brick_Common', 1024, 2.10, srgb(150, 78, 54), 0.07, 0.02, srgb(96, 52, 40),
-                              srgb(160, 156, 148), seed=21)
+                              srgb(160, 156, 148), seed=21, low=0.35)
     M['Trim_Stone'] = stone('Trim_Stone', 512, 1.2, srgb(198, 188, 166), seed=31, blocks=(2, 4))
     M['Roof_Slate'] = slate('Roof_Slate', 1024, 1.2, seed=41)
     M['Roof_Shingle'] = shingle('Roof_Shingle', 512, 1.0, seed=51)
-    M['Roof_Metal'] = standing_seam('Roof_Metal', 512, 0.9, seed=61)
+    M['Roof_Metal'] = standing_seam('Roof_Metal', 512, 0.9, seed=61, base=(78, 86, 88))
     M['Roof_Flat'] = gravel_roof('Roof_Flat', 512, 2.0, seed=71)
     M['Stucco'] = render('Stucco', 512, 2.0, (214, 204, 182), seed=81)
     M['Concrete'] = concrete('Concrete', 512, 2.4, seed=91)
@@ -423,7 +423,7 @@ def build():
     M['Glass'] = glass('Glass', 256, 1.0, (44, 56, 64), seed=121)
     M['Glass_Leaded'] = glass('Glass_Leaded', 512, 0.6, (52, 62, 66), seed=122, lead=(3, 3))
     M['Paint_Trim'] = paint('Paint_Trim', 256, 1.0, (232, 228, 216), seed=131)
-    M['Metal_Dark'] = paint('Metal_Dark', 256, 1.0, (52, 54, 56), seed=141, rough=0.4, metal=0.7)
+    M['Metal_Dark'] = paint('Metal_Dark', 256, 1.0, (58, 60, 62), seed=141, rough=0.45, metal=0.3)
     M['Wood_Timber'] = paint('Wood_Timber', 256, 1.0, (70, 46, 30), seed=151, rough=0.7)
     M['Window_House'] = window_decal('Window_House', 256, 384, (236, 232, 222), (0.20, 0.25, 0.29), 161)
     M['Window_Dark'] = window_decal('Window_Dark', 256, 384, (48, 46, 44), (0.18, 0.23, 0.27), 162, kind='casement')
