@@ -1,6 +1,6 @@
 {
  "ready": true,
- "generated": "2026-10-27T09:43:03-0700",
+ "generated": "2026-10-27T09:43:38-0700",
  "generator": "scripts/roofs.py",
  "files": {
   "roofs.json": {
@@ -31,9 +31,9 @@
   "shed": 5
  },
  "style_counts": {
-  "small_house": 390,
+  "small_house": 389,
   "unknown": 4,
-  "midcentury_academic": 8,
+  "midcentury_academic": 9,
   "modern_residence": 8,
   "collegiate_gothic_brick": 5,
   "contemporary_academic": 6,
