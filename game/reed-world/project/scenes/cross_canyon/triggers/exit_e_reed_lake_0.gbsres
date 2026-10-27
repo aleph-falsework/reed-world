@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 0,
-  "id": "d34ba379-88d8-586b-a14a-5d77f4155885",
+  "id": "895a2f21-0684-5ba4-9e2c-9c66f12bf4b8",
   "symbol": "trigger_cross_canyon_exit_e",
   "prefabId": "",
   "name": "exit_e_reed_lake_0",
@@ -18,16 +18,38 @@
         "sceneId": "3722cbc3-48ee-5c28-a8bf-fc23efd7a916",
         "x": {
           "type": "number",
-          "value": 2
+          "value": 1
         },
         "y": {
-          "type": "number",
-          "value": 30
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": -70
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 31
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 30
+          }
         },
         "direction": "right",
         "fadeSpeed": "2"
       },
-      "id": "1a51a1df-93e4-57a5-b94a-8dc79e6cab5a"
+      "id": "48899bd8-8f2c-5879-a65c-a473be44cba1"
     }
   ],
   "leaveScript": []

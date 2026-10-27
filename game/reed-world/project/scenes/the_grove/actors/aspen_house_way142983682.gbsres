@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 3,
-  "id": "b00f96e8-0b49-5d1b-a97c-9463b6260add",
+  "id": "42011a1f-d67e-5772-b1ef-a955786210fc",
   "symbol": "actor_way_142983682",
   "prefabId": "",
   "name": "Aspen House",
-  "notes": "id: way/142983682",
+  "notes": "id: way/142983682 (door estimated)",
   "coordinateType": "tiles",
   "x": 18,
   "y": 73,
@@ -32,7 +32,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "f0883e32-8089-5020-ab5d-d1a5dfab5db0"
+      "id": "bb82745f-2b1d-55cd-baa0-a0678450eb59"
     }
   ],
   "startScript": [],

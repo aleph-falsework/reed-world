@@ -2923,9 +2923,8 @@
    "id": "way/142983684",
    "name": "Biology",
    "sprite": "signpost",
-   "x": 6,
+   "x": 12,
    "y": 49,
-   "on_facade": true,
    "dialogue": [
     "BIOLOGY",
     "Biology labs,",
@@ -2997,9 +2996,16 @@
    "w": 1,
    "h": 2,
    "to": "canyon_east",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 66,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": 38,
+   "land": {
+    "axis": "y",
+    "offset": 38,
+    "min": 66,
+    "max": 69
+   }
   },
   {
    "id": "exit_e_canyon_east_1",
@@ -3008,9 +3014,16 @@
    "w": 1,
    "h": 2,
    "to": "canyon_east",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 56,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": 38,
+   "land": {
+    "axis": "y",
+    "offset": 38,
+    "min": 56,
+    "max": 57
+   }
   },
   {
    "id": "exit_e_canyon_east_3",
@@ -3021,7 +3034,14 @@
    "to": "canyon_east",
    "to_x": 1,
    "to_y": 41,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": 38,
+   "land": {
+    "axis": "y",
+    "offset": 38,
+    "min": 40,
+    "max": 41
+   }
   },
   {
    "id": "exit_e_studio_arts_0",
@@ -3032,7 +3052,14 @@
    "to": "studio_arts",
    "to_x": 1,
    "to_y": 12,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -40,
+   "land": {
+    "axis": "y",
+    "offset": -40,
+    "min": 12,
+    "max": 13
+   }
   },
   {
    "id": "exit_n_reed_lake_0",
@@ -3041,9 +3068,16 @@
    "w": 4,
    "h": 1,
    "to": "reed_lake",
-   "to_x": 68,
-   "to_y": 35,
-   "direction": "up"
+   "to_x": 69,
+   "to_y": 36,
+   "direction": "up",
+   "along_offset": 40,
+   "land": {
+    "axis": "x",
+    "offset": 40,
+    "min": 68,
+    "max": 70
+   }
   },
   {
    "id": "exit_n_reed_lake_1",
@@ -3053,8 +3087,15 @@
    "h": 1,
    "to": "reed_lake",
    "to_x": 80,
-   "to_y": 35,
-   "direction": "up"
+   "to_y": 36,
+   "direction": "up",
+   "along_offset": 40,
+   "land": {
+    "axis": "x",
+    "offset": 40,
+    "min": 80,
+    "max": 80
+   }
   },
   {
    "id": "exit_s_language_houses_0",
@@ -3064,8 +3105,15 @@
    "h": 1,
    "to": "language_houses",
    "to_x": 9,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 8,
+    "max": 10
+   }
   },
   {
    "id": "exit_s_language_houses_1",
@@ -3076,7 +3124,14 @@
    "to": "language_houses",
    "to_x": 13,
    "to_y": 1,
-   "direction": "down"
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 12,
+    "max": 14
+   }
   },
   {
    "id": "exit_w_old_campus_0",
@@ -3085,9 +3140,16 @@
    "w": 1,
    "h": 2,
    "to": "old_campus",
-   "to_x": 116,
+   "to_x": 117,
    "to_y": 12,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 12,
+    "max": 13
+   }
   }
  ]
 }

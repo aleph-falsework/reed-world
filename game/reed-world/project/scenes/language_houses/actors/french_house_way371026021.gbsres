@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 1,
-  "id": "8bf6f359-f2a8-54ac-aa73-c12b14adb1a6",
+  "id": "999a33a3-bf6a-5de0-92ee-63531efc6c99",
   "symbol": "actor_way_371026021",
   "prefabId": "",
   "name": "French House",
-  "notes": "id: way/371026021",
+  "notes": "id: way/371026021 (door estimated)",
   "coordinateType": "tiles",
   "x": 38,
   "y": 39,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "74da5777-81f2-5c1f-9647-f561cd75567e"
+      "id": "056b1f75-4aa5-5d24-a069-67863b7af3fd"
     }
   ],
   "startScript": [],

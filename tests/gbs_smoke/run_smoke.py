@@ -151,11 +151,12 @@ def main(web=False):
         print(("PASS " if v else "FAIL ") + k)
     contact_sheet(shots, SCREENS / "contact_sheet.png")
 
-    result = {"build_seconds": round(build_secs, 1), "checks": checks, "screens": shots}
+    rel = lambda q: str(Path(q).resolve().relative_to(REPO))  # noqa: E731  (repo-relative: no machine paths)
+    result = {"build_seconds": round(build_secs, 1), "checks": checks, "screens": [rel(q) for q in shots]}
     if web:
         t0 = time.time()
         index = build_web(proj.parent, OUT / "web")
-        result["web_index"] = str(index)
+        result["web_index"] = rel(index)
         result["web_seconds"] = round(time.time() - t0, 1)
         print("web:", index)
     (HERE / "smoke_result.json").write_text(json.dumps(result, indent=1))

@@ -114,7 +114,7 @@ This is the blank-template settings with these fields changed: `startSceneId`, `
 
 `tools/gbs/setup_gbstudio.sh` reproduces everything (~3 min). The steps:
 
-1. `git clone --depth 1 --branch v4.3.2 https://github.com/chrismaltby/gb-studio /home/claude/gbs-src`, then `git submodule update --init` (pulls in gbvm).
+1. `git clone --depth 1 --branch v4.3.2 https://github.com/chrismaltby/gb-studio "$GBS_SRC"` (default `../gbs-src`, next to this repo), then `git submodule update --init` (pulls in gbvm).
 2. GBDK: `fetchDependencies.ts` downloads `gbdk-2020/releases/latest/download/gbdk-linux64.tar.gz` and checks it against `buildTools/dependencies.lock`. The script does the same with curl and `sha256sum -c`, and extracts into `buildTools/linux-x64/` (giving `buildTools/linux-x64/gbdk/bin/lcc`).
 3. `COREPACK_NPM_REGISTRY=https://registry.npmjs.org ELECTRON_SKIP_BINARY_DOWNLOAD=1 corepack yarn install --immutable`.
 4. `printf electron-not-installed > node_modules/electron/path.txt`. The CLI bundle does `require("electron")`; in plain Node that returns a path string, `electron.app` is undefined, and the CLI code guards for that.

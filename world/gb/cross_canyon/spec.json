@@ -8514,7 +8514,7 @@
    "id": "way/39516352",
    "name": "Naito Hall",
    "sprite": "signpost",
-   "x": 2,
+   "x": 6,
    "y": 55,
    "dialogue": [
     "NAITO HALL",
@@ -8548,9 +8548,16 @@
    "w": 1,
    "h": 2,
    "to": "reed_lake",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 30,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -70,
+   "land": {
+    "axis": "y",
+    "offset": -70,
+    "min": 30,
+    "max": 31
+   }
   },
   {
    "id": "exit_e_reed_lake_2",
@@ -8559,9 +8566,16 @@
    "w": 1,
    "h": 2,
    "to": "reed_lake",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 18,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -70,
+   "land": {
+    "axis": "y",
+    "offset": -70,
+    "min": 18,
+    "max": 23
+   }
   },
   {
    "id": "exit_s_old_campus_0",
@@ -8571,8 +8585,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 8,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 4,
+   "land": {
+    "axis": "x",
+    "offset": 4,
+    "min": 6,
+    "max": 10
+   }
   },
   {
    "id": "exit_s_old_campus_1",
@@ -8582,8 +8603,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 16,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 4,
+   "land": {
+    "axis": "x",
+    "offset": 4,
+    "min": 14,
+    "max": 18
+   }
   },
   {
    "id": "exit_s_old_campus_2",
@@ -8593,8 +8621,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 21,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 4,
+   "land": {
+    "axis": "x",
+    "offset": 4,
+    "min": 20,
+    "max": 22
+   }
   },
   {
    "id": "exit_s_old_campus_3",
@@ -8604,8 +8639,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 62,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 4,
+   "land": {
+    "axis": "x",
+    "offset": 4,
+    "min": 62,
+    "max": 62
+   }
   },
   {
    "id": "exit_w_the_grove_0",
@@ -8614,9 +8656,16 @@
    "w": 1,
    "h": 2,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 106,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 106,
+    "max": 106
+   }
   },
   {
    "id": "exit_w_the_grove_1",
@@ -8625,9 +8674,16 @@
    "w": 1,
    "h": 2,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 102,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 102,
+    "max": 103
+   }
   },
   {
    "id": "exit_w_the_grove_10",
@@ -8636,9 +8692,16 @@
    "w": 1,
    "h": 8,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 25,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 18,
+    "max": 33
+   }
   },
   {
    "id": "exit_w_the_grove_11",
@@ -8647,9 +8710,16 @@
    "w": 1,
    "h": 8,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 17,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 10,
+    "max": 25
+   }
   },
   {
    "id": "exit_w_the_grove_12",
@@ -8658,9 +8728,16 @@
    "w": 1,
    "h": 8,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 9,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 6,
+    "max": 17
+   }
   },
   {
    "id": "exit_w_the_grove_13",
@@ -8669,9 +8746,16 @@
    "w": 1,
    "h": 4,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 1,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 0,
+    "max": 3
+   }
   },
   {
    "id": "exit_w_the_grove_3",
@@ -8680,9 +8764,16 @@
    "w": 1,
    "h": 4,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 77,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 76,
+    "max": 77
+   }
   },
   {
    "id": "exit_w_the_grove_4",
@@ -8693,7 +8784,14 @@
    "to": "the_grove",
    "to_x": 81,
    "to_y": 69,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 68,
+    "max": 69
+   }
   },
   {
    "id": "exit_w_the_grove_5",
@@ -8702,9 +8800,16 @@
    "w": 1,
    "h": 2,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 64,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 64,
+    "max": 65
+   }
   },
   {
    "id": "exit_w_the_grove_6",
@@ -8713,9 +8818,16 @@
    "w": 1,
    "h": 6,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 56,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 54,
+    "max": 59
+   }
   },
   {
    "id": "exit_w_the_grove_7",
@@ -8724,9 +8836,16 @@
    "w": 1,
    "h": 6,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 48,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 42,
+    "max": 51
+   }
   },
   {
    "id": "exit_w_the_grove_8",
@@ -8735,9 +8854,16 @@
    "w": 1,
    "h": 2,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 42,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 40,
+    "max": 47
+   }
   },
   {
    "id": "exit_w_the_grove_9",
@@ -8746,9 +8872,16 @@
    "w": 1,
    "h": 8,
    "to": "the_grove",
-   "to_x": 80,
+   "to_x": 81,
    "to_y": 33,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 26,
+    "max": 37
+   }
   }
  ]
 }

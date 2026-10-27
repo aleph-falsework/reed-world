@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 8,
-  "id": "9e1c40a9-980e-53ec-8285-2343b984ee67",
+  "id": "4fee8aed-be2c-5485-babc-8f8f088c0f6b",
   "symbol": "trigger_science_quad_exit_w",
   "prefabId": "",
   "name": "exit_w_old_campus_0",
@@ -18,16 +18,31 @@
         "sceneId": "63329105-269c-5a55-b8f3-9553c4ac4c8c",
         "x": {
           "type": "number",
-          "value": 116
+          "value": 117
         },
         "y": {
-          "type": "number",
-          "value": 12
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "ypos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 13
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 12
+          }
         },
         "direction": "left",
         "fadeSpeed": "2"
       },
-      "id": "83496e13-61bc-5716-8679-58bfc1284fc2"
+      "id": "ba5d36af-1a3d-547e-bf60-14b32846ca83"
     }
   ],
   "leaveScript": []

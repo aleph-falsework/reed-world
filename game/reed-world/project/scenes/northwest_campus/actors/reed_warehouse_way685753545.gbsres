@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 8,
-  "id": "32c6b676-adf4-5511-8a0e-a2bbc730cccc",
+  "id": "9427e219-dcd2-5c53-aa58-305edf0af8f1",
   "symbol": "actor_way_685753545",
   "prefabId": "",
   "name": "Reed Warehouse",
-  "notes": "id: way/685753545",
+  "notes": "id: way/685753545 (door estimated)",
   "coordinateType": "tiles",
   "x": 2,
   "y": 55,
@@ -32,7 +32,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "b7020caf-4063-52b6-89b8-1974ea44d88f"
+      "id": "00e6d679-c60b-5857-96b2-487b5cd482ea"
     }
   ],
   "startScript": [],

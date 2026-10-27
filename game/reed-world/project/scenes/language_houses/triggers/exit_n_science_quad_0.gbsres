@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 7,
-  "id": "dd3a313e-6d5f-522c-89c8-fe02d01d7da4",
+  "id": "6b5421a9-be79-53f5-b9f5-690c8f6d8779",
   "symbol": "trigger_language_houses_exi_6",
   "prefabId": "",
   "name": "exit_n_science_quad_0",
@@ -17,17 +17,32 @@
       "args": {
         "sceneId": "b68055af-a12b-5ad0-bed2-acfd622bc4f7",
         "x": {
-          "type": "number",
-          "value": 8
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 10
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 8
+          }
         },
         "y": {
           "type": "number",
-          "value": 49
+          "value": 50
         },
         "direction": "up",
         "fadeSpeed": "2"
       },
-      "id": "55388cec-dee7-5a3f-b164-596ef3de646e"
+      "id": "09949747-2c04-5e0f-93c2-9cb612032f94"
     }
   ],
   "leaveScript": []

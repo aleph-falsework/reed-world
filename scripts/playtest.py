@@ -15,9 +15,17 @@ What it does
     that has one; cross every scene boundary at least once). Each tile step is driven closed-loop:
     hold the direction until RAM shows the player on the target tile, else record the step as
     stuck, block that edge in the model and re-plan from where RAM says the player is.
-  * Asserts after every warp that RAM shows the destination scene and landing tile, and after
+  * Asserts after every warp that RAM shows the destination scene and landing tile (exits land
+    proportionally: clamp(entry + offset, min, max), see `land` in scripts/gb_export.py), and after
     every A press that a text box is up (window layer raised, WY < 144) and later dismissed.
-  * Screenshots: first arrival in each scene, every signpost read; build/playtest/contact_sheet.png;
+  * Wall tests: in every scene, for each solid metatile class present (ROOF, FACADE, TREE, FOREST,
+    LONETREE, WATER, STEEP), walks to a reachable tile beside it, pushes into it 3 times and asserts in
+    RAM that the player did not move and faces the wall, then steps the other way as a positive
+    control. A ROM without collisions fails these.
+  * "info" rows (reachability %, unreachable exits, landing shift, untestable wall classes) are
+    reported separately and are not counted as passes or failures.
+  * Screenshots: first arrival in each scene, every signpost read, every wall push;
+    build/playtest/contact_sheet.png (+ _signs, _walls);
     build/playtest/RESULTS.md with pass/fail per check; build/playtest/results.json.
 """
 from __future__ import annotations
@@ -50,6 +58,35 @@ class Scene:
         self.actors = s["actors"]
         self.triggers = s["triggers"]
         self.blocked = set()  # (x, y, dir) found stuck in play
+        meta = REPO / "world/gb" / self.id / "meta.json"
+        self.mclass = json.loads(meta.read_text())["metatile_classes"] if meta.exists() else []
+
+    def cls_at(self, x, y):
+        my, mx = y // 2, x // 2
+        return self.mclass[my][mx] if 0 <= my < len(self.mclass) and 0 <= mx < len(self.mclass[my]) else None
+
+    def solid_at(self, x, y):
+        return 0 <= x < self.w and 0 <= y < self.h and bool(self.col[y][x])
+
+    def wall_spots(self, cls):
+        """(x, y, dir): standing at (x, y), a step `dir` pushes the player's box into solid tiles that are all
+        of metatile class `cls` (no signpost, not off-scene), and the opposite step is free (positive control)."""
+        out = []
+        for y in range(self.h):
+            for x in range(self.w - 1):
+                if not self.box_free(x, y) or self.trigger_at(x, y):
+                    continue
+                for d, (dx, dy) in DXY.items():
+                    nx, ny = x + dx, y + dy
+                    if not (0 <= nx <= self.w - 2 and 0 <= ny < self.h) or self.actor_at(nx, ny):
+                        continue
+                    hit = [(cx, ny) for cx in (nx, nx + 1) if self.solid_at(cx, ny)]
+                    if not hit or any(self.cls_at(cx, cy) != cls for cx, cy in hit):
+                        continue
+                    bx, by = x - dx, y - dy
+                    if self.box_free(bx, by) and not self.trigger_at(bx, by):
+                        out.append((x, y, d))
+        return out
 
     def box_free(self, x, y):
         if not (0 <= x <= self.w - 2 and 0 <= y < self.h):
@@ -70,6 +107,14 @@ class Scene:
                 return t
         return None
 
+    def landings(self, t):
+        """Every (x, y) trigger t can land the player on (see land in scripts/gb_export.py)."""
+        L = t.get("land")
+        if not L:
+            return [(t["to_x"], t["to_y"])]
+        rng = range(L["min"], L["max"] + 1)
+        return [(v, t["to_y"]) for v in rng] if L["axis"] == "x" else [(t["to_x"], v) for v in rng]
+
     def read_spots(self, a):
         """(x, y, facing) tiles from which A reads signpost `a` (player box shifted 8 px overlaps it)."""
         sx, sy = a["x"], a["y"]
@@ -82,6 +127,20 @@ class Scene:
             out.append((sx - 2, yy, "right"))
             out.append((sx + 2, yy, "left"))
         return [(x, y, d) for x, y, d in out if self.box_free(x, y) and not self.trigger_at(x, y)]
+
+
+def landing(t, x, y):
+    """Where trigger t drops a player whose box arrived at (x, y): GB Studio evaluates
+    clamp(player pos + offset, min, max) on the land axis (tools/gbs/project.py _landing)."""
+    L = t.get("land")
+    if not L:
+        return t["to_x"], t["to_y"]
+    v = min(max((x if L["axis"] == "x" else y) + L["offset"], L["min"]), L["max"])
+    return (v, t["to_y"]) if L["axis"] == "x" else (t["to_x"], v)
+
+
+SOLID_CLASSES = ("ROOF", "FACADE", "TREE", "FOREST", "LONETREE", "WATER", "STEEP")  # gb_export.py SOLID
+BACK = {"up": "down", "down": "up", "left": "right", "right": "left"}
 
 
 class World:
@@ -101,7 +160,7 @@ class World:
                 continue
             t = sc.trigger_at(nx, ny)
             if t:
-                yield d, (t["to"], t["to_x"], t["to_y"]), (t, (nx, ny))
+                yield d, (t["to"], *landing(t, nx, ny)), (t, (nx, ny))
             else:
                 yield d, (sid, nx, ny), None
 
@@ -236,6 +295,15 @@ class Game:
         self.settle()
         return self.scene() == target[0] and self.node() == target
 
+    def push(self, d, times=3):
+        """Press into a wall `times` times (holding long enough for a free step to complete)."""
+        for _ in range(times):
+            self.pb.button_press(d)
+            self.tick(24)
+            self.pb.button_release(d)
+            self.tick(4)
+        self.settle()
+
     def await_warp(self, dest, timeout=240):
         for _ in range(timeout):
             self.tick(1)
@@ -294,11 +362,16 @@ def main():
     for old in OUT.glob("*.png"):
         old.unlink()
     checks = []  # (group, name, ok, detail)
+    infos = []  # (group, name, detail): reported, never counted as a pass or a fail
 
     def check(group, name, ok, detail=""):
         checks.append((group, name, bool(ok), detail))
         print(("PASS " if ok else "FAIL ") + f"[{group}] {name}" + (f"  ({detail})" if detail else ""), flush=True)
         return ok
+
+    def info(group, name, detail):
+        infos.append((group, name, detail))
+        print(f"INFO [{group}] {name}  ({detail})", flush=True)
 
     # ---------------- static
     from tools.gbs import validate
@@ -322,8 +395,9 @@ def main():
     for sc in world.scenes.values():
         for t in sc.triggers:
             d = world.scenes[t["to"]]
-            if not d.box_free(t["to_x"], t["to_y"]) or d.trigger_at(t["to_x"], t["to_y"]):
-                bad_land.append(f"{sc.id}/{t['id']}")
+            for lx, ly in sc.landings(t):
+                if not d.box_free(lx, ly) or d.trigger_at(lx, ly):
+                    bad_land.append(f"{sc.id}/{t['id']}->({lx},{ly})")
     check("static", "every exit lands clear of collision and triggers", not bad_land, ", ".join(bad_land[:5]))
     seen, all_pairs = world.reachable(start)
     reach_sc = {n[0] for n in seen}
@@ -345,12 +419,11 @@ def main():
                 dead.append(f"{sc.id}/{t['id']}")
     # a dead exit pair is harmless (no one gets there); report it, but only fail on the stuck case:
     # a landing from which no exit of that scene can be reached by walking
-    check("static", "exit triggers reachable from the spawn (info: unreachable ones listed)", True,
-          ("unreachable: " + ", ".join(dead)) if dead else "all reachable")
+    info("static", "exit triggers unreachable from the spawn", ", ".join(dead) if dead else "none")
     trapped = []
     for sc in world.scenes.values():
-        for t in sc.triggers:
-            land = (t["to"], t["to_x"], t["to_y"])
+        for t, (lx, ly) in ((t, q) for t in sc.triggers for q in sc.landings(t)):
+            land = (t["to"], lx, ly)
             q, seen_l, out = deque([land]), {land}, False
             while q and not out:
                 n = q.popleft()
@@ -362,7 +435,7 @@ def main():
                         seen_l.add(m)
                         q.append(m)
             if not out:
-                trapped.append(f"{sc.id}/{t['id']}")
+                trapped.append(f"{sc.id}/{t['id']}->({lx},{ly})")
     check("static", "no exit lands the player where no exit can be walked to (stuck)", not trapped,
           ", ".join(trapped[:6]))
     walk_total = sum(sc.box_free(x, y) for sc in world.scenes.values() for y in range(sc.h) for x in range(sc.w - 1))
@@ -371,8 +444,20 @@ def main():
     for sid, sc in world.scenes.items():
         free = [(x, y) for y in range(sc.h) for x in range(sc.w - 1) if sc.box_free(x, y)]
         reach_pct[sid] = 100.0 * sum((sid, x, y) in seen for x, y in free) / max(1, len(free))
-    check("static", "open ground reachable per scene (info)", True,
-          ", ".join(f"{sid} {p:.0f}%" for sid, p in reach_pct.items()))
+    info("static", "open ground reachable per scene", ", ".join(f"{sid} {p:.0f}%" for sid, p in reach_pct.items()))
+    # sideways shift on crossing a border: landing vs the same world tile in the destination
+    snaps = []
+    for sc in world.scenes.values():
+        for t in sc.triggers:
+            along_x = t["land"]["axis"] == "x" if t.get("land") else t["h"] == 1
+            cells = range(t["x"] - 1, t["x"] + t["w"]) if along_x else range(t["y"], t["y"] + t["h"])
+            for e in cells:
+                lx, ly = landing(t, e, t["y"]) if along_x else landing(t, t["x"], e)
+                snaps.append((abs((lx if along_x else ly) - (e + t["along_offset"])), f"{sc.id}/{t['id']}@{e}"))
+    big = sorted((s_ for s_ in snaps if s_[0] > 1), reverse=True)
+    info("static", "exit landing sideways shift (tiles)",
+         f"max {max(s_[0] for s_ in snaps)}; {sum(s_[0] <= 1 for s_ in snaps)}/{len(snaps)} entry tiles shift <= 1; "
+         f"over 1: " + ", ".join(f"{n} by {k}" for k, n in big[:8]))
     print(f"reachable player positions: {walk_seen}/{walk_total}")
 
     # ---------------- play
@@ -381,6 +466,7 @@ def main():
     node = g.node()
     check("play", f"boot: player spawns in {start[0]} at ({start[1]},{start[2]})", node == start, f"RAM {node}")
     shots = {}
+    wall_shots = []
 
     def arrive(sid):
         if sid not in shots:
@@ -390,11 +476,30 @@ def main():
     # every signpost (a superset of "one per scene"), keyed (scene, actor index)
     sign_goals = {(sid, k) for sid, sc in world.scenes.items() for k in range(len(sc.actors))}
     pair_goals = set(all_pairs)
+    # wall tests: in every scene, one push into each solid metatile class present there, from a reachable tile
+    wall_goals, wall_spots = set(), {}
+    for sid, sc in world.scenes.items():
+        present = {c for row in sc.mclass for c in row}
+        for cls in SOLID_CLASSES:
+            if cls not in present:
+                continue
+            every = sc.wall_spots(cls)
+            spots = [q for q in every if (sid, q[0], q[1]) in seen]
+            if spots:
+                wall_goals.add((sid, cls))
+                wall_spots[(sid, cls)] = spots
+            elif every:
+                info("wall", f"{sid}: {cls} not tested", "open ground beside it is unreachable from the spawn")
+            else:
+                info("wall", f"{sid}: {cls} not tested", "no open tile beside it (FOREST interior is ringed by "
+                     "TREE; tested via TREE)" if cls == "FOREST" else "no open tile beside it with room to step back")
+    walls_done = set()
     signs_done, pairs_done = {}, set()
     stuck = []
     steps = 0
     budget_s = 1500
-    while (sign_goals - set(signs_done) or pair_goals - pairs_done) and time.time() - t0 < budget_s:
+    while (sign_goals - set(signs_done) or pair_goals - pairs_done or wall_goals - walls_done) \
+            and time.time() - t0 < budget_s:
         cur = g.node()
         want_sign = sign_goals - set(signs_done)
         want_pair = pair_goals - pairs_done
@@ -404,6 +509,9 @@ def main():
             a = sc.actors[k]
             for x, y, d in sc.read_spots(a):
                 targets.setdefault((sid, x, y), ((sid, k), a, d))
+        for key in wall_goals - walls_done:
+            for x, y, d in wall_spots[key]:
+                targets.setdefault((key[0], x, y), (key, None, d))
 
         def goal(m, pair):
             return m in targets or (pair is not None and frozenset(pair) in want_pair)
@@ -454,6 +562,28 @@ def main():
                 break
             continue
         cur = g.node()
+        if cur in targets and targets[cur][1] is None:   # wall test
+            key, _, d = targets[cur]
+            sid, cls = key
+            sc = world.scenes[sid]
+            dx, dy = DXY[d]
+            hit = sorted({sc.cls_at(cx, cur[2] + dy) for cx in (cur[1] + dx, cur[1] + dx + 1)
+                          if sc.solid_at(cx, cur[2] + dy)})
+            g.push(d)
+            after, facing = g.node(), g.player()[2]
+            walls_done.add(key)
+            shot = OUT / f"wall_{sid}_{cls.lower()}.png"
+            g.screenshot(shot)
+            wall_shots.append((f"{sid}: {cls} ({d})", shot))
+            check("wall", f"{sid}: pushing {d} into {cls} at ({cur[1]},{cur[2]}) does not move the player",
+                  after == cur and facing == d, f"RAM {after} facing {facing}; solid {hit}")
+            back = (sid, cur[1] - dx, cur[2] - dy)
+            moved = g.step(BACK[d], back)
+            check("wall", f"{sid}: control step {BACK[d]} away from {cls} moves the player", moved,
+                  f"RAM {g.node()}, expected {back}")
+            if not moved:
+                stuck.append((cur, BACK[d], "control", g.node()))
+            continue
         if cur in targets:
             key, a, d = targets[cur]
             g.face(d)
@@ -467,13 +597,13 @@ def main():
                   f"opened={opened} closed={closed} boxes={boxes}/{exp_boxes}")
     for sid, k in sorted(sign_goals - set(signs_done)):
         check("sign", f"{sid}: read '{world.scenes[sid].actors[k]['name']}'", False, "not reached")
-    for sid, sc in world.scenes.items():
-        if sc.actors:
-            check("sign", f"{sid}: at least one signpost read", any(k[0] == sid for k in signs_done))
     for pr in pair_goals - pairs_done:
         check("boundary", f"cross {' <-> '.join(sorted(pr))}", False, "not reached")
-    for sid in world.scenes:
-        check("screens", f"{sid}: screenshot", sid in shots)
+    for sid, cls in sorted(wall_goals - walls_done):
+        check("wall", f"{sid}: push into {cls}", False, "not reached")
+    missing = [sid for sid in world.scenes if sid not in shots]
+    if missing:
+        info("screens", "scenes never visited (no screenshot)", ", ".join(missing))
     check("play", "no stuck steps (RAM matched the planned tile at every step)", not stuck,
           "; ".join(f"{h} {d}->{got}" for h, d, _, got in stuck[:5]))
     g.stop()
@@ -483,6 +613,8 @@ def main():
     sign_sheet = [(f"{sid}: {name}", OUT / f) for (sid, _k), (name, f) in sorted(signs_done.items())]
     if sign_sheet:
         contact_sheet(sign_sheet, OUT / "contact_sheet_signs.png", scale=1, cols=8)
+    if wall_shots:
+        contact_sheet(wall_shots, OUT / "contact_sheet_walls.png", scale=1, cols=8)
 
     # ---------------- results
     n_pass = sum(c[2] for c in checks)
@@ -490,21 +622,27 @@ def main():
     lines = [
         "# Reed World playtest results", "",
         f"ROM `build/reed_world.gb`, spec `world/gb/project_spec.json`. Generated by `scripts/playtest.py`.", "",
-        f"**{n_pass} passed, {n_fail} failed** ({len(checks)} checks). {steps} tile steps, {g.frame} frames, "
+        f"**{n_pass} passed, {n_fail} failed** ({len(checks)} checks), plus {len(infos)} info rows that are "
+        f"reported but not counted. {steps} tile steps, {g.frame} frames, "
         f"{time.time() - t0:.0f} s. Reachable player positions: {walk_seen} of {walk_total} open ones.", "",
         "Screenshots: `scene_NN_<id>.png` (first arrival in each scene), `sign_<id>_<k>.png` (each dialogue), "
-        "`contact_sheet.png`, `contact_sheet_signs.png`.", "",
+        "`wall_<id>_<class>.png` (each wall push), `contact_sheet.png`, `contact_sheet_signs.png`, "
+        "`contact_sheet_walls.png`.", "",
         "| Group | Check | Result | Detail |", "|---|---|---|---|",
     ]
     for grp, name, ok, det in checks:
         lines.append(f"| {grp} | {name} | {'PASS' if ok else '**FAIL**'} | {det.replace('|', '/')} |")
+    lines += ["", "## Info (not counted)", "", "| Group | Item | Detail |", "|---|---|---|"]
+    lines += [f"| {grp} | {name} | {det.replace('|', '/')} |" for grp, name, det in infos]
     if stuck:
         lines += ["", "## Stuck steps", ""] + [f"- {h} pressing {d} ({k}); RAM then {got}" for h, d, k, got in stuck]
     (OUT / "RESULTS.md").write_text("\n".join(lines) + "\n")
     (OUT / "results.json").write_text(json.dumps(
-        {"pass": n_pass, "fail": n_fail, "checks": [dict(group=a, name=b, ok=c, detail=d) for a, b, c, d in checks],
+        {"pass": n_pass, "fail": n_fail, "info": len(infos),
+         "checks": [dict(group=a, name=b, ok=c, detail=d) for a, b, c, d in checks],
+         "infos": [dict(group=a, name=b, detail=c) for a, b, c in infos],
          "signs": {f"{k[0]}/{k[1]}": v for k, v in signs_done.items()}, "stuck": [list(map(str, s)) for s in stuck]}, indent=1))
-    print(f"\n{n_pass} passed, {n_fail} failed -> {OUT / 'RESULTS.md'}")
+    print(f"\n{n_pass} passed, {n_fail} failed, {len(infos)} info -> {(OUT / 'RESULTS.md').relative_to(REPO)}")
     return 0 if n_fail == 0 else 1
 
 

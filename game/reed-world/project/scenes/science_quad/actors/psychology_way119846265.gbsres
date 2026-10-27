@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 1,
-  "id": "d3e3a2bd-9d65-50a7-b89e-f931c66cc7df",
+  "id": "7951c7c3-792c-54ec-982a-0420091dce45",
   "symbol": "actor_way_119846265",
   "prefabId": "",
   "name": "Psychology",
-  "notes": "id: way/119846265",
+  "notes": "id: way/119846265 (door estimated, mounted on facade)",
   "coordinateType": "tiles",
   "x": 16,
   "y": 47,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "1f95be6e-b7cb-5f43-ad7c-09d971b5c809"
+      "id": "2cafc36b-b9a6-5b6a-8db1-ed07472b2a90"
     }
   ],
   "startScript": [],

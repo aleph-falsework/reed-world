@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 0,
-  "id": "d7e2803c-fc4b-57ab-bb20-77b2a698f6bf",
+  "id": "8d64f50e-07b5-5ac4-8961-4d8d9a2ed026",
   "symbol": "actor_way_371026025",
   "prefabId": "",
   "name": "Farm House",
-  "notes": "id: way/371026025",
+  "notes": "id: way/371026025 (door estimated)",
   "coordinateType": "tiles",
   "x": 32,
   "y": 99,
@@ -32,7 +32,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "88a9d3a5-b848-59f2-b754-e7e52037fbb6"
+      "id": "f403488d-6bcf-5523-8023-2ed5d4015a4e"
     }
   ],
   "startScript": [],

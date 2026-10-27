@@ -9,8 +9,9 @@ PKG_DIR = Path(__file__).resolve().parent
 REPO_ROOT = PKG_DIR.parents[1]
 TEMPLATE_DIR = PKG_DIR / "template"
 
-# Where the headless GB Studio build lives (see tools/gbs/setup_gbstudio.sh).
-DEFAULT_GBS_SRC = Path("/home/claude/gbs-src")
+# Where the headless GB Studio build lives (see tools/gbs/setup_gbstudio.sh): $GBS_SRC if set,
+# else a gbs-src/ folder next to this repo's checkout. tools/gbs/build.py reads $GBS_SRC at call time.
+DEFAULT_GBS_SRC = REPO_ROOT.parent / "gbs-src"
 
 # Project format written by GB Studio 4.3.2. The last migration in
 # src/lib/project/migration/migrateProjectResources.ts is 4.2.0 r9 -> r10,

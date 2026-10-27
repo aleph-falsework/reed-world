@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 3,
-  "id": "daaa004c-bbb6-5c4e-8588-f57a79d84d12",
+  "id": "a0ee554f-725d-5091-bc16-613854df2ee5",
   "symbol": "actor_way_126856902",
   "prefabId": "",
   "name": "McKinley Hall",
-  "notes": "id: way/126856902",
+  "notes": "id: way/126856902 (door estimated)",
   "coordinateType": "tiles",
   "x": 20,
   "y": 75,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "98f7daca-39c7-5c5e-bb85-9fa8276a1a45"
+      "id": "f19f32b1-0889-5d9d-ac91-2f539f4a0e7b"
     }
   ],
   "startScript": [],

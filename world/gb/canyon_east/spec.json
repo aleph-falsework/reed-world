@@ -4374,7 +4374,20 @@
    0
   ]
  ],
- "actors": [],
+ "actors": [
+  {
+   "id": "way/787034614",
+   "name": "Reed Canyon",
+   "sprite": "signpost",
+   "x": 18,
+   "y": 23,
+   "dialogue": [
+    "REED CANYON",
+    "Reed College's",
+    "canyon."
+   ]
+  }
+ ],
  "triggers": [
   {
    "id": "exit_s_studio_arts_0",
@@ -4385,7 +4398,14 @@
    "to": "studio_arts",
    "to_x": 29,
    "to_y": 1,
-   "direction": "down"
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 28,
+    "max": 30
+   }
   },
   {
    "id": "exit_s_studio_arts_1",
@@ -4396,7 +4416,14 @@
    "to": "studio_arts",
    "to_x": 34,
    "to_y": 1,
-   "direction": "down"
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 34,
+    "max": 34
+   }
   },
   {
    "id": "exit_s_studio_arts_2",
@@ -4406,8 +4433,15 @@
    "h": 1,
    "to": "studio_arts",
    "to_x": 40,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 40,
+    "max": 40
+   }
   },
   {
    "id": "exit_s_studio_arts_3",
@@ -4417,8 +4451,15 @@
    "h": 1,
    "to": "studio_arts",
    "to_x": 50,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 48,
+    "max": 52
+   }
   },
   {
    "id": "exit_w_reed_lake_0",
@@ -4427,9 +4468,16 @@
    "w": 1,
    "h": 2,
    "to": "reed_lake",
-   "to_x": 90,
+   "to_x": 91,
    "to_y": 12,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 12,
+    "max": 13
+   }
   },
   {
    "id": "exit_w_science_quad_0",
@@ -4440,7 +4488,14 @@
    "to": "science_quad",
    "to_x": 51,
    "to_y": 27,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -38,
+   "land": {
+    "axis": "y",
+    "offset": -38,
+    "min": 26,
+    "max": 27
+   }
   },
   {
    "id": "exit_w_science_quad_1",
@@ -4449,9 +4504,16 @@
    "w": 1,
    "h": 2,
    "to": "science_quad",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 18,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -38,
+   "land": {
+    "axis": "y",
+    "offset": -38,
+    "min": 18,
+    "max": 19
+   }
   },
   {
    "id": "exit_w_science_quad_3",
@@ -4460,9 +4522,16 @@
    "w": 1,
    "h": 2,
    "to": "science_quad",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 4,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -38,
+   "land": {
+    "axis": "y",
+    "offset": -38,
+    "min": 4,
+    "max": 5
+   }
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
   "_resourceType": "actor",
   "_index": 3,
-  "id": "d984fd18-f655-58f4-a7f1-b239b265ceb3",
+  "id": "44f2b798-f211-5734-aef5-54046091b970",
   "symbol": "actor_way_302430449",
   "prefabId": "",
   "name": "Physics",
@@ -32,7 +32,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "ccb9a63e-251f-5b9e-af64-82cd896b709f"
+      "id": "0ac8d8a1-440a-5d97-98f5-85e2a141bd8b"
     }
   ],
   "startScript": [],

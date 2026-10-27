@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 4,
-  "id": "44f2b798-f211-5734-aef5-54046091b970",
+  "id": "6f7b1a13-f5df-5348-a504-3ef4b82f0d60",
   "symbol": "actor_way_142983685",
   "prefabId": "",
   "name": "Chemistry",
-  "notes": "id: way/142983685",
+  "notes": "id: way/142983685 (door estimated)",
   "coordinateType": "tiles",
   "x": 14,
   "y": 29,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "0ac8d8a1-440a-5d97-98f5-85e2a141bd8b"
+      "id": "79a694a0-164e-5b97-b087-29159228a895"
     }
   ],
   "startScript": [],

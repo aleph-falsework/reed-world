@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 5,
-  "id": "e025c0fe-73d4-5c09-890f-df15665881c0",
+  "id": "5da4e2a4-a0e3-5574-941b-53d3ac625ad8",
   "symbol": "actor_way_371026022",
   "prefabId": "",
   "name": "Russian House",
-  "notes": "id: way/371026022",
+  "notes": "id: way/371026022 (door estimated)",
   "coordinateType": "tiles",
   "x": 20,
   "y": 27,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "45baaded-7392-580b-b9b4-413693b9405d"
+      "id": "b41b7501-9620-5157-9df5-4deed684ab81"
     }
   ],
   "startScript": [],

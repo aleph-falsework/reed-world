@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 2,
-  "id": "7951c7c3-792c-54ec-982a-0420091dce45",
+  "id": "d984fd18-f655-58f4-a7f1-b239b265ceb3",
   "symbol": "actor_way_119846263",
   "prefabId": "",
   "name": "Reed Research Reactor",
-  "notes": "id: way/119846263",
+  "notes": "id: way/119846263 (door estimated)",
   "coordinateType": "tiles",
   "x": 28,
   "y": 37,
@@ -32,7 +32,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "2cafc36b-b9a6-5b6a-8db1-ed07472b2a90"
+      "id": "ccb9a63e-251f-5b9e-af64-82cd896b709f"
     }
   ],
   "startScript": [],

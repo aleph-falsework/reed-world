@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
-  "_index": 14,
-  "id": "f231ba0c-8dd1-5745-9215-24b7dfd46e50",
+  "_index": 17,
+  "id": "feda93ac-5fad-5505-88a9-f1b32daae227",
   "symbol": "trigger_the_grove_exit_s_pe",
   "prefabId": "",
   "name": "exit_s_performing_arts_0",
@@ -17,17 +17,32 @@
       "args": {
         "sceneId": "faf74918-57c1-5863-8d5c-49dfd8d9d083",
         "x": {
-          "type": "number",
-          "value": 30
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 30
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 30
+          }
         },
         "y": {
           "type": "number",
-          "value": 2
+          "value": 1
         },
         "direction": "down",
         "fadeSpeed": "2"
       },
-      "id": "94edf579-6c07-53f9-a203-b268c595f3bb"
+      "id": "7f711b0e-0b00-545e-97e2-078f79e5cc9c"
     }
   ],
   "leaveScript": []

@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 2,
-  "id": "0b5ccc2e-0e7a-5548-8afc-9908d1176359",
+  "id": "d6c8a35d-360d-57a5-bc4f-55b963a7d212",
   "symbol": "actor_way_126856904",
   "prefabId": "",
   "name": "Woodbridge Hall",
-  "notes": "id: way/126856904",
+  "notes": "id: way/126856904 (door estimated)",
   "coordinateType": "tiles",
   "x": 20,
   "y": 81,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "e296ec6e-2411-57a5-a768-de71bf39fbfb"
+      "id": "d279262c-3883-5fa6-9de9-c7533b3c60b5"
     }
   ],
   "startScript": [],

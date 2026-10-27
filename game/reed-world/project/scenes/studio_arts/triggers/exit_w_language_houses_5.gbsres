@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 8,
-  "id": "cdcf5c1c-a21b-5473-b42e-e2ad53015360",
+  "id": "1a92a143-354b-56bd-a6b2-2fd400117b19",
   "symbol": "trigger_studio_arts_exit_w__3",
   "prefabId": "",
   "name": "exit_w_language_houses_5",
@@ -18,16 +18,38 @@
         "sceneId": "508a97d7-6e18-5029-8ea6-f05b6175b5d9",
         "x": {
           "type": "number",
-          "value": 50
+          "value": 51
         },
         "y": {
-          "type": "number",
-          "value": 8
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": -12
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 9
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 8
+          }
         },
         "direction": "left",
         "fadeSpeed": "2"
       },
-      "id": "bee83437-1891-5bf6-bdba-184d638e3767"
+      "id": "9f776d77-ba3d-542b-8508-b72b3514483f"
     }
   ],
   "leaveScript": []

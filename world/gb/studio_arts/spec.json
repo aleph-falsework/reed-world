@@ -3714,7 +3714,9 @@
     "DOROTHY JOHANSEN",
     "HOUSE",
     "Former home of",
-    "alumna."
+    "history professor",
+    "Johansen; now",
+    "academic support."
    ],
    "door_estimated": true
   },
@@ -3756,7 +3758,14 @@
    "to": "canyon_east",
    "to_x": 29,
    "to_y": 76,
-   "direction": "up"
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 28,
+    "max": 30
+   }
   },
   {
    "id": "exit_n_canyon_east_1",
@@ -3767,7 +3776,14 @@
    "to": "canyon_east",
    "to_x": 34,
    "to_y": 76,
-   "direction": "up"
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 34,
+    "max": 34
+   }
   },
   {
    "id": "exit_n_canyon_east_2",
@@ -3777,8 +3793,15 @@
    "h": 1,
    "to": "canyon_east",
    "to_x": 40,
-   "to_y": 75,
-   "direction": "up"
+   "to_y": 76,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 40,
+    "max": 40
+   }
   },
   {
    "id": "exit_n_canyon_east_3",
@@ -3788,8 +3811,15 @@
    "h": 1,
    "to": "canyon_east",
    "to_x": 50,
-   "to_y": 75,
-   "direction": "up"
+   "to_y": 76,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 48,
+    "max": 52
+   }
   },
   {
    "id": "exit_w_language_houses_0",
@@ -3798,9 +3828,16 @@
    "w": 1,
    "h": 6,
    "to": "language_houses",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 48,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -12,
+   "land": {
+    "axis": "y",
+    "offset": -12,
+    "min": 42,
+    "max": 49
+   }
   },
   {
    "id": "exit_w_language_houses_1",
@@ -3809,9 +3846,16 @@
    "w": 1,
    "h": 4,
    "to": "language_houses",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 43,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -12,
+   "land": {
+    "axis": "y",
+    "offset": -12,
+    "min": 42,
+    "max": 49
+   }
   },
   {
    "id": "exit_w_language_houses_3",
@@ -3820,9 +3864,16 @@
    "w": 1,
    "h": 2,
    "to": "language_houses",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 20,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -12,
+   "land": {
+    "axis": "y",
+    "offset": -12,
+    "min": 20,
+    "max": 23
+   }
   },
   {
    "id": "exit_w_language_houses_4",
@@ -3831,9 +3882,16 @@
    "w": 1,
    "h": 2,
    "to": "language_houses",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 14,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -12,
+   "land": {
+    "axis": "y",
+    "offset": -12,
+    "min": 14,
+    "max": 15
+   }
   },
   {
    "id": "exit_w_language_houses_5",
@@ -3842,9 +3900,16 @@
    "w": 1,
    "h": 2,
    "to": "language_houses",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 8,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -12,
+   "land": {
+    "axis": "y",
+    "offset": -12,
+    "min": 8,
+    "max": 9
+   }
   },
   {
    "id": "exit_w_language_houses_6",
@@ -3853,9 +3918,16 @@
    "w": 1,
    "h": 2,
    "to": "language_houses",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 4,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -12,
+   "land": {
+    "axis": "y",
+    "offset": -12,
+    "min": 4,
+    "max": 5
+   }
   },
   {
    "id": "exit_w_language_houses_7",
@@ -3864,9 +3936,16 @@
    "w": 1,
    "h": 2,
    "to": "language_houses",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 0,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -12,
+   "land": {
+    "axis": "y",
+    "offset": -12,
+    "min": 0,
+    "max": 1
+   }
   },
   {
    "id": "exit_w_science_quad_0",
@@ -3875,9 +3954,16 @@
    "w": 1,
    "h": 4,
    "to": "science_quad",
-   "to_x": 50,
+   "to_x": 51,
    "to_y": 47,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 40,
+   "land": {
+    "axis": "y",
+    "offset": 40,
+    "min": 44,
+    "max": 47
+   }
   }
  ]
 }

@@ -21,8 +21,30 @@
           "value": 1
         },
         "y": {
-          "type": "number",
-          "value": 48
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": 18
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 49
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 48
+          }
         },
         "direction": "right",
         "fadeSpeed": "2"

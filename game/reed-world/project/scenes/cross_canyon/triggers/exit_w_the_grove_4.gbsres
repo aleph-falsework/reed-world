@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 13,
-  "id": "b6e5597b-d949-508c-baa7-3bd53436a11d",
+  "id": "802f0158-e369-5c8f-bff4-1c9776554a4b",
   "symbol": "trigger_cross_canyon_exit_w_6",
   "prefabId": "",
   "name": "exit_w_the_grove_4",
@@ -21,13 +21,28 @@
           "value": 81
         },
         "y": {
-          "type": "number",
-          "value": 69
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "ypos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 69
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 68
+          }
         },
         "direction": "left",
         "fadeSpeed": "2"
       },
-      "id": "50210b90-da9e-5389-93a2-69b5599bd5fd"
+      "id": "ffaad475-a8e2-5e99-9bc2-d36fae32fc43"
     }
   ],
   "leaveScript": []

@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 7,
-  "id": "2477f544-f459-54d0-9b61-d7d16eae420e",
+  "id": "fd287add-73be-5fba-905b-7a71259ebae9",
   "symbol": "actor_way_142983673",
   "prefabId": "",
   "name": "28 West",
-  "notes": "id: way/142983673",
+  "notes": "id: way/142983673 (door estimated)",
   "coordinateType": "tiles",
   "x": 40,
   "y": 61,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "42b54318-232d-5e89-a825-bbe7c848ff3c"
+      "id": "7da4287a-2e50-57ce-be3f-d53c51e81c9a"
     }
   ],
   "startScript": [],

@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 0,
-  "id": "8833c6c2-3835-57bf-b81e-4381c58f78ff",
+  "id": "c03516bd-17bd-55f6-9e91-3ee3872dae2c",
   "symbol": "actor_way_367893606",
   "prefabId": "",
   "name": "Dorothy Johansen House",
-  "notes": "id: way/367893606",
+  "notes": "id: way/367893606 (door estimated, mounted on facade)",
   "coordinateType": "tiles",
   "x": 20,
   "y": 41,
@@ -27,13 +27,13 @@
       "args": {
         "text": [
           "DOROTHY JOHANSEN\nHOUSE\nFormer home of",
-          "alumna."
+          "history professor\nJohansen; now\nacademic support."
         ],
         "avatarId": "",
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "3e7d9932-03e5-5eee-aafe-fd3f3f780334"
+      "id": "7b1cdf51-479e-591b-be6a-c689a9bc46af"
     }
   ],
   "startScript": [],

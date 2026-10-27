@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 1,
-  "id": "f1a80d61-c537-5b29-a303-1bcfe862490a",
+  "id": "42d0e30a-e818-52b7-80bd-5aa6b34f1012",
   "symbol": "actor_way_126856906",
   "prefabId": "",
   "name": "Bragdon Hall",
-  "notes": "id: way/126856906",
+  "notes": "id: way/126856906 (door estimated)",
   "coordinateType": "tiles",
   "x": 60,
   "y": 95,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "933d7e9c-aa25-5e5f-a888-012f608f63dd"
+      "id": "d6c32664-266e-5d1a-b584-684a1fd9a944"
     }
   ],
   "startScript": [],

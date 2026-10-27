@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 11,
-  "id": "de77d919-1c38-52da-a766-65d7202b742c",
+  "id": "bd11d86d-e296-5cea-8899-1233d8afb4c1",
   "symbol": "trigger_studio_arts_exit_w__6",
   "prefabId": "",
   "name": "exit_w_science_quad_0",
@@ -18,16 +18,38 @@
         "sceneId": "b68055af-a12b-5ad0-bed2-acfd622bc4f7",
         "x": {
           "type": "number",
-          "value": 50
+          "value": 51
         },
         "y": {
-          "type": "number",
-          "value": 47
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": 40
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 47
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 44
+          }
         },
         "direction": "left",
         "fadeSpeed": "2"
       },
-      "id": "ba173192-68ad-5ce6-bff1-ba99a8cebd0a"
+      "id": "06fcb2f7-53fa-5166-afa0-45aeff532e7b"
     }
   ],
   "leaveScript": []

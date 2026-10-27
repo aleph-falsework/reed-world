@@ -5,9 +5,10 @@
 # Takes ~3 minutes on a fresh machine. Needs node 22, corepack, git, curl, tar.
 set -euo pipefail
 
-GBS_SRC="${GBS_SRC:-/home/claude/gbs-src}"
-GBS_TAG="v4.3.2"
 HERE="$(cd "$(dirname "$0")" && pwd)"
+# Default: gbs-src/ next to this repo's checkout (same default as tools/gbs/constants.py).
+GBS_SRC="${GBS_SRC:-$(cd "$HERE/../../.." && pwd)/gbs-src}"
+GBS_TAG="v4.3.2"
 # sha256 of gbdk-linux64.tar.gz pinned in GB Studio 4.3.2's buildTools/dependencies.lock
 GBDK_SHA256="d7857a5f6d135ee4c249043ca26aad9f2ec8ab5d4106d97720d404114f42605c"
 

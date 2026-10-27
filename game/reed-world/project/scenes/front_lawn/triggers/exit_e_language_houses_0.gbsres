@@ -9,7 +9,7 @@
   "x": 119,
   "y": 52,
   "width": 1,
-  "height": 6,
+  "height": 2,
   "prefabScriptOverrides": {},
   "script": [
     {
@@ -21,8 +21,30 @@
           "value": 1
         },
         "y": {
-          "type": "number",
-          "value": 43
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": -8
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 43
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 40
+          }
         },
         "direction": "right",
         "fadeSpeed": "2"

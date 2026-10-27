@@ -1,13 +1,13 @@
 {
   "_resourceType": "actor",
   "_index": 5,
-  "id": "d6c8a35d-360d-57a5-bc4f-55b963a7d212",
+  "id": "e20b9749-00f3-576e-bb56-5e9ab284a9fb",
   "symbol": "actor_way_39516352",
   "prefabId": "",
   "name": "Naito Hall",
-  "notes": "id: way/39516352",
+  "notes": "id: way/39516352 (door estimated)",
   "coordinateType": "tiles",
-  "x": 2,
+  "x": 6,
   "y": 55,
   "frame": 0,
   "animate": false,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "d279262c-3883-5fa6-9de9-c7533b3c60b5"
+      "id": "45d47f36-eb0e-5d78-8e0b-1b48893a0743"
     }
   ],
   "startScript": [],

@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 3,
-  "id": "01ac7564-c47f-5041-b099-48f946c6b7ed",
+  "id": "274b949f-d3ee-5709-b105-64eef16f67f4",
   "symbol": "actor_way_119843567",
   "prefabId": "",
   "name": "Greywood Hall",
-  "notes": "id: way/119843567",
+  "notes": "id: way/119843567 (door estimated)",
   "coordinateType": "tiles",
   "x": 4,
   "y": 33,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "636f0011-156a-5a69-bde1-d66fff7ecbfa"
+      "id": "d1e6d89b-e944-5055-a87e-7971a3a3a0fb"
     }
   ],
   "startScript": [],

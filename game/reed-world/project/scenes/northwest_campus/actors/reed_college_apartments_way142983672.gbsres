@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 5,
-  "id": "19c4ab09-ef17-525c-ac82-a3446dad54ba",
+  "id": "a0d53ea1-6dc6-59a9-bfd9-315d39d57b50",
   "symbol": "actor_way_142983672",
   "prefabId": "",
   "name": "Reed College Apartments",
-  "notes": "id: way/142983672",
+  "notes": "id: way/142983672 (door estimated)",
   "coordinateType": "tiles",
   "x": 58,
   "y": 77,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "e5fd4e03-97e7-5347-8490-f0fed95e28bb"
+      "id": "bb8e8bea-88ba-5a90-bafc-e2a501e1f8f4"
     }
   ],
   "startScript": [],

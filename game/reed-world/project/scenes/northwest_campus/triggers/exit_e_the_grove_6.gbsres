@@ -1,8 +1,8 @@
 {
   "_resourceType": "trigger",
-  "_index": 6,
-  "id": "94835247-105b-546a-92ac-1596e18a28e7",
-  "symbol": "trigger_northwest_exit_e_th_5",
+  "_index": 8,
+  "id": "7dc1a9dd-4cd5-5133-92b9-7429e48d2936",
+  "symbol": "trigger_northwest_exit_e_th_7",
   "prefabId": "",
   "name": "exit_e_the_grove_6",
   "notes": "id: exit_e_the_grove_6 -> the_grove",
@@ -18,16 +18,31 @@
         "sceneId": "f02b12d1-8de8-5e52-a97e-55b8b3760346",
         "x": {
           "type": "number",
-          "value": 2
+          "value": 1
         },
         "y": {
-          "type": "number",
-          "value": 1
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "ypos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 3
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
         },
         "direction": "right",
         "fadeSpeed": "2"
       },
-      "id": "98a0bdbd-afec-5531-bc84-87c6660add57"
+      "id": "40c82aae-90c9-5390-9669-9f13f0df7b27"
     }
   ],
   "leaveScript": []

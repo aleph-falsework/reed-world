@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 """One command for the whole Reed World chain.
 
-    python3 scripts/build_game.py            # art -> export -> validate -> project -> check -> ROM -> web
-    python3 scripts/build_game.py --no-web   # skip the HTML5 export
-    python3 scripts/build_game.py --skip-art --skip-export   # reuse art/ and world/gb/
-    python3 scripts/build_game.py --playtest # also run scripts/playtest.py at the end
+    python3 scripts/build_game.py               # export -> validate -> project -> check -> ROM -> web (uses art/ as is)
+    python3 scripts/build_game.py --regen-art   # also redraw every art/ PNG with art/make_art.py (overwrites hand edits)
+    python3 scripts/build_game.py --skip-export # reuse world/gb/
+    python3 scripts/build_game.py --no-web      # skip the HTML5 export
+    python3 scripts/build_game.py --sync-game   # also replace game/reed-world/ (old copy backed up first)
+    python3 scripts/build_game.py --playtest    # also run scripts/playtest.py at the end
 
 Outputs:
-    game/reed-world/      the GB Studio 4.3.2 project (open Reed World.gbsproj in the app)
+    build/gbs-project/    the generated GB Studio 4.3.2 project, overwritten on every run; the ROM and web
+                          build are made from it
+    game/reed-world/      the hand-owned copy to open and edit in GB Studio. Created from build/gbs-project/
+                          only if it does not exist; --sync-game replaces it after moving the old one to
+                          game/reed-world.bak-<timestamp>/. A normal run never touches it.
     build/reed_world.gb   the ROM (+ .sym/.map/.noi/.build.log)
     build/web/            the HTML5 export (index.html)
     build/build_log.json  timings and the validate summary
@@ -28,7 +34,8 @@ sys.path.insert(0, str(REPO))
 from tools.gbs import build_rom, build_web, check_project, make_project, validate  # noqa: E402
 
 SPEC = REPO / "world/gb/project_spec.json"
-PROJECT = REPO / "game/reed-world"
+PROJECT = REPO / "build/gbs-project"   # generated, overwritten freely
+GAME = REPO / "game/reed-world"         # hand-owned copy (see --sync-game)
 BUILD = REPO / "build"
 ROM = BUILD / "reed_world.gb"
 WEB = BUILD / "web"
@@ -57,7 +64,10 @@ def run_py(script, log):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--skip-art", action="store_true")
+    ap.add_argument("--regen-art", action="store_true", help="redraw art/ with art/make_art.py (overwrites art/ PNGs)")
+    ap.add_argument("--skip-art", action="store_true", help=argparse.SUPPRESS)  # the default now; kept for old commands
+    ap.add_argument("--sync-game", action="store_true",
+                    help="replace game/reed-world/ with the new project (the old copy is backed up first)")
     ap.add_argument("--skip-export", action="store_true")
     ap.add_argument("--no-web", action="store_true")
     ap.add_argument("--playtest", action="store_true")
@@ -65,7 +75,7 @@ def main():
     BUILD.mkdir(exist_ok=True)
     log: list = []
 
-    if not a.skip_art:
+    if a.regen_art:
         step("art: art/make_art.py", log)
         run_py("art/make_art.py", log)
         done(log)
@@ -93,7 +103,7 @@ def main():
     over = [sid for sid, s in summary.items() if (s["unique_tiles"] or 0) > 180]
     done(log, ok=True, warnings=rep["warnings"], scenes=summary, over_180=over)
 
-    step("make_project -> game/reed-world", log)
+    step("make_project -> build/gbs-project", log)
     if PROJECT.exists():
         shutil.rmtree(PROJECT)  # stale scenes/actors from older exports would otherwise linger
     proj = make_project(spec, PROJECT, REPO, seed=SEED)
@@ -106,6 +116,18 @@ def main():
         print(json.dumps(chk, indent=1)[:4000])
         raise SystemExit("check_project failed")
     done(log, ok=True, **{k: chk[k] for k in ("isMigrated",) if k in chk})
+
+    if a.sync_game or not GAME.exists():
+        step("copy -> game/reed-world", log)
+        backup = None
+        if GAME.exists():
+            backup = GAME.with_name(f"{GAME.name}.bak-{time.strftime('%Y%m%d-%H%M%S')}")
+            GAME.rename(backup)
+            print("    backed up the old copy to", backup.relative_to(REPO))
+        shutil.copytree(PROJECT, GAME, ignore=shutil.ignore_patterns("build"))
+        done(log, backup=str(backup.relative_to(REPO)) if backup else None)
+    else:
+        print("== game/reed-world exists: left as is (hand-owned; --sync-game replaces it, with a backup)")
 
     step("build_rom -> build/reed_world.gb", log)
     rom = build_rom(PROJECT, ROM)

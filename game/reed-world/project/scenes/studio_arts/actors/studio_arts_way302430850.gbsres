@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 2,
-  "id": "d92991be-6faf-5a8a-bf31-930507cb7963",
+  "id": "3d386b3b-59f5-56ed-9424-b30351b67bd4",
   "symbol": "actor_way_302430850",
   "prefabId": "",
   "name": "Studio Arts",
-  "notes": "id: way/302430850",
+  "notes": "id: way/302430850 (door estimated)",
   "coordinateType": "tiles",
   "x": 12,
   "y": 13,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "de110534-cd09-56cb-bd03-cff4c78731c3"
+      "id": "18bffbce-98e9-58cc-82b8-c6befb5c4390"
     }
   ],
   "startScript": [],

@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 1,
-  "id": "cddba808-ae92-5b0f-9181-d8898a36e3b8",
+  "id": "4d6b71f0-c6d0-536e-a5ae-996b7891c09f",
   "symbol": "trigger_studio_arts_exit_n__0",
   "prefabId": "",
   "name": "exit_n_canyon_east_1",
@@ -17,8 +17,23 @@
       "args": {
         "sceneId": "a561454c-2d94-5fc7-9df4-e2a578b04e60",
         "x": {
-          "type": "number",
-          "value": 34
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 34
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 34
+          }
         },
         "y": {
           "type": "number",
@@ -27,7 +42,7 @@
         "direction": "up",
         "fadeSpeed": "2"
       },
-      "id": "4e0678f6-2a2f-5375-9831-39ce3dbb4449"
+      "id": "d4595174-99a2-54b9-940a-e6176f8d4a8d"
     }
   ],
   "leaveScript": []

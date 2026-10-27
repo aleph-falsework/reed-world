@@ -44,7 +44,7 @@
       "sprite_tiles": 12,
       "sprite_tile_budget": 96,
       "actors": 5,
-      "triggers": 19,
+      "triggers": 20,
       "max_actors": 20
     },
     "science_quad": {
@@ -85,9 +85,9 @@
       "image_height": 624,
       "unique_tiles": 79,
       "unique_tiles_with_flips": 78,
-      "sprite_tiles": 10,
+      "sprite_tiles": 12,
       "sprite_tile_budget": 96,
-      "actors": 0,
+      "actors": 1,
       "triggers": 8,
       "max_actors": 20
     },
@@ -96,9 +96,9 @@
       "image_height": 304,
       "unique_tiles": 88,
       "unique_tiles_with_flips": 87,
-      "sprite_tiles": 10,
+      "sprite_tiles": 12,
       "sprite_tile_budget": 96,
-      "actors": 0,
+      "actors": 1,
       "triggers": 5,
       "max_actors": 20
     },
@@ -121,7 +121,7 @@
       "sprite_tiles": 12,
       "sprite_tile_budget": 96,
       "actors": 7,
-      "triggers": 25,
+      "triggers": 28,
       "max_actors": 20
     },
     "northwest": {
@@ -132,7 +132,7 @@
       "sprite_tiles": 12,
       "sprite_tile_budget": 96,
       "actors": 11,
-      "triggers": 7,
+      "triggers": 9,
       "max_actors": 20
     }
   }

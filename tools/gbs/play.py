@@ -19,6 +19,7 @@ that want to assert on state between steps.
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 BUTTONS = {"up", "down", "left", "right", "a", "b", "start", "select"}
@@ -141,7 +142,8 @@ def run_steps(runner: GBRunner, inputs, out_dir, scale=1, log=None):
             path = runner.screenshot(Path(out_dir) / f"{arg}.png", scale)
             shots.append(path)
             if log is not None:
-                log.append({"name": arg, "path": path, **runner.state()})
+                # relative to out_dir (where play_log.json is written), so logs carry no machine paths
+                log.append({"name": arg, "path": os.path.relpath(path, out_dir), **runner.state()})
         else:
             raise ValueError(f"unknown input step {step!r}")
     return shots

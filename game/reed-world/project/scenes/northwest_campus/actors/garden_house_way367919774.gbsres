@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 1,
-  "id": "994d57fd-b822-5706-8f18-0abc81dbc81c",
+  "id": "2477f544-f459-54d0-9b61-d7d16eae420e",
   "symbol": "actor_way_367919774",
   "prefabId": "",
   "name": "Garden House",
-  "notes": "id: way/367919774",
+  "notes": "id: way/367919774 (door estimated)",
   "coordinateType": "tiles",
   "x": 42,
   "y": 85,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "4709710e-f2a1-551c-a9d7-1e88dde46cab"
+      "id": "42b54318-232d-5e89-a825-bbe7c848ff3c"
     }
   ],
   "startScript": [],

@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 6,
-  "id": "5da4e2a4-a0e3-5574-941b-53d3ac625ad8",
+  "id": "27e6d58b-4bff-5378-846d-9400be5cd4c6",
   "symbol": "actor_way_119843572",
   "prefabId": "",
   "name": "Educational Technology Center",
-  "notes": "id: way/119843572",
+  "notes": "id: way/119843572 (door estimated)",
   "coordinateType": "tiles",
   "x": 10,
   "y": 23,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "b41b7501-9620-5157-9df5-4deed684ab81"
+      "id": "3c1e211e-35d0-5f00-bd57-f3904259397b"
     }
   ],
   "startScript": [],

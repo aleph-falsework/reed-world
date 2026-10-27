@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 0,
-  "id": "6807a2ac-76da-5756-8fd2-86f359046441",
+  "id": "daaa004c-bbb6-5c4e-8588-f57a79d84d12",
   "symbol": "actor_way_126856903",
   "prefabId": "",
   "name": "Chittick",
-  "notes": "id: way/126856903",
+  "notes": "id: way/126856903 (door estimated)",
   "coordinateType": "tiles",
   "x": 36,
   "y": 93,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "acfbe800-6a0b-53de-b2a3-4060f4f526a5"
+      "id": "98f7daca-39c7-5c5e-bb85-9fa8276a1a45"
     }
   ],
   "startScript": [],

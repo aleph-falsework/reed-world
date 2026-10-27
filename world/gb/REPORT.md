@@ -9,15 +9,15 @@ Player start: `front_lawn` at tile (92, 47), facing up.
 | Front Lawn (`front_lawn`) | 960×464 | 78 | 1 | 23 | 1 (1) | art | 0 |
 | Old Campus (`old_campus`) | 960×352 | 70 | 8 | 21 | 10 (3) | art | 0 |
 | West Campus (`west_campus`) | 640×512 | 98 | 5 | 12 | 8 (3) | art | 0 |
-| Performing Arts & Sports (`performing_arts`) | 640×496 | 78 | 5 | 19 | 5 (4) | art | 0 |
+| Performing Arts & Sports (`performing_arts`) | 640×496 | 78 | 5 | 20 | 5 (4) | art | 0 |
 | Science Quad (`science_quad`) | 432×416 | 62 | 5 | 9 | 5 (4) | art | 0 |
 | Language Houses (`language_houses`) | 432×432 | 79 | 7 | 16 | 7 (7) | art | 0 |
 | Studio Arts (`studio_arts`) | 432×528 | 64 | 3 | 12 | 3 (3) | art | 0 |
-| Reed Canyon East (`canyon_east`) | 432×624 | 79 | 0 | 8 | 0 (0) | art | 0 |
-| Reed Lake (`reed_lake`) | 752×304 | 88 | 0 | 5 | 0 (0) | art | 0 |
+| Reed Canyon East (`canyon_east`) | 432×624 | 79 | 1 | 8 | 0 (0) | art | 0 |
+| Reed Lake (`reed_lake`) | 752×304 | 88 | 1 | 5 | 0 (0) | art | 0 |
 | Cross Canyon (`cross_canyon`) | 608×864 | 89 | 7 | 19 | 10 (6) | art | 0 |
-| The Grove (`the_grove`) | 672×864 | 73 | 7 | 25 | 11 (6) | art | 0 |
-| Northwest Campus (`northwest`) | 576×864 | 91 | 11 | 7 | 11 (11) | art | 0 |
+| The Grove (`the_grove`) | 672×864 | 73 | 7 | 28 | 11 (6) | art | 0 |
+| Northwest Campus (`northwest`) | 576×864 | 91 | 11 | 9 | 11 (11) | art | 0 |
 
 ## Tile budget log
 
@@ -124,17 +124,24 @@ Tree metatiles are solid, so these doors opened onto clearings walled in by tree
 - Bragdon Hall (way/126856906): 1 metatile(s)
 - Canyon House (way/367919775): 3 metatile(s)
 
+## Exit landings
+
+Exits land the player where they crossed: each trigger carries `land = {axis, offset, min, max}` and GB Studio evaluates `clamp(player xpos/ypos + offset, min, max)` in the EVENT_SWITCH_SCENE script value (`tools/gbs/project.py` `_landing`). Top/bottom spans always map one to one. On left/right edges the 16 px player also needs the next column open, so a span is split into one trigger per run of usable rows; rows whose nearest landing is more than 2 tiles away get no trigger, unless the span would then have none. Where two triggers overlap the player box, the lower `_index` (spec order) wins (gbvm `include/trigger.h` `trigger_at_intersection`). Per-tile shifts are listed in `build/playtest/RESULTS.md` (info row "exit landing sideways shift").
+
+182 triggers, 1 with a fixed landing (no usable row on the span).
+
 ## Notes
 
 - `front_lawn`: exit_n_old_campus_0: no room for the 16 px player on the matching edge of old_campus (one-metatile pocket); exit dropped on both sides
 - `performing_arts`: exit_e_old_campus_0: no room for the 16 px player on the matching edge of old_campus (one-metatile pocket); exit dropped on both sides
-- `science_quad`: signpost of Biology (way/142983684) mounted on the facade beside its door (no free ground beside the door)
 - `science_quad`: signpost of Psychology (way/119846265) mounted on the facade beside its door (no free ground beside the door)
 - `language_houses`: exit_w_front_lawn_7: no room for the 16 px player on the matching edge of front_lawn (one-metatile pocket); exit dropped on both sides
 - `studio_arts`: exit_w_language_houses_2: no room for the 16 px player on the matching edge of language_houses (one-metatile pocket); exit dropped on both sides
 - `studio_arts`: signpost of Dorothy Johansen House (way/367893606) mounted on the facade beside its door (no free ground beside the door)
 - `canyon_east`: exit_w_science_quad_2: no room for the 16 px player on the matching edge of science_quad (one-metatile pocket); exit dropped on both sides
+- `canyon_east`: landmark signpost for Reed Canyon (way/787034614) on the reachable tile nearest the feature
 - `reed_lake`: exit_w_cross_canyon_1: no room for the 16 px player on the matching edge of cross_canyon (one-metatile pocket); exit dropped on both sides
+- `reed_lake`: landmark signpost for Reed Lake (way/39516063) on the reachable tile nearest the feature
 - `cross_canyon`: exit_e_reed_lake_3: no room for the 16 px player on the matching edge of reed_lake (one-metatile pocket); exit dropped on both sides
 - `cross_canyon`: exit_w_the_grove_2: no room for the 16 px player on the matching edge of the_grove (one-metatile pocket); exit dropped on both sides
 - `northwest`: signpost of Canyon House (way/367919775) mounted on the facade beside its door (no free ground beside the door)

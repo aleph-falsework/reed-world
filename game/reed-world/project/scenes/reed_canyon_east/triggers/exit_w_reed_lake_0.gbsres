@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 4,
-  "id": "0bd0780f-63fb-5820-8fb4-52b5e52d414b",
+  "id": "02e30663-14c5-5daf-a65a-b46eb3cf9ff8",
   "symbol": "trigger_canyon_east_exit_w_",
   "prefabId": "",
   "name": "exit_w_reed_lake_0",
@@ -18,16 +18,31 @@
         "sceneId": "3722cbc3-48ee-5c28-a8bf-fc23efd7a916",
         "x": {
           "type": "number",
-          "value": 90
+          "value": 91
         },
         "y": {
-          "type": "number",
-          "value": 12
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "ypos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 13
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 12
+          }
         },
         "direction": "left",
         "fadeSpeed": "2"
       },
-      "id": "19e7cde7-31ff-53c1-89d2-f7b5377a93ca"
+      "id": "bfc1f650-f1e8-5569-9b42-6808687b79e3"
     }
   ],
   "leaveScript": []

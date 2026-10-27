@@ -112,6 +112,20 @@ def _num(v: int) -> dict:
     return {"type": "number", "value": int(v)}
 
 
+def _landing(t: dict, axis: str) -> dict:
+    """Destination coordinate for EVENT_SWITCH_SCENE. A trigger with
+    land = {axis, offset, min, max} lands at clamp(player <axis> + offset, min, max) on that axis
+    (a GB Studio script value over the player's xpos/ypos property, in tiles), so the player keeps
+    their position along the edge; otherwise the fixed to_x / to_y."""
+    L = t.get("land")
+    if not L or L["axis"] != axis:
+        return _num(t[f"to_{axis}"])
+    pos = {"type": "property", "target": "player", "property": f"{axis}pos"}
+    v = {"type": "add", "valueA": pos, "valueB": _num(L["offset"])} if L["offset"] else pos
+    v = {"type": "min", "valueA": v, "valueB": _num(L["max"])}
+    return {"type": "max", "valueA": v, "valueB": _num(L["min"])}
+
+
 # ---------------------------------------------------------------- main
 def make_project(spec: dict, out_dir, base_dir=None, seed=None, strict: bool = True) -> Path:
     """Write a complete GB Studio 4.3.2 project for `spec` into `out_dir`.
@@ -267,6 +281,8 @@ def make_project(spec: dict, out_dir, base_dir=None, seed=None, strict: bool = T
                     }
                 )
             label = a.get("name") or a["id"]
+            flags = [f for f, on in (("door estimated", a.get("door_estimated") or a.get("estimated")),
+                                     ("mounted on facade", a.get("on_facade"))) if on]
             actor = {
                 "_resourceType": "actor",
                 "_index": ai,
@@ -274,7 +290,7 @@ def make_project(spec: dict, out_dir, base_dir=None, seed=None, strict: bool = T
                 "symbol": sym(f"actor_{a['id']}"),
                 "prefabId": "",
                 "name": label,
-                "notes": f"id: {a['id']}" + (" (estimated)" if a.get("estimated") else ""),
+                "notes": f"id: {a['id']}" + (f" ({', '.join(flags)})" if flags else ""),
                 "coordinateType": "tiles",
                 "x": int(a["x"]),
                 "y": int(a["y"]),
@@ -299,6 +315,9 @@ def make_project(spec: dict, out_dir, base_dir=None, seed=None, strict: bool = T
             }
             _write_json(scene_dir / "actors" / f"{unique_file(label + '_' + a['id'], 'actor')}.gbsres", actor)
 
+        # _index is spec order. Where the player's 16 px box overlaps two triggers at once, the engine
+        # runs the one with the lower _index (gbvm include/trigger.h trigger_at_intersection scans
+        # triggers[0..n) and returns the first hit), so spec order decides adjacent-span ties.
         for ti, t in enumerate(s.get("triggers") or []):
             trig = {
                 "_resourceType": "trigger",
@@ -318,8 +337,8 @@ def make_project(spec: dict, out_dir, base_dir=None, seed=None, strict: bool = T
                         "command": "EVENT_SWITCH_SCENE",
                         "args": {
                             "sceneId": scene_ids[t["to"]],
-                            "x": _num(t["to_x"]),
-                            "y": _num(t["to_y"]),
+                            "x": _landing(t, "x"),
+                            "y": _landing(t, "y"),
                             "direction": t.get("direction") or "",
                             "fadeSpeed": "2",
                         },

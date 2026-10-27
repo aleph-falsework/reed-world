@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 0,
-  "id": "3256b021-01ea-53a5-990f-e6c35ceeae07",
+  "id": "8bf6f359-f2a8-54ac-aa73-c12b14adb1a6",
   "symbol": "actor_way_371026023",
   "prefabId": "",
   "name": "Spanish House",
-  "notes": "id: way/371026023",
+  "notes": "id: way/371026023 (door estimated)",
   "coordinateType": "tiles",
   "x": 46,
   "y": 41,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "ba5d36af-1a3d-547e-bf60-14b32846ca83"
+      "id": "74da5777-81f2-5c1f-9647-f561cd75567e"
     }
   ],
   "startScript": [],

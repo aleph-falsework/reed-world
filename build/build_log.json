@@ -1,7 +1,11 @@
 [
  {
+  "step": "export: scripts/gb_export.py",
+  "seconds": 2.8
+ },
+ {
   "step": "validate",
-  "seconds": 3.5,
+  "seconds": 3.4,
   "ok": true,
   "warnings": [],
   "scenes": {
@@ -26,7 +30,7 @@
    "performing_arts": {
     "unique_tiles": 78,
     "actors": 5,
-    "triggers": 19,
+    "triggers": 20,
     "sprite_tile_budget": 96
    },
    "science_quad": {
@@ -49,13 +53,13 @@
    },
    "canyon_east": {
     "unique_tiles": 79,
-    "actors": 0,
+    "actors": 1,
     "triggers": 8,
     "sprite_tile_budget": 96
    },
    "reed_lake": {
     "unique_tiles": 88,
-    "actors": 0,
+    "actors": 1,
     "triggers": 5,
     "sprite_tile_budget": 96
    },
@@ -68,22 +72,22 @@
    "the_grove": {
     "unique_tiles": 73,
     "actors": 7,
-    "triggers": 25,
+    "triggers": 28,
     "sprite_tile_budget": 96
    },
    "northwest": {
     "unique_tiles": 91,
     "actors": 11,
-    "triggers": 7,
+    "triggers": 9,
     "sprite_tile_budget": 96
    }
   },
   "over_180": []
  },
  {
-  "step": "make_project -> game/reed-world",
-  "seconds": 3.4,
-  "project": "game/reed-world/reed_world.gbsproj"
+  "step": "make_project -> build/gbs-project",
+  "seconds": 3.8,
+  "project": "build/gbs-project/reed_world.gbsproj"
  },
  {
   "step": "check_project",
@@ -93,18 +97,13 @@
  },
  {
   "step": "build_rom -> build/reed_world.gb",
-  "seconds": 25.2,
+  "seconds": 26.8,
   "rom": "build/reed_world.gb",
   "bytes": 524288
  },
  {
   "step": "build_web -> build/web",
-  "seconds": 26.4,
+  "seconds": 26.3,
   "index": "build/web/index.html"
- },
- {
-  "step": "playtest",
-  "seconds": 8.5,
-  "returncode": 0
  }
 ]

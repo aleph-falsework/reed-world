@@ -3654,7 +3654,20 @@
    1
   ]
  ],
- "actors": [],
+ "actors": [
+  {
+   "id": "way/39516063",
+   "name": "Reed Lake",
+   "sprite": "signpost",
+   "x": 54,
+   "y": 23,
+   "dialogue": [
+    "REED LAKE",
+    "Reed College's",
+    "lake."
+   ]
+  }
+ ],
  "triggers": [
   {
    "id": "exit_e_canyon_east_0",
@@ -3665,7 +3678,14 @@
    "to": "canyon_east",
    "to_x": 1,
    "to_y": 11,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 10,
+    "max": 11
+   }
   },
   {
    "id": "exit_s_science_quad_0",
@@ -3674,9 +3694,16 @@
    "w": 4,
    "h": 1,
    "to": "science_quad",
-   "to_x": 28,
-   "to_y": 2,
-   "direction": "down"
+   "to_x": 29,
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": -40,
+   "land": {
+    "axis": "x",
+    "offset": -40,
+    "min": 28,
+    "max": 30
+   }
   },
   {
    "id": "exit_s_science_quad_1",
@@ -3687,7 +3714,14 @@
    "to": "science_quad",
    "to_x": 40,
    "to_y": 1,
-   "direction": "down"
+   "direction": "down",
+   "along_offset": -40,
+   "land": {
+    "axis": "x",
+    "offset": -40,
+    "min": 40,
+    "max": 40
+   }
   },
   {
    "id": "exit_w_cross_canyon_0",
@@ -3698,7 +3732,14 @@
    "to": "cross_canyon",
    "to_x": 73,
    "to_y": 99,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 70,
+   "land": {
+    "axis": "y",
+    "offset": 70,
+    "min": 98,
+    "max": 99
+   }
   },
   {
    "id": "exit_w_cross_canyon_2",
@@ -3709,7 +3750,14 @@
    "to": "cross_canyon",
    "to_x": 73,
    "to_y": 87,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 70,
+   "land": {
+    "axis": "y",
+    "offset": 70,
+    "min": 86,
+    "max": 87
+   }
   }
  ]
 }

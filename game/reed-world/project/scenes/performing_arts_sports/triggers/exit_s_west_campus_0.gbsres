@@ -1,8 +1,8 @@
 {
   "_resourceType": "trigger",
-  "_index": 10,
-  "id": "b4c281cf-56fc-57f7-8f54-486b0c1457c7",
-  "symbol": "trigger_performing_arts_exi_9",
+  "_index": 11,
+  "id": "2fdc0fdd-2add-5de0-9a9a-8c3b232b34e9",
+  "symbol": "trigger_performing_arts_exi_10",
   "prefabId": "",
   "name": "exit_s_west_campus_0",
   "notes": "id: exit_s_west_campus_0 -> west_campus",
@@ -17,17 +17,32 @@
       "args": {
         "sceneId": "dabb468e-94a2-5b6a-84a7-b3a42ccdf2fe",
         "x": {
-          "type": "number",
-          "value": 0
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 0
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
         },
         "y": {
           "type": "number",
-          "value": 2
+          "value": 1
         },
         "direction": "down",
         "fadeSpeed": "2"
       },
-      "id": "a4de0a53-bb22-5e3f-a004-6d0f3c20a88d"
+      "id": "b2e2d3b4-686e-5630-9616-7fc5fd9195b6"
     }
   ],
   "leaveScript": []

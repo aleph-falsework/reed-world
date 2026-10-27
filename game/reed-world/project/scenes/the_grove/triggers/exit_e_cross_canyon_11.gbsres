@@ -1,8 +1,8 @@
 {
   "_resourceType": "trigger",
-  "_index": 3,
-  "id": "2b874805-f4b4-563c-b3c9-0b489c8d865d",
-  "symbol": "trigger_the_grove_exit_e_cr_2",
+  "_index": 6,
+  "id": "a2ded7c2-67ce-5da5-a919-3e324423e498",
+  "symbol": "trigger_the_grove_exit_e_cr_5",
   "prefabId": "",
   "name": "exit_e_cross_canyon_11",
   "notes": "id: exit_e_cross_canyon_11 -> cross_canyon",
@@ -18,16 +18,31 @@
         "sceneId": "e5d5d9a3-b537-592f-b336-3afe2a5c728c",
         "x": {
           "type": "number",
-          "value": 2
+          "value": 1
         },
         "y": {
-          "type": "number",
-          "value": 17
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "ypos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 21
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 10
+          }
         },
         "direction": "right",
         "fadeSpeed": "2"
       },
-      "id": "4fcd82fc-fbdc-5726-b6b1-67fe23eb9c02"
+      "id": "77f87ab4-972b-5ce4-afe3-618850d11fd5"
     }
   ],
   "leaveScript": []

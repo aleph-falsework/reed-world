@@ -1,13 +1,13 @@
 {
   "_resourceType": "actor",
   "_index": 2,
-  "id": "ce796820-f722-5676-9c07-6b7d7f171bce",
+  "id": "4da22f05-851a-5b08-b1bb-daa0b0ece00c",
   "symbol": "actor_way_142983681",
   "prefabId": "",
   "name": "Sequoia House",
-  "notes": "id: way/142983681",
+  "notes": "id: way/142983681 (door estimated)",
   "coordinateType": "tiles",
-  "x": 2,
+  "x": 6,
   "y": 75,
   "frame": 0,
   "animate": false,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "f7cfe527-4ecf-56b7-bf65-6f06b77d814a"
+      "id": "a455572c-5de3-5abe-9015-aecb58b53868"
     }
   ],
   "startScript": [],

@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 0,
-  "id": "4b325db4-b848-595b-becd-41fe571b2374",
+  "id": "b00f96e8-0b49-5d1b-a97c-9463b6260add",
   "symbol": "actor_way_160952269",
   "prefabId": "",
   "name": "Greenwood Hall",
-  "notes": "id: way/160952269",
+  "notes": "id: way/160952269 (door estimated)",
   "coordinateType": "tiles",
   "x": 34,
   "y": 103,
@@ -32,7 +32,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "d8f5f6e2-322b-5ce5-9faa-16fc7dc9f310"
+      "id": "f0883e32-8089-5020-ab5d-d1a5dfab5db0"
     }
   ],
   "startScript": [],

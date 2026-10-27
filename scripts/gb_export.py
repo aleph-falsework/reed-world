@@ -33,6 +33,7 @@ PAL_RGB = np.array([[int(c[i:i + 2], 16) for i in (1, 3, 5)] for c in PAL], np.u
 TILE_LIMIT, TILE_TARGET = 192, 180
 MAX_ACTORS, MAX_TRIGGERS = 20, 30
 TEXT_COLS, TEXT_LINES = 18, 6   # 6 lines = two full 3-line text boxes (4 left a lone line in box 2)
+MAX_SNAP = 2                 # max sideways shift (tiles) when an exit lands the player
 EXIT_CHUNK = 6               # max exit trigger length in tiles before splitting (grows if >30 triggers)
 
 # ---------------------------------------------------------------- zones
@@ -69,6 +70,17 @@ SOLID = {C['WATER'], C['TREE'], C['FOREST'], C['LONETREE'], C['STEEP'], C['ROOF'
 WALKABLE = set(C.values()) - SOLID
 SLIVERS = []
 PATH_LINKS = set()   # ((j,i),(j2,i2)) metatile pairs an OSM footway steps between (south-up)
+# Signs for scenes without a building: OSM id -> (scene, text after the name). Neither feature has a row in
+# data/raw/reed_college_buildings.csv, so the text says only what the feature is.
+LANDMARK_SIGNS = {'way/787034614': ('canyon_east', "Reed College's canyon."),
+                  'way/39516063': ('reed_lake', "Reed College's lake.")}
+# Hand-fixed sign text where the automatic clause cut changed the meaning (REVIEW.md Minor 3).
+# Every fact is from data/raw/reed_college_buildings.csv ("What happens there" / "Changes since 2010 map").
+SIGN_TEXT = {
+    'Old Dorm Block': "Reed's original 1912 Tudor Gothic dormitory, divided into eight halls.",
+    'Dorothy Johansen House': 'Former home of history professor Johansen; now academic support.',
+    'Prexy Hall': "Former president's residence; music moved to the Performing Arts Building in 2013.",
+}
 
 
 def log(*a):
@@ -589,6 +601,10 @@ def dialogue(name, use):
     """Name in caps, then the CSV use text cut at clause boundaries to fit TEXT_LINES lines of TEXT_COLS chars."""
     title = wrap(ascii_text(name).upper())
     room = TEXT_LINES - len(title)
+    if name in SIGN_TEXT:
+        body = wrap(SIGN_TEXT[name])
+        assert len(body) <= room, f'SIGN_TEXT[{name!r}] needs {len(body)} lines, room {room}'
+        return title + body
     if not use or room <= 0:
         return title[:TEXT_LINES]
     use = ascii_text(use).strip()
@@ -751,6 +767,9 @@ def main():
             pt = shape(f['geometry']).representative_point() if f['geometry']['type'] != 'Point' else shape(f['geometry'])
             venues.append((p, pt))
 
+    landmark_geoms = {f['properties']['id']: (f['properties']['name'], shape(f['geometry'])) for f in feats
+                      if f['properties'].get('id') in LANDMARK_SIGNS}
+
     for z in ZONES:
         g_, col = z['grid'], z['col']
         occupied = set()
@@ -764,8 +783,8 @@ def main():
                 for xx in range(t['x'], t['x'] + t['w']):
                     trig_cells.add((yy // 2, xx // 2))
         # metatiles under an incoming exit's landing spot (the player's 16x8 box)
-        land_cells = {(t['to_y'] // 2, xx // 2) for z2 in ZONES for t in z2['triggers'] if t['to'] == z['id']
-                      for xx in (t['to_x'], t['to_x'] + 1)}
+        land_cells = {(yy // 2, xx // 2) for z2 in ZONES for t in z2['triggers'] if t['to'] == z['id']
+                      for lx, yy in landing_spots(t) for xx in (lx, lx + 1)}
         open_mt = np.isin(g_, list(WALKABLE))
 
         def cuts_corridor(rr, cc):
@@ -836,6 +855,40 @@ def main():
                 occupied.add(spot)
                 z['actors'].append(dict(id=p['id'], name=p['name'], sprite='signpost', x=spot[1] * 2, y=spot[0] * 2 + 1,
                                         dialogue=dialogue(p['name'], p.get('use'))))
+        # landmark signs for the two scenes with no building (keyed to the OSM feature; text = name only plus
+        # what the feature is, since data/raw/reed_college_buildings.csv has no row for either)
+        for oid, (zid, use) in LANDMARK_SIGNS.items():
+            if zid != z['id'] or oid not in landmark_geoms:
+                continue
+            name, geom = landmark_geoms[oid]
+            area = geom.intersection(box(z['x0'], z['y0'], z['x1'], z['y1']))
+            rep = area.representative_point()
+            starts = [q for z2 in ZONES for t in z2['triggers'] if t['to'] == z['id'] for q in landing_spots(t)]
+            reach = reach_positions(col, starts, z['triggers'])
+            reach_mt = {(y // 2, xx // 2) for x, y in reach for xx in (x, x + 1)}
+            j_top, i_left = z['y1'] // MT_M - 1, z['x0'] // MT_M
+
+            def readable(rc):
+                """A player position that reads a sign on metatile rc (box shifted 8 px overlaps the 16x16
+                sign; same spots as scripts/playtest.py read_spots) is reachable and not on an exit."""
+                sx, sy = rc[1] * 2, rc[0] * 2 + 1
+                spots = [(sx + dx, sy + 1) for dx in (0, -1, 1)] + [(sx + dx, sy - 2) for dx in (0, -1, 1)] \
+                    + [(sx + dx, yy) for yy in (sy, sy - 1) for dx in (-2, 2)]
+                return any(q in reach and (q[1] // 2, q[0] // 2) not in trig_cells
+                           and (q[1] // 2, (q[0] + 1) // 2) not in trig_cells for q in spots)
+
+            def key(rc):
+                pt = Point((rc[1] + i_left) * MT_M + 3, (j_top - rc[0]) * MT_M + 3)
+                return (round(area.distance(pt) / MT_M), pt.distance(rep))
+            spot = next((s_ for rc in sorted(reach_mt, key=key)
+                         if readable(rc) and (s_ := free_spot(rc[0], rc[1], [(0, 0)]))), None)
+            if spot:
+                occupied.add(spot)
+                z['actors'].append(dict(id=oid, name=name, sprite='signpost', x=spot[1] * 2, y=spot[0] * 2 + 1,
+                                        dialogue=dialogue(name, use)))
+                z['notes'].append(f'landmark signpost for {name} ({oid}) on the reachable tile nearest the feature')
+            else:
+                z['warnings'].append(f'no reachable free tile for the {name} ({oid}) signpost')
         if len(z['actors']) > MAX_ACTORS:
             z['warnings'].append(f"{len(z['actors'])} signposts > {MAX_ACTORS}; dropped the unnamed-use ones")
             z['actors'] = sorted(z['actors'], key=lambda a: len(a['dialogue']), reverse=True)[:MAX_ACTORS]
@@ -1049,6 +1102,7 @@ def build_exits():
     # landing spot: inside the matching run of the destination edge, clear of its exit trigger.
     # The player's collision box is row y, columns x and x+1 (tools/gbs/sprites.py BOUNDS_PLAYER).
     for z in ZONES:
+        new_trigs = []
         for t in z['triggers']:
             tz = zmap[t['to']]
             col = tz['col']
@@ -1057,6 +1111,16 @@ def build_exits():
                       for xx in range(u['x'], u['x'] + u['w'])}
             ok = lambda x, y: 0 <= y < col.shape[0] and 0 <= x < col.shape[1] - 1 and col[y, x] == 0 \
                 and col[y, x + 1] == 0 and (y, x) not in tcells and (y, x + 1) not in tcells
+            t['along_offset'] = lo - (t['x'] if edge in ('bottom', 'top') else t['y'])
+            same = [u for u in tz['triggers'] if u['_pair'] == t['_pair']]
+            partner = dict(x=min(u['x'] for u in same), y=min(u['y'] for u in same),
+                           w=max(u['x'] + u['w'] for u in same) - min(u['x'] for u in same),
+                           h=max(u['y'] + u['h'] for u in same) - min(u['y'] for u in same))
+            subs = proportional_landings(t, tz, edge, lo, hi, ok, partner)
+            if subs:
+                new_trigs += subs
+                continue
+            new_trigs.append(t)
             centre = (lo + hi) / 2
             spot = None
             if edge in ('bottom', 'top'):
@@ -1089,6 +1153,7 @@ def build_exits():
                                   f"(one-metatile pocket); exit dropped on both sides")
                 continue
             t['to_x'], t['to_y'] = spot
+        z['triggers'] = new_trigs
     for z in ZONES:
         keep = []
         for t in z['triggers']:
@@ -1101,6 +1166,85 @@ def build_exits():
         for t in keep:
             t.pop('_pair')
         z['triggers'] = keep
+
+
+def landing_spots(t):
+    """Every (x, y) the player can land on through trigger t."""
+    L = t.get('land')
+    if not L:
+        return [(t['to_x'], t['to_y'])]
+    return [(v, t['to_y']) if L['axis'] == 'x' else (t['to_x'], v) for v in range(L['min'], L['max'] + 1)]
+
+
+def proportional_landings(t, tz, edge, lo, hi, ok, partner):
+    """Land the player where they crossed the edge, not at a fixed spot per trigger.
+
+    Each returned trigger carries land = dict(axis, offset, min, max): in the destination,
+    <axis> = clamp(player <axis> + offset, min, max), the other coordinate is to_x / to_y.
+    tools/gbs/project.py writes that as a GB Studio script value on EVENT_SWITCH_SCENE
+    (min/max/add over the player's xpos or ypos property). `offset` maps a source tile to the
+    same world tile in the destination, so the only sideways shift is the clamp.
+
+    Top/bottom edges: the landing row is the edge metatile's inner row, open across the whole run
+    by construction, so one trigger per span always works. Left/right edges: the 16 px box also
+    needs the next column open; where a path leaves the edge on a diagonal that column is solid on
+    some rows, so the span is split into one trigger per run of usable rows (rows with no usable
+    landing go to the nearest run). Returns None if no row of the span is usable."""
+    off = t['along_offset']
+    if edge in ('bottom', 'top'):
+        y = tz['h'] - 2 if edge == 'bottom' else 1
+        if not all(ok(x, y) for x in range(lo, hi - 1)):
+            return None
+        return [dict(t, to_x=(lo + hi - 2) // 2, to_y=y, land=dict(axis='x', offset=off, min=lo, max=hi - 2))]
+    x = 1 if edge == 'left' else tz['w'] - 3
+    # usable landing rows: inside the span, or up to 4 rows beyond it if the player can walk back from there
+    # onto the partner trigger (a path that leaves the edge on a diagonal has no standing room in the span)
+    good = [y for y in range(lo - 4, hi + 4)
+            if ok(x, y) and (lo <= y < hi or walks_to(tz['col'], (x, y), partner))]
+    if not good:
+        return None
+    runs = []
+    for y in good:
+        if runs and y == runs[-1][1] + 1:
+            runs[-1][1] = y
+        else:
+            runs.append([y, y])
+    # each row of the span goes to its nearest run; consecutive rows with the same run share one trigger
+    dist = lambda k, y: max(runs[k][0] - y, y - runs[k][1], 0)
+    near = [min(range(len(runs)), key=lambda k: (dist(k, y), k)) for y in range(lo, hi)]
+    # a row whose nearest landing is more than MAX_SNAP rows away gets no trigger (the player walks along
+    # the edge to a row that maps), unless that would leave the span with no exit at all
+    if any(dist(near[y - lo], y) <= MAX_SNAP for y in range(lo, hi)):
+        near = [k if dist(k, y) <= MAX_SNAP else None for y, k in zip(range(lo, hi), near)]
+    out, g0 = [], lo
+    for y in range(lo, hi + 1):
+        if y == hi or near[y - lo] != near[g0 - lo]:
+            if near[g0 - lo] is not None:
+                r0, r1 = runs[near[g0 - lo]]
+                u = dict(t, id=t['id'] + ('' if not out else 'abcdefghijklmnop'[len(out)]), y=g0 - off, h=y - g0,
+                         to_x=x, to_y=min(max((g0 + y - 1) // 2, r0), r1),
+                         land=dict(axis='y', offset=off, min=r0, max=r1))
+                out.append(u)
+            g0 = y
+    return out
+
+
+def reach_positions(col, starts, triggers=()):
+    """All player positions (16x8 box: row y, columns x..x+1) reachable by walking from `starts`.
+    A step whose box overlaps one of `triggers` warps the player away, so it is not walked through."""
+    H_, W_ = col.shape
+    tcells = {(yy, xx) for t in triggers for yy in range(t['y'], t['y'] + t['h']) for xx in range(t['x'], t['x'] + t['w'])}
+    seen = {s for s in starts if 0 <= s[1] < H_ and 0 <= s[0] < W_ - 1}
+    q = deque(seen)
+    while q:
+        x, y = q.popleft()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if (nx, ny) in seen or not (0 <= ny < H_ and 0 <= nx < W_ - 1) or col[ny, nx] or col[ny, nx + 1] \
+                    or (ny, nx) in tcells or (ny, nx + 1) in tcells:
+                continue
+            seen.add((nx, ny)); q.append((nx, ny))
+    return seen
 
 
 def walks_to(col, start, trig, limit=600):
@@ -1255,6 +1399,17 @@ def report(player, forced, outside):
               'These paths are a gameplay accommodation, not survey data.', '']
         for oid, name, n in CARVED:
             L.append(f'- {name or "(unnamed)"} ({oid}): {n} metatile(s)')
+    L += ['', '## Exit landings', '',
+          'Exits land the player where they crossed: each trigger carries `land = {axis, offset, min, max}` and '
+          'GB Studio evaluates `clamp(player xpos/ypos + offset, min, max)` in the EVENT_SWITCH_SCENE script value '
+          '(`tools/gbs/project.py` `_landing`). Top/bottom spans always map one to one. On left/right edges the 16 px '
+          'player also needs the next column open, so a span is split into one trigger per run of usable rows; rows '
+          f'whose nearest landing is more than {MAX_SNAP} tiles away get no trigger, unless the span would then have none. '
+          'Where two triggers overlap the player box, the lower `_index` (spec order) wins '
+          '(gbvm `include/trigger.h` `trigger_at_intersection`). Per-tile shifts are listed in '
+          '`build/playtest/RESULTS.md` (info row "exit landing sideways shift").', '']
+    fixed = sum('land' not in t for z in ZONES for t in z['triggers'])
+    L.append(f"{sum(len(z['triggers']) for z in ZONES)} triggers, {fixed} with a fixed landing (no usable row on the span).")
     L += ['', '## Notes', '']
     for z in ZONES:
         for n_ in z['notes']:

@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 2,
-  "id": "999a33a3-bf6a-5de0-92ee-63531efc6c99",
+  "id": "01ac7564-c47f-5041-b099-48f946c6b7ed",
   "symbol": "actor_way_371022333",
   "prefabId": "",
   "name": "German House",
-  "notes": "id: way/371022333",
+  "notes": "id: way/371022333 (door estimated)",
   "coordinateType": "tiles",
   "x": 28,
   "y": 35,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "056b1f75-4aa5-5d24-a069-67863b7af3fd"
+      "id": "636f0011-156a-5a69-bde1-d66fff7ecbfa"
     }
   ],
   "startScript": [],

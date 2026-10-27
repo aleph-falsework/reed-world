@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 9,
-  "id": "1b5d5b58-db38-5f15-8ae2-55df7943e96c",
+  "id": "bff70b02-fa0c-5e2f-8f25-388e34fd9ebf",
   "symbol": "trigger_language_houses_exi_8",
   "prefabId": "",
   "name": "exit_w_front_lawn_0",
@@ -9,7 +9,7 @@
   "x": 0,
   "y": 44,
   "width": 1,
-  "height": 6,
+  "height": 4,
   "prefabScriptOverrides": {},
   "script": [
     {
@@ -18,16 +18,38 @@
         "sceneId": "a7363636-b50b-55d9-9bde-a25859601447",
         "x": {
           "type": "number",
-          "value": 116
+          "value": 117
         },
         "y": {
-          "type": "number",
-          "value": 53
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": 8
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 53
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 48
+          }
         },
         "direction": "left",
         "fadeSpeed": "2"
       },
-      "id": "02d54b52-42f4-5cc0-b91f-fd83cafd3ee6"
+      "id": "f37c3a6d-ee63-5e72-8a57-e8ac020016b0"
     }
   ],
   "leaveScript": []

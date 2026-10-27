@@ -89,8 +89,16 @@ def build_rom(project_dir, out_rom, verbose: bool = False) -> Path:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
-def build_web(project_dir, out_dir, verbose: bool = False) -> Path:
-    """Build the HTML5 export (binjgb wasm emulator + ROM). Returns index.html."""
+# binjgb built-in palette 62 is the DMG green set: each shade within 3.5 RGB units of DMG_HEX
+# (88c070 346856 e0f8d0 081820, measured by running the template's binjgb.wasm under node).
+DMG_WEB_PALETTE = 62
+
+
+def build_web(project_dir, out_dir, verbose: bool = False, palette: int | None = DMG_WEB_PALETTE) -> Path:
+    """Build the HTML5 export (binjgb wasm emulator + ROM). Returns index.html.
+
+    palette: the template's own default-palette option (DEFAULT_PALETTE_IDX in js/script.js, an
+    index into binjgb's 84 built-in DMG palettes; the template ships 83). None keeps the template's."""
     out_dir = Path(out_dir).resolve()
     if out_dir.exists():
         shutil.rmtree(out_dir)
@@ -100,6 +108,12 @@ def build_web(project_dir, out_dir, verbose: bool = False) -> Path:
         index = out_dir / "index.html"
         if not index.exists():
             raise BuildError(f"CLI exited 0 but no {index}")
+        if palette is not None:
+            js = out_dir / "js" / "script.js"
+            src = js.read_text()
+            if "const DEFAULT_PALETTE_IDX = 83;" not in src:
+                raise BuildError(f"{js}: DEFAULT_PALETTE_IDX line not found; template changed?")
+            js.write_text(src.replace("const DEFAULT_PALETTE_IDX = 83;", f"const DEFAULT_PALETTE_IDX = {int(palette)};"))
         build_web.last_seconds = secs  # type: ignore[attr-defined]
         return index
     finally:

@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 9,
-  "id": "236ec697-b74f-5490-860b-5f6b0e6fac76",
+  "id": "e03e68cc-ca84-57a6-9f47-9e39a824dbb6",
   "symbol": "actor_way_39516260",
   "prefabId": "",
   "name": "Health and Counseling Center",
-  "notes": "id: way/39516260",
+  "notes": "id: way/39516260 (door estimated)",
   "coordinateType": "tiles",
   "x": 32,
   "y": 39,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "062c3a0a-c0e5-5044-852a-5d8625d4b8ee"
+      "id": "36cc2371-8af5-5e39-8d78-326db4922695"
     }
   ],
   "startScript": [],

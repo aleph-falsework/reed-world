@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 5,
-  "id": "4da22f05-851a-5b08-b1bb-daa0b0ece00c",
+  "id": "82b74a16-9b92-551a-871f-2ed3a4527089",
   "symbol": "actor_way_142983683",
   "prefabId": "",
   "name": "Bidwell House",
-  "notes": "id: way/142983683",
+  "notes": "id: way/142983683 (door estimated)",
   "coordinateType": "tiles",
   "x": 18,
   "y": 65,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "a455572c-5de3-5abe-9015-aecb58b53868"
+      "id": "3c844076-4dfe-51c5-8d5f-2f778ade5aaf"
     }
   ],
   "startScript": [],

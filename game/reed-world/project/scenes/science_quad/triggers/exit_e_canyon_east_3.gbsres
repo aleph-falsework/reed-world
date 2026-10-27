@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 2,
-  "id": "a20ab572-646a-554a-b3ee-4b77c717bf52",
+  "id": "c9a7884b-034a-51a3-9bdd-92bb21a78820",
   "symbol": "trigger_science_quad_exit_e_1",
   "prefabId": "",
   "name": "exit_e_canyon_east_3",
@@ -21,13 +21,35 @@
           "value": 1
         },
         "y": {
-          "type": "number",
-          "value": 41
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": 38
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 41
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 40
+          }
         },
         "direction": "right",
         "fadeSpeed": "2"
       },
-      "id": "53f22ff7-6570-5101-a469-4a24ab30d57e"
+      "id": "3bfbffa9-075d-5ae7-bc24-974d5128f00f"
     }
   ],
   "leaveScript": []

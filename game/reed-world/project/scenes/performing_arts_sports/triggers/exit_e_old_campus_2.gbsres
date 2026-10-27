@@ -1,8 +1,8 @@
 {
   "_resourceType": "trigger",
-  "_index": 3,
-  "id": "b7700e2d-98e4-5ecb-940b-ddd8a1d7a8b6",
-  "symbol": "trigger_performing_arts_exi_2",
+  "_index": 4,
+  "id": "db5b50dd-4b50-5f54-8a52-cfc0225efde3",
+  "symbol": "trigger_performing_arts_exi_3",
   "prefabId": "",
   "name": "exit_e_old_campus_2",
   "notes": "id: exit_e_old_campus_2 -> old_campus",
@@ -18,16 +18,31 @@
         "sceneId": "63329105-269c-5a55-b8f3-9553c4ac4c8c",
         "x": {
           "type": "number",
-          "value": 2
+          "value": 1
         },
         "y": {
-          "type": "number",
-          "value": 21
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "ypos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 23
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 20
+          }
         },
         "direction": "right",
         "fadeSpeed": "2"
       },
-      "id": "ab506a81-61dd-5220-874d-628ec2d45d4b"
+      "id": "a2e6c895-6e17-5c14-b093-aca36b3b1786"
     }
   ],
   "leaveScript": []

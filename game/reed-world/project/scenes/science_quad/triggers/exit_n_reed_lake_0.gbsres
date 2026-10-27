@@ -1,7 +1,7 @@
 {
   "_resourceType": "trigger",
   "_index": 4,
-  "id": "1ba8aadd-70fe-50f8-bfac-92bd274a18f0",
+  "id": "b7c0bc54-da94-5c5d-860b-bb6f024ce86c",
   "symbol": "trigger_science_quad_exit_n",
   "prefabId": "",
   "name": "exit_n_reed_lake_0",
@@ -17,17 +17,39 @@
       "args": {
         "sceneId": "3722cbc3-48ee-5c28-a8bf-fc23efd7a916",
         "x": {
-          "type": "number",
-          "value": 68
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "xpos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": 40
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 70
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 68
+          }
         },
         "y": {
           "type": "number",
-          "value": 35
+          "value": 36
         },
         "direction": "up",
         "fadeSpeed": "2"
       },
-      "id": "226925c1-759c-5ad9-9137-7859c4214b0c"
+      "id": "aa73bc4c-293c-560c-97e0-79e626e0a9c0"
     }
   ],
   "leaveScript": []

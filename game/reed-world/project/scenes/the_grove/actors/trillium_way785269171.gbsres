@@ -1,7 +1,7 @@
 {
   "_resourceType": "actor",
   "_index": 4,
-  "id": "c0acddd6-d612-53cb-8f9f-3764b9b6cc3c",
+  "id": "d262275d-f814-5e4a-8aeb-74364ce7331b",
   "symbol": "actor_way_785269171",
   "prefabId": "",
   "name": "Trillium",
@@ -32,7 +32,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "23ce5d92-c102-5537-8dc4-4ee603ed6e24"
+      "id": "65206657-43b4-5c0b-84bc-73fa2549109c"
     }
   ],
   "startScript": [],

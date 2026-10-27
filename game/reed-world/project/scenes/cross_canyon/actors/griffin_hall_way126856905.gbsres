@@ -1,11 +1,11 @@
 {
   "_resourceType": "actor",
   "_index": 4,
-  "id": "42d0e30a-e818-52b7-80bd-5aa6b34f1012",
+  "id": "1a51a1df-93e4-57a5-b94a-8dc79e6cab5a",
   "symbol": "actor_way_126856905",
   "prefabId": "",
   "name": "Griffin Hall",
-  "notes": "id: way/126856905",
+  "notes": "id: way/126856905 (door estimated)",
   "coordinateType": "tiles",
   "x": 8,
   "y": 69,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "d6c32664-266e-5d1a-b584-684a1fd9a944"
+      "id": "d34ba379-88d8-586b-a14a-5d77f4155885"
     }
   ],
   "startScript": [],

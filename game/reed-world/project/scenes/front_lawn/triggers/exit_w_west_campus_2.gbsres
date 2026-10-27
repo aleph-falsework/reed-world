@@ -18,11 +18,33 @@
         "sceneId": "dabb468e-94a2-5b6a-84a7-b3a42ccdf2fe",
         "x": {
           "type": "number",
-          "value": 76
+          "value": 77
         },
         "y": {
-          "type": "number",
-          "value": 10
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "add",
+              "valueA": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "valueB": {
+                "type": "number",
+                "value": -18
+              }
+            },
+            "valueB": {
+              "type": "number",
+              "value": 11
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 10
+          }
         },
         "direction": "left",
         "fadeSpeed": "2"

@@ -5170,9 +5170,16 @@
    "w": 1,
    "h": 4,
    "to": "front_lawn",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 13,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -44,
+   "land": {
+    "axis": "y",
+    "offset": -44,
+    "min": 10,
+    "max": 15
+   }
   },
   {
    "id": "exit_e_front_lawn_1",
@@ -5181,20 +5188,52 @@
    "w": 1,
    "h": 2,
    "to": "front_lawn",
-   "to_x": 2,
-   "to_y": 0,
-   "direction": "right"
+   "to_x": 1,
+   "to_y": 1,
+   "direction": "right",
+   "along_offset": -44,
+   "land": {
+    "axis": "y",
+    "offset": -44,
+    "min": 1,
+    "max": 1
+   }
   },
   {
    "id": "exit_e_old_campus_1",
    "x": 79,
    "y": 32,
    "w": 1,
-   "h": 4,
+   "h": 1,
    "to": "old_campus",
-   "to_x": 2,
+   "to_x": 1,
+   "to_y": 31,
+   "direction": "right",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 30,
+    "max": 31
+   }
+  },
+  {
+   "id": "exit_e_old_campus_1b",
+   "x": 79,
+   "y": 33,
+   "w": 1,
+   "h": 3,
+   "to": "old_campus",
+   "to_x": 1,
    "to_y": 34,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 34,
+    "max": 35
+   }
   },
   {
    "id": "exit_e_old_campus_2",
@@ -5203,20 +5242,34 @@
    "w": 1,
    "h": 4,
    "to": "old_campus",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 21,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 20,
+    "max": 23
+   }
   },
   {
    "id": "exit_e_old_campus_3",
    "x": 79,
-   "y": 16,
+   "y": 18,
    "w": 1,
-   "h": 4,
+   "h": 2,
    "to": "old_campus",
    "to_x": 1,
    "to_y": 20,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 20,
+    "max": 23
+   }
   },
   {
    "id": "exit_e_old_campus_4",
@@ -5227,7 +5280,14 @@
    "to": "old_campus",
    "to_x": 1,
    "to_y": 9,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": 0,
+   "land": {
+    "axis": "y",
+    "offset": 0,
+    "min": 6,
+    "max": 9
+   }
   },
   {
    "id": "exit_n_the_grove_0",
@@ -5237,8 +5297,15 @@
    "h": 1,
    "to": "the_grove",
    "to_x": 30,
-   "to_y": 105,
-   "direction": "up"
+   "to_y": 106,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 30,
+    "max": 30
+   }
   },
   {
    "id": "exit_n_the_grove_1",
@@ -5247,9 +5314,16 @@
    "w": 10,
    "h": 1,
    "to": "the_grove",
-   "to_x": 46,
-   "to_y": 105,
-   "direction": "up"
+   "to_x": 42,
+   "to_y": 106,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 38,
+    "max": 46
+   }
   },
   {
    "id": "exit_n_the_grove_2",
@@ -5260,7 +5334,14 @@
    "to": "the_grove",
    "to_x": 54,
    "to_y": 106,
-   "direction": "up"
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 54,
+    "max": 54
+   }
   },
   {
    "id": "exit_n_the_grove_3",
@@ -5270,8 +5351,15 @@
    "h": 1,
    "to": "the_grove",
    "to_x": 75,
-   "to_y": 105,
-   "direction": "up"
+   "to_y": 106,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 72,
+    "max": 78
+   }
   },
   {
    "id": "exit_s_west_campus_0",
@@ -5281,8 +5369,15 @@
    "h": 1,
    "to": "west_campus",
    "to_x": 0,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 0,
+    "max": 0
+   }
   },
   {
    "id": "exit_s_west_campus_1",
@@ -5292,8 +5387,15 @@
    "h": 1,
    "to": "west_campus",
    "to_x": 12,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 10,
+    "max": 14
+   }
   },
   {
    "id": "exit_s_west_campus_2",
@@ -5303,8 +5405,15 @@
    "h": 1,
    "to": "west_campus",
    "to_x": 17,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 16,
+    "max": 18
+   }
   },
   {
    "id": "exit_s_west_campus_3",
@@ -5314,8 +5423,15 @@
    "h": 1,
    "to": "west_campus",
    "to_x": 29,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 28,
+    "max": 30
+   }
   },
   {
    "id": "exit_s_west_campus_4",
@@ -5325,8 +5441,15 @@
    "h": 1,
    "to": "west_campus",
    "to_x": 33,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 32,
+    "max": 34
+   }
   },
   {
    "id": "exit_s_west_campus_5",
@@ -5337,7 +5460,14 @@
    "to": "west_campus",
    "to_x": 40,
    "to_y": 1,
-   "direction": "down"
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 40,
+    "max": 40
+   }
   },
   {
    "id": "exit_s_west_campus_6",
@@ -5347,8 +5477,15 @@
    "h": 1,
    "to": "west_campus",
    "to_x": 50,
-   "to_y": 2,
-   "direction": "down"
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 48,
+    "max": 52
+   }
   },
   {
    "id": "exit_s_west_campus_7",
@@ -5357,9 +5494,16 @@
    "w": 4,
    "h": 1,
    "to": "west_campus",
-   "to_x": 54,
-   "to_y": 2,
-   "direction": "down"
+   "to_x": 55,
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 54,
+    "max": 56
+   }
   },
   {
    "id": "exit_s_west_campus_8",
@@ -5368,9 +5512,16 @@
    "w": 4,
    "h": 1,
    "to": "west_campus",
-   "to_x": 76,
-   "to_y": 2,
-   "direction": "down"
+   "to_x": 75,
+   "to_y": 1,
+   "direction": "down",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 74,
+    "max": 76
+   }
   }
  ]
 }

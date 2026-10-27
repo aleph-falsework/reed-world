@@ -5,7 +5,7 @@
   "symbol": "actor_way_331521983",
   "prefabId": "",
   "name": "Prexy Hall",
-  "notes": "id: way/331521983",
+  "notes": "id: way/331521983 (door estimated)",
   "coordinateType": "tiles",
   "x": 60,
   "y": 37,
@@ -26,8 +26,8 @@
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "PREXY HALL\nMusic building on\nthis map, a former",
-          "president's\nresidence,\npractice rooms."
+          "PREXY HALL\nFormer president's\nresidence; music",
+          "moved to the\nPerforming Arts\nBuilding in 2013."
         ],
         "avatarId": "",
         "minHeight": 4,

@@ -17,12 +17,27 @@
       "args": {
         "sceneId": "63329105-269c-5a55-b8f3-9553c4ac4c8c",
         "x": {
-          "type": "number",
-          "value": 104
+          "type": "max",
+          "valueA": {
+            "type": "min",
+            "valueA": {
+              "type": "property",
+              "target": "player",
+              "property": "xpos"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 106
+            }
+          },
+          "valueB": {
+            "type": "number",
+            "value": 102
+          }
         },
         "y": {
           "type": "number",
-          "value": 41
+          "value": 42
         },
         "direction": "up",
         "fadeSpeed": "2"

@@ -7106,11 +7106,18 @@
    "x": 119,
    "y": 52,
    "w": 1,
-   "h": 6,
+   "h": 2,
    "to": "language_houses",
    "to_x": 1,
    "to_y": 43,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -8,
+   "land": {
+    "axis": "y",
+    "offset": -8,
+    "min": 40,
+    "max": 43
+   }
   },
   {
    "id": "exit_e_language_houses_1",
@@ -7119,9 +7126,16 @@
    "w": 1,
    "h": 6,
    "to": "language_houses",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 40,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -8,
+   "land": {
+    "axis": "y",
+    "offset": -8,
+    "min": 38,
+    "max": 43
+   }
   },
   {
    "id": "exit_e_language_houses_2",
@@ -7132,7 +7146,14 @@
    "to": "language_houses",
    "to_x": 1,
    "to_y": 38,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -8,
+   "land": {
+    "axis": "y",
+    "offset": -8,
+    "min": 38,
+    "max": 41
+   }
   },
   {
    "id": "exit_e_language_houses_3",
@@ -7141,9 +7162,16 @@
    "w": 1,
    "h": 2,
    "to": "language_houses",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 32,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -8,
+   "land": {
+    "axis": "y",
+    "offset": -8,
+    "min": 32,
+    "max": 33
+   }
   },
   {
    "id": "exit_e_language_houses_4",
@@ -7152,9 +7180,16 @@
    "w": 1,
    "h": 4,
    "to": "language_houses",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 21,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -8,
+   "land": {
+    "axis": "y",
+    "offset": -8,
+    "min": 20,
+    "max": 23
+   }
   },
   {
    "id": "exit_e_language_houses_5",
@@ -7163,9 +7198,16 @@
    "w": 1,
    "h": 4,
    "to": "language_houses",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 9,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -8,
+   "land": {
+    "axis": "y",
+    "offset": -8,
+    "min": 4,
+    "max": 13
+   }
   },
   {
    "id": "exit_e_language_houses_6",
@@ -7174,9 +7216,16 @@
    "w": 1,
    "h": 4,
    "to": "language_houses",
-   "to_x": 2,
+   "to_x": 1,
    "to_y": 5,
-   "direction": "right"
+   "direction": "right",
+   "along_offset": -8,
+   "land": {
+    "axis": "y",
+    "offset": -8,
+    "min": 4,
+    "max": 11
+   }
   },
   {
    "id": "exit_n_old_campus_1",
@@ -7187,7 +7236,14 @@
    "to": "old_campus",
    "to_x": 12,
    "to_y": 42,
-   "direction": "up"
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 12,
+    "max": 12
+   }
   },
   {
    "id": "exit_n_old_campus_10",
@@ -7197,8 +7253,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 104,
-   "to_y": 41,
-   "direction": "up"
+   "to_y": 42,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 102,
+    "max": 106
+   }
   },
   {
    "id": "exit_n_old_campus_11",
@@ -7208,8 +7271,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 112,
-   "to_y": 41,
-   "direction": "up"
+   "to_y": 42,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 110,
+    "max": 114
+   }
   },
   {
    "id": "exit_n_old_campus_2",
@@ -7220,7 +7290,14 @@
    "to": "old_campus",
    "to_x": 18,
    "to_y": 42,
-   "direction": "up"
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 16,
+    "max": 20
+   }
   },
   {
    "id": "exit_n_old_campus_3",
@@ -7231,7 +7308,14 @@
    "to": "old_campus",
    "to_x": 27,
    "to_y": 42,
-   "direction": "up"
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 26,
+    "max": 28
+   }
   },
   {
    "id": "exit_n_old_campus_4",
@@ -7242,7 +7326,14 @@
    "to": "old_campus",
    "to_x": 32,
    "to_y": 42,
-   "direction": "up"
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 32,
+    "max": 32
+   }
   },
   {
    "id": "exit_n_old_campus_5",
@@ -7252,8 +7343,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 62,
-   "to_y": 41,
-   "direction": "up"
+   "to_y": 42,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 60,
+    "max": 64
+   }
   },
   {
    "id": "exit_n_old_campus_6",
@@ -7263,8 +7361,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 68,
-   "to_y": 41,
-   "direction": "up"
+   "to_y": 42,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 66,
+    "max": 70
+   }
   },
   {
    "id": "exit_n_old_campus_7",
@@ -7275,7 +7380,14 @@
    "to": "old_campus",
    "to_x": 73,
    "to_y": 42,
-   "direction": "up"
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 72,
+    "max": 74
+   }
   },
   {
    "id": "exit_n_old_campus_8",
@@ -7285,8 +7397,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 90,
-   "to_y": 41,
-   "direction": "up"
+   "to_y": 42,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 90,
+    "max": 90
+   }
   },
   {
    "id": "exit_n_old_campus_9",
@@ -7296,8 +7415,15 @@
    "h": 1,
    "to": "old_campus",
    "to_x": 98,
-   "to_y": 41,
-   "direction": "up"
+   "to_y": 42,
+   "direction": "up",
+   "along_offset": 0,
+   "land": {
+    "axis": "x",
+    "offset": 0,
+    "min": 98,
+    "max": 98
+   }
   },
   {
    "id": "exit_w_performing_arts_0",
@@ -7306,9 +7432,16 @@
    "w": 1,
    "h": 4,
    "to": "performing_arts",
-   "to_x": 76,
+   "to_x": 77,
    "to_y": 57,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 44,
+   "land": {
+    "axis": "y",
+    "offset": 44,
+    "min": 56,
+    "max": 59
+   }
   },
   {
    "id": "exit_w_performing_arts_1",
@@ -7317,9 +7450,16 @@
    "w": 1,
    "h": 2,
    "to": "performing_arts",
-   "to_x": 76,
+   "to_x": 77,
    "to_y": 44,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": 44,
+   "land": {
+    "axis": "y",
+    "offset": 44,
+    "min": 42,
+    "max": 45
+   }
   },
   {
    "id": "exit_w_west_campus_0",
@@ -7328,9 +7468,16 @@
    "w": 1,
    "h": 4,
    "to": "west_campus",
-   "to_x": 76,
+   "to_x": 77,
    "to_y": 37,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -18,
+   "land": {
+    "axis": "y",
+    "offset": -18,
+    "min": 36,
+    "max": 43
+   }
   },
   {
    "id": "exit_w_west_campus_1",
@@ -7341,7 +7488,14 @@
    "to": "west_campus",
    "to_x": 77,
    "to_y": 27,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -18,
+   "land": {
+    "axis": "y",
+    "offset": -18,
+    "min": 24,
+    "max": 27
+   }
   },
   {
    "id": "exit_w_west_campus_2",
@@ -7350,9 +7504,16 @@
    "w": 1,
    "h": 2,
    "to": "west_campus",
-   "to_x": 76,
+   "to_x": 77,
    "to_y": 10,
-   "direction": "left"
+   "direction": "left",
+   "along_offset": -18,
+   "land": {
+    "axis": "y",
+    "offset": -18,
+    "min": 10,
+    "max": 11
+   }
   }
  ]
 }

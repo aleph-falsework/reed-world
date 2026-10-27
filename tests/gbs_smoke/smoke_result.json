@@ -1,5 +1,5 @@
 {
- "build_seconds": 21.5,
+ "build_seconds": 21.8,
  "checks": {
   "a: starts in scene1 at (4,10)": true,
   "b: wall at column 12 stops player at x=10": true,
@@ -7,12 +7,12 @@
   "d: scene2 loaded at (11,16)": true
  },
  "screens": [
-  "/home/claude/reed-world/tests/gbs_smoke/screens/a_scene1_renders.png",
-  "/home/claude/reed-world/tests/gbs_smoke/screens/b_wall_blocks_player.png",
-  "/home/claude/reed-world/tests/gbs_smoke/screens/c_signpost_dialogue.png",
-  "/home/claude/reed-world/tests/gbs_smoke/screens/c2_dialogue_closed.png",
-  "/home/claude/reed-world/tests/gbs_smoke/screens/d_scene2_loaded.png"
+  "tests/gbs_smoke/screens/a_scene1_renders.png",
+  "tests/gbs_smoke/screens/b_wall_blocks_player.png",
+  "tests/gbs_smoke/screens/c_signpost_dialogue.png",
+  "tests/gbs_smoke/screens/c2_dialogue_closed.png",
+  "tests/gbs_smoke/screens/d_scene2_loaded.png"
  ],
- "web_index": "/home/claude/reed-world/tests/gbs_smoke/out/web/index.html",
- "web_seconds": 20.9
+ "web_index": "tests/gbs_smoke/out/web/index.html",
+ "web_seconds": 21.7
 }

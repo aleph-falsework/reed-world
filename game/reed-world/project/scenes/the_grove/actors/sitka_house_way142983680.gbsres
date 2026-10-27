@@ -1,13 +1,13 @@
 {
   "_resourceType": "actor",
   "_index": 6,
-  "id": "42011a1f-d67e-5772-b1ef-a955786210fc",
+  "id": "e1db0ade-3672-51c2-8fe4-c406b95f6c53",
   "symbol": "actor_way_142983680",
   "prefabId": "",
   "name": "Sitka House",
-  "notes": "id: way/142983680",
+  "notes": "id: way/142983680 (door estimated)",
   "coordinateType": "tiles",
-  "x": 2,
+  "x": 6,
   "y": 59,
   "frame": 0,
   "animate": false,
@@ -33,7 +33,7 @@
         "minHeight": 4,
         "maxHeight": 7
       },
-      "id": "bb82745f-2b1d-55cd-baa0-a0678450eb59"
+      "id": "7439a24e-6d5e-5dec-ac70-2220bac15c89"
     }
   ],
   "startScript": [],
