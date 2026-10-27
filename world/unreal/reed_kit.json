@@ -1,0 +1,227 @@
+{
+ "name": "Reed College - Unreal import kit",
+ "generator": "scripts/export_unreal.py",
+ "source_manifest": "2026-10-27T08:41:57-0700",
+ "credit": "\u00a9 OpenStreetMap contributors (ODbL) \u00b7 lidar: Oregon DOGAMI 2014 (OLC Metro)",
+ "mapping": {
+  "world": "metres; x east, y north, z elevation (NAVD88), right-handed",
+  "unreal": "UE.X = x*100 (east), UE.Y = -y*100 (south), UE.Z = z*100 (elevation, no datum shift)",
+  "gltf": "glTF metres, Y up: (x, z, -y). UE glTF import maps glTF (X,Y,Z) m -> UE (X,Z,Y)*100 cm",
+  "yaw": "UE yaw = -(world heading, deg CCW from east); east 0, south 90, north -90",
+  "campus_bounds_cm": {
+   "x": [
+    0,
+    127200
+   ],
+   "y": [
+    -81000,
+    0
+   ]
+  }
+ },
+ "ground_texture": {
+  "file": "T_ReedGround.png",
+  "size": [
+   2048,
+   1024
+  ],
+  "covers_world_m": {
+   "x": [
+    0,
+    1274
+   ],
+   "y": [
+    0,
+    811
+   ]
+  },
+  "world_uv": "U = UE.X / 127400; V = (UE.Y + 81100) / 81100"
+ },
+ "terrain": {
+  "mesh_glb": "reed_terrain.glb",
+  "tiles": [
+   "T_Terrain_r0_c0",
+   "T_Terrain_r0_c1",
+   "T_Terrain_r0_c2",
+   "T_Terrain_r0_c3",
+   "T_Terrain_r1_c0",
+   "T_Terrain_r1_c1",
+   "T_Terrain_r1_c2",
+   "T_Terrain_r1_c3",
+   "T_Terrain_r2_c0",
+   "T_Terrain_r2_c1",
+   "T_Terrain_r2_c2",
+   "T_Terrain_r2_c3"
+  ],
+  "carved": {
+   "lake_depth_m": 1.5,
+   "lake_ramp_m": 4.0,
+   "stream_m": 0.3
+  },
+  "heightmap_step_m": 2.0
+ },
+ "landscape": {
+  "1009": {
+   "file": "heightmap_landscape_1009.png",
+   "size": [
+    1009,
+    1009
+   ],
+   "spacing_cm": 127.0,
+   "ui_location_cm": {
+    "x": 63600.0,
+    "y": -40500.0,
+    "z": 3991.0
+   },
+   "actor_location_cm": {
+    "x": -408.0,
+    "y": -104508.0,
+    "z": 3991.0
+   },
+   "rotation_deg": [
+    0,
+    0,
+    0
+   ],
+   "scale": {
+    "x": 127.0,
+    "y": 127.0,
+    "z": 15
+   },
+   "component_layout": "63 quads/section, 2x2 sections/component, 8x8 components (or 1x1 sections, 16x16 components)",
+   "covers_world_m": {
+    "x": [
+     -4.08,
+     1276.08
+    ],
+    "y": [
+     -235.08,
+     1045.08
+    ]
+   },
+   "campus_world_m": {
+    "x": [
+     0.0,
+     1272.0
+    ],
+    "y": [
+     0.0,
+     810.0
+    ]
+   },
+   "z_formula": "UE Z (cm) = Location.Z + (pixel - 32768) * Scale.Z / 128",
+   "z_range_cm": [
+    1489.0,
+    6492.7
+   ],
+   "z_representable_cm": [
+    151.0,
+    7830.9
+   ],
+   "z_step_cm": 0.1171875,
+   "max_decode_error_cm": 0.059,
+   "padding": "outside the campus the edge heights are extended (flat streaks); the playable campus is the centre"
+  },
+  "2017": {
+   "file": "heightmap_landscape_2017.png",
+   "size": [
+    2017,
+    2017
+   ],
+   "spacing_cm": 64.0,
+   "ui_location_cm": {
+    "x": 63600.0,
+    "y": -40500.0,
+    "z": 3991.0
+   },
+   "actor_location_cm": {
+    "x": -912.0,
+    "y": -105012.0,
+    "z": 3991.0
+   },
+   "rotation_deg": [
+    0,
+    0,
+    0
+   ],
+   "scale": {
+    "x": 64.0,
+    "y": 64.0,
+    "z": 15
+   },
+   "component_layout": "63 quads/section, 2x2 sections/component, 16x16 components",
+   "covers_world_m": {
+    "x": [
+     -9.12,
+     1281.12
+    ],
+    "y": [
+     -240.12,
+     1050.12
+    ]
+   },
+   "campus_world_m": {
+    "x": [
+     0.0,
+     1272.0
+    ],
+    "y": [
+     0.0,
+     810.0
+    ]
+   },
+   "z_formula": "UE Z (cm) = Location.Z + (pixel - 32768) * Scale.Z / 128",
+   "z_range_cm": [
+    1489.0,
+    6493.8
+   ],
+   "z_representable_cm": [
+    151.0,
+    7830.9
+   ],
+   "z_step_cm": 0.1171875,
+   "max_decode_error_cm": 0.059,
+   "padding": "outside the campus the edge heights are extended (flat streaks); the playable campus is the centre"
+  }
+ },
+ "player_start": {
+  "location_cm": [
+   69976.0,
+   -34872.0,
+   4366.6
+  ],
+  "yaw_deg": -142.4,
+  "world_m": [
+   699.76,
+   348.72,
+   43.67
+  ],
+  "note": "open ground 8-40 m south of the Eliot Circle lawn with the clearest view of Eliot Hall; 1 m above ground; yaw looks at the Eliot Hall centroid"
+ },
+ "reference": {
+  "mesh": "B_way_39516532",
+  "name": "Eliot Hall",
+  "min_cm": [
+   60978.0,
+   -40046.0,
+   3927.0
+  ],
+  "max_cm": [
+   68891.0,
+   -37330.0,
+   5758.0
+  ]
+ },
+ "sign_board": {
+  "width_m": 1.6,
+  "height_m": 0.9,
+  "thick_m": 0.08,
+  "center_z_m": 1.55
+ },
+ "counts": {
+  "buildings": 549,
+  "trees": 10873,
+  "signs": 60,
+  "water": 10
+ }
+}
