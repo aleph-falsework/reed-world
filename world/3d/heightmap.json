@@ -1,0 +1,32 @@
+{
+ "file": "heightmap_16.png",
+ "width": 637,
+ "height": 406,
+ "m_per_px": 2,
+ "registration": "vertex",
+ "origin": {
+  "x": 0.0,
+  "y": 810.0,
+  "corner": "north-west (row 0, col 0)"
+ },
+ "x_of_col": "x = col * 2",
+ "y_of_row": "y = 810 - row * 2",
+ "extent_m": {
+  "x": [
+   0,
+   1272
+  ],
+  "y": [
+   0,
+   810
+  ]
+ },
+ "min_m": 16.0,
+ "max_m": 65.0,
+ "decode": "z = min_m + value / 65535 * (max_m - min_m)",
+ "precision_m": 0.00075,
+ "source": "DOGAMI 2014 OLC Metro lidar bare earth, 1 m, gaussian sigma 0.7 m, bilinear to 2 m",
+ "nodata_fill": "pyramid average + Laplace relaxation",
+ "filled_fraction": 0.12,
+ "note": "East of x ~ 1136 m the survey has no data; that strip is a smooth continuation, not measured."
+}
